@@ -21,6 +21,24 @@ Este projeto e estatico. Pode ser publicado diretamente em Vercel, GitHub Pages 
 
 Para Vercel, nao ha build step obrigatorio: o `index.html` redireciona para a home principal.
 
+### Git + Vercel
+
+O projeto esta configurado para deploy estatico na Vercel:
+
+```powershell
+npm install
+npm run deploy:preview
+npm run deploy
+```
+
+Arquivos de trabalho local, estudos `.md`, scripts e telemetria estao excluidos do deploy via `.vercelignore`.
+Para publicar via GitHub, configure um remote e envie a branch `master`:
+
+```powershell
+git remote add origin <url-do-repositorio>
+git push -u origin master
+```
+
 ## Atualizacao
 
 Revalidar sempre que mudar:
