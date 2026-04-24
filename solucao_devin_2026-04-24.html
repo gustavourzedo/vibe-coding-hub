@@ -74,12 +74,15 @@
           <tr>
             <td>Teams</td>
             <td>US$ 80/mes</td>
-            <td>Uso colaborativo; docs de billing ainda tratam `250 ACUs/mensais` nesse tier</td>
+            <td>Uso colaborativo, membros ilimitados, billing centralizado e quota incluida segundo a pagina publica de pricing.</td>
           </tr>
         </tbody>
       </table>
       <p class="small">
-        Nos docs de billing, `Core` e PAYG puro com `US$ 2.25 por ACU`; `Teams` inclui `250 ACUs por mes`.
+        Ha uma divergencia importante para manutencao: a pagina publica de pricing mostra `Teams` a US$ 80/mes com quota
+        incluida, enquanto a doc de billing ainda descreve `Core` como PAYG e usa `US$ 2.25 por ACU`, alem de citar um
+        formato `Teams` de US$ 500/mes com 250 ACUs. Para decisao publica, esta pagina usa a pagina de pricing como fonte
+        primaria e marca a doc de billing como ponto de revalidacao.
       </p>
     </section>
 
@@ -129,7 +132,7 @@
           <ul>
             <li>`ACU` mede o trabalho do Devin: planejamento, contexto, steps, browser, execucao de codigo e mais.</li>
             <li>Devin nao consome ACUs enquanto espera sua resposta, espera testes ou esta apenas clonando repositorios.</li>
-            <li>Em `Core`, tudo e PAYG. Em `Teams`, a franquia da assinatura reseta no ciclo.</li>
+              <li>A doc de billing ainda usa `Core` e `ACU`; a pagina publica de pricing atual usa `Free`, `Pro`, `Max`, `Teams` e `Enterprise`.</li>
             <li>Existem analytics proprios de consumo por sessao e por organizacao.</li>
           </ul>
         </div>
