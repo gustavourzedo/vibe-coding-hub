@@ -6,6 +6,9 @@ Documentacao viva para comparar assinaturas, modelos, IDEs, harnesses e telemetr
 
 Abra `index.html` ou `analise_final_assinaturas_vibe_coding_2026-04-24.html`.
 
+Publicacao oficial:
+https://vibe-coding-hub-vercel.vercel.app/analise_final_assinaturas_vibe_coding_2026-04-24
+
 ## Escopo
 
 - Ranking de assinaturas e plataformas para um benchmark extremo baseado em uma semana real de uso pesado no Cursor.
@@ -20,6 +23,9 @@ Abra `index.html` ou `analise_final_assinaturas_vibe_coding_2026-04-24.html`.
 Este projeto e estatico. Pode ser publicado diretamente em Vercel, GitHub Pages ou qualquer host estatico.
 
 Para Vercel, nao ha build step obrigatorio: o `index.html` redireciona para a home principal.
+
+URL publicada:
+https://vibe-coding-hub-vercel.vercel.app/analise_final_assinaturas_vibe_coding_2026-04-24
 
 ### Git + Vercel
 
