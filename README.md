@@ -12,6 +12,7 @@ Abra `index.html` ou `analise_final_assinaturas_vibe_coding_2026-04-24.html`.
 - Paginas profundas por solucao.
 - Benchmark tecnico por modelo.
 - Comparativo de IDEs, apps e harnesses.
+- Comparativo de orquestradores e workflows de agentes.
 - Telemetria local preparada para consolidar Cursor, Codex desktop e futuras ferramentas.
 
 ## Publicacao

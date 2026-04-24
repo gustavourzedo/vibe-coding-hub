@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orquestradores e Workflows de Agentes - Hub Vibe Coding</title>
+  <style>
+    :root {
+      --bg:#0b1020;
+      --panel:#151f38;
+      --panel-2:#1b2745;
+      --line:#2a3960;
+      --text:#e7edf9;
+      --muted:#9fb0d4;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --warn:#fbbf24;
+      --good:#34d399;
+      --danger:#fb7185;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family:"Segoe UI","Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg,#09101d 0%,#0b1020 100%);
+      line-height:1.58;
+    }
+    .wrap { width:min(1500px, calc(100% - 40px)); margin:32px auto 56px; }
+    .hero,.card {
+      background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+    .hero {
+      padding:28px 30px;
+      background:linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.1));
+    }
+    .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; }
+    h1 { font-size:clamp(30px,4vw,48px); letter-spacing:-0.03em; }
+    h2 { font-size:24px; }
+    h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); }
+    a { color:#9fcbff; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); }
+    li { margin-bottom:8px; }
+    .small { font-size:13px; color:#8ea0c7; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini {
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:16px;
+      background:rgba(255,255,255,.04);
+    }
+    .callout {
+      border-left:4px solid var(--accent);
+      background:rgba(110,231,183,.08);
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:14px;
+    }
+    .warnbox {
+      border-left:4px solid var(--warn);
+      background:rgba(251,191,36,.08);
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:14px;
+    }
+    .dangerbox {
+      border-left:4px solid var(--danger);
+      background:rgba(251,113,133,.08);
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:14px;
+    }
+    .metric { font-size:30px; font-weight:800; color:#fff; margin-bottom:4px; letter-spacing:-.02em; }
+    .metric.good { color:var(--good); }
+    .metric.warn { color:var(--warn); }
+    .tag {
+      display:inline-flex;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      margin:0 8px 8px 0;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.05);
+      color:#dbeafe;
+    }
+    .tag.good { color:#b7f7dd; background:rgba(52,211,153,.12); }
+    .tag.warn { color:#fde68a; background:rgba(251,191,36,.12); }
+    .tag.danger { color:#fecdd3; background:rgba(251,113,133,.12); }
+    .score { font-size:26px; font-weight:800; color:#fff; }
+    .score.good { color:var(--good); }
+    .score.warn { color:var(--warn); }
+    .bar {
+      width:100%;
+      height:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      overflow:hidden;
+      margin-top:7px;
+    }
+    .bar span {
+      display:block;
+      height:100%;
+      background:linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+    table {
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      font-size:14px;
+    }
+    th,td {
+      padding:14px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      text-align:left;
+      vertical-align:top;
+    }
+    th {
+      background:rgba(96,165,250,.08);
+      color:#f2f6ff;
+      font-weight:700;
+    }
+    tr:nth-child(even) td { background:rgba(255,255,255,.02); }
+    .rank {
+      display:inline-grid;
+      place-items:center;
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      font-weight:800;
+      background:rgba(110,231,183,.16);
+      color:#a7f3d0;
+    }
+    .rank.mid { background:rgba(96,165,250,.14); color:#bfdbfe; }
+    .rank.low { background:rgba(251,191,36,.14); color:#fde68a; }
+    .layer {
+      display:grid;
+      grid-template-columns: 170px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+    }
+    .layer strong { color:#f8fbff; }
+    .timeline {
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+    .step {
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:14px;
+      background:rgba(255,255,255,.04);
+      min-height:132px;
+    }
+    .step .num {
+      display:inline-grid;
+      place-items:center;
+      width:28px;
+      height:28px;
+      border-radius:999px;
+      background:rgba(96,165,250,.16);
+      color:#bfdbfe;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .nowrap { white-space:nowrap; }
+    @media (max-width: 1100px) {
+      .grid-4,.grid-3,.grid-2,.timeline { grid-template-columns:1fr; }
+      .layer { grid-template-columns:1fr; }
+      .wrap { width:min(100% - 20px, 1500px); }
+      th,td { font-size:13px; padding:12px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./analise_final_assinaturas_vibe_coding_2026-04-24.html">Voltar para o hub</a></div>
+
+    <section class="hero">
+      <h1>Orquestradores e Workflows de Agentes</h1>
+      <p>
+        Esta pagina coloca `LangGraph`, `n8n`, `Mastra`, `CrewAI`, `Dify`, `Temporal` e similares no lugar correto do estudo:
+        eles nao substituem uma assinatura de modelo nem uma IDE/harness. Eles entram como a camada que organiza tarefas,
+        automacoes, agentes especializados, memoria, filas, retries, avaliacao e telemetria.
+      </p>
+      <div class="grid-4">
+        <div class="mini">
+          <span class="tag good">Camada nova</span>
+          <h3>Onde encaixa</h3>
+          <p>Depois da assinatura e do harness: e a camada de operacao, workflows e produto.</p>
+        </div>
+        <div class="mini">
+          <span class="tag warn">Nao confundir</span>
+          <h3>Nao e IDE</h3>
+          <p>Orquestrador nao abre repo e vibe coda sozinho como Cursor/Codex; ele coordena fluxos.</p>
+        </div>
+        <div class="mini">
+          <span class="tag good">Uso imediato</span>
+          <h3>Hub vivo</h3>
+          <p>Melhor uso inicial: monitorar precos, quotas, telemetria local e snapshots semanais.</p>
+        </div>
+        <div class="mini">
+          <span class="tag">Compilado</span>
+          <h3>24/04/2026</h3>
+          <p>Revalidar quando mudarem docs oficiais, pricing, cloud plans ou politicas de execucao.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Modelo mental do stack</h2>
+      <div class="grid-2">
+        <div class="layer">
+          <strong>1. Modelo</strong>
+          <p>Opus, GPT, Gemini, GLM, Kimi, DeepSeek, MiniMax. Define inteligencia bruta, contexto e custo por token.</p>
+        </div>
+        <div class="layer">
+          <strong>2. Assinatura / provider</strong>
+          <p>Claude Max, ChatGPT, GLM Coding Plan, OpenCode Go, Google AI. Define franquia, teto, throttle e previsibilidade.</p>
+        </div>
+        <div class="layer">
+          <strong>3. IDE / harness</strong>
+          <p>Codex, Cursor, Claude Code, Antigravity, OpenCode, Windsurf. Define como o modelo mexe no codigo, terminal, git e contexto.</p>
+        </div>
+        <div class="layer">
+          <strong>4. Orquestrador</strong>
+          <p>n8n, LangGraph, Mastra, CrewAI, Dify, Temporal. Define como automatizar rotinas, coordenar agentes e transformar o estudo em sistema vivo.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Leitura curta:</strong> para vibe coding direto, a decisao principal continua sendo assinatura + harness.
+        Orquestradores ajudam mais quando voce quer repetir processos, criar pipelines, auditar uso, acionar varios agentes
+        ou transformar o hub em um produto/operacao continua.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ranking operacional para o nosso hub</h2>
+      <p class="small">
+        Score analitico do hub, nao benchmark publico universal. A pergunta aqui e: "qual ferramenta ajuda mais este estudo vivo,
+        mantendo custo, clareza e capacidade de virar produto depois?"
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Ferramenta</th>
+            <th>Tipo</th>
+            <th>Serve para vibe coding direto?</th>
+            <th>Serve para este hub?</th>
+            <th>Serve para produto proprio?</th>
+            <th>Custo / pricing</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank">1</span></td>
+            <td><strong>n8n</strong><br /><span class="small">Workflow automation + AI nodes</span></td>
+            <td>No-code/low-code, automacoes e integrações</td>
+            <td>Baixo. Nao edita repo como IDE.</td>
+            <td><div class="score good">90%</div><div class="bar"><span style="width:90%"></span></div></td>
+            <td><div class="score good">80%</div><div class="bar"><span style="width:80%"></span></div></td>
+            <td>Cloud por execucoes; Starter 20 EUR/mes anual com 2.5K execucoes; Pro a partir de 50 EUR/mes anual; Business 667 EUR/mes anual com 40K execucoes. LLM/API separado.</td>
+            <td>Melhor primeiro orquestrador para rotina semanal do hub: coleta, snapshots, notificacoes, webhooks e dashboards simples.</td>
+          </tr>
+          <tr>
+            <td><span class="rank">2</span></td>
+            <td><strong>LangGraph</strong><br /><span class="small">Stateful agent graphs</span></td>
+            <td>Framework code-first para agentes com estado</td>
+            <td>Medio indireto. Ajuda a construir agentes, nao substitui Codex/Cursor.</td>
+            <td><div class="score good">82%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td><div class="score good">92%</div><div class="bar"><span style="width:92%"></span></div></td>
+            <td>OSS para self-host/desenvolvimento; LangGraph Platform tem pricing cloud por deployment/time e LangSmith associado. LLM/API separado.</td>
+            <td>Melhor se o hub virar software com agentes especializados, estado persistente, evaluators e rotas controladas.</td>
+          </tr>
+          <tr>
+            <td><span class="rank">3</span></td>
+            <td><strong>Mastra</strong><br /><span class="small">TypeScript agents/workflows/RAG</span></td>
+            <td>Framework TS + cloud/memory gateway</td>
+            <td>Medio indireto. Excelente para construir produto em TS.</td>
+            <td><div class="score good">78%</div><div class="bar"><span style="width:78%"></span></div></td>
+            <td><div class="score good">88%</div><div class="bar"><span style="width:88%"></span></div></td>
+            <td>Starter US$ 0; Teams US$ 250/time/mes; Memory Gateway com tokens a market rate + 5,5%, storage e add-ons. LLM/API separado.</td>
+            <td>Melhor caminho code-first se quisermos transformar o hub em app Node/TypeScript com memoria e workflows versionados.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">4</span></td>
+            <td><strong>CrewAI</strong><br /><span class="small">Multi-agent workflows</span></td>
+            <td>Framework e AMP Cloud para agentes por papeis</td>
+            <td>Medio indireto. Bom para dividir trabalho em papeis.</td>
+            <td><div class="score warn">72%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td><div class="score good">80%</div><div class="bar"><span style="width:80%"></span></div></td>
+            <td>Basic Free com 50 execucoes/mes; Professional US$ 25/mes com 100 execucoes/mes; Enterprise custom. LLM/API separado.</td>
+            <td>Bom para experiments multiagente e times. Para o hub, pode ser mais framework do que precisamos no primeiro ciclo.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">5</span></td>
+            <td><strong>OpenAI Agents SDK</strong><br /><span class="small">Agents, tools, handoffs</span></td>
+            <td>SDK oficial para agentes OpenAI</td>
+            <td>Medio indireto. Complementa Codex, mas nao substitui app/harness.</td>
+            <td><div class="score warn">70%</div><div class="bar"><span style="width:70%"></span></div></td>
+            <td><div class="score good">84%</div><div class="bar"><span style="width:84%"></span></div></td>
+            <td>SDK sem assinatura propria; custo vem da API/modelos OpenAI usados, tracing/evals e infraestrutura.</td>
+            <td>Faz sentido se a estrategia final ficar muito OpenAI/Codex e quisermos agentes auxiliares no mesmo ecossistema.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">6</span></td>
+            <td><strong>Dify</strong><br /><span class="small">Low-code AI apps, RAG e workflows</span></td>
+            <td>Plataforma visual para apps/agents/RAG</td>
+            <td>Baixo. Nao e ambiente de codificacao.</td>
+            <td><div class="score warn">68%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td><div class="score good">78%</div><div class="bar"><span style="width:78%"></span></div></td>
+            <td>Cloud: Free com 200 message credits; Professional US$ 59/workspace/mes; Team US$ 159/workspace/mes. Self-host disponivel.</td>
+            <td>Bom para publicar interfaces internas de consulta ao hub, RAG de fontes e apps com feedback/logs sem codar tudo.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">7</span></td>
+            <td><strong>AutoGen / AutoGen Studio</strong><br /><span class="small">Microsoft OSS multi-agent</span></td>
+            <td>Framework + interface low-code experimental</td>
+            <td>Baixo/medio indireto.</td>
+            <td><div class="score warn">62%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td><div class="score warn">72%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td>Open source; custo de API/modelos e infraestrutura. Sem assinatura cloud principal unica.</td>
+            <td>Bom para pesquisa e prototipo multiagente, mas menos natural para uma rotina operacional simples do hub.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">8</span></td>
+            <td><strong>Temporal</strong><br /><span class="small">Durable execution</span></td>
+            <td>Infra de workflows resilientes</td>
+            <td>Baixo. Nao e framework de LLM por si so.</td>
+            <td><div class="score warn">58%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="score good">86%</div><div class="bar"><span style="width:86%"></span></div></td>
+            <td>Self-host open source; Temporal Cloud com creditos iniciais e planos/uso cloud. LLM/API separado.</td>
+            <td>Excelente se o produto exigir confiabilidade industrial, retries e processos longos. Overkill para o hub no curto prazo.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">9</span></td>
+            <td><strong>Make / Zapier / Pipedream</strong><br /><span class="small">Automacao SaaS e integrações</span></td>
+            <td>iPaaS/workflow automation</td>
+            <td>Baixo. Operam processos, nao repos.</td>
+            <td><div class="score warn">55%</div><div class="bar"><span style="width:55%"></span></div></td>
+            <td><div class="score warn">65%</div><div class="bar"><span style="width:65%"></span></div></td>
+            <td>Make por plano/operacoes; Zapier por tasks; Pipedream por creditos de compute. LLM/API ou AI credits podem ser separados.</td>
+            <td>Uteis quando a prioridade e integrar SaaS rapidamente. Para telemetria local e custo previsivel, n8n tende a encaixar melhor.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Casos de uso concretos para este estudo</h2>
+      <div class="timeline">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Snapshot semanal</h3>
+          <p>Ler fontes locais permitidas, atualizar `telemetry/latest_telemetry.json` e gerar resumo de uso por ferramenta.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Watch de preco</h3>
+          <p>Checar paginas oficiais de pricing e marcar diferenca de preco, quota, modelo ou restricao operacional.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Fila de pesquisa</h3>
+          <p>Separar fontes novas em "oficial", "comunidade" e "rumor", reduzindo risco de atualizar o hub com dado fraco.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Relatorio de decisao</h3>
+          <p>Gerar uma leitura semanal: capacidade real usada, gargalos, plano mais economico e plano de contingencia.</p>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <h3>Produto futuro</h3>
+          <p>Transformar a documentacao viva em app com historico, alertas, scoring versionado e comparativos por perfil.</p>
+        </div>
+      </div>
+      <div class="warnbox">
+        <strong>Melhor primeira implementacao:</strong> n8n para automacao externa + scripts locais versionados no repo.
+        Se o hub evoluir para produto proprio, migrar o nucleo inteligente para LangGraph ou Mastra, mantendo n8n apenas como camada de integracao/notificacao.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como escolher por situacao</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>Quero monitorar meu uso real</h3>
+          <p><strong>Escolha:</strong> n8n + scripts locais.</p>
+          <ul>
+            <li>Executa rotina semanal.</li>
+            <li>Integra email, webhook, planilha, GitHub e notificacoes.</li>
+            <li>Nao precisa reinventar painel de automacao.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quero criar agentes do produto</h3>
+          <p><strong>Escolha:</strong> LangGraph ou Mastra.</p>
+          <ul>
+            <li>Melhor controle de estado, memoria e grafo.</li>
+            <li>Mais testavel e versionavel em codigo.</li>
+            <li>Permite avaliacoes e roteamento por modelo.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quero montar prototipo visual</h3>
+          <p><strong>Escolha:</strong> Dify, Flowise ou CrewAI AMP.</p>
+          <ul>
+            <li>Menos codigo inicial.</li>
+            <li>Bom para demos e RAG interno.</li>
+            <li>Menos flexivel para engenharia fina.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quero confiabilidade industrial</h3>
+          <p><strong>Escolha:</strong> Temporal por baixo.</p>
+          <ul>
+            <li>Retries, estado duravel e processos longos.</li>
+            <li>Otimo para produto serio em escala.</li>
+            <li>Exagerado para o hub nesta fase.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quero viver no ecossistema OpenAI</h3>
+          <p><strong>Escolha:</strong> OpenAI Agents SDK.</p>
+          <ul>
+            <li>Tools, handoffs, guardrails e tracing.</li>
+            <li>Combina bem com Codex/OpenAI stack.</li>
+            <li>Menos neutro que LangGraph/Mastra.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quero integrar SaaS rapido</h3>
+          <p><strong>Escolha:</strong> Make, Zapier ou Pipedream.</p>
+          <ul>
+            <li>Melhor para acionar apps externos.</li>
+            <li>Pricing por task/operacao/credito exige cuidado.</li>
+            <li>Bom complemento, nao base principal do estudo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ferramentas em observacao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ferramenta</th>
+            <th>Por que observar</th>
+            <th>Risco / ressalva</th>
+            <th>Decisao atual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Flowise</strong></td>
+            <td>Visual builder popular para agentes, chatflows e LLM apps.</td>
+            <td>Mais forte para app/RAG visual do que para telemetria local. Revalidar pricing e postura de seguranca antes de self-host publico.</td>
+            <td>Observacao, nao primeira escolha.</td>
+          </tr>
+          <tr>
+            <td><strong>Langflow</strong></td>
+            <td>Visual builder conhecido, util para prototipos RAG.</td>
+            <td>DataStax Langflow cloud foi marcado como deprecated em docs oficiais; usar com cautela e preferir OSS/local se fizer sentido.</td>
+            <td>Observacao tecnica.</td>
+          </tr>
+          <tr>
+            <td><strong>Zapier Agents</strong></td>
+            <td>Boa superficie para agentes que executam acoes em SaaS.</td>
+            <td>Task-based pricing pode ficar caro quando agentes executam muitas acoes.</td>
+            <td>Complementar para integracoes externas.</td>
+          </tr>
+          <tr>
+            <td><strong>Pipedream</strong></td>
+            <td>Developer-friendly para APIs, webhooks e workflows serverless.</td>
+            <td>Credit-based por compute; menos "painel de operacao" que n8n para este caso.</td>
+            <td>Alternativa se o hub virar API/integracoes dev-heavy.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Recomendacao para o hub agora</h2>
+      <div class="callout">
+        <strong>Fase 1:</strong> manter o frontend estatico e adicionar uma rotina simples de telemetria.
+        O melhor encaixe pratico e `n8n` orquestrando tarefas externas + scripts versionados aqui no repo.
+      </div>
+      <div class="grid-3" style="margin-top:16px;">
+        <div class="mini">
+          <h3>Agora</h3>
+          <p>n8n para agenda, coleta, notificacao e abertura de tarefas de atualizacao.</p>
+        </div>
+        <div class="mini">
+          <h3>Se virar app</h3>
+          <p>Mastra se quisermos TypeScript-first; LangGraph se quisermos grafo robusto, estados e avaliacao profunda.</p>
+        </div>
+        <div class="mini">
+          <h3>Evitar por enquanto</h3>
+          <p>Temporal como primeira camada e Zapier/Make para loops intensivos de IA, porque podem aumentar custo/complexidade cedo demais.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://n8n.io/pricing/">n8n pricing</a></li>
+        <li><a href="https://n8n.io/ai-agents/">n8n AI agents</a></li>
+        <li><a href="https://www.langchain.com/pricing-langgraph-platform">LangGraph Platform pricing</a></li>
+        <li><a href="https://langchain-ai.github.io/langgraph/">LangGraph documentation</a></li>
+        <li><a href="https://mastra.ai/pricing">Mastra pricing</a></li>
+        <li><a href="https://mastra.ai/docs">Mastra docs</a></li>
+        <li><a href="https://www.crewai.com/pricing">CrewAI pricing</a></li>
+        <li><a href="https://docs.crewai.com/">CrewAI docs</a></li>
+        <li><a href="https://openai.github.io/openai-agents-python/multi_agent/">OpenAI Agents SDK - multi-agent orchestration</a></li>
+        <li><a href="https://microsoft.github.io/autogen/stable/user-guide/autogenstudio-user-guide/index.html">AutoGen Studio docs</a></li>
+        <li><a href="https://dify.ai/pricing">Dify pricing</a></li>
+        <li><a href="https://flowiseai.com/pricing">Flowise pricing</a></li>
+        <li><a href="https://docs.datastax.com/en/langflow/index.html">DataStax Langflow docs / deprecation notice</a></li>
+        <li><a href="https://temporal.io/">Temporal official site</a></li>
+        <li><a href="https://www.make.com/en/pricing">Make pricing</a></li>
+        <li><a href="https://zapier.com/l/agents-pricing">Zapier AI orchestration pricing</a></li>
+        <li><a href="https://pipedream.com/docs/pricing">Pipedream pricing docs</a></li>
+      </ul>
+      <p class="small">
+        Observacao: custos de orquestradores normalmente nao incluem o custo do LLM. A conta real e `orquestrador + API/modelo + infraestrutura + tempo de manutencao`.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

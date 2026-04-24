@@ -1,0 +1,6 @@
+.git
+.gitignore
+.vercel
+*.md
+scripts/
+telemetry/
