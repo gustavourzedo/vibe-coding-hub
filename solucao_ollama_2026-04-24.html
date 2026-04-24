@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ollama - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./analise_final_assinaturas_vibe_coding_2026-04-24.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Ollama</h1>
+      <p>
+        Pagina viva da camada `Ollama`, que mistura `local-first` com `cloud models` e hoje oferece planos pessoais
+        para aumentar uso em nuvem e concorrencia de modelos. Ela entra no hub porque entrega uma rota forte para
+        quem aceita `open-model cloud` como estrategia principal.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Alternativa relevante de open-model cloud</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Pro + Max com concorrencia alta e privacidade forte</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Uso medido por GPU/infra, nao por token/request fixo</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Ollama` resolve melhor o problema de quem quer `operar muitos open models` com uma camada de cloud e
+        ainda manter um caminho local/offline. Para o seu hub, isso e bom, mas ainda nao e a substituicao mais
+        fiel do mundo `Opus-heavy`.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> boa alternativa cloud para open models. Nao e a rota mais proxima de Opus,
+        mas e uma das melhores para quem quer autonomia e menos dependencia de modelo proprietario.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos atuais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Concorrencia cloud</th>
+            <th>Leitura oficial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free</td>
+            <td>US$ 0</td>
+            <td>1 modelo</td>
+            <td>Uso leve</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 20/mes ou US$ 200/ano</td>
+            <td>3 modelos</td>
+            <td>50x mais uso cloud que o Free</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>US$ 100/mes</td>
+            <td>10 modelos</td>
+            <td>5x mais uso que o Pro; foco em trabalho pesado e sustentado</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno dos planos Ollama</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td><div class="score warn">35% a 65%</div><div class="bar"><span style="width:50%"></span></div></td>
+            <td><div class="score warn">40% a 65%</div><div class="bar"><span style="width:52%"></span></div></td>
+            <td><div class="score warn">35% a 60%</div><div class="bar"><span style="width:48%"></span></div></td>
+            <td>Boa entrada para stack open-model cloud.</td>
+          </tr>
+          <tr>
+            <td><strong>Max</strong></td>
+            <td><div class="score warn">55% a 85%</div><div class="bar"><span style="width:70%"></span></div></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:56%"></span></div></td>
+            <td><div class="score warn">50% a 75%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td>Melhor tier da familia para carga continua e varios modelos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Como a medicao funciona</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que a doc deixa claro</h3>
+          <ul>
+            <li>Uso local e sempre ilimitado no seu proprio hardware.</li>
+            <li>O uso cloud tem limite por sessao de `5h` e limite semanal de `7 dias`.</li>
+            <li>A medicao reflete utilizacao real da infraestrutura cloud, principalmente `GPU time`.</li>
+            <li>Contexto compartilhado em cache e requests curtas gastam menos.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Implicacao para o hub</h3>
+          <ul>
+            <li>A proposta e elegante, mas a previsibilidade fica abaixo de quotas numericas simples.</li>
+            <li>Ollama melhora conforme hardware/modelos ficam mais eficientes; isso e otimo, mas pior para modelar ex ante.</li>
+            <li>Vale mais para quem quer stack open-model do que para quem quer "equivalente barato de Opus".</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score warn">45% a 85%</div><div class="bar"><span style="width: 64%"></span></div><p class="small">Boa, mas dependente do mix de modelos e da forma de uso cloud.</p></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score warn">45% a 70%</div><div class="bar"><span style="width: 56%"></span></div><p class="small">Melhora se o seu stack preferir open models bem servidos.</p></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score warn">45% a 75%</div><div class="bar"><span style="width: 60%"></span></div><p class="small">Alternativa forte, mas nao a mais natural para o seu benchmark atual.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://ollama.com/pricing">Ollama pricing</a></li>
+        <li><a href="https://ollama.com/">Ollama home</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

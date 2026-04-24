@@ -1,0 +1,56 @@
+{
+  "sources": [
+    {
+      "id": "chatgpt_plus_codex",
+      "label": "ChatGPT Plus + Codex Desktop",
+      "kind": "manual_snapshot",
+      "status": "active",
+      "notes": "Snapshot manual registrado em 24/04/2026 durante uso combinado de estudo pesado e trabalho no KLG Bots.",
+      "window": {
+        "snapshot_at": "2026-04-24T02:05:00-03:00"
+      },
+      "usage": {
+        "plan": "ChatGPT Plus",
+        "five_hour_remaining_pct": 24,
+        "five_hour_used_pct": 76,
+        "weekly_remaining_pct": 88,
+        "weekly_used_pct": 12,
+        "interface": "Codex desktop",
+        "workload_notes": [
+          "Estudo de viabilidade pesado",
+          "Uso adicional em KLG Bots"
+        ]
+      }
+    },
+    {
+      "id": "cursor_current_status",
+      "label": "Cursor - estado operacional atual",
+      "kind": "manual_snapshot",
+      "status": "degraded",
+      "notes": "Snapshot manual: quota principal estourada, uso atual limitado ao composer-2.",
+      "window": {
+        "snapshot_at": "2026-04-24T02:10:00-03:00"
+      },
+      "usage": {
+        "membership_type": "enterprise",
+        "current_mode": "composer-2 only",
+        "reason": "quota principal estourada"
+      }
+    },
+    {
+      "id": "opencode_go",
+      "label": "OpenCode Go",
+      "kind": "manual_snapshot",
+      "status": "planned",
+      "notes": "Ainda nao entrou na telemetria real. Deixar preparado para ser ativado assim que voce comecar a usar.",
+      "window": {
+        "snapshot_at": "2026-04-24T02:12:00-03:00"
+      },
+      "usage": {
+        "plan": "OpenCode Go",
+        "state": "not_started",
+        "next_action": "Adicionar monitoramento quando o uso real comecar"
+      }
+    }
+  ]
+}

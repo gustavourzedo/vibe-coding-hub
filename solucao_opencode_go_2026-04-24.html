@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenCode Go - Documentacao Viva</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap {
+      width: min(1280px, calc(100% - 40px));
+      margin: 32px auto 56px;
+    }
+
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21, 31, 56, 0.94), rgba(16, 24, 43, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px 30px;
+    }
+
+    .card {
+      padding: 20px;
+      margin-top: 22px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 6px;
+    }
+
+    h3 {
+      font-size: 18px;
+      color: #f3f7ff;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    a {
+      color: #9fcbff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .pill-row, .meta-grid, .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pill-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .meta-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pill, .meta, .mini {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .pill strong, .meta strong, .mini strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f6fbff;
+    }
+
+    .score {
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .score.good { color: var(--good); }
+    .score.warn { color: var(--warn); }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110, 231, 183, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 8px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      vertical-align: top;
+    }
+
+    th {
+      color: #f3f7ff;
+      background: rgba(96, 165, 250, 0.08);
+    }
+
+    .small {
+      font-size: 13px;
+      color: #8ea0c7;
+    }
+
+    .nav {
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .pill-row,
+      .meta-grid,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        width: min(100% - 20px, 1280px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav"><a href="./analise_final_assinaturas_vibe_coding_2026-04-24.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>OpenCode Go</h1>
+      <p>
+        Documentacao viva da solucao `OpenCode Go`, criada para servir como pagina de referencia e manutencao futura.
+        O foco aqui e entender com clareza o que ele resolve, como funciona a cobranca, onde ele encaixa no seu caso
+        e por que entrou como a melhor nova opcao de baixo custo do estudo.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta">
+          <strong>Ultima compilacao</strong>
+          <div>24/04/2026</div>
+        </div>
+        <div class="meta">
+          <strong>Status no estudo</strong>
+          <div>Melhor MVP barato para dimensionar uso real</div>
+        </div>
+        <div class="meta">
+          <strong>Atualizar quando</strong>
+          <div>Mudanca de preco, quotas, lista de modelos, app oficial ou docs do Go/Zen</div>
+        </div>
+      </div>
+
+      <div class="pill-row">
+        <div class="pill">
+          <strong>Preco</strong>
+          US$ 5 no primeiro mes, depois US$ 10/mes
+        </div>
+        <div class="pill">
+          <strong>Tipo de solucao</strong>
+          Assinatura de baixo custo com fallback opcional para PAYG via Zen
+        </div>
+        <div class="pill">
+          <strong>Ponto forte</strong>
+          Entrada muito barata para medir uso diario com varios open models curados
+        </div>
+        <div class="pill">
+          <strong>Ponto fraco</strong>
+          Nao e o substituto mais forte de qualidade para o seu padrao Opus-heavy
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `OpenCode Go` e uma assinatura oficial da OpenCode para acesso barato a um conjunto curado de open coding models.
+        Ele nao e um "all you can eat" puro e tambem nao e apenas API solta: e uma assinatura com limites de uso medidos em
+        <strong>equivalente monetario de API</strong>, com opcao de continuar pelo saldo do `Zen` se voce habilitar fallback.
+      </p>
+      <div class="callout">
+        <strong>Melhor forma de usar no seu caso:</strong> como MVP operacional para medir seu uso diario real, testar preferencia de modelos
+        e descobrir se seu gargalo principal esta em capacidade ou em qualidade tecnica.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Notas do estudo</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Capacidade</strong>
+          <div class="score warn">45% a 75%</div>
+          <div class="bar"><span style="width:60%"></span></div>
+          <p class="small">Boa para uso diario medido, mais fraca para substituir sem atrito a sua semana extrema.</p>
+        </div>
+        <div class="mini">
+          <strong>Qualidade tecnica</strong>
+          <div class="score warn">50% a 70%</div>
+          <div class="bar"><span style="width:60%"></span></div>
+          <p class="small">Boa para open models curados, mas ainda abaixo do patamar frontier fechado que voce extraiu de Opus-heavy.</p>
+        </div>
+        <div class="mini">
+          <strong>Consolidado</strong>
+          <div class="score warn">45% a 70%</div>
+          <div class="bar"><span style="width:58%"></span></div>
+          <p class="small">Excelente para validar comportamento real barato; mais fraco como plano principal definitivo.</p>
+        </div>
+      </div>
+    </section>
+
+      <section class="card">
+        <h2>Comparativo interno da solucao</h2>
+        <p>
+          Como o `OpenCode Go` hoje nao tem varios tiers oficiais, o comparativo interno util para o hub fica restrito
+          ao que realmente muda a capacidade frente ao seu benchmark extremo: `Go puro` e `Go + Zen fallback`.
+          `Go como MVP` continua valido como estrategia de adocao, mas nao entra na tabela quantitativa porque
+          <strong>nao muda a capacidade da assinatura</strong>.
+        </p>
+        <table>
+        <thead>
+          <tr>
+            <th>Modo</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Go puro</strong></td>
+            <td><div class="score warn">45% a 75%</div><div class="bar"><span style="width:60%"></span></div></td>
+            <td><div class="score warn">50% a 70%</div><div class="bar"><span style="width:60%"></span></div></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td>Melhor leitura para usar barato e serio ao mesmo tempo.</td>
+          </tr>
+            <tr>
+              <td><strong>Go + Zen fallback</strong></td>
+              <td><div class="score good">55% a 90%</div><div class="bar"><span style="width:72%"></span></div></td>
+              <td><div class="score warn">50% a 70%</div><div class="bar"><span style="width:60%"></span></div></td>
+              <td><div class="score warn">50% a 75%</div><div class="bar"><span style="width:64%"></span></div></td>
+              <td>Sobe em continuidade, mas deixa de ser assinatura pura e previsivel.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    <section class="card">
+      <h2>Como funciona de verdade</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Natureza da oferta</h3>
+          <ul>
+            <li>E uma <strong>assinatura</strong>, nao apenas uma API avulsa.</li>
+            <li>Voce assina o `Go`, pega uma API key e usa o provider dentro do ecossistema `OpenCode`.</li>
+            <li>Se quiser, pode ativar `Use balance` para cair no saldo do `Zen` quando atingir o limite do Go.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>O que isso significa na pratica</h3>
+          <ul>
+            <li>Base principal: assinatura.</li>
+            <li>Expansao: hibrida, via PAYG do `Zen`.</li>
+            <li>Nao encontrei, ate esta compilacao, um tier oficial `Go Pro` ou `Go Max` acima do plano atual.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quotas e cobranca</h2>
+      <p>
+        O ponto mais importante e que os limites do Go sao expressos em <strong>dolar equivalente de uso</strong>, e nao em quantidade fixa unica de requests.
+        Isso significa que modelos mais caros comem o orcamento mais rapido, enquanto modelos mais baratos rendem muito mais requests.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Janela</th>
+            <th>Limite oficial</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5 horas</td>
+            <td>US$ 12 de uso</td>
+            <td>Teto de uso equivalente a API na janela curta.</td>
+          </tr>
+          <tr>
+            <td>Semanal</td>
+            <td>US$ 30 de uso</td>
+            <td>Boa referencia para medir seu padrao de trabalho normal.</td>
+          </tr>
+          <tr>
+            <td>Mensal</td>
+            <td>US$ 60 de uso</td>
+            <td>Mostra que o Go e desenhado para eficiencia, nao para substituir uso extremo sem fallback.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Leitura correta: esse valor nao e uma cobranca adicional automatica dentro da assinatura; ele representa o orcamento interno de uso incluido em cada janela.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Modelos mapeados nesta compilacao</h2>
+      <p>
+        A lista pode mudar. A documentacao oficial do Go destaca que os modelos sao curados e podem ser substituidos conforme os testes e benchmarks deles evoluem.
+      </p>
+      <ul>
+        <li>`GLM-5`</li>
+        <li>`GLM-5.1`</li>
+        <li>`Kimi K2.5`</li>
+        <li>`Kimi K2.6`</li>
+        <li>`MiMo-V2-Pro`</li>
+        <li>`MiMo-V2-Omni`</li>
+        <li>`MiMo-V2.5-Pro`</li>
+        <li>`MiMo-V2.5`</li>
+        <li>`MiniMax M2.5`</li>
+          <li>`MiniMax M2.7`</li>
+          <li>`Qwen3.5 Plus`</li>
+          <li>`Qwen3.6 Plus`</li>
+          <li>`DeepSeek V4 Pro`</li>
+          <li>`DeepSeek V4 Flash`</li>
+      </ul>
+      <div class="callout">
+        <strong>Ponto importante:</strong> mesmo quando o nome do modelo coincide com outra plataforma, a experiencia pratica nao precisa ser igual.
+        O que muda e serving, provider, curadoria, contexto efetivo, cache, latencia e regras de quota.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Requests estimadas por modelo</h2>
+      <p>Esses numeros sao os que mais ajudam a usar o Go como ferramenta de dimensionamento do seu uso real.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Requests por 5h</th>
+            <th>Requests por semana</th>
+            <th>Requests por mes</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr><td>GLM-5.1</td><td>~880</td><td>~2.150</td><td>~4.300</td></tr>
+            <tr><td>GLM-5</td><td>~1.150</td><td>~2.880</td><td>~5.750</td></tr>
+            <tr><td>Kimi K2.5</td><td>~1.850</td><td>~4.630</td><td>~9.250</td></tr>
+            <tr><td>Kimi K2.6</td><td>~1.150</td><td>~2.880</td><td>~5.750</td></tr>
+            <tr><td>MiMo-V2-Pro</td><td>~1.290</td><td>~3.225</td><td>~6.450</td></tr>
+            <tr><td>MiMo-V2-Omni</td><td>~2.150</td><td>~5.450</td><td>~10.900</td></tr>
+            <tr><td>MiMo-V2.5-Pro</td><td>~1.290</td><td>~3.225</td><td>~6.450</td></tr>
+            <tr><td>MiMo-V2.5</td><td>~2.150</td><td>~5.450</td><td>~10.900</td></tr>
+            <tr><td>MiniMax M2.7</td><td>~3.400</td><td>~8.500</td><td>~17.000</td></tr>
+            <tr><td>MiniMax M2.5</td><td>~6.300</td><td>~15.900</td><td>~31.800</td></tr>
+            <tr><td>Qwen3.6 Plus</td><td>~3.300</td><td>~8.200</td><td>~16.300</td></tr>
+            <tr><td>Qwen3.5 Plus</td><td>~10.200</td><td>~25.200</td><td>~50.500</td></tr>
+            <tr><td>DeepSeek V4 Pro</td><td>~1.300</td><td>~3.250</td><td>~6.500</td></tr>
+            <tr><td>DeepSeek V4 Flash</td><td>~7.450</td><td>~18.600</td><td>~37.300</td></tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Esses numeros reforcam por que o Go pode ser otimo para medir comportamento diario, mas nao automaticamente o melhor substituto qualitativo do seu benchmark extremo.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Interface e experienca</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Existe interface desktop?</h3>
+          <ul>
+            <li>Sim. O `OpenCode` tem `desktop app`, `TUI`, `web app` e extensao de IDE.</li>
+            <li>O `OpenCode Go` entra como <strong>provider</strong> dentro desse ecossistema.</li>
+            <li>Ou seja: nao existe um "app do Go" separado; voce usa `OpenCode Desktop` + provider `Go`.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Comparacao qualitativa com Codex</h3>
+          <ul>
+            <li>Codex hoje parece mais polido e mais integrado como produto premium.</li>
+            <li>OpenCode parece mais aberto, configuravel e orientado a power users.</li>
+            <li>Para quem vem gostando muito da UX do Codex, o OpenCode faz sentido mais como teste serio do que como substituto automatico de experiencia.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Por que ele entrou bem no estudo</h2>
+      <ul>
+        <li>Preco de entrada extremamente baixo.</li>
+        <li>Lista de modelos interessante para coding agents.</li>
+        <li>Curadoria explicita de modelo + provider, em vez de exposicao totalmente crua.</li>
+        <li>Boa ferramenta para descobrir seu uso real fora do pico extremo do Cursor/Opus.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Por que ele nao ganhou do GLM Max</h2>
+      <ul>
+        <li>O GLM Max continua mais forte como aposta principal de consistencia perto do benchmark Opus-heavy.</li>
+        <li>O Go tem menos previsibilidade como plano final para uso muito extremo, porque o teto incluido e relativamente contido.</li>
+        <li>A qualidade aqui depende muito do modelo escolhido e do serving curado; o GLM Max fica mais proximo da fonte do seu modelo principal nessa estrategia.</li>
+      </ul>
+      <div class="callout">
+        <strong>Resumo:</strong> `OpenCode Go` e melhor como MVP barato e complementar. `GLM Max` continua melhor como plano principal para reduzir risco de arrependimento.
+      </div>
+    </section>
+
+      <section class="card">
+        <h2>Melhor estrategia pratica de uso</h2>
+        <ul>
+          <li>Assinar o `Go` por US$ 5 no primeiro mes.</li>
+          <li>Usar por alguns dias no fluxo real, nao so em benchmark artificial.</li>
+          <li>Medir quais modelos voce realmente prefere e onde a qualidade cai.</li>
+          <li>Usar esse aprendizado para decidir entre `GLM Max`, `Alibaba Pro` ou manter o `Go` como plano economico complementar.</li>
+          <li>Nessa leitura, `Go como MVP` e so uma estrategia de adocao: a capacidade continua sendo a do `Go puro`.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Por que as duas leituras quantitativas diferem</h2>
+        <div class="grid-2">
+          <div class="mini"><strong>Go puro</strong><p>Representa so a assinatura incluida. A capacidade aqui mede quanto da sua semana extrema ele sustentaria sem ajuda externa.</p></div>
+          <div class="mini"><strong>Go + Zen</strong><p>A capacidade sobe porque o travamento seco some e a continuidade melhora, mas isso ja deixa de ser assinatura pura e entra em territorio hibrido.</p></div>
+        </div>
+      </section>
+
+    <section class="card">
+      <h2>Checklist de atualizacao futura</h2>
+      <ul>
+        <li>Conferir se o preco continua em US$ 5 no primeiro mes e US$ 10/mes depois.</li>
+        <li>Conferir se ainda nao surgiu um tier superior oficial do `Go`.</li>
+        <li>Conferir mudancas nas janelas de US$ 12 / US$ 30 / US$ 60.</li>
+        <li>Conferir atualizacao da lista de modelos e endpoints.</li>
+        <li>Conferir se o app desktop saiu de beta e se melhorou a maturidade da UX.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://opencode.ai/docs/go/">OpenCode Go docs</a></li>
+        <li><a href="https://opencode.ai/docs/">OpenCode intro / produto</a></li>
+        <li><a href="https://opencode.ai/docs/web/">OpenCode web</a></li>
+        <li><a href="https://opencode.ai/zen">OpenCode Zen</a></li>
+        <li><a href="https://github.com/opencode-ai/opencode">Repositorio oficial OpenCode</a></li>
+      </ul>
+      <p class="small">
+        Esta pagina deve ser tratada como registro de manutencao. Ao atualizar, revisar primeiro as fontes oficiais acima e so depois ajustar as notas analiticas.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

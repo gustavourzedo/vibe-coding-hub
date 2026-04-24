@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solucoes Adicionais Auditadas - Hub de Agentes</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1400px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); } h2 { font-size:24px; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; } .tag { display:inline-flex; padding:4px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); font-size:12px; font-weight:700; }
+    @media (max-width:900px) { .wrap { width:min(100% - 20px, 1400px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./analise_final_assinaturas_vibe_coding_2026-04-24.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Solucoes adicionais auditadas</h1>
+      <p>
+        Esta pagina registra opcoes relevantes que foram conferidas durante a auditoria, mas que nao mudaram o topo
+        da recomendacao para o seu benchmark extremo. Elas continuam importantes para manutencao futura do hub.
+      </p>
+      <p class="small">Ultima compilacao: 24/04/2026 19:05</p>
+    </section>
+
+    <section class="card">
+      <h2>Assinaturas e estrategias que nao estavam visiveis o suficiente</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Solucao</th>
+            <th>Tipo</th>
+            <th>Preco / quota oficial encontrada</th>
+            <th>Por que nao entrou no topo</th>
+            <th>Fonte oficial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cursor</strong></td>
+            <td><span class="tag">IDE agentica</span></td>
+            <td>Pro US$ 20/mes, Pro+ US$ 60/mes, Ultra US$ 200/mes; Ultra inclui 20x usage em modelos OpenAI, Claude e Gemini.</td>
+            <td>Excelente experiencia e benchmark pratico do seu uso, mas a tese aqui e menor custo com previsibilidade melhor.</td>
+            <td><a href="https://www.cursor.com/en/pricing">cursor.com/pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>GitHub Copilot</strong></td>
+            <td><span class="tag">VS Code/GitHub</span></td>
+            <td>Planos pessoais e business com premium requests; ecossistema forte para VS Code e GitHub cloud agents.</td>
+            <td>Relevante para equipes GitHub-centric, mas nao parece suficiente para substituir sua semana extrema frontier-heavy.</td>
+            <td><a href="https://docs.github.com/en/copilot/get-started/plans">Copilot plans</a></td>
+          </tr>
+          <tr>
+            <td><strong>Replit</strong></td>
+            <td><span class="tag">app builder / cloud IDE</span></td>
+            <td>Planos com creditos e agent effort pricing; foco forte em criar/publicar apps.</td>
+            <td>Muito bom para app building, menos natural como harness principal para varios repos locais pesados.</td>
+            <td><a href="https://replit.com/pricing">replit.com/pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>JetBrains AI / Junie</strong></td>
+            <td><span class="tag">JetBrains IDE + agente</span></td>
+            <td>AI Pro US$ 10/mes com 10 credits; AI Ultimate US$ 30/mes com 35 credits; creditos top-up disponiveis.</td>
+            <td>Importante para quem vive em JetBrains, mas a quota e pequena perto do seu benchmark extremo.</td>
+            <td><a href="https://www.jetbrains.com/help/junie/licensing-and-subscriptions.html">Junie licensing</a></td>
+          </tr>
+          <tr>
+            <td><strong>Augment Code</strong></td>
+            <td><span class="tag">agent para codebases grandes</span></td>
+            <td>Indie US$ 20 com 40k credits, Standard US$ 60 com 130k, Max US$ 200 com 450k; top-up US$ 15/24k credits.</td>
+            <td>Forte em contexto e codebase grande, mas credit-based e menos alinhado a "usar sem pensar em token".</td>
+            <td><a href="https://www.augmentcode.com/pricing">augmentcode.com/pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>Amp</strong></td>
+            <td><span class="tag">CLI/VS Code agent</span></td>
+            <td>Prepaid credits, at-cost pricing para individuos/equipes e uso dos melhores modelos por modo.</td>
+            <td>Muito relevante como harness premium, mas nao e assinatura flat previsivel.</td>
+            <td><a href="https://ampcode.com/pricing">ampcode.com/pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>Amazon Q Developer</strong></td>
+            <td><span class="tag">AWS coding agent</span></td>
+            <td>Free e Pro; Pro inclui recursos de agente, CLI/IDE e limites por usuario/conta para transformacao.</td>
+            <td>Melhor para workloads AWS e transformacoes especificas do que para substituir Opus-heavy geral.</td>
+            <td><a href="https://aws.amazon.com/q/developer/pricing/">Amazon Q Developer pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>Kilo Code / Kilo Pass</strong></td>
+            <td><span class="tag">open agent + gateway</span></td>
+            <td>Kilo Code e open source; Kilo Pass de US$ 19/49/199 com bonus de creditos e modelos via gateway.</td>
+            <td>Interessante como rota provider-agnostic, mas parecido com infra/PAYG com bonus, nao flat de uso extremo.</td>
+            <td><a href="https://kilo.ai/pricing">kilo.ai/pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>Trae</strong></td>
+            <td><span class="tag">IDE agentica</span></td>
+            <td>Pricing internacional pouco legivel; pagina chinesa mostra tiers empresariais com tokens por assento.</td>
+            <td>Relevante para observar, mas a previsibilidade publica ainda e fraca para recomendacao principal.</td>
+            <td><a href="https://www.trae.ai/pricing">trae.ai/pricing</a></td>
+          </tr>
+          <tr>
+            <td><strong>Qodo</strong></td>
+            <td><span class="tag">review/quality agents</span></td>
+            <td>Developer free com PRs/credits; Teams US$ 38/user/mes; foco em review e qualidade.</td>
+            <td>Excelente adjacente para revisar output de vibe coding, mas nao substitui o agente principal.</td>
+            <td><a href="https://www.qodo.ai/pricing/">qodo.ai/pricing</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
