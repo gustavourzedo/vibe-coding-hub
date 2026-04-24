@@ -1,0 +1,13 @@
+{
+  "name": "vibecoding-study-case",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Hub estatico para comparar assinaturas, modelos, IDEs, harnesses, orquestradores e telemetria de vibe coding.",
+  "scripts": {
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
+  },
+  "devDependencies": {
+    "vercel": "^52.0.0"
+  }
+}
