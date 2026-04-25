@@ -426,6 +426,11 @@
         `Qualidade tecnica` estima o quao perto ela chega do nivel tecnico que voce vinha extraindo de Opus-heavy em coding agent pesado.
         `Consolidado` junta volume, nivel tecnico, previsibilidade e risco operacional.
       </p>
+      <div class="callout">
+        <strong>Nota metodologica desta rodada:</strong> `Kiro` e `MiMo` agora entram explicitamente no ranking, mas ainda
+        com leitura mais provisoria do que `GLM`, `Alibaba`, `OpenCode Go`, `Cursor` e `Claude Max`. O motivo nao e falta
+        de relevancia tecnica; e falta de legibilidade comercial fina comparavel nas camadas de quota, billing e previsibilidade operacional.
+      </div>
       <table>
         <thead>
           <tr>
@@ -509,6 +514,17 @@
           </tr>
           <tr>
             <td><span class="rank mid">7</span></td>
+            <td><a class="doc-link" href="./kiro.html"><strong>Kiro (AWS)</strong></a><span class="doc-hint">Entrada nova no ranking: leitura provisoria, pagina profunda pronta</span></td>
+            <td>US$ 0 a US$ 200/mes<br /><span class="subtle">overage por credito</span></td>
+            <td>Kiro IDE, Kiro CLI, ACP IDEs; Sonnet 4/4.5, Opus 4.5/4.6/4.7, Haiku 4.5</td>
+            <td>Free/Pro/Pro+/Power com creditos incluidos e overage de `US$ 0.04/credito`; uso forte pode escalar rapido</td>
+            <td><div class="coverage">25% a 80%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="coverage">75% a 90%</div><div class="bar"><span style="width:84%"></span></div></td>
+            <td><div class="coverage">35% a 75%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td>Entra pelo nivel tecnico e pela seriedade do produto, mas ainda perde pontos para billing por creditos pouco intuitivo no seu benchmark extremo.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">8</span></td>
             <td><a class="doc-link" href="./solucao_factory_2026-04-24.html"><strong>Factory Pro / Max</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 20 a US$ 200/mes</td>
             <td>Workspace agentico com desktop, web, CLI e frontier models</td>
@@ -519,7 +535,7 @@
             <td>Workspace premium forte. Entra mais por plataforma e modelos do que por previsibilidade economica.</td>
           </tr>
           <tr>
-            <td><span class="rank mid">8</span></td>
+            <td><span class="rank mid">9</span></td>
             <td><a class="doc-link" href="./solucao_windsurf_2026-04-24.html"><strong>Windsurf Pro / Max</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 20 a US$ 200/mes</td>
             <td>SWE-1.6, SWE-1.5, Adaptive, Claude/GPT/BYOK</td>
@@ -530,7 +546,7 @@
             <td>IDE/agent relevante, mas com risco alto de friccao operacional desde a migracao para quota-based usage.</td>
           </tr>
           <tr>
-            <td><span class="rank mid">9</span></td>
+            <td><span class="rank mid">10</span></td>
             <td><a class="doc-link" href="./solucao_ollama_2026-04-24.html"><strong>Ollama Pro / Max</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 20 a US$ 100/mes</td>
             <td>Open models locais e cloud, com privacidade forte e concorrencia alta</td>
@@ -541,7 +557,18 @@
             <td>Alternativa real para estrategia open-model cloud, menos natural para substituir diretamente seu benchmark atual.</td>
           </tr>
           <tr>
-            <td><span class="rank low">10</span></td>
+            <td><span class="rank low">11</span></td>
+            <td><a class="doc-link" href="./mimo.html"><strong>Xiaomi MiMo</strong></a><span class="doc-hint">Entrada nova no ranking: provider/modelo com leitura comercial ainda provisoria</span></td>
+            <td>Token plans e assinatura em observacao</td>
+            <td>MiMo-V2.5-Pro, MiMo-V2.5-Flash e familia MiMo para coding / agentic / long context</td>
+            <td>Stack comercial existe, mas a camada publica de tiers/quota ainda e menos auditavel; benchmark tecnico ja merece acompanhar</td>
+            <td><div class="coverage">30% a 85%</div><div class="bar"><span style="width:60%"></span></div></td>
+            <td><div class="coverage">55% a 80%</div><div class="bar"><span style="width:70%"></span></div></td>
+            <td><div class="coverage">35% a 70%</div><div class="bar"><span style="width:54%"></span></div></td>
+            <td>Sobe pelo potencial tecnico e pela direcao comercial, mas ainda nao tem transparencia suficiente para brigar de igual para igual com as assinaturas mais auditadas.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">12</span></td>
             <td><a class="doc-link" href="./solucao_devin_2026-04-24.html"><strong>Devin Pro / Max / Teams</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 20 a US$ 80/mes<br /><span class="subtle">Max US$ 200/mes</span></td>
             <td>Agente autonomo com ACUs, Integrations e sessoes mais delegadas</td>
@@ -552,7 +579,7 @@
             <td>Boa referencia de autonomia, ruim como resposta principal para o problema economico deste hub.</td>
           </tr>
           <tr>
-            <td><span class="rank low">11</span></td>
+            <td><span class="rank low">13</span></td>
             <td><a class="doc-link" href="./solucao_kimi_2026-04-24.html"><strong>Kimi Code / Membership</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>Varia por membership</td>
             <td>K2.6 e stack Kimi Code</td>
@@ -563,7 +590,7 @@
             <td>Promissor em fluxos certos, mas ainda muito arriscado para seu uso longo e agentico como plano principal.</td>
           </tr>
           <tr>
-            <td><span class="rank low">12</span></td>
+            <td><span class="rank low">14</span></td>
             <td><a class="doc-link" href="./solucao_minimax_2026-04-24.html"><strong>MiniMax Token Plan</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 10 a US$ 150/mes</td>
             <td>MiniMax M2.x e afins</td>
@@ -574,7 +601,7 @@
             <td>Atrativa no papel para throughput. Ainda sem confianca suficiente como substituta principal de qualidade.</td>
           </tr>
           <tr>
-            <td><span class="rank low">13</span></td>
+            <td><span class="rank low">15</span></td>
             <td><a class="doc-link" href="./solucao_openai_chatgpt_codex_2026-04-24.html"><strong>OpenAI / ChatGPT / Codex</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 20 a US$ 200/mes</td>
             <td>ChatGPT Plus/Pro, Codex, GPT-5.x e afins</td>
@@ -585,7 +612,7 @@
             <td>Produto forte, mas nao a rota mais barata nem a mais previsivel para reproduzir seu uso Opus-heavy.</td>
           </tr>
           <tr>
-            <td><span class="rank low">14</span></td>
+            <td><span class="rank low">16</span></td>
             <td><a class="doc-link" href="./solucao_chutes_2026-04-24.html"><strong>Chutes Pro / Plus</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 10 a US$ 20/mes</td>
             <td>Infra hibrida com acesso a modelos e PAYG alem da franquia</td>
