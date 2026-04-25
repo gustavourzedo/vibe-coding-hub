@@ -2,11 +2,558 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=./comparativo_ide_harness_agentes_2026-04-24.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IDEs e Harnesses - Vibe Coding Hub</title>
+  <title>IDEs e Harnesses para Vibe Coding - Documentacao Viva</title>
+  <style>
+    :root {
+      --bg:#0b1020;
+      --panel:#151f38;
+      --line:#2a3960;
+      --text:#e7edf9;
+      --muted:#9fb0d4;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --warn:#fbbf24;
+      --good:#34d399;
+      --danger:#fb7185;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family:"Segoe UI","Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg,#09101d 0%,#0b1020 100%);
+      line-height:1.58;
+    }
+    .wrap { width:min(1500px, calc(100% - 40px)); margin:32px auto 56px; }
+    .hero,.card {
+      background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+    .hero {
+      padding:28px 30px;
+      background:linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.1));
+    }
+    .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; }
+    h1 { font-size:clamp(30px,4vw,48px); letter-spacing:-0.03em; }
+    h2 { font-size:24px; }
+    h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); }
+    a { color:#9fcbff; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .small { font-size:13px; color:#8ea0c7; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini {
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      padding:16px;
+      background:rgba(255,255,255,.04);
+    }
+    .callout {
+      border-left:4px solid var(--accent);
+      background:rgba(110,231,183,.08);
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:14px;
+    }
+    .warnbox {
+      border-left:4px solid var(--warn);
+      background:rgba(251,191,36,.08);
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:14px;
+    }
+    .score { font-size:28px; font-weight:700; color:#fff; }
+    .good { color:var(--good); }
+    .warn { color:var(--warn); }
+    .bar {
+      width:100%;
+      height:10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      overflow:hidden;
+      margin-top:8px;
+    }
+    .bar span {
+      display:block;
+      height:100%;
+      background:linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+    table {
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      font-size:14px;
+    }
+    th,td {
+      padding:14px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      text-align:left;
+      vertical-align:top;
+    }
+    th {
+      background:rgba(96,165,250,.08);
+      color:#f2f6ff;
+      font-weight:700;
+    }
+    tr:nth-child(even) td { background:rgba(255,255,255,.02); }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); }
+    li { margin-bottom:8px; }
+    .tag {
+      display:inline-flex;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      margin:0 8px 8px 0;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.05);
+      color:#d9e7ff;
+    }
+    .rank {
+      display:inline-flex;
+      min-width:30px;
+      height:30px;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      font-weight:700;
+      background:rgba(255,255,255,.08);
+    }
+    .rank.top { background:rgba(52,211,153,.15); color:#a7f3d0; }
+    .rank.mid { background:rgba(251,191,36,.15); color:#fde68a; }
+    .rank.low { background:rgba(251,113,133,.15); color:#fecdd3; }
+    @media (max-width:1100px) {
+      .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; }
+      .wrap { width:min(100% - 20px, 1500px); }
+    }
+  </style>
 </head>
 <body>
-  <p><a href="./comparativo_ide_harness_agentes_2026-04-24.html">Abrir IDEs e harnesses</a></p>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>IDEs, Apps e Harnesses para Vibe Coding</h1>
+      <p>
+        Pagina viva para comparar as principais superficies onde o modelo efetivamente trabalha: editor host,
+        harness local no terminal, app de orquestracao multiagente e agentes cloud. Aqui o foco deixa de ser
+        "qual assinatura comprar" e passa a ser "em qual superficie aquele modelo rende melhor no uso real".
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
+        <div class="mini"><strong>Leitura certa</strong><div>Nem tudo aqui e "IDE". Parte relevante e harness ou command center.</div></div>
+        <div class="mini"><strong>Benchmark usado</strong><div>Benchmark operacional do hub, nao benchmark de laboratorio vendor-neutral.</div></div>
+        <div class="mini"><strong>Ponto critico</strong><div>O mesmo modelo pode render bem diferente dependendo da superficie, autonomia e controle.</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Terminologia de referencia</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>VS Code</h3>
+          <p>`VS Code` sozinho nao e um harness. Ele e um <strong>host editor</strong>. O harness vem do agente conectado a ele: `Copilot`, `Codex IDE extension`, `Claude Code` no terminal, `OpenCode`, e assim por diante.</p>
+        </div>
+        <div class="mini">
+          <h3>Codex</h3>
+          <p>`Codex` tambem nao e exclusivo de uma unica assinatura. Oficialmente, ele esta incluido em `ChatGPT Plus`, `Pro`, `Business`, `Enterprise/Edu`, e por tempo limitado tambem em `Free` e `Go`.</p>
+        </div>
+        <div class="mini">
+          <h3>Claude Code e OpenCode</h3>
+          <p>`Claude Code` e o harness oficial do ecossistema Anthropic. `OpenCode` e outra ferramenta, aberta e provider-agnostica, focada em terminal, desktop app e extensao.</p>
+        </div>
+      </div>
+      <div class="warnbox">
+        <strong>Ponto de metodo:</strong> nao existe hoje um `SWE-bench para harnesses` que compare `Cursor`, `Codex`, `Claude Code`, `Antigravity`, `Windsurf` e `VS Code + Copilot` em condicoes identicas e publicas. Entao esta pagina usa um <strong>benchmark operacional do hub</strong>: um score analitico baseado em docs oficiais, arquitetura do produto, modelo de execucao, superficie de controle e previsibilidade de uso.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como o hub vai medir cada superficie</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Eixo</th>
+            <th>O que mede</th>
+            <th>Peso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fluxo local vivo</td>
+            <td>Quao bem a superficie edita, testa, itera e se corrige no seu ambiente real.</td>
+            <td>25%</td>
+          </tr>
+          <tr>
+            <td>Delegacao e paralelismo</td>
+            <td>Capacidade de tocar tarefas em background, multiagente, cloud ou worktrees sem travar o fluxo.</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>Controle e revisao</td>
+            <td>Qualidade do diff, checkpoints, aprovacao de comandos, visibilidade do que o agente esta fazendo.</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td>Ajuste modelo-harness</td>
+            <td>Quao bem os modelos tipicos daquela superficie sao aproveitados por ela no uso real.</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td>Flexibilidade de provedores</td>
+            <td>Liberdade para trocar modelo, provider e assinatura sem perder o fluxo.</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td>Previsibilidade operacional</td>
+            <td>Clareza de limites, custo, quotas e comportamento quando bate teto.</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td>Extensibilidade</td>
+            <td>MCP, plugins, skills, hooks, integracoes com browser, terminal e servicos externos.</td>
+            <td>5%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Ranking operacional do hub</h2>
+      <p>
+        Este ranking tenta responder: <strong>em qual superficie o modelo realmente vira trabalho de alta qualidade com menos atrito</strong>.
+        O numero nao e benchmark publico do fornecedor; e a leitura consolidada do hub.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Superficie</th>
+            <th>Tipo</th>
+            <th>Melhor encaixe</th>
+            <th>Fluxo local</th>
+            <th>Delegacao</th>
+            <th>Ajuste modelo-harness</th>
+            <th>Previsibilidade</th>
+            <th>Consolidado</th>
+            <th>Leitura final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank top">1</span></td>
+            <td><strong>Codex</strong></td>
+            <td>Command center + CLI + IDE extension</td>
+            <td>Quem ja vive em `ChatGPT Plus/Pro/Business/Enterprise` e quer multiagente serio</td>
+            <td>90</td>
+            <td>95</td>
+            <td>95</td>
+            <td>70</td>
+            <td><strong>90</strong></td>
+            <td>Melhor superficie geral do hub hoje para orquestracao, controle de diffs, worktrees e fluxo multiagente. Perde em flexibilidade de provider.</td>
+          </tr>
+          <tr>
+            <td><span class="rank top">2</span></td>
+            <td><strong>Cursor</strong></td>
+            <td>IDE integrada com agentes e cloud agents</td>
+            <td>Quem quer editor all-in-one com frontier models e automacao forte</td>
+            <td>92</td>
+            <td>88</td>
+            <td>84</td>
+            <td>45</td>
+            <td><strong>84</strong></td>
+            <td>Continua fortissimo como editor agentico. Cai no consolidado por complexidade de pricing, uso incluido + overage e comportamento diferente por modo/modelo.</td>
+          </tr>
+          <tr>
+            <td><span class="rank top">3</span></td>
+            <td><strong>Claude Code</strong></td>
+            <td>Harness terminal-native</td>
+            <td>Quem quer o melhor encaixe com o ecossistema Anthropic e fluxo Unix/CLI</td>
+            <td>88</td>
+            <td>74</td>
+            <td>92</td>
+            <td>58</td>
+            <td><strong>81</strong></td>
+            <td>Excelente quando o seu centro de gravidade e terminal, git e MCP. Menos forte do que Codex como command center visual de multiagentes.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">4</span></td>
+            <td><strong>Google Antigravity</strong></td>
+            <td>Agentic development platform</td>
+            <td>Quem ja tem `Google AI Pro/Ultra` e quer orquestracao mais pesada com bundle Google</td>
+            <td>82</td>
+            <td>90</td>
+            <td>82</td>
+            <td>55</td>
+            <td><strong>79</strong></td>
+            <td>Subiu muito depois que ficou claro que e produto proprio com pricing e creditos. Ainda perde por opacidade de quota numerica detalhada.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">5</span></td>
+            <td><strong>Windsurf</strong></td>
+            <td>IDE integrada com Cascade e cloud/background</td>
+            <td>Quem quer editor-agent com deploy, previews e background dev</td>
+            <td>86</td>
+            <td>84</td>
+            <td>78</td>
+            <td>48</td>
+            <td><strong>77</strong></td>
+            <td>Produto forte e completo, mas mais dificil de ler em quota/custo do que deveria para este estudo.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">6</span></td>
+            <td><strong>VS Code + Copilot Agents</strong></td>
+            <td>Host editor + agentes locais, background e cloud</td>
+            <td>Quem quer ficar no VS Code e usar o ecossistema GitHub</td>
+            <td>84</td>
+            <td>82</td>
+            <td>74</td>
+            <td>66</td>
+            <td><strong>76</strong></td>
+            <td>Arquitetura muito boa e cada vez mais moderna. Fica abaixo dos lideres porque o fluxo continua mais fragmentado entre Copilot IDE, cloud agent e GitHub.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">7</span></td>
+            <td><strong>OpenCode</strong></td>
+            <td>Harness aberto: terminal, desktop e extensao</td>
+            <td>Quem quer flexibilidade de provider e open models em uma camada propria</td>
+            <td>76</td>
+            <td>62</td>
+            <td>72</td>
+            <td>72</td>
+            <td><strong>73</strong></td>
+            <td>Excelente para portabilidade e stack aberto. Ainda abaixo dos lideres em maturidade geral de UX e orquestracao visual.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Escolha rapida por assinatura ou modelo</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>Se voce ja paga OpenAI</h3>
+          <p>O encaixe mais natural e `Codex`. A propria OpenAI o posiciona como agente em `app`, `CLI`, `IDE extension` e cloud, todos no mesmo harness.</p>
+          <div class="tag">Melhor escolha: Codex</div>
+        </div>
+        <div class="mini">
+          <h3>Se voce ja paga Anthropic</h3>
+          <p>O encaixe mais natural e `Claude Code`. Ele rende melhor quando seu fluxo principal e terminal, git, MCP e automacao de linha de comando.</p>
+          <div class="tag">Melhor escolha: Claude Code</div>
+        </div>
+        <div class="mini">
+          <h3>Se voce ja paga Google AI</h3>
+          <p>O encaixe natural e `Antigravity`. A leitura do hub melhorou bastante depois que ficou claro que ele tem baseline quota + AI credits dentro do ecossistema Google.</p>
+          <div class="tag">Melhor escolha: Antigravity</div>
+        </div>
+        <div class="mini">
+          <h3>Se quer editor integrado multi-modelo</h3>
+          <p>`Cursor` ainda e a melhor resposta direta. `Windsurf` entra logo atras se voce valoriza previews, deploys e o ecossistema Cascade.</p>
+          <div class="tag">Melhor escolha: Cursor</div>
+        </div>
+        <div class="mini">
+          <h3>Se quer host neutro e GitHub-centric</h3>
+          <p>`VS Code + Copilot Agents` e forte porque te deixa no editor mais neutro do mercado, com agentes locais, background e cloud na mesma casa GitHub.</p>
+          <div class="tag">Melhor escolha: VS Code + Copilot</div>
+        </div>
+        <div class="mini">
+          <h3>Se quer provider agnostico e open models</h3>
+          <p>`OpenCode` e o melhor encaixe. Ele nao vence em maturidade final, mas ganha em liberdade de composicao com `OpenCode Go`, `Zen` e outros providers.</p>
+          <div class="tag">Melhor escolha: OpenCode</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que os docs oficiais realmente mostram</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Superficie</th>
+            <th>O que a doc oficial confirma</th>
+            <th>O que isso significa no hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Codex</strong></td>
+            <td>`Codex` existe em `app`, `CLI`, `IDE extension` e web, todos sobre o mesmo harness. O app foi posicionado como "command center for agents" com worktrees e multiplos agentes em paralelo.</td>
+            <td>E a superficie mais forte para orquestracao supervisionada, nao so para editar codigo.</td>
+          </tr>
+          <tr>
+            <td><strong>Cursor</strong></td>
+            <td>Planos oficiais com `Cloud agents`, modelos frontier, MCP, skills e hooks. `Pro`, `Pro+` e `Ultra` aumentam uso incluido e overage.</td>
+            <td>E uma IDE agentica de alto nivel, mas com previsibilidade pior que parece a primeira vista.</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Code</strong></td>
+            <td>Anthropic o descreve como ferramenta agentica terminal-native, composable, scriptable, com git direto, CI e MCP.</td>
+            <td>Excelente harness local para quem pensa em shell, pipes, automacao e engenharia de contexto.</td>
+          </tr>
+          <tr>
+            <td><strong>Antigravity</strong></td>
+            <td>Google o descreve como plataforma de desenvolvimento agentica. `AI Pro` e `AI Ultra` recebem quotas maiores, baseline quota e AI credits; `Ultra` recebe 25.000 credits/mensais.</td>
+            <td>Virou alternativa de verdade, nao so "beneficio do bundle". O gargalo e a quota numerica publica ainda pouco detalhada.</td>
+          </tr>
+          <tr>
+            <td><strong>VS Code + Copilot</strong></td>
+            <td>VS Code hoje suporta agentes `local`, `background`, `cloud` e ate terceiros. O Copilot cloud agent roda em ambiente efemero no GitHub Actions.</td>
+            <td>Arquitetura muito boa e aberta, mas a experiencia final continua mais espalhada do que em Codex/Cursor.</td>
+          </tr>
+          <tr>
+            <td><strong>Windsurf</strong></td>
+            <td>Oficialmente oferece `Cascade`, `Tab`, previews, deploys, Devin cloud sessions e uso quota-based com refresh diario/semanal.</td>
+            <td>Superficie poderosa, principalmente para fluxo full-stack, mas ainda mais opaca em custo e allowance.</td>
+          </tr>
+          <tr>
+            <td><strong>OpenCode</strong></td>
+            <td>Disponivel como terminal, desktop app ou extensao. O `Go` e curado com combinacoes `modelo + provider` benchmarkadas pelo proprio time.</td>
+            <td>Melhor opcao aberta para quem quer liberdade de provider e stack open-model.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Casos de uso: qual superficie escolher</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Escolha `Codex` quando</h3>
+          <ul>
+            <li>voce quer coordenar varios agentes ao mesmo tempo com trabalho paralelo e worktrees;</li>
+            <li>o seu centro de gravidade ja e `ChatGPT`;</li>
+            <li>voce valoriza muito supervisao de diff e mudanca de contexto entre threads/projetos.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Escolha `Cursor` quando</h3>
+          <ul>
+            <li>voce quer tudo dentro da IDE;</li>
+            <li>precisa de varios frontier models num unico editor;</li>
+            <li>aceita uma camada de custo/uso mais complexa em troca de fluidez de produto.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Escolha `Claude Code` quando</h3>
+          <ul>
+            <li>voce pensa melhor em terminal do que em UI;</li>
+            <li>quer maximizar o encaixe com `Claude` e MCP;</li>
+            <li>seu fluxo inclui CI, git, hooks e automacoes shell-first.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Escolha `Antigravity` quando</h3>
+          <ul>
+            <li>voce ja esta dentro de `Google AI Pro/Ultra`;</li>
+            <li>quer platforma de agentes mais pesada com browser, editor e terminal;</li>
+            <li>aceita uma quota publica menos transparente em troca do ecossistema Google.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Escolha `VS Code + Copilot` quando</h3>
+          <ul>
+            <li>voce quer um host mais neutro e multiprotocolo;</li>
+            <li>prefere ficar no editor padrao do mercado;</li>
+            <li>o seu fluxo e muito GitHub-centric e voce valoriza cloud agent em PR/issues.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Escolha `OpenCode` quando</h3>
+          <ul>
+            <li>voce quer portar facilmente entre providers;</li>
+            <li>o objetivo e open models com custo baixo;</li>
+            <li>voce aceita uma UX menos madura para ganhar liberdade tecnica.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ferramentas relevantes fora do top operacional</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ferramenta</th>
+            <th>Tipo</th>
+            <th>Por que importa</th>
+            <th>Leitura do hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Kiro</strong></td><td>IDE + CLI agentico</td><td>Produto oficial de agentic coding com specs, hooks, CLI e billing formal.</td><td>Entrou no radar real do hub; forte tecnicamente, mas credit-based demais para a tese economica principal.</td></tr>
+          <tr><td><strong>Amp</strong></td><td>CLI + VS Code agent</td><td>Agent premium com modelos frontier e foco forte em qualidade.</td><td>Relevante, mas prepaid/credit-based, nao assinatura flat.</td></tr>
+          <tr><td><strong>Augment Code</strong></td><td>agent/context engine</td><td>Muito forte para codebases grandes e equipes.</td><td>Deve ser observado; credit-based e menos natural para seu objetivo de previsibilidade.</td></tr>
+          <tr><td><strong>JetBrains Junie</strong></td><td>JetBrains IDE agent</td><td>Importante para quem vive em IntelliJ/PyCharm/WebStorm.</td><td>Quota por AI Credits parece pequena para o benchmark extremo.</td></tr>
+          <tr><td><strong>Replit Agent</strong></td><td>cloud IDE/app builder</td><td>Forte para criar e publicar apps rapidamente.</td><td>Bom para app building, menos natural para varios repos locais pesados.</td></tr>
+          <tr><td><strong>Amazon Q Developer</strong></td><td>AWS IDE/CLI agent</td><td>Bom encaixe para workloads AWS e transformacoes Java.</td><td>Mais especializado em AWS do que substituto geral de vibe coding extremo.</td></tr>
+          <tr><td><strong>Kilo Code</strong></td><td>open agent + gateway</td><td>Open source, VS Code, JetBrains e CLI, com Kilo Pass opcional.</td><td>Interessante como rota BYOK/gateway, mas entra mais em infra do que em flat plan.</td></tr>
+          <tr><td><strong>Trae</strong></td><td>IDE agentica</td><td>Produto popular e agressivo em preco em alguns mercados.</td><td>Pricing publico internacional ainda pouco legivel para recomendacao principal.</td></tr>
+          <tr><td><strong>Qodo</strong></td><td>review/quality agents</td><td>Forte para revisar PRs e controlar qualidade de output de agentes.</td><td>Complementar, nao substituto do agente principal.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Leitura final do hub</h2>
+      <div class="callout">
+        <strong>Resumo curto:</strong> se a pergunta for `qual superficie e mais forte no geral hoje`, o hub pende para `Codex`.
+        Se a pergunta for `qual IDE integrada continua mais forte`, a resposta segue `Cursor`.
+        Se a pergunta for `qual harness melhor extrai Anthropic`, a resposta e `Claude Code`.
+        Se a pergunta for `qual plataforma mais promissora dentro do bundle Google`, a resposta agora e `Antigravity`.
+      </div>
+      <p>
+        A leitura conceitual do hub e esta: <strong>nao faz sentido comparar tudo como se fosse "IDE"</strong>.
+        `Cursor` e `Windsurf` sao IDEs agenticas. `VS Code` e host editor. `Codex` e `Antigravity` estao mais para
+        command centers e plataformas agenticas. `Claude Code` e `OpenCode` sao harnesses terminais com graus
+        diferentes de app/extensao por cima. Essa diferenca muda muito a experiencia, o encaixe com o modelo e o
+        valor real da assinatura.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://help.openai.com/en/articles/11369540/">Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://openai.com/index/introducing-the-codex-app/">Introducing the Codex app</a></li>
+        <li><a href="https://openai.com/index/unlocking-the-codex-harness/">Unlocking the Codex harness</a></li>
+        <li><a href="https://www.cursor.com/en/pricing">Cursor pricing</a></li>
+        <li><a href="https://code.claude.com/docs/en/overview">Claude Code overview</a></li>
+        <li><a href="https://code.claude.com/docs/en/costs">Claude Code costs</a></li>
+        <li><a href="https://antigravity.google/pricing">Antigravity pricing</a></li>
+        <li><a href="https://support.google.com/googleone/answer/14534406?hl=en">Google AI Pro benefits</a></li>
+        <li><a href="https://support.google.com/googleone/answer/16286513?hl=en">Google AI Ultra benefits</a></li>
+        <li><a href="https://kiro.dev/pricing/">Kiro pricing</a></li>
+        <li><a href="https://kiro.dev/docs/cli/billing/">Kiro billing</a></li>
+        <li><a href="https://aws.amazon.com/documentation-overview/kiro/">AWS Kiro docs</a></li>
+        <li><a href="https://code.visualstudio.com/docs/copilot/concepts/agents">VS Code agents</a></li>
+        <li><a href="https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode">VS Code chat and agent mode</a></li>
+        <li><a href="https://docs.github.com/en/copilot/get-started/plans">GitHub Copilot plans</a></li>
+        <li><a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent">GitHub Copilot cloud agent</a></li>
+        <li><a href="https://windsurf.com/pricing">Windsurf pricing</a></li>
+        <li><a href="https://docs.windsurf.com/windsurf/accounts/quota">Windsurf quota-based usage</a></li>
+        <li><a href="https://opencode.ai/docs/">OpenCode docs</a></li>
+        <li><a href="https://opencode.ai/docs/go/">OpenCode Go docs</a></li>
+        <li><a href="https://ampcode.com/pricing">Amp pricing</a></li>
+        <li><a href="https://www.augmentcode.com/pricing">Augment Code pricing</a></li>
+        <li><a href="https://www.jetbrains.com/help/junie/licensing-and-subscriptions.html">JetBrains Junie licensing</a></li>
+        <li><a href="https://replit.com/pricing">Replit pricing</a></li>
+        <li><a href="https://aws.amazon.com/q/developer/pricing/">Amazon Q Developer pricing</a></li>
+        <li><a href="https://kilo.ai/pricing">Kilo pricing</a></li>
+        <li><a href="https://www.trae.ai/pricing">Trae pricing</a></li>
+        <li><a href="https://www.qodo.ai/pricing/">Qodo pricing</a></li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>

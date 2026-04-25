@@ -2,11 +2,199 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=./solucao_alibaba_coding_plan_2026-04-24.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alibaba - Vibe Coding Hub</title>
+  <title>Alibaba Coding Plan - Documentacao Viva</title>
+  <style>
+    :root {
+      --bg: #0b1020; --panel: #151f38; --line: #2a3960; --text: #e7edf9; --muted: #9fb0d4;
+      --accent: #6ee7b7; --accent-2: #60a5fa; --warn: #fbbf24; --good: #34d399; --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Inter", sans-serif; color: var(--text); background:
+      radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+      radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+      linear-gradient(180deg, #09101d 0%, #0b1020 100%); line-height: 1.58; }
+    .wrap { width: min(1280px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card { background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+    .hero { padding: 28px 30px; } .card { padding: 20px; margin-top: 20px; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; } h1 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.03em; } h2 { font-size: 24px; } h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); } a { color: #9fcbff; text-decoration: none; } a:hover { text-decoration: underline; }
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; } .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; } .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mini { border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 16px; background: rgba(255,255,255,.04); }
+    .score { font-size: 28px; font-weight: 700; color: white; } .good { color: var(--good); } .warn { color: var(--warn); }
+    .bar { width: 100%; height: 10px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; margin-top: 8px; } .bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left: 4px solid var(--accent); background: rgba(110,231,183,.08); border-radius: 12px; padding: 14px 16px; margin-top: 14px; }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); } li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; } th, td { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; vertical-align: top; } th { color: #f4f8ff; background: rgba(96,165,250,.08); }
+    .small { font-size: 13px; color: #8ea0c7; }
+    @media (max-width: 1100px) { .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; } .wrap { width: min(100% - 20px, 1280px); } }
+  </style>
 </head>
 <body>
-  <p><a href="./solucao_alibaba_coding_plan_2026-04-24.html">Abrir Alibaba</a></p>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Alibaba Cloud Coding Plan Pro</h1>
+      <p>
+        Pagina viva da assinatura `Coding Plan` da Alibaba Cloud Model Studio. Esta e a solucao mais agressiva
+        em custo bruto entre as candidatas fortes, mas tambem uma das que mais exigem humildade analitica:
+        a quota oficial parece excelente, porem a visibilidade de `tokens`, `contexto efetivo` e `qualidade real`
+        ainda nao e tao limpa quanto no GLM.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Melhor dark horse / piloto agressivo</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Muita quota oficial por US$ 50/mes</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Contagem em chamadas, nao em tokens</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        A Alibaba hoje vende uma assinatura mensal fixa para coding tools com varios modelos fortes no mesmo pacote.
+        A oferta oficial e boa o bastante para merecer teste serio em `KLG Bots`, `GnBots` e `ClipForge`.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> em `capacidade bruta`, o plano impressiona. O que segura a recomendacao principal
+        e a combinacao de `quota por requests`, `falta de token-level detail`, `visibilidade limitada por modelo` e
+        mais incerteza pratica de qualidade/consistencia do que no GLM.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Plano, modelos e quota oficial</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Preco</th>
+            <th>Modelos citados oficialmente</th>
+            <th>Quota</th>
+            <th>Reset</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>US$ 50/mes</td>
+            <td>qwen3.5-plus, kimi-k2.5, glm-5, MiniMax-M2.5, qwen3-max-2026-01-23, qwen3-coder-next, qwen3-coder-plus, glm-4.7</td>
+            <td>6.000 requests / 5h, 45.000 / semana, 90.000 / mes</td>
+            <td>5h em sliding window; semanal toda segunda 00:00 UTC+8; mensal na data de aniversario da assinatura</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+      <section class="card">
+        <h2>Benchmark resumido desta assinatura</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Plano</th>
+              <th>Capacidade</th>
+              <th>Aderencia tecnica pratica</th>
+              <th>Consolidado</th>
+              <th>Leitura pratica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Alibaba Coding Plan Pro</strong></td>
+              <td><div class="score good">80% a 110%</div><div class="bar"><span style="width:92%"></span></div></td>
+              <td><div class="score warn">45% a 65%</div><div class="bar"><span style="width:55%"></span></div></td>
+              <td><div class="score warn">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
+              <td>Leitura da assinatura frente ao seu benchmark extremo de uma semana no Cursor.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="small">
+          A recomendacao de usar como `piloto controlado` e uma estrategia de adocao. Ela nao muda a `capacidade`
+          do plano, que continua sendo a fracao plausivel da sua semana extrema que essa assinatura sustentaria.
+        </p>
+      </section>
+
+    <section class="card">
+      <h2>Como a cobranca funciona</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que a doc oficial deixa claro</h3>
+          <ul>
+            <li>A quota do plano e por `requests`, nao por tokens.</li>
+            <li>Cada query gasta varias requests internas: tasks simples usam ~`5-10`; tasks complexas usam `10-30+`.</li>
+            <li>O plano tem `API key` e `base URL` proprios; se usar a credencial geral da Model Studio, a cobranca vai para PAYG.</li>
+            <li>Depois que a quota acaba, o uso falha. Nao existe spillover automatico para PAYG.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que continua opaco</h3>
+          <ul>
+            <li>Sem detalhe de `token consumption`.</li>
+            <li>Sem leitura de consumo por modelo.</li>
+            <li>Sem publicacao clara de contexto efetivo por tool/session dentro do plano.</li>
+            <li>Sem uma camada oficial tao madura de monitoramento quanto o ecossistema GLM.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Capacidade</strong>
+          <div class="score good">80% a 110%</div>
+          <div class="bar"><span style="width: 92%"></span></div>
+          <p class="small">Na matematica de requests, ele parece aguentar ate workloads pesados.</p>
+        </div>
+        <div class="mini">
+          <strong>Qualidade tecnica</strong>
+          <div class="score warn">45% a 65%</div>
+          <div class="bar"><span style="width: 55%"></span></div>
+          <p class="small">O pacote tem modelos fortes, mas a consistencia no agentic coding pesado ainda e a grande incognita.</p>
+        </div>
+        <div class="mini">
+          <strong>Consolidado</strong>
+          <div class="score warn">55% a 80%</div>
+          <div class="bar"><span style="width: 68%"></span></div>
+          <p class="small">Melhor como piloto controlado do que como compra cega.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Por que esta assinatura recebe essas faixas</h2>
+      <div class="grid-2">
+        <div class="mini"><h3>Capacidade alta</h3><p>A quota oficial em requests e muito generosa para o seu tipo de fluxo agentico.</p></div>
+        <div class="mini"><h3>Qualidade e consolidado menores</h3><p>O desconto vem da menor visibilidade em tokens, contexto efetivo e consistencia pratica por modelo.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sinais de campo relevantes</h2>
+      <ul>
+        <li>O proprio plano hoje documenta claramente a diferenca entre `coding key` e `general key`, o que ajuda a evitar cobrancas erradas.</li>
+        <li>Tambem fica claro que nao ha `token view`; isso e uma limitacao real para o seu tipo de estudo.</li>
+        <li>Na camada comunitaria, o plano vem chamando atencao justamente pelo contraste entre `preco muito baixo` e `risco de qualidade/contexto ainda pouco entendido`.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Como eu usaria no seu caso</h2>
+      <ul>
+        <li>Trataria como `piloto de 1 ciclo` com workloads reais dos seus projetos mais pesados.</li>
+        <li>Mediria quantas tasks complexas voce fecha antes de sentir degradacao ou travamento operacional.</li>
+        <li>So promoveria para plano principal se a qualidade pratica surpreender positivamente.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan">Alibaba Coding Plan overview</a></li>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan-faq">Alibaba Coding Plan FAQ</a></li>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/qwen-code-coding-plan">Qwen Code for Coding Plan</a></li>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/other-tools-coding-plan">Other tools for Coding Plan</a></li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>

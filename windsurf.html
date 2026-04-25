@@ -2,11 +2,178 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=./solucao_windsurf_2026-04-24.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Windsurf - Vibe Coding Hub</title>
+  <title>Windsurf - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
 </head>
 <body>
-  <p><a href="./solucao_windsurf_2026-04-24.html">Abrir Windsurf</a></p>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Windsurf</h1>
+      <p>
+        Pagina viva da assinatura `Windsurf`, agora numa fase bem diferente da antiga estrutura por credits.
+        Em `marco de 2026`, o produto migrou para `quota-based usage`, o que mexe bastante na previsibilidade
+        e tambem mudou a leitura do seu encaixe neste hub.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Alternativa relevante, mas com alto risco operacional</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>SWE-1.6 / SWE-1.5, Adaptive e BYOK</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Quotas diarias e semanais sem numero publico simples</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Windsurf` continua interessante como IDE/agent platform, mas ficou menos previsivel para compra racional
+        de uso pesado depois da mudanca para budget diario e semanal baseado em tokens por modelo.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> produto forte, porem com `muita friccao` na leitura de quota real.
+        Para o seu caso, ele fica abaixo das melhores assinaturas do hub porque o risco de bater em limite sem
+        previsao clara e alto demais.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos atuais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Allowance</th>
+            <th>Extra usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free</td>
+            <td>US$ 0</td>
+            <td>Light</td>
+            <td>Nao aplicavel</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 20/mes</td>
+            <td>Standard</td>
+            <td>At API price</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>US$ 200/mes</td>
+            <td>Heavy</td>
+            <td>At API price</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno dos planos Windsurf</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td><div class="score warn">35% a 60%</div><div class="bar"><span style="width:46%"></span></div></td>
+            <td><div class="score warn">55% a 75%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td><div class="score warn">35% a 55%</div><div class="bar"><span style="width:44%"></span></div></td>
+            <td>Interessante como IDE, mas allowance ainda opaco demais.</td>
+          </tr>
+          <tr>
+            <td><strong>Max</strong></td>
+            <td><div class="score warn">50% a 85%</div><div class="bar"><span style="width:66%"></span></div></td>
+            <td><div class="score good">60% a 80%</div><div class="bar"><span style="width:70%"></span></div></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:56%"></span></div></td>
+            <td>Sobe em folga, nao resolve a incerteza estrutural de quota.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Como a quota funciona em 2026</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Documentacao oficial</h3>
+          <ul>
+            <li>O plano passou a usar `daily and weekly budget` em vez de creditos fixos.</li>
+            <li>O custo por request varia conforme o modelo e o total de tokens usado.</li>
+            <li>`Free` espera o reset; `Pro`, `Teams` e `Max` podem comprar `extra usage` para continuar.</li>
+            <li>Os modelos internos `SWE-1.6`, `SWE-1.5`, `swe-grep` e `SWE-1` aparecem como grande parte da proposta.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Risco operacional</h3>
+          <ul>
+            <li>A doc nao publica um numero simples de requests/tokens incluidos por tier self-serve.</li>
+            <li>Isso dificulta transformar o plano em previsao honesta para um workload extremo como o seu.</li>
+            <li>A camada `BYOK` existe para alguns modelos Anthropic, mas isso muda o problema para custo de API propria.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score warn">35% a 85%</div><div class="bar"><span style="width: 56%"></span></div><p class="small">A incerteza e alta porque o allowance nao vem em numerica publica direta.</p></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score warn">55% a 80%</div><div class="bar"><span style="width: 66%"></span></div><p class="small">Boa combinacao de modelos proprios e frontier/BYOK.</p></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score warn">35% a 70%</div><div class="bar"><span style="width: 52%"></span></div><p class="small">Perde muito em previsibilidade para este hub.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Por que Pro e Max sobem menos no consolidado</h2>
+      <div class="grid-2">
+        <div class="mini"><h3>Quota pouco legivel</h3><p>Mesmo os tiers pagos continuam sem uma numerica simples de "o quanto leva", entao a aderencia tecnica pratica cai antes da qualidade bruta cair.</p></div>
+        <div class="mini"><h3>Experiencia versus previsibilidade</h3><p>A plataforma pode ser boa, mas o hub premia muito a capacidade de prever custo e travamento, o que pesa bastante entre os tiers.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sinais de campo</h2>
+      <ul>
+        <li>Depois da migracao para quota-based usage, o Reddit do Windsurf ficou cheio de relatos de daily limit acabando rapido e weekly quota "sumindo" em poucos dias.</li>
+        <li>Esses relatos nao invalidam a doc oficial, mas reforcam que o produto precisa de desconto de risco na leitura do hub.</li>
+        <li>Na pratica, o Windsurf parece hoje melhor para quem compra `experiencia de IDE/agent` do que para quem quer `plano mais racional por dolar`.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://windsurf.com/pricing">Windsurf pricing</a></li>
+        <li><a href="https://docs.windsurf.com/windsurf/accounts/usage">Plans and usage</a></li>
+        <li><a href="https://docs.windsurf.com/windsurf/accounts/quota">Quota-based usage</a></li>
+        <li><a href="https://docs.windsurf.com/windsurf/models">AI models</a></li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>

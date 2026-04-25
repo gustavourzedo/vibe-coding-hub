@@ -2,11 +2,244 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=./solucao_kiro_aws_2026-04-25.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kiro - Vibe Coding Hub</title>
+  <title>Kiro (AWS) - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --danger:#fb7185; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); } .danger { color:var(--danger); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    .warnbox { border-left:4px solid var(--warn); background:rgba(251,191,36,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
 </head>
 <body>
-  <p><a href="./solucao_kiro_aws_2026-04-25.html">Abrir Kiro</a></p>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Kiro (AWS)</h1>
+      <p>
+        Pagina viva do `Kiro` como solucao real para entrar no estudo. Hoje ele ja e um produto oficial de
+        `agentic coding` com `Kiro IDE`, `Kiro CLI`, suporte a `ACP-compatible IDEs`, specs, hooks e billing
+        formal por creditos. Ou seja: ele <strong>merece fazer parte do hub</strong>, mas nao pelo mesmo motivo
+        de um plano flat simples como GLM ou Alibaba.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Solucao auditada e valida, mas fora do topo economico</div></div>
+        <div class="mini"><strong>Encaixe correto</strong><div>IDE/harness + assinatura por creditos</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Billing previsivel so ate certo ponto; depois vira credit metering + overage</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Kiro` entra no estudo com legitimidade porque ja tem pricing oficial, docs formais e posicionamento claro
+        como solucao de coding agent. O problema nao e maturidade de produto; e o modelo de cobranca.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> eu colocaria `Kiro` dentro do estudo como <strong>solucao valida e relevante</strong>,
+        principalmente para quem quer fluxo `spec-driven`, terminal + IDE e ecossistema AWS. Eu <strong>nao colocaria
+        `Kiro` como recomendacao principal de menor custo/previsibilidade</strong> para reproduzir sua semana extrema
+        porque o billing por `credits` continua opaco demais para mapear 100% do seu benchmark de Cursor.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos oficiais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Franquia</th>
+            <th>Overage</th>
+            <th>Leitura para o seu caso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free</td>
+            <td>US$ 0/mes</td>
+            <td>50 credits</td>
+            <td>Nao disponivel</td>
+            <td>Bom para conhecer o fluxo; irrelevante para seu benchmark pesado.</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 20/mes</td>
+            <td>1.000 credits</td>
+            <td>US$ 0.04/credit opt-in</td>
+            <td>Plano serio de entrada, mas pequeno para sua semana extrema se voce usar spec mode com frequencia.</td>
+          </tr>
+          <tr>
+            <td>Pro+</td>
+            <td>US$ 40/mes</td>
+            <td>2.000 credits</td>
+            <td>US$ 0.04/credit opt-in</td>
+            <td>Mais interessante para uso diario real, ainda insuficiente para benchmark extremo sem risco de overage.</td>
+          </tr>
+          <tr>
+            <td>Power</td>
+            <td>US$ 200/mes</td>
+            <td>10.000 credits</td>
+            <td>US$ 0.04/credit opt-in</td>
+            <td>O tier que mais conversa com seu uso pesado, mas ja concorre com outros premium do hub.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Bonus oficial para novos usuarios individuais: `500 credits` validos por `30 dias`.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Como a cobranca funciona de verdade</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que e um credit</h3>
+          <ul>
+            <li>Credito e uma unidade de trabalho por prompt.</li>
+            <li>Prompts simples podem consumir menos de `1 credit`.</li>
+            <li>Tarefas mais complexas, como `executing a spec task`, tipicamente consomem mais de `1 credit`.</li>
+            <li>Modelos diferentes consomem creditos em taxas diferentes.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que isso implica no hub</h3>
+          <ul>
+            <li>O billing e mais audivel que um limite nebuloso de 5 horas.</li>
+            <li>Mas ele ainda nao e tao legivel quanto token pricing ou request quotas publicas.</li>
+            <li>`Spec mode`, hooks e automacoes tambem consomem creditos.</li>
+            <li>O risco operacional real e o plano parecer barato e a semana virar overage rapido.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warnbox">
+        <strong>Ponto importante:</strong> a doc oficial da Kiro da um exemplo claro de multiplicador:
+        uma tarefa que custa `X` em `Auto` passa a custar `1.3X` em `Sonnet 4`. Isso ja prova que o seu
+        custo real varia bastante com o modelo e com o modo de uso.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Modelos e superficie</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Eixo</th>
+            <th>Leitura oficial</th>
+            <th>Leitura do hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Model routing padrao</td>
+            <td>`Auto` usa mistura de modelos frontier + modelos especializados.</td>
+            <td>Bom para produtividade geral, pior para previsibilidade fina de consumo.</td>
+          </tr>
+          <tr>
+            <td>Modelos selecionaveis</td>
+            <td>`Sonnet 4`, `Sonnet 4.5`, `Haiku 4.5`, `Opus 4.5`, `Opus 4.6`, `Opus 4.7`.</td>
+            <td>Otimo sinal tecnico. O produto e serio porque trabalha com modelos realmente fortes.</td>
+          </tr>
+          <tr>
+            <td>Superficies suportadas</td>
+            <td>`Kiro IDE`, `Kiro CLI`, `ACP compatible IDEs` e automacao em software development.</td>
+            <td>Reforca que ele nao e so app fechado; e uma camada util para IDE + CLI.</td>
+          </tr>
+          <tr>
+            <td>Restricao relevante</td>
+            <td>Uso com `OpenClaw` e harnesses similares de terceiros e proibido.</td>
+            <td>Menos flexivel do que OpenCode/OpenRouter-style stacks.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Viabilidade para fazer parte do estudo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Pergunta</th>
+            <th>Resposta</th>
+            <th>Por que</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>`Kiro` merece entrar no hub?</td>
+            <td><span class="score good">Sim</span></td>
+            <td>Ha pricing oficial, docs oficiais e uma proposta de coding agent claramente definida.</td>
+          </tr>
+          <tr>
+            <td>Entra como assinatura principal recomendada?</td>
+            <td><span class="score warn">Ainda nao</span></td>
+            <td>O credit metering e melhor que limites vagos, mas ainda pouco legivel para mapear sua semana extrema como `100%` com confianca.</td>
+          </tr>
+          <tr>
+            <td>Entra como IDE/harness relevante?</td>
+            <td><span class="score good">Sim</span></td>
+            <td>Ele ja compete conceitualmente com Cursor/Windsurf/Claude Code em parte do fluxo, com identidade propria de `spec-driven coding`.</td>
+          </tr>
+          <tr>
+            <td>Entra como aposta de menor custo?</td>
+            <td><span class="score danger">Nao</span></td>
+            <td>O overage de `US$ 0.04/credit` pode virar custo relevante rapido em uso pesado.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Leitura final do hub</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>Onde `Kiro` brilha</h3>
+          <ul>
+            <li>Fluxo `spec-driven` mais formal.</li>
+            <li>Hooks, automacoes e terminal no mesmo ecossistema.</li>
+            <li>Modelos Anthropic premium por baixo.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Onde ele perde</h3>
+          <ul>
+            <li>Billing por creditos ainda abstrato para benchmarking de extremo.</li>
+            <li>Menos flexibilidade provider-agnostica do que um harness aberto.</li>
+            <li>Nao vence a tese economica do hub.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Conclusao</h3>
+          <ul>
+            <li>`Kiro` deve permanecer no estudo.</li>
+            <li>Hoje ele entra como `solucao adicional auditada`, nao como top 3 de compra.</li>
+            <li>Se a AWS abrir uma tabela de consumo por modelo mais legivel, ele sobe de relevancia.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://kiro.dev/pricing/">Kiro pricing</a></li>
+        <li><a href="https://kiro.dev/docs/cli/billing/">Kiro billing for individuals</a></li>
+        <li><a href="https://aws.amazon.com/documentation-overview/kiro/">AWS Kiro documentation overview</a></li>
+        <li><a href="https://kiro.dev/license/">Kiro license</a></li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>
