@@ -191,7 +191,7 @@
       </p>
 
       <div class="grid-4">
-        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 16:08</div></div>
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
         <div class="mini"><strong>Base desta rodada</strong><div>DeepSeek X + OpenAI + Anthropic + Z.ai + Google + Moonshot</div></div>
         <div class="mini"><strong>Uso correto desta pagina</strong><div>Comparar capacidade tecnica; nao substituir a analise de assinatura</div></div>
         <div class="mini"><strong>Ponto de atencao</strong><div>Benchmark de fornecedor e comparacao de effort nao sao verdade absoluta</div></div>
@@ -222,6 +222,11 @@
           <div class="score warn">DeepSeek V4 Pro Max</div>
           <p class="small">Aparece muito forte no benchmark, mas ainda sem API V4 oficial clara na documentacao da DeepSeek.</p>
         </div>
+        <div class="mini">
+          <strong>Nova familia para vigiar</strong>
+          <div class="score warn">Xiaomi MiMo</div>
+          <p class="small">Ja saiu do campo de curiosidade. A Xiaomi agora tem family marketing, token plans e benchmark oficial forte o bastante para entrar no radar do hub.</p>
+        </div>
       </div>
     </section>
 
@@ -234,8 +239,48 @@
         <div class="mini"><strong>Moonshot / Kimi</strong><div class="small">K2.6 Thinking</div></div>
         <div class="mini"><strong>Google</strong><div class="small">Gemini-3.1-Pro High</div></div>
         <div class="mini"><strong>DeepSeek</strong><div class="small">DS-V4-Pro Max e DS-V4-Flash Max</div></div>
+        <div class="mini"><strong>Xiaomi MiMo</strong><div class="small">MiMo-V2-Flash auditado; V2.5-Pro em observacao forte</div></div>
         <div class="mini"><strong>Tipo de evidencia</strong><div class="small">Oficial quando possivel; comparativo publico quando necessario</div></div>
         <div class="mini"><strong>Objetivo</strong><div class="small">Entender o papel tecnico de cada modelo antes da assinatura</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Entrada nova: Xiaomi MiMo</h2>
+      <p>
+        `MiMo` passou a merecer lugar nesta pagina por dois motivos: a Xiaomi ja posiciona oficialmente a familia
+        como `agentic`, `long-horizon` e integrada a harnesses relevantes, e o card oficial de `MiMo-V2-Flash`
+        no Hugging Face ja traz benchmark suficiente para nao tratar mais a marca como puro rumor.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Camada</th>
+            <th>Estado atual no hub</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MiMo-V2-Flash</td>
+            <td><strong>Benchmark auditavel</strong></td>
+            <td>Ja da para usar como referencia tecnica oficial da familia MiMo.</td>
+          </tr>
+          <tr>
+            <td>MiMo-V2.5-Pro</td>
+            <td><strong>Model watch premium</strong></td>
+            <td>Homepage oficial traz claim forte contra `Claude Opus 4.6`, mas ainda com pouca tabela publica detalhada.</td>
+          </tr>
+          <tr>
+            <td>MiMo Token Plans</td>
+            <td><strong>Comercial em observacao</strong></td>
+            <td>Ja existe produto comercial de assinaturas, mas o nivel de transparencia publica ainda nao bate GLM/Alibaba/Kiro.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warnout">
+        <strong>Leitura certa:</strong> `MiMo` sobe primeiro no benchmark e no model watch. Para subir no ranking principal de assinatura,
+        ela ainda precisa de mais legibilidade publica em `preco por tier`, `quota por tier` e comportamento de consumo.
       </div>
     </section>
 
@@ -499,6 +544,7 @@
           <div class="badge">Se voce quer vigiar a proxima ruptura</div>
           <ul>
             <li><strong>`DeepSeek V4 Pro Max`</strong> e o nome mais quente para acompanhar.</li>
+            <li><strong>`Xiaomi MiMo V2.5-Pro`</strong> entrou no mesmo radar de observacao forte.</li>
             <li><strong>`K2.6`</strong> tambem merece vigia continua porque o produto oficial insiste muito em long-range coding e agent autonomy.</li>
             <li>O problema do DeepSeek nao esta no benchmark; esta em faltar trilha comercial clara para entrar forte no hub.</li>
             <li>Se aparecer assinatura, workspace ou API V4 oficial redonda, ele sobe rapido de relevancia.</li>
@@ -531,6 +577,7 @@
           <div class="badge">Evidencia em observacao</div>
           <ul>
             <li><strong>`DeepSeek V4 Pro Max`</strong> e <strong>`Flash Max`</strong>: benchmark visual muito promissor, mas ainda sem trilha comercial/API oficial redonda nesta rodada.</li>
+            <li><strong>`Xiaomi MiMo`</strong>: evidence tecnica subiu bastante com `MiMo-V2-Flash`, mas a camada comercial ainda esta um degrau abaixo em auditabilidade publica.</li>
             <li>Por isso entram no benchmark como <strong>modelo forte em observacao</strong>, nao como aposta comercial madura.</li>
           </ul>
         </div>
@@ -734,6 +781,9 @@
         <li><a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a></li>
         <li><a href="https://ai.google.dev/models/gemini">Gemini models</a></li>
         <li><a href="https://ai.google.dev/gemini-api/docs/gemini-3">Gemini 3 guide</a></li>
+        <li><a href="https://mimo.mi.com/">Xiaomi MiMo home</a></li>
+        <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a></li>
+        <li><a href="https://github.com/XiaomiMiMo/MiMo">Xiaomi MiMo GitHub</a></li>
       </ul>
     </section>
   </div>

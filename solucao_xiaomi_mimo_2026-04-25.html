@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaomi MiMo - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --danger:#fb7185; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); } .danger { color:var(--danger); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    .warnbox { border-left:4px solid var(--warn); background:rgba(251,191,36,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./analise_final_assinaturas_vibe_coding_2026-04-24.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Xiaomi MiMo</h1>
+      <p>
+        Pagina viva da `MiMo` como nova familia relevante para o hub. Aqui a principal separacao metodologica e:
+        `MiMo` ja e forte o bastante para entrar no <strong>benchmark tecnico</strong> e no <strong>model watch comercial</strong>,
+        mas a entrada dela como <strong>assinatura recomendavel</strong> ainda depende de mais transparencia publica de
+        preco/quota do que encontrei nesta rodada.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Modelo/provider em observacao forte</div></div>
+        <div class="mini"><strong>Encaixe correto</strong><div>Benchmark tecnico + assinatura ainda parcialmente opaca</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Planos existem, mas tabela publica fina de preco/quota nao ficou audivel o bastante</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `MiMo` deve entrar no estudo, sim. So que entra melhor em dois andares diferentes:
+        <strong>como familia de modelos muito relevante</strong> e <strong>como provider comercial em observacao</strong>.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> eu colocaria `MiMo` dentro do nosso estudo imediatamente, mas <strong>nao
+        a colocaria ainda no ranking principal de assinatura</strong> sem uma pagina oficial mais audivel com
+        `preco por tier`, `quota por tier` e comportamento de consumo suficientemente claro para o seu benchmark.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que existe oficialmente hoje</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Camada</th>
+            <th>Evidencia oficial</th>
+            <th>Leitura do hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Produto comercial</td>
+            <td>Home oficial diz que o `Token Plan` suporta assinaturas `mensais/anuais` e cobre modelos `V2.5`.</td>
+            <td>Ha produto comercial real, nao so benchmark de laboratorio.</td>
+          </tr>
+          <tr>
+            <td>Estrutura de planos</td>
+            <td>Home oficial informa `four-tier plans` para compra e renovacao.</td>
+            <td>Bom sinal, mas ainda insuficiente sem a tabela completa de preco/quota audivel publicamente.</td>
+          </tr>
+          <tr>
+            <td>Quotas</td>
+            <td>Home oficial fala em billing por token e quotas transparentes/controllables.</td>
+            <td>Promissor, mas nao tao auditavel nesta rodada quanto GLM/Alibaba/Kiro.</td>
+          </tr>
+          <tr>
+            <td>Toolchain</td>
+            <td>Compatibilidade oficial com `OpenCode`, `OpenClaw` e `Claude Code`.</td>
+            <td>Muito relevante para vibe coding; prova que a MiMo quer entrar no jogo de agentes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Modelos oficiais mais importantes para o hub</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>MiMo-V2.5-Pro</h3>
+          <ul>
+            <li>`1T total params | 42B active | 1M extended context`.</li>
+            <li>Claim oficial: `matches Claude Opus 4.6 in demanding agentic scenarios`.</li>
+            <li>Posicionamento: flagship para agentic e long-horizon coherence.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>MiMo-V2.5</h3>
+          <ul>
+            <li>Modelo omni-modal com `1M context`.</li>
+            <li>Claim oficial de agentic capability forte para everyday tasks.</li>
+            <li>Leitura do hub: mais amplo que coding puro; talvez forte para workflows multimodais.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warnbox">
+        <strong>Importante:</strong> o claim oficial do `MiMo-V2.5-Pro` contra `Opus 4.6` e valioso como sinal,
+        mas ainda e um claim de homepage. Para benchmark detalhado realmente publico e auditavel, a melhor base que encontrei
+        nesta rodada foi o `MiMo-V2-Flash` no Hugging Face oficial da Xiaomi.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Benchmark tecnico oficial que ja da para usar</h2>
+      <p>
+        O `MiMo-V2-Flash` tem card oficial no Hugging Face com benchmarks detalhados. Ele nao e o topo V2.5-Pro,
+        mas ja mostra que a familia inteira merece estar no radar do hub.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>MiMo-V2-Flash</th>
+            <th>Leitura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SWE-Bench Verified</td>
+            <td>73.4</td>
+            <td>Resultado forte o bastante para levar a serio em coding agent.</td>
+          </tr>
+          <tr>
+            <td>SWE-Bench Multilingual</td>
+            <td>71.7</td>
+            <td>Bom sinal para uso fora do eixo ingles puro.</td>
+          </tr>
+          <tr>
+            <td>LiveCodeBench-v6</td>
+            <td>80.6</td>
+            <td>Mostra que a familia MiMo nao e so marketing agentic.</td>
+          </tr>
+          <tr>
+            <td>Terminal-Bench 2.0</td>
+            <td>38.5</td>
+            <td>Ainda abaixo do topo absoluto em terminal hard.</td>
+          </tr>
+          <tr>
+            <td>BrowseComp (w/ Context Manage)</td>
+            <td>58.3</td>
+            <td>Agencia existe, mas ainda nao prova dominancia frontier.</td>
+          </tr>
+          <tr>
+            <td>LongBench V2</td>
+            <td>60.6</td>
+            <td>Long context forte, embora nao no topo da referencia premium.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Viabilidade para fazer parte do estudo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Pergunta</th>
+            <th>Resposta</th>
+            <th>Por que</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>`MiMo` deve entrar no benchmark tecnico?</td>
+            <td><span class="score good">Sim</span></td>
+            <td>A Xiaomi ja tem evidencia oficial suficiente em Hugging Face e homepage para merecer lugar no benchmark/model watch.</td>
+          </tr>
+          <tr>
+            <td>`MiMo` ja merece pagina propria no hub?</td>
+            <td><span class="score good">Sim</span></td>
+            <td>Porque ela ja deixou de ser curiosidade e virou familia comercial + tecnica relevante.</td>
+          </tr>
+          <tr>
+            <td>`MiMo` ja merece entrar no ranking principal de assinatura?</td>
+            <td><span class="score warn">Ainda nao</span></td>
+            <td>Sem tabela publica fina de preco/quota por tier auditavel, a comparacao contra GLM/Alibaba ficaria fraca demais.</td>
+          </tr>
+          <tr>
+            <td>Ela merece ser observada como possivel disrupcao?</td>
+            <td><span class="score good">Muito</span></td>
+            <td>Porque junta long context, agentic positioning, compatibilidade com harnesses conhecidos e claims fortes de custo/eficiencia.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Leitura final do hub</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>O que faz `MiMo` subir</h3>
+          <ul>
+            <li>Familia claramente voltada a agente e coding.</li>
+            <li>`1M context` e posicionamento de long-horizon tasks.</li>
+            <li>Compatibilidade oficial com harnesses que importam para o hub.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que ainda segura</h3>
+          <ul>
+            <li>Tabela publica de assinatura ainda pouco auditavel.</li>
+            <li>Homepage forte em claims, mais fraca em detalhes de cobranca.</li>
+            <li>Para recomendacao economica, falta legibilidade operacional.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Conclusao</h3>
+          <ul>
+            <li>`MiMo` deve continuar no estudo.</li>
+            <li>Hoje entra como `benchmark/model watch` e `provider em observacao`.</li>
+            <li>Se a Xiaomi abrir pricing/quota com mais clareza, ela pode subir rapido de importancia.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://mimo.mi.com/">Xiaomi MiMo home</a></li>
+        <li><a href="https://mimo.xiaomi.com/">Xiaomi MiMo blog/homepage</a></li>
+        <li><a href="https://platform.xiaomimimo.com/">Xiaomi MiMo API Platform</a></li>
+        <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a></li>
+        <li><a href="https://github.com/XiaomiMiMo/MiMo">Xiaomi MiMo GitHub</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
