@@ -1,0 +1,156 @@
+{
+  "version": "2026-04-25",
+  "project": "vibe-coding-hub",
+  "public_base_url": "https://vibe-coding-hub-vercel.vercel.app/",
+  "policy": {
+    "default_schedule": "twice_daily",
+    "strategy": "diff_first_rules_first_llm_only_when_material",
+    "timezone": "America/Sao_Paulo"
+  },
+  "pages": [
+    {
+      "slug": "ranking",
+      "route": "/ranking",
+      "type": "meta",
+      "cadence": "daily",
+      "checks": ["ranking_changes", "new_products", "conclusion_shift"],
+      "sources": []
+    },
+    {
+      "slug": "benchmarks",
+      "route": "/benchmarks",
+      "type": "meta",
+      "cadence": "daily",
+      "checks": ["benchmark_table_changes", "new_models", "official_claim_updates"],
+      "sources": [
+        "https://openai.com/index/introducing-gpt-5-4/",
+        "https://openai.com/index/introducing-gpt-5-5/",
+        "https://www.anthropic.com/news/claude-opus-4-6",
+        "https://www.anthropic.com/news/claude-opus-4-7",
+        "https://docs.z.ai/guides/llm/glm-5.1",
+        "https://platform.moonshot.cn/",
+        "https://mimo.mi.com/",
+        "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash"
+      ]
+    },
+    {
+      "slug": "harnesses",
+      "route": "/harnesses",
+      "type": "meta",
+      "cadence": "twice_daily",
+      "checks": ["pricing_changes", "limit_changes", "surface_changes", "agent_feature_changes"],
+      "sources": [
+        "https://openai.com/index/introducing-the-codex-app/",
+        "https://www.cursor.com/en/pricing",
+        "https://code.claude.com/docs/en/overview",
+        "https://antigravity.google/pricing",
+        "https://kiro.dev/pricing/",
+        "https://windsurf.com/pricing",
+        "https://opencode.ai/docs/"
+      ]
+    },
+    {
+      "slug": "telemetry",
+      "route": "/telemetria",
+      "type": "meta",
+      "cadence": "twice_daily",
+      "checks": ["local_usage_changes", "new_tool_usage", "benchmark_rebase_needed"],
+      "sources": ["local"]
+    },
+    {
+      "slug": "glm",
+      "route": "/glm",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["price", "quota", "models", "multiplier", "promo"],
+      "sources": [
+        "https://docs.z.ai/guides/llm/glm-5.1",
+        "https://docs.z.ai/guides/overview/pricing"
+      ]
+    },
+    {
+      "slug": "alibaba",
+      "route": "/alibaba",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["price", "requests_window", "models", "plan_terms"],
+      "sources": [
+        "https://www.alibabacloud.com/",
+        "https://www.alibabacloud.com/help/en"
+      ]
+    },
+    {
+      "slug": "opencode-go",
+      "route": "/opencode-go",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["supported_models", "per_model_limits", "payg_fallback", "restrictions"],
+      "sources": [
+        "https://opencode.ai/docs/",
+        "https://opencode.ai/docs/go/"
+      ]
+    },
+    {
+      "slug": "google-ai",
+      "route": "/google-ai",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["plan_bundle", "credits", "rate_limits", "antigravity_terms"],
+      "sources": [
+        "https://antigravity.google/pricing",
+        "https://support.google.com/googleone/answer/14534406?hl=en",
+        "https://support.google.com/googleone/answer/16286513?hl=en"
+      ]
+    },
+    {
+      "slug": "cursor",
+      "route": "/cursor",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["plan_price", "usage_multiplier", "overage", "included_models"],
+      "sources": [
+        "https://www.cursor.com/en/pricing",
+        "https://docs.cursor.com/account/pricing",
+        "https://docs.cursor.com/account/usage"
+      ]
+    },
+    {
+      "slug": "claude-max",
+      "route": "/claude-max",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["plan_price", "session_limits", "caps", "claude_code_costs"],
+      "sources": [
+        "https://www.anthropic.com/pricing",
+        "https://code.claude.com/docs/en/costs",
+        "https://code.claude.com/docs/en/overview"
+      ]
+    },
+    {
+      "slug": "kiro",
+      "route": "/kiro",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["credits_per_tier", "overage", "model_routing", "supported_surfaces"],
+      "sources": [
+        "https://kiro.dev/pricing/",
+        "https://kiro.dev/docs/cli/billing/",
+        "https://aws.amazon.com/documentation-overview/kiro/"
+      ]
+    },
+    {
+      "slug": "mimo",
+      "route": "/mimo",
+      "type": "product",
+      "cadence": "twice_daily",
+      "checks": ["token_plan", "tiers", "quotas", "new_models", "official_claims"],
+      "sources": [
+        "https://mimo.mi.com/",
+        "https://mimo.xiaomi.com/",
+        "https://platform.xiaomimimo.com/",
+        "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash",
+        "https://github.com/XiaomiMiMo/MiMo"
+      ]
+    }
+  ]
+}

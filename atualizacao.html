@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playbook de Atualizacao - Vibe Coding Hub</title>
+  <style>
+    :root { --bg:#08111f; --panel:#151f38; --line:#2a3960; --text:#edf3ff; --muted:#a7b7d9; --accent:#71e4bd; --accent-2:#6da8ff; --warn:#f8cd68; --danger:#ff8da1; --shadow:0 22px 70px rgba(0,0,0,.42); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(109,168,255,.16), transparent 28%),radial-gradient(circle at top right, rgba(113,228,189,.1), transparent 24%),linear-gradient(180deg,#060d19 0%,#08111f 100%); line-height:1.58; }
+    .wrap { width:min(1440px, calc(100% - 40px)); margin:30px auto 54px; } .hero,.card { background:linear-gradient(180deg, rgba(18,29,54,.96), rgba(12,20,38,.98)); border:1px solid var(--line); border-radius:22px; box-shadow:var(--shadow); } .hero { padding:30px 32px; } .card { padding:22px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.1; } h1 { font-size:clamp(34px,4.5vw,56px); letter-spacing:-.04em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f7fbff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#b6d2ff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); }
+    .badge { display:inline-flex; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); margin-bottom:10px; }
+    .badge.good { color:#baf7df; background:rgba(113,228,189,.12); } .badge.warn { color:#ffe39f; background:rgba(248,205,104,.11); } .badge.info { color:#cae0ff; background:rgba(109,168,255,.12); }
+    .callout { border-left:4px solid var(--accent); background:rgba(113,228,189,.08); border-radius:14px; padding:16px 18px; margin-top:12px; }
+    .warnbox { border-left:4px solid var(--warn); background:rgba(248,205,104,.09); border-radius:14px; padding:16px 18px; margin-top:12px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { background:rgba(109,168,255,.08); color:#f2f6ff; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .small { font-size:13px; color:#90a4cb; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1440px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para a home publica</a></div>
+
+    <section class="hero">
+      <h1>Playbook de atualizacao do hub</h1>
+      <p>
+        Esta pagina existe para um agente ou operador humano conseguir revisar o hub inteiro com custo baixo,
+        duas vezes por dia, sem refazer trabalho desnecessario e sem misturar rumor com mudanca oficial.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
+        <div class="mini"><strong>Frequencia recomendada</strong><div>2x por dia para pricing; 1x por dia para benchmarks</div></div>
+        <div class="mini"><strong>Metodo</strong><div>Rules-first, diff-first, LLM only when needed</div></div>
+        <div class="mini"><strong>Objetivo</strong><div>Manter o hub publico atualizado sem que o custo de monitoramento exploda</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Procedimento-padrao do agente</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <div class="badge info">1. Coleta</div>
+          <p>Baixar as paginas oficiais listadas abaixo, extrair texto limpo, normalizar e salvar hash + timestamp.</p>
+        </div>
+        <div class="mini">
+          <div class="badge warn">2. Deteccao</div>
+          <p>Se o hash mudou, comparar so os blocos relevantes: preco, quota, modelos, limites, claims, changelog e docs.</p>
+        </div>
+        <div class="mini">
+          <div class="badge good">3. Julgamento</div>
+          <p>Usar LLM local apenas para resumir diferencas materiais e propor update da pagina afetada.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Regra de ouro:</strong> se nao houve mudanca textual relevante nas fontes oficiais, o agente nao chama LLM nenhum.
+        Isso e o que deixa a rotina economica.
+      </div>
+      <p class="small">Manifesto estruturado para automacao: <a href="./monitoring-manifest.json">monitoring-manifest.json</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Pagina por pagina: onde verificar e o que conferir</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Pagina publica</th>
+            <th>Produto / escopo</th>
+            <th>Onde verificar</th>
+            <th>O que conferir</th>
+            <th>Frequencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="./ranking.html">/ranking</a></td>
+            <td>Ranking consolidado</td>
+            <td>Revisar todas as fontes abaixo e telemetria local.</td>
+            <td>Rank, percentuais, mudanca de conclusao, novas entradas e remocoes.</td>
+            <td>1x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./benchmarks.html">/benchmarks</a></td>
+            <td>Benchmark de modelos</td>
+            <td>OpenAI, Anthropic, Google, Z.ai, Moonshot, Xiaomi MiMo, DeepSeek.</td>
+            <td>Novos benchmarks, novos modelos, mudancas de tabela, novos claims oficiais.</td>
+            <td>1x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./harnesses.html">/harnesses</a></td>
+            <td>IDEs e harnesses</td>
+            <td>OpenAI/Codex, Cursor, Claude Code, Antigravity, Kiro, Windsurf, VS Code/Copilot, OpenCode.</td>
+            <td>Pricing, limites, novos recursos de agente, mudanca em compatibilidade e superficie.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./telemetria.html">/telemetria</a></td>
+            <td>Uso real</td>
+            <td>Arquivos locais, DBs, snapshots manuais.</td>
+            <td>Mudanca de uso, burst anormal, nova ferramenta monitorada, rebaselining do benchmark.</td>
+            <td>2x por dia ou sob demanda</td>
+          </tr>
+          <tr>
+            <td><a href="./glm.html">/glm</a></td>
+            <td>GLM</td>
+            <td><a href="https://docs.z.ai/guides/llm/glm-5.1">GLM docs</a>, <a href="https://docs.z.ai/guides/overview/pricing">Z.ai pricing</a></td>
+            <td>Preco, multiplicadores, modelos cobertos, limites, promo e docs de billing.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./alibaba.html">/alibaba</a></td>
+            <td>Alibaba Coding Plan</td>
+            <td>Alibaba Cloud pricing/docs oficiais do coding plan.</td>
+            <td>Requests por janela, modelos incluidos, preco e mudancas de cobertura.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./opencode-go.html">/opencode-go</a></td>
+            <td>OpenCode Go</td>
+            <td><a href="https://opencode.ai/docs/">OpenCode docs</a>, <a href="https://opencode.ai/docs/go/">OpenCode Go docs</a></td>
+            <td>Modelos suportados, quotas por modelo, fallback PAYG, restricoes novas.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./google-ai.html">/google-ai</a></td>
+            <td>Google AI / Antigravity</td>
+            <td><a href="https://antigravity.google/pricing">Antigravity pricing</a>, docs Google One AI benefits.</td>
+            <td>Plano developer, AI credit pool, rate limits, mudancas no bundle Pro/Ultra.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./cursor.html">/cursor</a></td>
+            <td>Cursor</td>
+            <td><a href="https://www.cursor.com/en/pricing">Cursor pricing</a>, docs de usage/pricing.</td>
+            <td>Planos, 3x/20x usage, overage, modelos incluidos e termos de uso.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./claude-max.html">/claude-max</a></td>
+            <td>Claude Max</td>
+            <td>Anthropic pricing, Claude Code docs e costs.</td>
+            <td>Planos, limites de 5h/semanais, caps novos, mudancas em Claude Code.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./kiro.html">/kiro</a></td>
+            <td>Kiro (AWS)</td>
+            <td><a href="https://kiro.dev/pricing/">Kiro pricing</a>, <a href="https://kiro.dev/docs/cli/billing/">billing docs</a>, <a href="https://aws.amazon.com/documentation-overview/kiro/">AWS Kiro docs</a></td>
+            <td>Credits por tier, overage, modelos usados, superfícies suportadas, policy changes.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./mimo.html">/mimo</a></td>
+            <td>Xiaomi MiMo</td>
+            <td><a href="https://mimo.mi.com/">MiMo home</a>, <a href="https://mimo.xiaomi.com/">MiMo blog</a>, <a href="https://platform.xiaomimimo.com/">API platform</a>, <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">HF official</a></td>
+            <td>Token plans, tiers, quotas, preco publico, novos modelos e claims oficiais comparativos.</td>
+            <td>2x por dia</td>
+          </tr>
+          <tr>
+            <td><a href="./solucoes-auditadas.html">/solucoes-auditadas</a></td>
+            <td>Outras solucoes</td>
+            <td>Pricing oficial de cada vendor listado.</td>
+            <td>Novas alternativas relevantes, reposicionamento ou remocao de opcoes.</td>
+            <td>1x por dia</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Regra de acao por tipo de mudanca</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de mudanca</th>
+            <th>Acao automatica</th>
+            <th>Acao do agente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>So mudou layout/CSS</td>
+            <td>Ignorar</td>
+            <td>Nao chamar LLM, nao abrir issue, nao editar o hub.</td>
+          </tr>
+          <tr>
+            <td>Mudou preco, quota ou overage</td>
+            <td>Alta prioridade</td>
+            <td>Gerar resumo, marcar pagina afetada, sugerir edicao e recalculo do ranking se necessario.</td>
+          </tr>
+          <tr>
+            <td>Mudou lista de modelos suportados</td>
+            <td>Alta prioridade</td>
+            <td>Atualizar benchmark/model watch e revisar aderencia tecnica.</td>
+          </tr>
+          <tr>
+            <td>Mudou benchmark oficial</td>
+            <td>Media prioridade</td>
+            <td>Atualizar pagina de benchmark e revisar narrativas tecnicas.</td>
+          </tr>
+          <tr>
+            <td>Mudou docs sem impacto material</td>
+            <td>Baixa prioridade</td>
+            <td>Registrar diff, mas adiar edicao publica ate acumular valor real.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Rotina economica 2x por dia</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Rodada 1 - 08:00</h3>
+          <ul>
+            <li>Buscar paginas de pricing e docs mais sensiveis.</li>
+            <li>Comparar hashes e blocos extraidos.</li>
+            <li>Se nao houver diff material, encerrar em poucos segundos.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Rodada 2 - 20:00</h3>
+          <ul>
+            <li>Repetir pricing/docs.</li>
+            <li>Checar benchmark pages e posts oficiais mais recentes.</li>
+            <li>Executar sumarizacao local so para os itens que mudaram.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warnbox">
+        <strong>Forma economica certa:</strong> scraper e diff primeiro, LLM depois. O LLM local entra so para
+        responder “essa mudanca e material?” e “qual pagina do hub precisa ser revista?”.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Arquitetura recomendada para automatizar</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <div class="badge info">Camada 1</div>
+          <h3>Coleta barata</h3>
+          <p>Use `Playwright` ou `requests + readability` para extrair texto. Guarde hash, snapshot e trecho relevante em `SQLite`.</p>
+        </div>
+        <div class="mini">
+          <div class="badge warn">Camada 2</div>
+          <h3>Decisao local</h3>
+          <p>Rode um `14B-32B instruct local` via `Ollama` ou `vLLM` para classificar o diff como `cosmetico`, `material` ou `critico`.</p>
+        </div>
+        <div class="mini">
+          <div class="badge good">Camada 3</div>
+          <h3>Acao</h3>
+          <p>So quando o diff for material: abrir issue, preparar patch HTML e opcionalmente sugerir commit.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Minha recomendacao para os seus dois servidores medios:</strong> `Servidor A` roda coleta, hashing, SQLite e scheduler.
+        `Servidor B` roda o LLM local e o classificador de diff. O custo operacional cai muito porque o LLM nao fica ligado o tempo todo para navegar a web.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Stack sugerida</h2>
+      <ul>
+        <li><strong>Scheduler:</strong> `cron` ou `n8n`.</li>
+        <li><strong>Crawler:</strong> `Playwright` para sites JS-heavy e `requests` para docs simples.</li>
+        <li><strong>Storage:</strong> `SQLite` com tabelas `sources`, `snapshots`, `diffs`, `actions`.</li>
+        <li><strong>LLM local:</strong> um modelo instruct de `14B` a `32B`, suficiente para classificar diffs e resumir mudancas.</li>
+        <li><strong>Fallback cloud:</strong> so para casos ambíguos ou quando o site quebra parse repetidamente.</li>
+      </ul>
+      <p class="small">
+        Se a meta for economizar de verdade, eu evitaria um agente web-first rodando o dia todo. O melhor ROI aqui e
+        `rules-first + diff-first + local summarizer`.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

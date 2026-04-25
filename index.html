@@ -2,11 +2,421 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=./analise_final_assinaturas_vibe_coding_2026-04-24.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hub de Agentes para Vibe Coding</title>
+  <title>Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: rgba(14, 23, 42, 0.9);
+      --panel-2: rgba(20, 33, 60, 0.88);
+      --line: rgba(154, 176, 212, 0.18);
+      --text: #edf3ff;
+      --muted: #a7b7d9;
+      --accent: #71e4bd;
+      --accent-2: #6da8ff;
+      --warn: #f8cd68;
+      --danger: #ff8da1;
+      --shadow: 0 22px 70px rgba(0,0,0,.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(109,168,255,.18), transparent 26%),
+        radial-gradient(circle at 88% 0%, rgba(113,228,189,.14), transparent 24%),
+        linear-gradient(180deg, #060d19 0%, #08111f 100%);
+      line-height: 1.58;
+    }
+
+    .wrap {
+      width: min(1420px, calc(100% - 40px));
+      margin: 30px auto 52px;
+    }
+
+    .hero, .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      padding: 34px 34px 30px;
+      background:
+        linear-gradient(130deg, rgba(109,168,255,.15), rgba(113,228,189,.08)),
+        linear-gradient(180deg, rgba(13,22,42,.96), rgba(10,18,34,.98));
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(255,255,255,.55), transparent 80%);
+      pointer-events: none;
+    }
+
+    .card {
+      padding: 22px;
+      margin-top: 20px;
+      background: linear-gradient(180deg, rgba(18, 29, 54, 0.96), rgba(13, 21, 39, 0.98));
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      letter-spacing: -0.05em;
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f7fbff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #b6d2ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(109,168,255,.12);
+      border: 1px solid rgba(109,168,255,.2);
+      color: #dce9ff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      max-width: 880px;
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions, .grid-4, .grid-3, .grid-2, .summary-strip {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-actions {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .summary-strip {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .nav-card, .mini, .stat, .feature {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .nav-card {
+      display: block;
+      padding: 18px;
+      color: inherit;
+      text-decoration: none;
+      min-height: 132px;
+      transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+    }
+
+    .nav-card:hover {
+      text-decoration: none;
+      transform: translateY(-3px);
+      border-color: rgba(113,228,189,.42);
+      box-shadow: 0 16px 30px rgba(0,0,0,.24);
+      background: rgba(255,255,255,.055);
+    }
+
+    .nav-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #89c5ff;
+      margin-bottom: 10px;
+    }
+
+    .nav-title {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #f7fbff;
+    }
+
+    .stat, .mini, .feature {
+      padding: 16px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #91a8d2;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: #f7fbff;
+      margin-bottom: 6px;
+    }
+
+    .kpi {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      letter-spacing: -.03em;
+    }
+
+    .kpi.good { color: var(--accent); }
+    .kpi.warn { color: var(--warn); }
+
+    .badge {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 10px;
+    }
+
+    .badge.good { color: #baf7df; background: rgba(113,228,189,.12); }
+    .badge.warn { color: #ffe39f; background: rgba(248,205,104,.11); }
+    .badge.info { color: #cae0ff; background: rgba(109,168,255,.12); }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(113,228,189,.08);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 12px;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .link-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .link-pill:hover {
+      text-decoration: none;
+      border-color: rgba(109,168,255,.35);
+      background: rgba(255,255,255,.055);
+    }
+
+    .arrow {
+      font-size: 18px;
+      color: #a9d3ff;
+      flex: 0 0 auto;
+    }
+
+    .small { font-size: 13px; color: #90a4cb; }
+    .footer-note { margin-top: 16px; font-size: 13px; color: #8ea3ca; }
+
+    @media (max-width: 1100px) {
+      .hero-actions, .summary-strip, .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1420px); }
+    }
+  </style>
 </head>
 <body>
-  <p><a href="./analise_final_assinaturas_vibe_coding_2026-04-24.html">Abrir Hub de Agentes para Vibe Coding</a></p>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Vibe Coding Hub</div>
+      <h1>Guia vivo para escolher agentes, planos e modelos sem cair em marketing solto.</h1>
+      <p class="hero-copy">
+        Esta versao publica foi reorganizada para ficar mais profissional, mais facil de compartilhar e mais clara
+        para quem quer entender <strong>o que vale a pena hoje</strong>, <strong>o que esta em observacao</strong> e
+        <strong>como manter esse estudo atualizado com rigor</strong>.
+      </p>
+
+      <div class="summary-strip">
+        <div class="stat">
+          <div class="stat-label">Publicacao oficial</div>
+          <div class="stat-value">Vercel em producao</div>
+          <div class="small">URL curta e ponto de entrada publico do projeto.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Ultima compilacao</div>
+          <div class="stat-value">25/04/2026 13:03</div>
+          <div class="small">Inclui `Kiro` e `Xiaomi MiMo` no estudo vivo.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Benchmark de referencia</div>
+          <div class="stat-value">Semana extrema no Cursor = 100%</div>
+          <div class="small">A capacidade continua ancorada no seu uso frontier pesado.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Modo do site</div>
+          <div class="stat-value">Hub publico + base operacional</div>
+          <div class="small">Leitura comercial na frente, profundidade tecnica por tras.</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="nav-card" href="./ranking.html">
+          <div class="nav-kicker">Entrada principal</div>
+          <div class="nav-title">Ranking detalhado</div>
+          <div>Comparacao completa de assinaturas, capacidade, qualidade tecnica e leitura consolidada.</div>
+        </a>
+        <a class="nav-card" href="./benchmarks.html">
+          <div class="nav-kicker">Modelos</div>
+          <div class="nav-title">Benchmarks</div>
+          <div>Painel tecnico para entender quem realmente sobe em coding, terminal, tools e contexto.</div>
+        </a>
+        <a class="nav-card" href="./harnesses.html">
+          <div class="nav-kicker">Superficies</div>
+          <div class="nav-title">IDEs e harnesses</div>
+          <div>Comparativo entre Codex, Cursor, Claude Code, Antigravity, VS Code, OpenCode e agora Kiro no radar.</div>
+        </a>
+        <a class="nav-card" href="./atualizacao.html">
+          <div class="nav-kicker">Operacao</div>
+          <div class="nav-title">Playbook de atualizacao</div>
+          <div>Procedimento pagina por pagina para um agente verificar preco, quota, modelos e mudancas oficiais.</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="grid-4" style="margin-top:20px;">
+      <div class="card">
+        <div class="badge good">Leitura do momento</div>
+        <div class="kpi good">GLM</div>
+        <p>Continua como melhor compra principal do hub quando a meta e chegar perto do topo tecnico gastando menos.</p>
+      </div>
+      <div class="card">
+        <div class="badge warn">Piloto agressivo</div>
+        <div class="kpi warn">Alibaba</div>
+        <p>Segue como dark horse forte em volume, mas com risco maior na consistencia pratica.</p>
+      </div>
+      <div class="card">
+        <div class="badge info">Novo auditado</div>
+        <div class="kpi">Kiro</div>
+        <p>Ja entrou como solucao valida, com docs e pricing oficiais, mas ainda fora do topo economico.</p>
+      </div>
+      <div class="card">
+        <div class="badge info">Nova familia no radar</div>
+        <div class="kpi">MiMo</div>
+        <p>Entrou forte no benchmark e no model watch, ainda aguardando transparencia comercial mais fina.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como navegar sem se perder</h2>
+      <div class="grid-3">
+        <div class="feature">
+          <h3>Se voce quer decidir o que comprar</h3>
+          <p>Comece em <a href="./ranking.html">`/ranking`</a>. E o painel mais completo para assinatura, custo, capacidade e risco.</p>
+        </div>
+        <div class="feature">
+          <h3>Se voce quer entender quem e forte tecnicamente</h3>
+          <p>Vá para <a href="./benchmarks.html">`/benchmarks`</a>. Ali a comparacao e por modelo, nao por plano.</p>
+        </div>
+        <div class="feature">
+          <h3>Se voce quer saber onde o modelo rende melhor</h3>
+          <p>Use <a href="./harnesses.html">`/harnesses`</a>. A mesma IA pode performar muito diferente dependendo da superficie.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Para amigos e familiares:</strong> a leitura mais segura e esta. Nem todo produto forte em benchmark vira boa compra.
+        O hub separa <strong>capacidade tecnica</strong>, <strong>capacidade comercial</strong> e <strong>qualidade do harness</strong>
+        para nao confundir “modelo bom” com “solucao boa para comprar”.
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h2>Paginas de destaque</h2>
+        <div class="link-list">
+          <a class="link-pill" href="./glm.html"><span><strong>GLM</strong><br /><span class="small">Assinatura principal do momento</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./alibaba.html"><span><strong>Alibaba</strong><br /><span class="small">Dark horse mais serio da rodada</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./opencode-go.html"><span><strong>OpenCode Go</strong><br /><span class="small">Melhor MVP barato para medir uso real</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./kiro.html"><span><strong>Kiro</strong><br /><span class="small">Nova entrada auditada no estudo</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./mimo.html"><span><strong>Xiaomi MiMo</strong><br /><span class="small">Nova familia tecnica e comercial em observacao</span></span><span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Camada operacional</h2>
+        <div class="link-list">
+          <a class="link-pill" href="./telemetria.html"><span><strong>Telemetria</strong><br /><span class="small">Uso real e base para reavaliar o benchmark</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./orquestradores.html"><span><strong>Orquestradores</strong><br /><span class="small">n8n, LangGraph, Mastra e a camada de workflow do produto</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./solucoes-auditadas.html"><span><strong>Solucoes auditadas</strong><br /><span class="small">Tudo o que foi verificado, mesmo fora do topo</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./atualizacao.html"><span><strong>Procedimento de update</strong><br /><span class="small">Como um agente barato deve vigiar o hub todo dia</span></span><span class="arrow">→</span></a>
+          <a class="link-pill" href="./ranking.html"><span><strong>Mapa completo</strong><br /><span class="small">Lista de todas as paginas profundas do estudo dentro do ranking detalhado</span></span><span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura publica recomendada</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>Para quem quer o melhor custo-beneficio</h3>
+          <p>`GLM` continua sendo a compra principal mais coerente, com `Alibaba` como piloto agressivo e `OpenCode Go` como instrumento barato de calibracao.</p>
+        </div>
+        <div class="mini">
+          <h3>Para quem quer a melhor experiencia de IDE</h3>
+          <p>`Codex` e `Cursor` seguem como as superficies mais fortes do hub, cada uma com trade-offs diferentes de custo e previsibilidade.</p>
+        </div>
+        <div class="mini">
+          <h3>Para quem quer acompanhar o que esta chegando</h3>
+          <p>`Kiro`, `MiMo` e `DeepSeek V4/R4` agora formam a faixa mais interessante de observacao para a proxima rodada.</p>
+        </div>
+      </div>
+      <p class="footer-note">
+        URL curta recomendada para compartilhar: <a href="https://vibe-coding-hub-vercel.vercel.app/">vibe-coding-hub-vercel.vercel.app</a>
+      </p>
+    </section>
+  </div>
 </body>
 </html>
