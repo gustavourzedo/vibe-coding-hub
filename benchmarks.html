@@ -144,6 +144,123 @@
     .small { font-size: 13px; color: #8ea0c7; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
+    .jump-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .jump-link {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(96, 165, 250, 0.2);
+      background: rgba(255,255,255,.04);
+      color: #eaf1ff;
+      text-decoration: none;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .jump-link:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      border-color: rgba(110, 231, 183, 0.45);
+      background: rgba(255,255,255,.06);
+    }
+
+    .jump-kicker {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8fd0ff;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+    }
+
+    .matrix-table {
+      min-width: 1380px;
+      margin-top: 0;
+    }
+
+    .catalog-table {
+      min-width: 1180px;
+      margin-top: 0;
+    }
+
+    .sticky-col {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: #18233f;
+    }
+
+    th.sticky-col {
+      z-index: 4;
+      background: #1d2a4c;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.05);
+      color: #e6eefc;
+      white-space: nowrap;
+    }
+
+    .tag.good {
+      background: rgba(52, 211, 153, 0.14);
+      color: #b9f6dd;
+      border-color: rgba(52, 211, 153, 0.22);
+    }
+
+    .tag.mid {
+      background: rgba(96, 165, 250, 0.14);
+      color: #d4e4ff;
+      border-color: rgba(96, 165, 250, 0.22);
+    }
+
+    .tag.warn {
+      background: rgba(251, 191, 36, 0.14);
+      color: #fde8a5;
+      border-color: rgba(251, 191, 36, 0.24);
+    }
+
+    .tag.risk {
+      background: rgba(251, 113, 133, 0.14);
+      color: #ffd1da;
+      border-color: rgba(251, 113, 133, 0.22);
+    }
+
+    .family-row td {
+      background: rgba(96,165,250,.08) !important;
+      color: #f4f8ff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .muted-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -191,10 +308,33 @@
       </p>
 
       <div class="grid-4">
-        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 18:20</div></div>
         <div class="mini"><strong>Base desta rodada</strong><div>DeepSeek X + OpenAI + Anthropic + Z.ai + Google + Moonshot</div></div>
         <div class="mini"><strong>Uso correto desta pagina</strong><div>Comparar capacidade tecnica; nao substituir a analise de assinatura</div></div>
         <div class="mini"><strong>Ponto de atencao</strong><div>Benchmark de fornecedor e comparacao de effort nao sao verdade absoluta</div></div>
+      </div>
+
+      <div class="jump-grid">
+        <a class="jump-link" href="#matriz-central">
+          <span class="jump-kicker">Primeira leitura</span>
+          <strong>Matriz numerica central</strong>
+          <div class="small">So os modelos com comparabilidade mais seria.</div>
+        </a>
+        <a class="jump-link" href="#catalogo-completo">
+          <span class="jump-kicker">Cobertura total</span>
+          <strong>Catalogo completo do estudo</strong>
+          <div class="small">Todos os modelos relevantes citados nas paginas do hub.</div>
+        </a>
+        <a class="jump-link" href="#compra-mental">
+          <span class="jump-kicker">Leitura rapida</span>
+          <strong>Painel de compra mental</strong>
+          <div class="small">Qual modelo tende a brilhar em cada tese.</div>
+        </a>
+        <a class="jump-link" href="#fontes-futuras">
+          <span class="jump-kicker">Manutencao</span>
+          <strong>Fontes e revalidacao</strong>
+          <div class="small">Links oficiais para atualizar a pagina depois.</div>
+        </a>
       </div>
 
       <div class="warnout">
@@ -241,6 +381,8 @@
         <div class="mini"><strong>DeepSeek</strong><div class="small">DS-V4-Pro Max e DS-V4-Flash Max</div></div>
         <div class="mini"><strong>Xiaomi MiMo</strong><div class="small">MiMo-V2-Flash auditado; V2.5-Pro em observacao forte</div></div>
         <div class="mini"><strong>Tipo de evidencia</strong><div class="small">Oficial quando possivel; comparativo publico quando necessario</div></div>
+        <div class="mini"><strong>Cobertura central</strong><div class="small">10 modelos na matriz numerica comparavel</div></div>
+        <div class="mini"><strong>Cobertura total do estudo</strong><div class="small">33 modelos catalogados na camada estendida</div></div>
         <div class="mini"><strong>Objetivo</strong><div class="small">Entender o papel tecnico de cada modelo antes da assinatura</div></div>
       </div>
     </section>
@@ -284,7 +426,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="compra-mental">
       <h2>Painel de Compra Mental</h2>
       <p>
         Esta camada resume o papel natural de cada modelo quando a pergunta e: <strong>quem parece mais forte tecnicamente</strong>,
@@ -368,17 +510,18 @@
       </table>
     </section>
 
-    <section class="card">
-      <h2>Comparativo Visual Consolidado</h2>
+    <section class="card" id="matriz-central">
+      <h2>Matriz Numerica Central</h2>
       <p>
-        Em vez de tentar resumir tudo numa media unica, esta tabela junta os eixos que mais interessam para vibe coding pesado:
-        `coding`, `agentic execution`, `tool use`, `reasoning` e `long context`. Ela combina fontes oficiais e comparativos
-        publicos, deixando as lacunas visiveis quando nao encontrei um numero comparavel o bastante.
+        Esta e a matriz compacta dos modelos que hoje tem comparabilidade publica minimamente seria dentro do hub.
+        Ela continua sendo a melhor primeira leitura da pagina. Logo abaixo, o catalogo completo cobre <strong>todos os modelos do estudo</strong>,
+        inclusive quando o benchmark ainda e parcial, indireto ou apenas comercial.
       </p>
-      <table>
+      <div class="table-wrap">
+      <table class="matrix-table">
         <thead>
           <tr>
-            <th>Benchmark</th>
+            <th class="sticky-col">Benchmark</th>
             <th>DS-V4-Pro Max</th>
             <th>DS-V4-Flash Max</th>
             <th>K2.6 Thinking</th>
@@ -392,7 +535,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>SWE-Bench Pro / Public</strong><br /><span class="small">coding agent</span></td>
+            <td class="sticky-col"><strong>SWE-Bench Pro / Public</strong><br /><span class="small">coding agent</span></td>
             <td>-</td>
             <td>-</td>
             <td>-</td>
@@ -404,7 +547,7 @@
             <td>54.2<br /><span class="small">OpenAI comparativo</span></td>
           </tr>
           <tr>
-            <td><strong>GPQA Diamond</strong><br /><span class="small">raciocinio geral</span></td>
+            <td class="sticky-col"><strong>GPQA Diamond</strong><br /><span class="small">raciocinio geral</span></td>
             <td>90.1</td>
             <td>88.1</td>
             <td>90.5</td>
@@ -416,7 +559,7 @@
             <td><strong>94.3</strong></td>
           </tr>
           <tr>
-            <td><strong>LiveCodeBench</strong><br /><span class="small">coding benchmark</span></td>
+            <td class="sticky-col"><strong>LiveCodeBench</strong><br /><span class="small">coding benchmark</span></td>
             <td><strong>93.5</strong></td>
             <td>91.6</td>
             <td>89.6</td>
@@ -428,7 +571,7 @@
             <td>91.7</td>
           </tr>
           <tr>
-            <td><strong>MRCR 1M / Graphwalks 1M</strong><br /><span class="small">long context indicativo</span></td>
+            <td class="sticky-col"><strong>MRCR 1M / Graphwalks 1M</strong><br /><span class="small">long context indicativo</span></td>
             <td>83.5<br /><span class="small">MRCR</span></td>
             <td>78.7<br /><span class="small">MRCR</span></td>
             <td>-</td>
@@ -440,7 +583,7 @@
             <td>76.3<br /><span class="small">MRCR</span></td>
           </tr>
           <tr>
-            <td><strong>CorpusQA 1M</strong><br /><span class="small">reasoning em contexto longo</span></td>
+            <td class="sticky-col"><strong>CorpusQA 1M</strong><br /><span class="small">reasoning em contexto longo</span></td>
             <td>62.0</td>
             <td>60.5</td>
             <td>-</td>
@@ -452,7 +595,7 @@
             <td>53.8</td>
           </tr>
           <tr>
-            <td><strong>Terminal Bench 2.0</strong><br /><span class="small">terminal + tools</span></td>
+            <td class="sticky-col"><strong>Terminal Bench 2.0</strong><br /><span class="small">terminal + tools</span></td>
             <td>67.9</td>
             <td>56.9</td>
             <td>66.7</td>
@@ -464,7 +607,7 @@
             <td>68.5<br /><span class="small">OpenAI comparativo</span></td>
           </tr>
           <tr>
-            <td><strong>SWE Verified</strong><br /><span class="small">resolucao de issues</span></td>
+            <td class="sticky-col"><strong>SWE Verified</strong><br /><span class="small">resolucao de issues</span></td>
             <td>80.6</td>
             <td>79.0</td>
             <td>80.2</td>
@@ -476,7 +619,7 @@
             <td>80.6</td>
           </tr>
           <tr>
-            <td><strong>BrowseComp</strong><br /><span class="small">agentic browse + synthesis</span></td>
+            <td class="sticky-col"><strong>BrowseComp</strong><br /><span class="small">agentic browse + synthesis</span></td>
             <td>83.4</td>
             <td>73.2</td>
             <td>83.2</td>
@@ -488,7 +631,7 @@
             <td><strong>85.9</strong><br /><span class="small">OpenAI comparativo</span></td>
           </tr>
           <tr>
-            <td><strong>HLE w/tools</strong><br /><span class="small">reasoning com ferramentas</span></td>
+            <td class="sticky-col"><strong>HLE w/tools</strong><br /><span class="small">reasoning com ferramentas</span></td>
             <td>48.2</td>
             <td>45.1</td>
             <td><strong>54.0</strong></td>
@@ -500,7 +643,7 @@
             <td>51.6</td>
           </tr>
           <tr>
-            <td><strong>Toolathlon</strong><br /><span class="small">tool use geral</span></td>
+            <td class="sticky-col"><strong>Toolathlon</strong><br /><span class="small">tool use geral</span></td>
             <td>51.8</td>
             <td>47.8</td>
             <td>50.0</td>
@@ -513,11 +656,390 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <p class="small">
         Valores desta tabela combinam o card publicado pela DeepSeek no X em <a href="https://x.com/deepseek_ai/status/2047516922263285776">2047516922263285776</a>,
         a pagina oficial de <a href="https://openai.com/index/introducing-gpt-5-5/">GPT-5.5</a>, a pagina oficial de <a href="https://openai.com/index/introducing-gpt-5-4/">GPT-5.4</a>,
         a pagina oficial de <a href="https://www.anthropic.com/news/claude-opus-4-6?id=ClaudeOpus4.6">Claude Opus 4.6</a>, a de <a href="https://www.anthropic.com/news/claude-opus-4-7">Claude Opus 4.7</a>
         e a documentacao oficial de <a href="https://docs.z.ai/guides/llm/glm-5.1">GLM-5.1</a>. Onde ha `-`, nao usei um numero comparavel o bastante nesta pagina.
+      </p>
+    </section>
+
+    <section class="card" id="catalogo-completo">
+      <h2>Catalogo Completo de Modelos do Estudo</h2>
+      <p>
+        Esta camada resolve exatamente a lacuna que voce apontou: ela inclui <strong>todos os modelos relevantes ja citados no hub</strong>.
+        Aqui o objetivo nao e fingir que todo mundo tem score comparavel; e deixar claro <strong>quem esta no estudo</strong>, qual a
+        <strong>forca principal</strong>, que tipo de <strong>evidencia publica</strong> existe e como cada modelo entra nas solucoes do hub.
+      </p>
+      <div class="muted-list">
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag mid">Benchmark parcial</span>
+        <span class="tag warn">Catalogado por produto/comercial</span>
+        <span class="tag risk">Precificacao ou API ainda opaca</span>
+      </div>
+      <div class="table-wrap">
+        <table class="catalog-table">
+          <thead>
+            <tr>
+              <th class="sticky-col">Modelo</th>
+              <th>Familia / lab</th>
+              <th>Papel tecnico no hub</th>
+              <th>Evidencia publica</th>
+              <th>Preco / sinal de API</th>
+              <th>Onde aparece no estudo</th>
+              <th>Leitura pratica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="family-row"><td colspan="7">Claude / Anthropic</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>Opus-4.6 Max</strong></td>
+              <td>Anthropic / Claude</td>
+              <td>Referencia premium de contexto longo e qualidade geral</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>US$ 5 input / US$ 25 output</td>
+              <td>Claude Max, Cursor, Kiro, comparativo central</td>
+              <td>Ancora tecnica do hub para medir frontier premium de verdade.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Opus-4.7</strong></td>
+              <td>Anthropic / Claude</td>
+              <td>Software engineering premium no topo da familia</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>US$ 5 input / US$ 25 output</td>
+              <td>Claude Max, Cursor, telemetria, comparativo central</td>
+              <td>Melhor leitura Anthropic para engenharia pesada nesta rodada.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Opus-4.5</strong></td>
+              <td>Anthropic / Claude</td>
+              <td>Tier premium anterior ainda citado em IDEs agenticas</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Faixa premium Anthropic</td>
+              <td>Kiro</td>
+              <td>Presenca relevante no ecossistema, mas sem benchmark proprio consolidado aqui.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Sonnet 4.5</strong></td>
+              <td>Anthropic / Claude</td>
+              <td>Modelo intermediario forte para fluxo diario</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Faixa intermediaria Anthropic</td>
+              <td>Kiro, Cursor, harnesses</td>
+              <td>Mais importante como superficie de produto do que como benchmark deste painel.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Sonnet 4</strong></td>
+              <td>Anthropic / Claude</td>
+              <td>Base forte para coding premium moderado</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Faixa intermediaria Anthropic</td>
+              <td>Kiro</td>
+              <td>Relevante porque impacta billing e fallback em suites como Kiro.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Haiku 4.5</strong></td>
+              <td>Anthropic / Claude</td>
+              <td>Fallback barato e rapido dentro da familia</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Faixa barata Anthropic</td>
+              <td>Kiro</td>
+              <td>Importa para custo e fallback, nao para topo tecnico do hub.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">OpenAI</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>GPT-5.5</strong></td>
+              <td>OpenAI</td>
+              <td>Terminal, browse e tool use no topo atual</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>US$ 5 input / US$ 30 output</td>
+              <td>OpenAI/Codex, Cursor, comparativo central</td>
+              <td>Hoje e a leitura mais agressiva do hub para execucao agentica ferramental.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GPT-5.4 xHigh</strong></td>
+              <td>OpenAI</td>
+              <td>Agente premium com melhor custo que Opus em varios cenarios</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>US$ 2.50 input / US$ 15 output</td>
+              <td>OpenAI/Codex, Cursor, comparativo central</td>
+              <td>Muito forte para terminal e tools, mas vive dentro de quotas menos legiveis.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GPT-5.4-Mini</strong></td>
+              <td>OpenAI</td>
+              <td>Fallback barato dentro do stack GPT-5.x</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Faixa abaixo do GPT-5.4 full</td>
+              <td>OpenAI/Codex</td>
+              <td>Entra mais como economia operacional do que como competidor premium.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GPT-5.3-Codex</strong></td>
+              <td>OpenAI</td>
+              <td>Variante voltada a coding no ecossistema Codex</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Integrado ao stack OpenAI</td>
+              <td>OpenAI/Codex</td>
+              <td>Importa pela superficie de produto, nao pelo ranking tecnico desta pagina.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GPT-5.3-Codex-Spark</strong></td>
+              <td>OpenAI</td>
+              <td>Variante mais leve do stack Codex</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Integrado ao stack OpenAI</td>
+              <td>OpenAI/Codex</td>
+              <td>Util para custo e rapidez, mas fora da conversa principal de benchmark.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GPT-5.2</strong></td>
+              <td>OpenAI</td>
+              <td>Camada anterior ainda presente no ecossistema</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Historico OpenAI</td>
+              <td>OpenAI/Codex</td>
+              <td>Fica no catalogo por cobertura do estudo, nao por protagonismo atual.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">Google / Gemini</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>Gemini-3.1-Pro High</strong></td>
+              <td>Google / Gemini</td>
+              <td>Reasoning forte e boa leitura para browse</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>US$ 2 input / US$ 12 output</td>
+              <td>Google AI, Antigravity, comparativo central</td>
+              <td>Muito competitivo no papel e relevante para stacks Google.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Gemini 3 Pro</strong></td>
+              <td>Google / Gemini</td>
+              <td>Modelo comercial central do bundle Google</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Amarrado ao ecossistema Google AI</td>
+              <td>Google AI, Antigravity</td>
+              <td>Mesmo quando a nomenclatura comercial varia, continua no catalogo do hub.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">Z.ai / GLM</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>GLM-5.1 Thinking</strong></td>
+              <td>Z.ai / GLM</td>
+              <td>Melhor custo-beneficio tecnico serio desta rodada</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>US$ 1.40 input / US$ 4.40 output</td>
+              <td>GLM plans, Alibaba, OpenCode Go, comparativo central</td>
+              <td>Base racional mais limpa do hub para coding pesado com disciplina.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GLM-5-Turbo</strong></td>
+              <td>Z.ai / GLM</td>
+              <td>Tier de throughput e custo dentro da familia GLM</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Mesma familia com multiplicadores proprios</td>
+              <td>GLM plans</td>
+              <td>Importa muito para quota real, mais do que para benchmark absoluto.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GLM-4.7</strong></td>
+              <td>Z.ai / GLM</td>
+              <td>Modelo padrao forte para operacao diaria</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Faixa mais amigavel que GLM-5.1</td>
+              <td>GLM plans, OpenCode Go</td>
+              <td>Faltava nesta pagina e agora entra como componente central da familia GLM.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>GLM-4.5-Air</strong></td>
+              <td>Z.ai / GLM</td>
+              <td>Fallback barato e leve</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Tier economico Z.ai</td>
+              <td>GLM plans</td>
+              <td>Mais importante para estrategia de quota do que para topo tecnico.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">Moonshot / Kimi</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>K2.6 Thinking</strong></td>
+              <td>Moonshot / Kimi</td>
+              <td>Open contender forte para agentic coding</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>Y 6.50 input / Y 27 output</td>
+              <td>Kimi, Alibaba, OpenCode Go, comparativo central</td>
+              <td>Continua um dos open contenders mais serios para ferramentas e agente.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>K2.5</strong></td>
+              <td>Moonshot / Kimi</td>
+              <td>Geracao anterior ainda relevante comercialmente</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Mais barato que o K2.6 em stacks agregadas</td>
+              <td>Alibaba, OpenCode Go</td>
+              <td>Entra por disponibilidade real nas assinaturas, mesmo com menos evidencias publicas fortes.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">Xiaomi MiMo</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>MiMo-V2-Flash</strong></td>
+              <td>Xiaomi MiMo</td>
+              <td>Primeiro benchmark auditavel serio da familia no hub</td>
+              <td><span class="tag good">Benchmark forte</span></td>
+              <td>Token plans / precificacao ainda parcial</td>
+              <td>MiMo, benchmark central de familia</td>
+              <td>E a ancora tecnica auditavel que prova que MiMo nao e so marketing.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>MiMo-V2.5-Pro</strong></td>
+              <td>Xiaomi MiMo</td>
+              <td>Modelo topo atual em observacao forte</td>
+              <td><span class="tag mid">Benchmark parcial</span> <span class="tag risk">Claim comercial</span></td>
+              <td>Token plans / tiers ainda menos legiveis</td>
+              <td>MiMo, OpenCode Go</td>
+              <td>Ja e relevante demais para ficar fora do catalogo, mesmo antes de benchmark publico equivalente ao core matrix.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>MiMo-V2.5</strong></td>
+              <td>Xiaomi MiMo</td>
+              <td>Companion mais barato da geracao atual</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Token plans / tiers ainda menos legiveis</td>
+              <td>MiMo, OpenCode Go</td>
+              <td>Importa para tese comercial da familia MiMo, nao so para topo tecnico.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>MiMo-V2-Pro</strong></td>
+              <td>Xiaomi MiMo</td>
+              <td>Modelo comercial presente em agregadores de coding</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Visivel em ofertas multi-provider</td>
+              <td>OpenCode Go</td>
+              <td>Bom para medir alcance real da familia em produtos terceiros.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>MiMo-V2-Omni</strong></td>
+              <td>Xiaomi MiMo</td>
+              <td>Variante multimodal/comercial do ecossistema MiMo</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Visivel em ofertas multi-provider</td>
+              <td>OpenCode Go</td>
+              <td>Fica no catalogo porque amplia a leitura de ecossistema, mesmo fora da matriz central.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">DeepSeek</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>DS-V4-Pro Max</strong></td>
+              <td>DeepSeek V4</td>
+              <td>Maior sinal de ruptura tecnica desta rodada</td>
+              <td><span class="tag good">Benchmark forte</span> <span class="tag risk">API opaca</span></td>
+              <td>Nao revalidado oficialmente nesta rodada</td>
+              <td>Benchmarks, OpenCode Go, model watch</td>
+              <td>O benchmark puxa para cima; a trilha comercial e que ainda segura a subida no hub.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>DS-V4-Flash Max</strong></td>
+              <td>DeepSeek V4</td>
+              <td>Versao mais eficiente da tese V4</td>
+              <td><span class="tag good">Benchmark forte</span> <span class="tag risk">API opaca</span></td>
+              <td>Nao revalidado oficialmente nesta rodada</td>
+              <td>Benchmarks, OpenCode Go, model watch</td>
+              <td>Mais leve que o Pro Max, ainda assim forte o bastante para radar continuo.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>DeepSeek V4 Pro</strong></td>
+              <td>DeepSeek V4</td>
+              <td>Nome comercial visto em agregadores e stacks terceiros</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Visivel em OpenCode Go; pricing oficial ainda pouco claro para V4</td>
+              <td>OpenCode Go</td>
+              <td>Fica como ponte entre benchmark V4 e uso comercial real em products-as-a-service.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>DeepSeek V4 Flash</strong></td>
+              <td>DeepSeek V4</td>
+              <td>Nome comercial leve visto em agregadores</td>
+              <td><span class="tag mid">Benchmark parcial</span></td>
+              <td>Visivel em OpenCode Go; pricing oficial ainda pouco claro para V4</td>
+              <td>OpenCode Go</td>
+              <td>Ajuda a mapear onde a familia V4 ja esta chegando antes da formalizacao completa.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">MiniMax</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>MiniMax M2.7</strong></td>
+              <td>MiniMax</td>
+              <td>Open throughput candidate mais agressivo</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Muito favoravel em agregadores de budget</td>
+              <td>MiniMax, OpenCode Go, Alibaba</td>
+              <td>Brilha na tese de volume barato, nao na ancora tecnica premium.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>MiniMax M2.5</strong></td>
+              <td>MiniMax</td>
+              <td>Variante popular de alto throughput</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Muito favoravel em agregadores de budget</td>
+              <td>MiniMax, OpenCode Go, Alibaba</td>
+              <td>Continua relevante para capacidade, mesmo com confianca tecnica moderada.</td>
+            </tr>
+
+            <tr class="family-row"><td colspan="7">Qwen / Alibaba</td></tr>
+            <tr>
+              <td class="sticky-col"><strong>Qwen3.6 Plus</strong></td>
+              <td>Qwen / Alibaba</td>
+              <td>Open/commercial throughput forte em coding plans</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Muito competitivo em stacks agregadas</td>
+              <td>Alibaba, OpenCode Go</td>
+              <td>Mais importante por disponibilidade real do que por benchmark central aqui.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>Qwen3.5 Plus</strong></td>
+              <td>Qwen / Alibaba</td>
+              <td>Variante anterior ainda muito usada</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Muito competitivo em stacks agregadas</td>
+              <td>Alibaba, OpenCode Go</td>
+              <td>Ajuda a sustentar volume bruto nos planos baseados em request.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>qwen3-max-2026-01-23</strong></td>
+              <td>Qwen / Alibaba</td>
+              <td>Tier mais ambicioso citado no plano Alibaba</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Encaixado no coding plan</td>
+              <td>Alibaba</td>
+              <td>Fica no catalogo porque representa a camada mais potente do ecossistema Qwen do plano.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>qwen3-coder-next</strong></td>
+              <td>Qwen / Alibaba</td>
+              <td>Variante explicitamente voltada a coding</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Encaixado no coding plan</td>
+              <td>Alibaba</td>
+              <td>Importa para entender que o plano Alibaba nao depende de um unico modelo.</td>
+            </tr>
+            <tr>
+              <td class="sticky-col"><strong>qwen3-coder-plus</strong></td>
+              <td>Qwen / Alibaba</td>
+              <td>Outra variante explicitamente voltada a coding</td>
+              <td><span class="tag warn">Catalogado</span></td>
+              <td>Encaixado no coding plan</td>
+              <td>Alibaba</td>
+              <td>Entra pela profundidade do portfolio, nao por benchmark comparavel publicado aqui.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">
+        Regra desta tabela estendida: se o modelo aparece nas paginas do hub como opcao real de assinatura, provider, fallback
+        ou tier comercial relevante, ele entra aqui. Quando nao existe benchmark suficientemente comparavel, a linha continua existindo
+        mesmo assim com a sinalizacao correta de evidencia.
       </p>
     </section>
 
@@ -766,7 +1288,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="fontes-futuras">
       <h2>Fontes para Atualizacao Futura</h2>
       <ul>
         <li><a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek benchmark card no X</a></li>
