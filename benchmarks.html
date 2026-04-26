@@ -187,13 +187,91 @@
     }
 
     .matrix-table {
-      min-width: 1380px;
+      min-width: 1860px;
       margin-top: 0;
+      table-layout: fixed;
     }
 
     .catalog-table {
       min-width: 1180px;
       margin-top: 0;
+    }
+
+    .matrix-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+
+    .matrix-meta .mini {
+      padding: 14px 15px;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+    }
+
+    .matrix-table th {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      padding: 16px 10px;
+      background: linear-gradient(180deg, rgba(35, 53, 92, 0.98), rgba(25, 38, 68, 0.98));
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      min-width: 124px;
+      white-space: normal;
+    }
+
+    .matrix-table td {
+      padding: 16px 10px;
+    }
+
+    .matrix-table td:not(.sticky-col) {
+      min-width: 124px;
+      text-align: center;
+      font-size: 16px;
+      color: #edf4ff;
+      font-variant-numeric: tabular-nums;
+      background: rgba(255,255,255,.02);
+    }
+
+    .matrix-table tbody tr:nth-child(even) td:not(.sticky-col) {
+      background: rgba(255,255,255,.035);
+    }
+
+    .matrix-table tbody tr:hover td:not(.sticky-col) {
+      background: rgba(96, 165, 250, 0.08);
+    }
+
+    .matrix-table td .small,
+    .matrix-table th .small {
+      display: block;
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+    .matrix-table td strong {
+      font-size: 18px;
+      color: #f8fbff;
+    }
+
+    .matrix-table .na {
+      color: #6980ad;
+      font-size: 18px;
+    }
+
+    .matrix-table .claim-col,
+    .matrix-table .claim-cell {
+      background:
+        linear-gradient(180deg, rgba(251, 191, 36, 0.08), rgba(251, 191, 36, 0.03));
+    }
+
+    .matrix-table .claim-col {
+      border-left: 1px solid rgba(251, 191, 36, 0.18);
+      border-right: 1px solid rgba(251, 191, 36, 0.18);
+    }
+
+    .matrix-table .claim-cell {
+      color: #f8ddb0;
     }
 
     .sticky-col {
@@ -291,6 +369,7 @@
 
     @media (max-width: 1100px) {
       .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .matrix-meta { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 20px, 1500px); }
     }
   </style>
@@ -522,12 +601,27 @@
         <strong>Regra desta matriz:</strong> benchmark interno puro de produto nao entra aqui sozinho. Se um numero nao e compartilhado
         publicamente em benchmark reconhecido e comparavel, ele fica no catalogo estendido e na leitura de produto, nao nesta mesa principal.
       </div>
+      <div class="matrix-meta">
+        <div class="mini">
+          <strong>Benchmarks desta matriz</strong>
+          <div class="small">So linhas publicas e cruzaveis entre labs: `SWE-Bench`, `LiveCodeBench`, `Terminal Bench`, `BrowseComp`, `Toolathlon`, `HLE w/tools` e `GPQA`.</div>
+        </div>
+        <div class="mini">
+          <strong>Colunas realmente comparaveis</strong>
+          <div class="small">Modelos com alguma evidência publica compartilhada por benchmark reconhecido. Esta e a parte mais util para decidir nivel tecnico.</div>
+        </div>
+        <div class="mini">
+          <strong>MiMo-V2.5-Pro</strong>
+          <div class="small">Entra como <strong>claim-tracked</strong>: importante demais para ficar fora, mas ainda sem matriz publica row-by-row comparavel como a do `MiMo-V2-Flash`.</div>
+        </div>
+      </div>
       <div class="table-wrap">
       <table class="matrix-table">
         <thead>
           <tr>
             <th class="sticky-col">Benchmark</th>
             <th>MiMo-V2-Flash</th>
+            <th class="claim-col">MiMo-V2.5-Pro<br /><span class="small">claim-tracked</span></th>
             <th>DS-V4-Pro Max</th>
             <th>DS-V4-Flash Max</th>
             <th>K2.6 Thinking</th>
@@ -545,14 +639,15 @@
         <tbody>
           <tr>
             <td class="sticky-col"><strong>SWE-Bench Pro / Public</strong><br /><span class="small">coding agent</span></td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>58.6<br /><span class="small">Kimi oficial</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td><strong>58.4</strong><br /><span class="small">Z.ai oficial</span></td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>53.4<br /><span class="small">Kimi comparativo</span></td>
             <td>64.3<br /><span class="small">OpenAI comparativo</span></td>
             <td>57.7<br /><span class="small">OpenAI oficial</span></td>
@@ -561,62 +656,66 @@
           </tr>
           <tr>
             <td class="sticky-col"><strong>SWE-Bench Verified</strong><br /><span class="small">resolucao de issues reais</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>80.6</td>
             <td>79.0</td>
             <td>80.2</td>
             <td>73.8<br /><span class="small">Z.ai oficial</span></td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>75.3<br /><span class="small">Qwen oficial</span></td>
             <td><strong>80.8</strong></td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>80.6</td>
           </tr>
           <tr>
             <td class="sticky-col"><strong>SWE-Bench Multilingual</strong><br /><span class="small">coding agent multilanguage</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>76.2</td>
             <td>73.3</td>
             <td>76.7</td>
             <td>66.7<br /><span class="small">Z.ai oficial</span></td>
             <td>73.3</td>
             <td>76.5<br /><span class="small">MiniMax oficial</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td><strong>77.8</strong><br /><span class="small">Kimi comparativo</span></td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>76.9<br /><span class="small">Kimi comparativo</span></td>
           </tr>
           <tr>
             <td class="sticky-col"><strong>LiveCodeBench</strong><br /><span class="small">coding benchmark</span></td>
             <td>30.8<br /><span class="small">MiMo HF oficial</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td><strong>93.5</strong></td>
             <td>91.6</td>
             <td>89.6</td>
             <td>84.9<br /><span class="small">Z.ai oficial</span></td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>85.9<br /><span class="small">Qwen oficial</span></td>
             <td>88.8</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>91.7</td>
           </tr>
           <tr>
             <td class="sticky-col"><strong>Terminal Bench 2.0</strong><br /><span class="small">terminal + tools</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>67.9</td>
             <td>56.9</td>
             <td>66.7</td>
             <td>41.0<br /><span class="small">Z.ai oficial</span></td>
             <td>63.5</td>
             <td>57.0<br /><span class="small">MiniMax oficial</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>65.4</td>
             <td>69.4<br /><span class="small">OpenAI comparativo</span></td>
             <td>75.1</td>
@@ -625,14 +724,15 @@
           </tr>
           <tr>
             <td class="sticky-col"><strong>BrowseComp</strong><br /><span class="small">agentic browse + synthesis</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>83.4</td>
             <td>73.2</td>
             <td>83.2</td>
             <td>67.0<br /><span class="small">Z.ai oficial</span></td>
             <td>79.3</td>
-            <td>-</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td><span class="na">-</span></td>
             <td>83.7</td>
             <td>79.3<br /><span class="small">OpenAI comparativo</span></td>
             <td>82.7<br /><span class="small">OpenAI oficial</span></td>
@@ -641,29 +741,31 @@
           </tr>
           <tr>
             <td class="sticky-col"><strong>Toolathlon</strong><br /><span class="small">tool use geral</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>51.8</td>
             <td>47.8</td>
             <td>50.0</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>40.7</td>
             <td>46.3<br /><span class="small">MiniMax oficial</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>47.2</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>54.6</td>
             <td><strong>55.6</strong><br /><span class="small">OpenAI oficial</span></td>
             <td>48.8<br /><span class="small">OpenAI comparativo</span></td>
           </tr>
           <tr>
             <td class="sticky-col"><strong>HLE w/tools</strong><br /><span class="small">reasoning com ferramentas</span></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>48.2</td>
             <td>45.1</td>
             <td><strong>54.0</strong></td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>50.4</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>49.8<br /><span class="small">Qwen oficial</span></td>
             <td>53.1</td>
             <td>54.7<br /><span class="small">OpenAI comparativo</span></td>
@@ -674,12 +776,13 @@
           <tr>
             <td class="sticky-col"><strong>GPQA Diamond</strong><br /><span class="small">raciocinio geral</span></td>
             <td>55.1<br /><span class="small">MiMo HF oficial</span></td>
+            <td class="claim-cell"><span class="na">-</span></td>
             <td>90.1</td>
             <td>88.1</td>
             <td>90.5</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>86.2</td>
-            <td>-</td>
+            <td><span class="na">-</span></td>
             <td>87.4<br /><span class="small">Qwen oficial</span></td>
             <td>91.3</td>
             <td>94.2<br /><span class="small">OpenAI comparativo</span></td>
