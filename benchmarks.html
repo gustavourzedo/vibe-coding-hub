@@ -221,6 +221,18 @@
       white-space: normal;
     }
 
+    .matrix-link {
+      color: #f3f8ff;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1.35;
+    }
+
+    .matrix-link:hover {
+      text-decoration: underline;
+      color: #bfe0ff;
+    }
+
     .matrix-table td {
       padding: 16px 10px;
     }
@@ -403,6 +415,16 @@
           <span class="jump-kicker">Cobertura total</span>
           <strong>Catalogo completo do estudo</strong>
           <div class="small">Todos os modelos relevantes citados nas paginas do hub.</div>
+        </a>
+        <a class="jump-link" href="./benchmark-modelos.html">
+          <span class="jump-kicker">Por modelo</span>
+          <strong>Fichas benchmark dos modelos</strong>
+          <div class="small">Abrir uma pagina dedicada com fontes e benchmark de cada coluna da matriz.</div>
+        </a>
+        <a class="jump-link" href="./arena-code.html">
+          <span class="jump-kicker">Arena</span>
+          <strong>Code Arena operacional</strong>
+          <div class="small">Como usar o leaderboard do Arena dentro do metodo do hub.</div>
         </a>
         <a class="jump-link" href="#compra-mental">
           <span class="jump-kicker">Leitura rapida</span>
@@ -620,20 +642,20 @@
         <thead>
           <tr>
             <th class="sticky-col">Benchmark</th>
-            <th>MiMo-V2-Flash</th>
-            <th class="claim-col">MiMo-V2.5-Pro<br /><span class="small">claim-tracked</span></th>
-            <th>DS-V4-Pro Max</th>
-            <th>DS-V4-Flash Max</th>
-            <th>K2.6 Thinking</th>
-            <th>GLM-4.7</th>
-            <th>GLM-5.1 Thinking</th>
-            <th>MiniMax M2.7</th>
-            <th>Qwen3-Max Thinking</th>
-            <th>Opus-4.6 Max</th>
-            <th>Opus-4.7</th>
-            <th>GPT-5.4 xHigh</th>
-            <th>GPT-5.5</th>
-            <th>Gemini-3.1-Pro High</th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#mimo-v2-flash">MiMo-V2-Flash</a></th>
+            <th class="claim-col"><a class="matrix-link" href="./benchmark-modelos.html#mimo-v2-5-pro">MiMo-V2.5-Pro</a><br /><span class="small">claim-tracked</span></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#ds-v4-pro-max">DS-V4-Pro Max</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#ds-v4-flash-max">DS-V4-Flash Max</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#k2-6-thinking">K2.6 Thinking</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#glm-4-7">GLM-4.7</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#glm-5-1-thinking">GLM-5.1 Thinking</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#minimax-m2-7">MiniMax M2.7</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#qwen3-max-thinking">Qwen3-Max Thinking</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#opus-4-6-max">Opus-4.6 Max</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#opus-4-7">Opus-4.7</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#gpt-5-4-xhigh">GPT-5.4 xHigh</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#gpt-5-5">GPT-5.5</a></th>
+            <th><a class="matrix-link" href="./benchmark-modelos.html#gemini-3-1-pro-high">Gemini-3.1-Pro High</a></th>
           </tr>
         </thead>
         <tbody>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fichas Benchmark dos Modelos - Hub de Agentes</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --panel-2: #1b2745;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --danger: #fb7185;
+      --good: #34d399;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1460px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 28px 30px; background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.1)); }
+    .card { padding: 20px; margin-top: 20px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; color: #f4f8ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 13px; color: #8ea0c7; }
+
+    .grid-4, .grid-3, .grid-2 {
+      display: grid;
+      gap: 16px;
+    }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(96,165,250,.24);
+      background: rgba(255,255,255,.05);
+      color: #e6eefc;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .chip:hover {
+      text-decoration: none;
+      border-color: rgba(110,231,183,.45);
+      background: rgba(255,255,255,.08);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.06);
+      font-size: 12px;
+      font-weight: 700;
+      color: #eef4ff;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .tag.good { background: rgba(52,211,153,.14); color: #b9f6dd; border-color: rgba(52,211,153,.24); }
+    .tag.mid { background: rgba(96,165,250,.14); color: #d7e7ff; border-color: rgba(96,165,250,.24); }
+    .tag.warn { background: rgba(251,191,36,.14); color: #fde8a5; border-color: rgba(251,191,36,.24); }
+    .tag.risk { background: rgba(251,113,133,.14); color: #ffd1da; border-color: rgba(251,113,133,.24); }
+
+    .model-card {
+      scroll-margin-top: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: #f4f8ff;
+      background: rgba(96,165,250,.08);
+    }
+
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1460px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./benchmarks.html">Voltar para benchmarks</a></div>
+
+    <section class="hero">
+      <h1>Fichas Benchmark dos Modelos</h1>
+      <p>
+        Esta pagina funciona como a camada <strong>modelo por modelo</strong> da matriz principal. Em vez de so ver o numero na tabela,
+        aqui voce abre a ficha do modelo e enxerga: benchmark publico relevante, papel tecnico no hub, maturidade da evidencia e links
+        oficiais para revalidacao futura.
+      </p>
+      <div class="callout">
+        <strong>Regra da ficha:</strong> quando o modelo tem benchmark cruzavel forte, a ficha destaca linhas numericas.
+        Quando a evidencia ainda e parcial, a ficha continua existindo, mas marcada como `claim-tracked`, `benchmark parcial`
+        ou `catalogado comercialmente`.
+      </div>
+      <div class="chip-row">
+        <a class="chip" href="#mimo-v2-flash">MiMo-V2-Flash</a>
+        <a class="chip" href="#mimo-v2-5-pro">MiMo-V2.5-Pro</a>
+        <a class="chip" href="#ds-v4-pro-max">DS-V4-Pro Max</a>
+        <a class="chip" href="#ds-v4-flash-max">DS-V4-Flash Max</a>
+        <a class="chip" href="#k2-6-thinking">K2.6 Thinking</a>
+        <a class="chip" href="#glm-4-7">GLM-4.7</a>
+        <a class="chip" href="#glm-5-1-thinking">GLM-5.1 Thinking</a>
+        <a class="chip" href="#minimax-m2-7">MiniMax M2.7</a>
+        <a class="chip" href="#qwen3-max-thinking">Qwen3-Max Thinking</a>
+        <a class="chip" href="#opus-4-6-max">Opus-4.6 Max</a>
+        <a class="chip" href="#opus-4-7">Opus-4.7</a>
+        <a class="chip" href="#gpt-5-4-xhigh">GPT-5.4 xHigh</a>
+        <a class="chip" href="#gpt-5-5">GPT-5.5</a>
+        <a class="chip" href="#gemini-3-1-pro-high">Gemini-3.1-Pro High</a>
+      </div>
+    </section>
+
+    <section class="card grid-3">
+      <div class="mini">
+        <strong>Ultima compilacao</strong>
+        <div>26/04/2026 18:25</div>
+      </div>
+      <div class="mini">
+        <strong>Uso certo desta pagina</strong>
+        <div class="small">Abrir a ficha quando a matriz principal levantar uma duvida ou um modelo parecer promissor demais para passar batido.</div>
+      </div>
+      <div class="mini">
+        <strong>Arena Code</strong>
+        <div class="small">Complementa esta pagina, mas nao substitui benchmark estruturado. Veja <a href="./arena-code.html">/arena-code</a>.</div>
+      </div>
+    </section>
+
+    <section class="card model-card" id="mimo-v2-flash">
+      <h2>MiMo-V2-Flash</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag mid">Xiaomi MiMo</span>
+      </div>
+      <p>Primeira ancora realmente auditavel da familia MiMo dentro do hub. E o ponto em que a Xiaomi deixa de ser so claim comercial e passa a entrar em benchmark publico utilizavel.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>LiveCodeBench</td><td>30.8</td><td>Ainda abaixo do topo frontier, mas suficiente para provar substancia tecnica da familia.</td></tr>
+          <tr><td>GPQA Diamond</td><td>55.1</td><td>Raciocinio geral moderado; fica mais forte como sinal de direcao da familia do que como topo absoluto.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a>.</p>
+    </section>
+
+    <section class="card model-card" id="mimo-v2-5-pro">
+      <h2>MiMo-V2.5-Pro</h2>
+      <div>
+        <span class="tag warn">Claim-tracked</span>
+        <span class="tag risk">Sem matriz row-by-row publica</span>
+      </div>
+      <p>Modelo topo atual da Xiaomi MiMo. Ele entra na matriz principal por relevancia estrategica, mas ainda sem a mesma granularidade benchmark-by-benchmark que temos no `MiMo-V2-Flash`.</p>
+      <div class="warnout">
+        <strong>Estado real hoje:</strong> a Xiaomi faz claim oficial de paridade com `Claude Opus 4.6` em cenarios agenticos exigentes, mas ainda nao publicou
+        uma tabela publica row-by-row comparavel o bastante para preencher as linhas centrais do hub sem forcar a comparabilidade.
+      </div>
+      <ul>
+        <li>Serve como `model watch premium` da familia MiMo.</li>
+        <li>Ja e importante para avaliar OpenCode Go e futuras stacks multi-provider.</li>
+        <li>Precisa de benchmark oficial detalhado para deixar de ser `claim-tracked` e virar coluna plenamente numerica.</li>
+      </ul>
+      <p class="small">Fontes principais: <a href="https://mimo.mi.com/">MiMo home</a>, <a href="https://mimo.xiaomi.com/">MiMo blog/homepage</a>.</p>
+    </section>
+
+    <section class="card model-card" id="ds-v4-pro-max">
+      <h2>DS-V4-Pro Max</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag risk">Trilha comercial opaca</span>
+      </div>
+      <p>O modelo mais “ruptura em potencial” desta rodada. O benchmark visual forte existe; o problema e a camada de produto, API e assinatura ainda nao estar tao legivel quanto o benchmark.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Verified</td><td>80.6</td><td>Score forte o bastante para competir com as referencias premium desta pagina.</td></tr>
+          <tr><td>LiveCodeBench</td><td>93.5</td><td>Um dos sinais mais agressivos da rodada para coding benchmark.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>67.9</td><td>Boa leitura ferramental, mas nao a mais alta.</td></tr>
+          <tr><td>BrowseComp</td><td>83.4</td><td>Mostra competencia agentica alem de puro coding benchmark.</td></tr>
+          <tr><td>Toolathlon</td><td>51.8</td><td>Uso de ferramentas forte, embora nao lidere.</td></tr>
+          <tr><td>GPQA Diamond</td><td>90.1</td><td>Raciocinio geral de altissimo nivel.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek benchmark card no X</a>.</p>
+    </section>
+
+    <section class="card model-card" id="ds-v4-flash-max">
+      <h2>DS-V4-Flash Max</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag risk">Trilha comercial opaca</span>
+      </div>
+      <p>Variante mais leve do ecossistema V4. Continua forte o bastante para radar serio, com menos folga que o `Pro Max` mas ainda acima de muita coisa comercialmente madura.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Verified</td><td>79.0</td><td>Muito forte para uma variante “flash”.</td></tr>
+          <tr><td>LiveCodeBench</td><td>91.6</td><td>Sinal de coding benchmark ainda premium.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>56.9</td><td>Cai em ferramental versus o Pro Max.</td></tr>
+          <tr><td>BrowseComp</td><td>73.2</td><td>Agentic browse mais modesto.</td></tr>
+          <tr><td>Toolathlon</td><td>47.8</td><td>Ferramentas decentes, mas nao lideres.</td></tr>
+          <tr><td>GPQA Diamond</td><td>88.1</td><td>Raciocinio ainda bastante forte.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek benchmark card no X</a>.</p>
+    </section>
+
+    <section class="card model-card" id="k2-6-thinking">
+      <h2>K2.6 Thinking</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag mid">Moonshot / Kimi</span>
+      </div>
+      <p>Hoje e um dos open contenders mais serios para agente com ferramentas. O benchmark dele aparece bem distribuido, o que o torna mais perigoso comercialmente do que um modelo que so brilha em uma linha.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Pro / Public</td><td>58.6</td><td>Boa leitura para coding agent de primeira linha.</td></tr>
+          <tr><td>SWE-Bench Verified</td><td>80.2</td><td>Fica muito bem posicionado em issues reais.</td></tr>
+          <tr><td>SWE-Bench Multilingual</td><td>76.7</td><td>Boa robustez fora do ingles.</td></tr>
+          <tr><td>LiveCodeBench</td><td>89.6</td><td>Coding benchmark muito serio.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>66.7</td><td>Ferramental bom, abaixo dos melhores GPTs.</td></tr>
+          <tr><td>BrowseComp</td><td>83.2</td><td>Agentic browse bastante competitivo.</td></tr>
+          <tr><td>Toolathlon</td><td>50.0</td><td>Uso de ferramentas consistente.</td></tr>
+          <tr><td>HLE w/tools</td><td>54.0</td><td>Melhor linha ferramental desta familia na matriz.</td></tr>
+          <tr><td>GPQA Diamond</td><td>90.5</td><td>Raciocinio geral quase frontier fechado.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://www.kimi.com/blog/kimi-k2-6">Kimi K2.6 benchmark post</a>.</p>
+    </section>
+
+    <section class="card model-card" id="glm-4-7">
+      <h2>GLM-4.7</h2>
+      <div>
+        <span class="tag mid">Benchmark parcial</span>
+        <span class="tag good">Z.ai / GLM</span>
+      </div>
+      <p>Essa ficha existe justamente porque `GLM-4.7` era uma falta sentida no hub. Ele nao vence o `GLM-5.1` em prestígio técnico, mas importa muito para uso real por ser o modelo padrao mais amigavel da familia.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Verified</td><td>73.8</td><td>Boa base de engenharia para um tier operacional.</td></tr>
+          <tr><td>SWE-Bench Multilingual</td><td>66.7</td><td>Segura multilanguage melhor do que muita alternativa barata.</td></tr>
+          <tr><td>LiveCodeBench</td><td>84.9</td><td>Coding benchmark forte para o papel de modelo diario.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>41.0</td><td>Aqui fica claro que ele nao e o “modelo agente premium” da familia.</td></tr>
+          <tr><td>BrowseComp</td><td>67.0</td><td>Agentic browse funcional, nao excepcional.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://docs.z.ai/guides/llm/glm-4.7">GLM-4.7 overview</a>.</p>
+    </section>
+
+    <section class="card model-card" id="glm-5-1-thinking">
+      <h2>GLM-5.1 Thinking</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag good">Melhor custo-beneficio</span>
+      </div>
+      <p>Continua como a leitura mais limpa do hub para custo-beneficio tecnico serio. Nao e o topo absoluto em tudo, mas quase sempre e forte o bastante para justificar a tese economica do hub.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Pro / Public</td><td>58.4</td><td>Base muito respeitavel para coding agent.</td></tr>
+          <tr><td>SWE-Bench Multilingual</td><td>73.3</td><td>Segura bem multilinguagem.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>63.5</td><td>Bom ferramental, abaixo dos melhores GPTs.</td></tr>
+          <tr><td>BrowseComp</td><td>79.3</td><td>Boa capacidade de navegação/síntese.</td></tr>
+          <tr><td>Toolathlon</td><td>40.7</td><td>Tool use mais fraco que o restante do pacote.</td></tr>
+          <tr><td>HLE w/tools</td><td>50.4</td><td>Ferramental ainda competitivo.</td></tr>
+          <tr><td>GPQA Diamond</td><td>86.2</td><td>Raciocinio geral forte o bastante para o preço.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://docs.z.ai/guides/llm/glm-5.1">GLM-5.1 overview</a>.</p>
+    </section>
+
+    <section class="card model-card" id="minimax-m2-7">
+      <h2>MiniMax M2.7</h2>
+      <div>
+        <span class="tag mid">Benchmark parcial</span>
+        <span class="tag warn">Volume barato</span>
+      </div>
+      <p>O principal papel do `M2.7` no hub e mostrar que MiniMax nao e so throughput bruto: existe benchmark publico suficiente para justificar monitoramento tecnico serio.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Multilingual</td><td>76.5</td><td>Muito boa leitura fora do ingles.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>57.0</td><td>Ferramental decente, abaixo do bloco premium.</td></tr>
+          <tr><td>Toolathlon</td><td>46.3</td><td>Uso de ferramentas razoavel.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://www.minimax.io/news/minimax-m27-en">MiniMax M2.7 benchmark post</a>.</p>
+    </section>
+
+    <section class="card model-card" id="qwen3-max-thinking">
+      <h2>Qwen3-Max Thinking</h2>
+      <div>
+        <span class="tag mid">Benchmark parcial</span>
+        <span class="tag good">Alibaba / Qwen</span>
+      </div>
+      <p>Essa ficha amarra a profundidade real do ecossistema Alibaba. Ele nao esta no topo do hub por ser “o melhor modelo do mundo”, mas por reforcar a tese de capacidade e portfolio.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Verified</td><td>75.3</td><td>Boa leitura de issues reais.</td></tr>
+          <tr><td>LiveCodeBench</td><td>85.9</td><td>Coding benchmark competitivo.</td></tr>
+          <tr><td>HLE w/tools</td><td>49.8</td><td>Ferramental funcional, nao dominante.</td></tr>
+          <tr><td>GPQA Diamond</td><td>87.4</td><td>Raciocinio geral forte.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://www.alibabacloud.com/blog/602834">Qwen3-Max-Thinking benchmark post</a>.</p>
+    </section>
+
+    <section class="card model-card" id="opus-4-6-max">
+      <h2>Opus-4.6 Max</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag good">Referencia premium</span>
+      </div>
+      <p>Continua como ancora premium do hub para contexto longo, qualidade geral e “frontier de verdade”. Muito do raciocinio economico do estudo so faz sentido porque essa ficha existe como referencia.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Verified</td><td>80.8</td><td>Continua de elite para issues reais.</td></tr>
+          <tr><td>LiveCodeBench</td><td>88.8</td><td>Coding benchmark muito forte.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>65.4</td><td>Ferramental bom, abaixo dos melhores GPTs.</td></tr>
+          <tr><td>BrowseComp</td><td>83.7</td><td>Agentic browse muito competitivo.</td></tr>
+          <tr><td>Toolathlon</td><td>47.2</td><td>Uso de ferramentas bom, nao lider.</td></tr>
+          <tr><td>HLE w/tools</td><td>53.1</td><td>Ferramental muito solido.</td></tr>
+          <tr><td>GPQA Diamond</td><td>91.3</td><td>Raciocinio geral premium.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://www.anthropic.com/news/claude-opus-4-6?id=ClaudeOpus4.6">Claude Opus 4.6</a>.</p>
+    </section>
+
+    <section class="card model-card" id="opus-4-7">
+      <h2>Opus-4.7</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag good">Melhor Opus para engenharia</span>
+      </div>
+      <p>E a leitura mais forte da familia Opus para software engineering nesta rodada. Nem sempre com linha oficial para todo benchmark, mas forte demais para ficar fora das fichas principais.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Pro / Public</td><td>64.3</td><td>Sobe sobre varias referencias fortes da matriz.</td></tr>
+          <tr><td>BrowseComp</td><td>79.3</td><td>Agentic browse bem resolvido.</td></tr>
+          <tr><td>GPQA Diamond</td><td>94.2</td><td>Raciocinio geral muito alto.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://www.anthropic.com/news/claude-opus-4-7">Claude Opus 4.7</a>.</p>
+    </section>
+
+    <section class="card model-card" id="gpt-5-4-xhigh">
+      <h2>GPT-5.4 xHigh</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag good">Ferramental premium</span>
+      </div>
+      <p>O melhor argumento da OpenAI antes do salto do `GPT-5.5` para terminal e tools. Ainda e fortissimo, especialmente quando a questao e “agente que mexe nas coisas”.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Pro / Public</td><td>57.7</td><td>Boa base de coding agent premium.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>75.1</td><td>Um dos grandes destaques ferramental da matriz.</td></tr>
+          <tr><td>BrowseComp</td><td>82.7</td><td>Agentic browse muito forte.</td></tr>
+          <tr><td>Toolathlon</td><td>54.6</td><td>Tool use entre os melhores.</td></tr>
+          <tr><td>HLE w/tools</td><td>52.0</td><td>Ferramental premium consistente.</td></tr>
+          <tr><td>GPQA Diamond</td><td>93.0</td><td>Raciocinio geral altissimo.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://openai.com/index/introducing-gpt-5-4/">Introducing GPT-5.4</a>.</p>
+    </section>
+
+    <section class="card model-card" id="gpt-5-5">
+      <h2>GPT-5.5</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag good">Melhor para terminal + browse</span>
+      </div>
+      <p>Hoje e a referencia mais agressiva do hub para terminal, browse e execucao agentica ferramental. Por isso a tese OpenAI continua relevante mesmo com quota menos legivel.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Pro / Public</td><td>58.6</td><td>Boa base de coding agent premium.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>82.7</td><td>Melhor linha desta matriz para terminal + tools.</td></tr>
+          <tr><td>BrowseComp</td><td>84.4</td><td>Muito forte para navegação e síntese.</td></tr>
+          <tr><td>Toolathlon</td><td>55.6</td><td>Melhor linha tool use da matriz principal.</td></tr>
+          <tr><td>HLE w/tools</td><td>52.2</td><td>Ferramental premium muito estável.</td></tr>
+          <tr><td>GPQA Diamond</td><td>93.6</td><td>Raciocinio geral no topo frontier.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://openai.com/index/introducing-gpt-5-5/">Introducing GPT-5.5</a>.</p>
+    </section>
+
+    <section class="card model-card" id="gemini-3-1-pro-high">
+      <h2>Gemini-3.1-Pro High</h2>
+      <div>
+        <span class="tag good">Benchmark forte</span>
+        <span class="tag good">Reasoning + browse</span>
+      </div>
+      <p>E o contraponto mais forte da Google dentro do hub: muito competitivo em raciocinio geral e browse, com custo de API mais amigavel do que a elite premium mais cara.</p>
+      <table>
+        <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>SWE-Bench Pro / Public</td><td>54.2</td><td>Base solida de coding agent.</td></tr>
+          <tr><td>SWE-Bench Verified</td><td>80.6</td><td>Empata com blocos premium em issues reais.</td></tr>
+          <tr><td>SWE-Bench Multilingual</td><td>76.9</td><td>Muito forte em multilanguage.</td></tr>
+          <tr><td>LiveCodeBench</td><td>91.7</td><td>Coding benchmark excelente.</td></tr>
+          <tr><td>Terminal Bench 2.0</td><td>68.5</td><td>Ferramental bom, abaixo de GPT-5.5.</td></tr>
+          <tr><td>BrowseComp</td><td>85.9</td><td>Melhor linha desta matriz para browse.</td></tr>
+          <tr><td>Toolathlon</td><td>48.8</td><td>Tool use competitivo, nao topo.</td></tr>
+          <tr><td>HLE w/tools</td><td>51.6</td><td>Ferramental equilibrado.</td></tr>
+          <tr><td>GPQA Diamond</td><td>94.3</td><td>Melhor linha da matriz em raciocinio geral.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fonte principal: <a href="https://deepmind.google/models/gemini/pro/">Gemini 3.1 Pro benchmarks</a>.</p>
+    </section>
+  </div>
+</body>
+</html>
