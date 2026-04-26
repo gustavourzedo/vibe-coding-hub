@@ -227,20 +227,31 @@
     <section class="card model-card" id="mimo-v2-5-pro">
       <h2>MiMo-V2.5-Pro</h2>
       <div>
-        <span class="tag warn">Claim-tracked</span>
-        <span class="tag risk">Sem matriz row-by-row publica</span>
+        <span class="tag mid">Benchmark oficial do vendor</span>
+        <span class="tag risk">Fora da matriz central</span>
       </div>
-      <p>Modelo topo atual da Xiaomi MiMo. Ele entra na matriz principal por relevancia estrategica, mas ainda sem a mesma granularidade benchmark-by-benchmark que temos no `MiMo-V2-Flash`.</p>
+      <p>Modelo topo atual da Xiaomi MiMo. A correcao importante aqui e que ele ja nao esta mais num limbo de `claim-tracked` puro: a Xiaomi publicou em 22/04/2026 uma pagina oficial de `MiMo V2.5` com benchmark e logica de custo do `Token Plan`.</p>
+      <table>
+        <thead><tr><th>Benchmark oficial</th><th>Valor</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>Claw-Eval Text</td><td>62.3</td><td>Boa ancora para agentic tasks do dia a dia, com leitura forte de eficiencia.</td></tr>
+          <tr><td>Claw-Eval Multimodal</td><td>23.8</td><td>Empata com `Claude Sonnet 4.6` no comparativo oficial da Xiaomi.</td></tr>
+          <tr><td>Video-MME</td><td>87.7</td><td>Fica muito perto de `Gemini 3 Pro` no comparativo oficial; bom sinal para long-horizon multimodal.</td></tr>
+          <tr><td>CharXiv RQ</td><td>81.0</td><td>Mostra image/chart understanding competitivo para workflows mistos.</td></tr>
+          <tr><td>MMMU-Pro</td><td>77.9</td><td>Reforca que a ambicao da familia vai alem de coding puro.</td></tr>
+        </tbody>
+      </table>
       <div class="warnout">
-        <strong>Estado real hoje:</strong> a Xiaomi faz claim oficial de paridade com `Claude Opus 4.6` em cenarios agenticos exigentes, mas ainda nao publicou
-        uma tabela publica row-by-row comparavel o bastante para preencher as linhas centrais do hub sem forcar a comparabilidade.
+        <strong>Por que ele continua fora da matriz central:</strong> os benchmarks oficiais do `MiMo V2.5` sao uteis e entram nesta ficha,
+        mas eles nao estao no mesmo conjunto de linhas compartilhadas que o hub usa para a comparacao central entre labs
+        (`SWE-Bench`, `LiveCodeBench`, `Terminal Bench`, `BrowseComp`, `Toolathlon`, `GPQA`).
       </div>
       <ul>
-        <li>Serve como `model watch premium` da familia MiMo.</li>
-        <li>Ja e importante para avaliar OpenCode Go e futuras stacks multi-provider.</li>
-        <li>Precisa de benchmark oficial detalhado para deixar de ser `claim-tracked` e virar coluna plenamente numerica.</li>
+        <li>No `Token Plan`, `MiMo-V2.5-Pro` consome `2 credits` por token.</li>
+        <li>O update oficial diz que nao ha mais multiplicador extra para `1M context`.</li>
+        <li>Hoje ele serve como ficha benchmark oficial do vendor + model watch premium da familia MiMo.</li>
       </ul>
-      <p class="small">Fontes principais: <a href="https://mimo.mi.com/">MiMo home</a>, <a href="https://mimo.xiaomi.com/">MiMo blog/homepage</a>.</p>
+      <p class="small">Fontes principais: <a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5 official page</a>, <a href="https://mimo.mi.com/">MiMo home</a>, <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a>.</p>
     </section>
 
     <section class="card model-card" id="ds-v4-pro-max">
