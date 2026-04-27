@@ -24,6 +24,7 @@
     .score { font-size: 28px; font-weight: 700; color: white; } .good { color: var(--good); } .warn { color: var(--warn); }
     .bar { width: 100%; height: 10px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; margin-top: 8px; } .bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
     .callout { border-left: 4px solid var(--accent); background: rgba(110,231,183,.08); border-radius: 12px; padding: 14px 16px; margin-top: 14px; }
+    .callout-warn { border-left: 4px solid var(--warn); background: rgba(251,191,36,.08); border-radius: 12px; padding: 14px 16px; margin-top: 14px; }
     ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); } li { margin-bottom: 8px; }
     table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; } th, td { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; vertical-align: top; } th { color: #f4f8ff; background: rgba(96,165,250,.08); }
     .small { font-size: 13px; color: #8ea0c7; }
@@ -42,10 +43,10 @@
         ainda nao e tao limpa quanto no GLM.
       </p>
       <div class="grid-4">
-        <div class="mini"><strong>Ultima compilacao</strong><div>27/04/2026 (Lite descontinuado; qwen3.6-plus Pro exclusivo; preco internacional confirmado US$ 50)</div></div>
+        <div class="mini"><strong>Ultima compilacao</strong><div>27/04/2026</div></div>
         <div class="mini"><strong>Status no hub</strong><div>Melhor dark horse / piloto agressivo</div></div>
-        <div class="mini"><strong>Ponto forte</strong><div>Muita quota oficial por US$ 50/mes (¥200 na China)</div></div>
-        <div class="mini"><strong>Ponto de atencao</strong><div>Contagem em chamadas, nao em tokens</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>US$ 50/mes (¥200 na China) por 90K requests/mes com multiplos modelos fortes</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Contagem em chamadas, nao em tokens; sem visibilidade por modelo</div></div>
       </div>
     </section>
 
@@ -53,64 +54,165 @@
       <h2>Leitura executiva</h2>
       <p>
         A Alibaba hoje vende uma assinatura mensal fixa para coding tools com varios modelos fortes no mesmo pacote.
-        A oferta oficial e boa o bastante para merecer teste serio em `KLG Bots`, `GnBots` e `ClipForge`.
+        A oferta oficial e boa o bastante para merecer teste serio. A questao central nao e se a quota e suficiente
+        em numero de requests &mdash; ela claramente e &mdash; mas sim se a <strong>qualidade tecnica por modelo</strong>
+        e a <strong>previsibilidade do consumo real</strong> justificam confiar nela como plano principal.
       </p>
       <div class="callout">
-        <strong>Resumo curto:</strong> em `capacidade bruta`, o plano impressiona. O que segura a recomendacao principal
-        e a combinacao de `quota por requests`, `falta de token-level detail`, `visibilidade limitada por modelo` e
-        mais incerteza pratica de qualidade/consistencia do que no GLM.
+        <strong>Resumo curto:</strong> em `capacidade bruta`, o plano impressiona (6.000 requests/5h e muito volume).
+        O que segura a recomendacao principal e a combinacao de `quota por requests`, `falta de token-level detail`,
+        `sem visibilidade por modelo` e mais incerteza pratica de qualidade/consistencia do que no GLM.
+      </div>
+      <div class="callout-warn" style="margin-top:12px;">
+        <strong>Atualizacao critica (27/04):</strong> a doc oficial agora lista <code>qwen3.6-plus</code> como modelo
+        recomendado exclusivo do Pro, com 1M de contexto e suporte a imagens. Isso eleva significativamente o valor
+        tecnico do plano, mas <code>kimi-k2.5</code> e <code>glm-5</code> estao disponiveis <strong>apenas na China continental</strong>
+        &mdash; internacionalmente, os modelos terceiros acessiveis podem ser mais limitados.
       </div>
     </section>
 
     <section class="card">
-      <h2>Plano, modelos e quota oficial</h2>
+      <h2>Plano, modelos e quota oficial (verificado 27/04/2026)</h2>
       <table>
         <thead>
-          <tr>
-            <th>Preco</th>
-            <th>Modelos citados oficialmente</th>
-            <th>Quota</th>
-            <th>Reset</th>
-          </tr>
+          <tr><th>Preco</th><th>Modelos recomendados (Pro)</th><th>Modelos adicionais</th><th>Quota Pro</th><th>Reset</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td>US$ 50/mes (¥200 na China)</td>
-            <td>qwen3.5-plus, kimi-k2.5, glm-5, MiniMax-M2.5, qwen3-max-2026-01-23, qwen3-coder-next, qwen3-coder-plus, glm-4.7</td>
-            <td>6.000 requests / 5h, 45.000 / semana, 90.000 / mes</td>
-            <td>5h em sliding window; semanal toda segunda 00:00 UTC+8; mensal na data de aniversario da assinatura</td>
+            <td>US$ 50/mes (internacional)<br/>¥200/mes (China)</td>
+            <td><strong>qwen3.6-plus</strong> (1M ctx, visao, Pro exclusivo)<br/>kimi-k2.5 (visao)<br/>glm-5<br/>MiniMax-M2.5</td>
+            <td>qwen3.5-plus (visao)<br/>qwen3-max-2026-01-23<br/>qwen3-coder-next<br/>qwen3-coder-plus<br/>glm-4.7</td>
+            <td>6.000 req/5h<br/>45.000/semana<br/>90.000/mes</td>
+            <td>5h sliding window<br/>Segunda 00:00 UTC+8<br/>Aniversario da assinatura</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout-warn" style="margin-top:12px;">
+        <strong>Atencao regional:</strong> <code>kimi-k2.5</code> e <code>glm-5</code> estao disponiveis na doc chinesa, mas
+        podem ter acesso limitado fora da China continental. Verifique acessibilidade real pelo endpoint internacional
+        (<code>coding-intl.dashscope.aliyuncs.com</code>) antes de contar com eles.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Modelos: benchmark tecnico e comparacao</h2>
+      <table>
+        <thead>
+          <tr><th>Modelo</th><th>Contexto</th><th>SWE-bench Verified</th><th>Terminal Bench 2.0</th><th>BFCL-V4 (tools)</th><th>Comparacao com Opus 4.7</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>qwen3.6-plus</strong><br/><span class="small">Pro exclusivo</span></td>
+            <td>1M</td>
+            <td>~77% <span class="small">(Qwen3.6-27B)</span></td>
+            <td>59.3%</td>
+            <td>~72-73%</td>
+            <td><span class="good">~82-90% da qualidade</span><br/><span class="small">Mais proximo de Opus no pacote. 1M de contexto e diferencial.</span></td>
+          </tr>
+          <tr>
+            <td><strong>qwen3.5-plus</strong><br/><span class="small">Demoted para "mais modelos"</span></td>
+            <td>256K</td>
+            <td>~76%</td>
+            <td>~55-57%</td>
+            <td>72.9%</td>
+            <td><span class="warn">~70-80% da qualidade</span><br/><span class="small">Ainda forte, mas perdeu destaque para o 3.6.</span></td>
+          </tr>
+          <tr>
+            <td><strong>qwen3-coder-plus/next</strong></td>
+            <td>?</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><span class="warn">Incerto</span><br/><span class="small">Modelos dedicados a codigo, mas sem benchmarks publicos claros. Podem surpreender.</span></td>
+          </tr>
+          <tr>
+            <td><strong>glm-5</strong><br/><span class="small">Pode ser so China</span></td>
+            <td>?</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><span class="warn">Incerto</span><br/><span class="small">Benchmark fraco na pratica para agentic coding pesado vs GLM-5.1 direto.</span></td>
+          </tr>
+          <tr>
+            <td><strong>kimi-k2.5</strong><br/><span class="small">Pode ser so China</span></td>
+            <td>?</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><span class="warn">Incerto</span><br/><span class="small">Benchmark K2.6 e 62.6% SWE; K2.5 provavelmente inferior.</span></td>
+          </tr>
+          <tr>
+            <td><strong>MiniMax-M2.5</strong></td>
+            <td>?</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><span class="warn">Incerto</span><br/><span class="small">Confiabilidade tecnica fraca como sub principal de Opus.</span></td>
+          </tr>
+          <tr style="background:rgba(110,231,183,.06);">
+            <td><strong>Claude Opus 4.7 (ref)</strong></td>
+            <td>200K</td>
+            <td>~80%</td>
+            <td>~60%</td>
+            <td>77.5%</td>
+            <td><span class="good">100% (benchmark de referencia)</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small" style="margin-top:8px;">
+        Nota: Os scores de benchmark sao dos modelos open-weight (Qwen3.6-27B, Qwen3.5-397B-A17B).
+        As versoes de API podem ter diferencas sutis. SWE-bench e Terminal Bench 2.0 sao os mais proximos
+        do uso agentico pesado do seu benchmark.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Consumo estimado de requests por tipo de tarefa</h2>
+      <p>A doc oficial confirma que cada prompt gasta multiplas requests internas. Estimativa real:</p>
+      <table>
+        <thead>
+          <tr><th>Tipo de uso</th><th>Requests por prompt</th><th>Prompts/5h (6.000 req)</th><th>Prompts/semana (45.000 req)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tarefa simples (pergunta, geracao isolada)</td><td>5-10</td><td>600-1.200</td><td>4.500-9.000</td></tr>
+          <tr><td>Tarefa moderada (refatoracao, debug com contexto)</td><td>10-20</td><td>300-600</td><td>2.250-4.500</td></tr>
+          <tr><td>Tarefa pesada (agentic coding, multi-step, tools)</td><td>20-30+</td><td>200-300</td><td>1.500-2.250</td></tr>
+          <tr style="background:rgba(110,231,183,.06);"><td><strong>Seu benchmark (Opus-heavy, ~295 prompts/semana)</strong></td><td>20-30+</td><td><strong>200-300</strong></td><td><strong>1.500-2.250</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>Conclusao de capacidade:</strong> com consumo agentico pesado (20-30+ requests/prompt),
+        os 45.000 requests/semana rendem <strong>~1.500-2.250 prompts uteis</strong> contra sua demanda de ~295.
+        Isso e <strong>5-7x de headroom</strong> &mdash; a quota em requests e amplamente suficiente para o seu caso.
+        O gargalo nunca vai ser volume. E <strong>qualidade tecnica e previsibilidade</strong>.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Benchmark resumido desta assinatura</h2>
+      <table>
+        <thead>
+          <tr><th>Dimensao</th><th>Faixa</th><th>Justificativa</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Capacidade (volume)</strong></td>
+            <td><div class="score good">85% a 115%</div><div class="bar"><span style="width:95%"></span></div></td>
+            <td>90K requests/mes com 5-30 por prompt e muito mais do que 295 prompts/semana. Headroom de 5-7x.</td>
+          </tr>
+          <tr>
+            <td><strong>Qualidade tecnica</strong></td>
+            <td><div class="score warn">50% a 70%</div><div class="bar"><span style="width:60%"></span></div></td>
+            <td>qwen3.6-plus (1M ctx) chega a ~82-90% de Opus, mas glm-5, kimi-k2.5 e MiniMax-M2.5 nao tem benchmark claro e podem ser significativamente inferiores. Media ponderada provavelmente 50-70%.</td>
+          </tr>
+          <tr>
+            <td><strong>Consolidado</strong></td>
+            <td><div class="score warn">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td>Excelente volume, mas a incerteza em qualidade por modelo e a falta de visibilidade de tokens consumidos reduzem a confianca como plano principal.</td>
           </tr>
         </tbody>
       </table>
     </section>
-
-      <section class="card">
-        <h2>Benchmark resumido desta assinatura</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Plano</th>
-              <th>Capacidade</th>
-              <th>Aderencia tecnica pratica</th>
-              <th>Consolidado</th>
-              <th>Leitura pratica</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Alibaba Coding Plan Pro</strong></td>
-              <td><div class="score good">80% a 110%</div><div class="bar"><span style="width:92%"></span></div></td>
-              <td><div class="score warn">45% a 65%</div><div class="bar"><span style="width:55%"></span></div></td>
-              <td><div class="score warn">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
-              <td>Leitura da assinatura frente ao seu benchmark extremo de uma semana no Cursor.</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="small">
-          A recomendacao de usar como `piloto controlado` e uma estrategia de adocao. Ela nao muda a `capacidade`
-          do plano, que continua sendo a fracao plausivel da sua semana extrema que essa assinatura sustentaria.
-        </p>
-      </section>
 
     <section class="card">
       <h2>Como a cobranca funciona</h2>
@@ -120,82 +222,81 @@
           <ul>
             <li>A quota do plano e por `requests`, nao por tokens.</li>
             <li>Cada query gasta varias requests internas: tasks simples usam ~`5-10`; tasks complexas usam `10-30+`.</li>
-            <li>O plano tem `API key` e `base URL` proprios; se usar a credencial geral da Model Studio, a cobranca vai para PAYG.</li>
+            <li>O plano tem `API key` dedicada (sk-sp-xxxxx) e `base URL` dedicada; usar credencial geral = PAYG.</li>
             <li>Depois que a quota acaba, o uso falha. Nao existe spillover automatico para PAYG.</li>
-            <li>O plano `Lite` foi descontinuado (novas compras suspensas desde 20/03, renovações desde 13/04). So resta o `Pro`.</li>
-            <li>`qwen3.6-plus` (1M contexto) e agora modelo recomendado exclusivo do plano Pro; `qwen3.5-plus` foi movido para "mais modelos".</li>
+            <li>O plano `Lite` foi descontinuado (novas compras suspensas desde 20/03, renovacoes desde 13/04). So resta o `Pro`.</li>
+            <li>`qwen3.6-plus` (1M contexto, visao) e modelo recomendado exclusivo do Pro.</li>
+            <li>Domestic (China): <code>coding.dashscope.aliyuncs.com</code>; International: <code>coding-intl.dashscope.aliyuncs.com</code>.</li>
+            <li>Proibido usar para API calls automatizadas; so ferramentas interativas de coding.</li>
+            <li>Dados de entrada e saida sao usados para melhoria do servico (§5.2 dos termos).</li>
           </ul>
         </div>
         <div class="mini">
           <h3>O que continua opaco</h3>
           <ul>
-            <li>Sem detalhe de `token consumption`.</li>
-            <li>Sem leitura de consumo por modelo.</li>
-            <li>Sem publicacao clara de contexto efetivo por tool/session dentro do plano.</li>
-            <li>Sem uma camada oficial tao madura de monitoramento quanto o ecossistema GLM.</li>
+            <li><strong>Sem detalhe de token consumption.</strong> So e possivel ver consumo agregado de requests no console.</li>
+            <li><strong>Sem leitura de consumo por modelo.</strong> Nao da para saber quantos requests foram qwen3.6-plus vs glm-5.</li>
+            <li><strong>Sem publicacao clara de contexto efetivo por tool/session.</strong> O 1M do qwen3.6-plus e pagamento API, mas o contexto real dentro do Coding Plan nao e documentado.</li>
+            <li><strong>Modelos terceiros podem nao estar disponiveis no endpoint internacional.</strong> kimi-k2.5 e glm-5 podem ser so China.</li>
+            <li><strong>Nenhum multiplier por modelo visivel.</strong> Ao contrario do GLM (3x/2x/1x), nao se sabe se modelos mais pesados consomem mais requests.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>Capacidade e qualidade estimadas</h2>
-      <div class="grid-3">
-        <div class="mini">
-          <strong>Capacidade</strong>
-          <div class="score good">80% a 110%</div>
-          <div class="bar"><span style="width: 92%"></span></div>
-          <p class="small">Na matematica de requests, ele parece aguentar ate workloads pesados.</p>
-        </div>
-        <div class="mini">
-          <strong>Qualidade tecnica</strong>
-          <div class="score warn">45% a 65%</div>
-          <div class="bar"><span style="width: 55%"></span></div>
-          <p class="small">O pacote tem modelos fortes, mas a consistencia no agentic coding pesado ainda e a grande incognita.</p>
-        </div>
-        <div class="mini">
-          <strong>Consolidado</strong>
-          <div class="score warn">55% a 80%</div>
-          <div class="bar"><span style="width: 68%"></span></div>
-          <p class="small">Melhor como piloto controlado do que como compra cega.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Por que esta assinatura recebe essas faixas</h2>
+      <h2>Veredito: a Alibaba consegue entregar?</h2>
       <div class="grid-2">
-        <div class="mini"><h3>Capacidade alta</h3><p>A quota oficial em requests e muito generosa para o seu tipo de fluxo agentico.</p></div>
-        <div class="mini"><h3>Qualidade e consolidado menores</h3><p>O desconto vem da menor visibilidade em tokens, contexto efetivo e consistencia pratica por modelo.</p></div>
+        <div class="mini">
+          <h3>Volume: SIM, com folga</h3>
+          <p>
+            Os 6.000 requests/5h e 45.000/semana sao absurdamente mais do que o seu benchmark de ~295 prompts pesados.
+            Mesmo no pior cenario de 30+ requests/prompt, a quota cobre com folga de 5-7x.
+            <strong>O gargalo nunca sera volume.</strong>
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Qualidade: DEPENDE DO MODELO</h3>
+          <p>
+            <code>qwen3.6-plus</code> (1M contexto, ~77% SWE-bench) e o modelo mais forte do pacote e chega
+            a ~82-90% de Opus 4.7 em benchmarks de codigo. <strong>Este e o modelo que voce usaria neeste plano.</strong>
+          </p>
+          <p>
+            Os outros modelos (glm-5, kimi-k2.5, MiniMax-M2.5) nao tem benchmarks claros de coding e
+            provavelmente ficam abaixo de qwen3.6-plus em qualidade. <strong>Confie no qwen3.6-plus como fallback;
+            trate os demais como bonus, nao como razao de compra.</strong>
+          </p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Recomendacao atualizada:</strong> a Alibaba Pro a US$ 50/mes e um <strong>excelente piloto</strong>
+        para testar se o qwen3.6-plus no Coding Plan substitui Opus no seu workflow real.
+        A quota cobre com folga. O risco nao e volume &mdash; e se o modelo entrega a consistencia que o seu
+        benchmark extremo exige em tarefas agenticas de multi-step. <strong>Teste com 1 ciclo antes de
+        promover para plano principal.</strong>
       </div>
     </section>
 
     <section class="card">
-      <h2>Sinais de campo relevantes</h2>
-      <ul>
-        <li>O proprio plano hoje documenta claramente a diferenca entre `coding key` e `general key`, o que ajuda a evitar cobrancas erradas.</li>
-        <li>Tambem fica claro que nao ha `token view`; isso e uma limitacao real para o seu tipo de estudo.</li>
-        <li>Na camada comunitaria, o plano vem chamando atencao justamente pelo contraste entre `preco muito baixo` e `risco de qualidade/contexto ainda pouco entendido`.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Como eu usaria no seu caso</h2>
-      <ul>
-        <li>Trataria como `piloto de 1 ciclo` com workloads reais dos seus projetos mais pesados.</li>
-        <li>Mediria quantas tasks complexas voce fecha antes de sentir degradacao ou travamento operacional.</li>
-        <li>So promoveria para plano principal se a qualidade pratica surpreender positivamente.</li>
-      </ul>
+      <h2>Ferramentas compatíveis (oficiais)</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Principais</strong><br/>Claude Code, Cline, Cursor, OpenCode, Codex, Qwen Code</div>
+        <div class="mini"><strong>Secundarias</strong><br/>OpenClaw, Kilo Code, Kilo CLI, Qoder, Lingma</div>
+        <div class="mini"><strong>Protocolo</strong><br/>OpenAI-compativel e Anthropic-compativel com base URLs dedicadas</div>
+      </div>
     </section>
 
     <section class="card">
       <h2>Caminhos oficiais para manutencao futura</h2>
       <ul>
         <li><a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan">Alibaba Coding Plan overview</a></li>
-        <li><a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan-faq">Alibaba Coding Plan FAQ</a></li>
-        <li><a href="https://www.alibabacloud.com/help/en/model-studio/qwen-code-coding-plan">Qwen Code for Coding Plan</a></li>
-        <li><a href="https://www.alibabacloud.com/help/en/model-studio/other-tools-coding-plan">Other tools for Coding Plan</a></li>
+        <li><a href="https://www.alibabacloud.com/en/campaign/ai-scene-coding">Campaign page (pricing, tools)</a></li>
+        <li><a href="https://help.aliyun.com/zh/model-studio/coding-plan">Documentacao chinesa completa</a></li>
+        <li><a href="https://jia.je/kb/en/software/coding_plan.html">jia.je Knowledge Base (comparativo comunitario)</a></li>
       </ul>
+      <p class="small">
+        Atualizar esta pagina sempre que mudar: modelos suportados, preco, quota, disponibilidade internacional, ou benchmark oficial.
+      </p>
     </section>
   </div>
 </body>
