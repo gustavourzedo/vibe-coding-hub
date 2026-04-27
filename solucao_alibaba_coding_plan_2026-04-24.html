@@ -59,7 +59,7 @@
         e a <strong>previsibilidade do consumo real</strong> justificam confiar nela como plano principal.
       </p>
       <div class="callout">
-        <strong>Resumo curto:</strong> em `capacidade bruta`, o plano impressiona (6.000 requests/5h e muito volume).
+        <strong>Resumo curto:</strong> em `capacidade bruta`, o plano impressiona (6.000 requests/5h e muito volume), mas qwen3.6-plus gasta mais requests por prompt do que modelos menores &mdash; o headroom real e 4-5x, nao 5-7x.
         O que segura a recomendacao principal e a combinacao de `quota por requests`, `falta de token-level detail`,
         `sem visibilidade por modelo` e mais incerteza pratica de qualidade/consistencia do que no GLM.
       </div>
@@ -197,8 +197,8 @@
         <tbody>
           <tr>
             <td><strong>Capacidade (volume)</strong></td>
-            <td><div class="score good">85% a 115%</div><div class="bar"><span style="width:95%"></span></div></td>
-            <td>90K requests/mes com 5-30 por prompt e muito mais do que 295 prompts/semana. Headroom de 5-7x.</td>
+            <td><div class="score good">80% a 105%</div><div class="bar"><span style="width:90%"></span></div></td>
+            <td>90K requests/mes cobre com folga, mas qwen3.6-plus e mais capaz e gasta mais requests/prompt (estimativa 25-35+ ao inves de 20-30+). Headroom real: 4-5x.</td>
           </tr>
           <tr>
             <td><strong>Qualidade tecnica</strong></td>
