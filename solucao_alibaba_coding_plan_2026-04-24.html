@@ -96,74 +96,68 @@
 
     <section class="card">
       <h2>Modelos: benchmark tecnico e comparacao</h2>
+      <p class="small" style="margin-bottom:8px;">Dados de 27/04/2026. Arena Code = preferencia humana em coding agentic (mais proximo do seu uso real). SWE-bench = benchmark estruturado de repos Python.</p>
       <table>
         <thead>
-          <tr><th>Modelo</th><th>Contexto</th><th>SWE-bench Verified</th><th>Terminal Bench 2.0</th><th>BFCL-V4 (tools)</th><th>Comparacao com Opus 4.7</th></tr>
+          <tr><th>Modelo</th><th>Arena Code</th><th>SWE-bench</th><th>Contexto</th><th>vs Opus 4.7 (Arena)</th></tr>
         </thead>
         <tbody>
+          <tr style="background:rgba(110,231,183,.06);">
+            <td><strong>Claude Opus 4.7</strong><br/><span class="small">referencia</span></td>
+            <td><strong>1565</strong><br/><span class="small">#2</span></td>
+            <td>~80%</td>
+            <td>1M</td>
+            <td><span class="good">100%</span></td>
+          </tr>
+          <tr style="background:rgba(110,231,183,.04);">
+            <td><strong>GLM-5.1</strong><br/><span class="small">melhor do GLM Plan</span></td>
+            <td><strong>1534</strong><br/><span class="small">#5</span></td>
+            <td>58.4%</td>
+            <td>202.8K</td>
+            <td><span class="good">~98%</span><br/><span class="small">Compete com Opus no Arena. Principal concorrente do qwen3.6-plus.</span></td>
+          </tr>
           <tr>
             <td><strong>qwen3.6-plus</strong><br/><span class="small">Pro exclusivo</span></td>
+            <td><strong>1470</strong><br/><span class="small">#11</span></td>
+            <td>~77%</td>
             <td>1M</td>
-            <td>~77% <span class="small">(Qwen3.6-27B)</span></td>
-            <td>59.3%</td>
-            <td>~72-73%</td>
-            <td><span class="good">~82-90% da qualidade</span><br/><span class="small">Mais proximo de Opus no pacote. 1M de contexto e diferencial.</span></td>
+            <td><span class="warn">~94%</span><br/><span class="small">Bom em SWE-bench, mas 64 pontos abaixo do GLM-5.1 no Arena Code.</span></td>
           </tr>
           <tr>
-            <td><strong>qwen3.5-plus</strong><br/><span class="small">Demoted para "mais modelos"</span></td>
+            <td><strong>glm-5</strong><br/><span class="small">pode ser so China</span></td>
+            <td><strong>1436</strong><br/><span class="small">#21</span></td>
+            <td>N/A</td>
+            <td>202.8K</td>
+            <td><span class="warn">~92%</span><br/><span class="small">Versao completa do GLM, mas abaixo do 5.1.</span></td>
+          </tr>
+          <tr>
+            <td><strong>kimi-k2.6</strong><br/><span class="small">pode ser so China</span></td>
+            <td><strong>1529</strong><br/><span class="small">#6</span></td>
+            <td>N/A</td>
             <td>256K</td>
+            <td><span class="good">~97.7%</span><br/><span class="small">Muito forte no Arena, mas disponibilidade no Alibaba e incerta.</span></td>
+          </tr>
+          <tr>
+            <td><strong>qwen3.5-plus</strong><br/><span class="small">demoted</span></td>
+            <td><strong>1388</strong><br/><span class="small">#33</span></td>
             <td>~76%</td>
-            <td>~55-57%</td>
-            <td>72.9%</td>
-            <td><span class="warn">~70-80% da qualidade</span><br/><span class="small">Ainda forte, mas perdeu destaque para o 3.6.</span></td>
+            <td>262.1K</td>
+            <td><span class="warn">~89%</span><br/><span class="small">Perdeu destaque para o 3.6, e por boas razoes.</span></td>
           </tr>
           <tr>
-            <td><strong>qwen3-coder-plus/next</strong></td>
-            <td>?</td>
+            <td><strong>MiniMax-M2.7</strong></td>
+            <td><strong>1413</strong><br/><span class="small">#24</span></td>
             <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td><span class="warn">Incerto</span><br/><span class="small">Modelos dedicados a codigo, mas sem benchmarks publicos claros. Podem surpreender.</span></td>
-          </tr>
-          <tr>
-            <td><strong>glm-5</strong><br/><span class="small">Pode ser so China</span></td>
-            <td>?</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td><span class="warn">Incerto</span><br/><span class="small">Benchmark fraco na pratica para agentic coding pesado vs GLM-5.1 direto.</span></td>
-          </tr>
-          <tr>
-            <td><strong>kimi-k2.5</strong><br/><span class="small">Pode ser so China</span></td>
-            <td>?</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td><span class="warn">Incerto</span><br/><span class="small">Benchmark K2.6 e 62.6% SWE; K2.5 provavelmente inferior.</span></td>
-          </tr>
-          <tr>
-            <td><strong>MiniMax-M2.5</strong></td>
-            <td>?</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td><span class="warn">Incerto</span><br/><span class="small">Confiabilidade tecnica fraca como sub principal de Opus.</span></td>
-          </tr>
-          <tr style="background:rgba(110,231,183,.06);">
-            <td><strong>Claude Opus 4.7 (ref)</strong></td>
-            <td>200K</td>
-            <td>~80%</td>
-            <td>~60%</td>
-            <td>77.5%</td>
-            <td><span class="good">100% (benchmark de referencia)</span></td>
+            <td>196.6K</td>
+            <td><span class="warn">~90%</span><br/><span class="small">Competitivo mas abaixo dos tops.</span></td>
           </tr>
         </tbody>
       </table>
-      <p class="small" style="margin-top:8px;">
-        Nota: Os scores de benchmark sao dos modelos open-weight (Qwen3.6-27B, Qwen3.5-397B-A17B).
-        As versoes de API podem ter diferencas sutis. SWE-bench e Terminal Bench 2.0 sao os mais proximos
-        do uso agentico pesado do seu benchmark.
-      </p>
+      <div class="callout-warn" style="margin-top:12px;">
+        <strong>Insight critico:</strong> o qwen3.6-plus tem SWE-bench alto (~77%), mas no Arena Code esta <strong>64 pontos abaixo do GLM-5.1</strong> e <strong> Rank #11 vs #5</strong>.
+        Para vibe coding agentic pesado (o seu caso real), o Arena Code e mais relevante que SWE-bench.
+        <code>qwen3.6-plus</code> e bom, mas <strong>nao e superior ao GLM-5.1 em coding agentic real</strong>.
+      </div>
     </section>
 
     <section class="card">
@@ -202,8 +196,8 @@
           </tr>
           <tr>
             <td><strong>Qualidade tecnica</strong></td>
-            <td><div class="score warn">50% a 70%</div><div class="bar"><span style="width:60%"></span></div></td>
-            <td>qwen3.6-plus (1M ctx) chega a ~82-90% de Opus, mas glm-5, kimi-k2.5 e MiniMax-M2.5 nao tem benchmark claro e podem ser significativamente inferiores. Media ponderada provavelmente 50-70%.</td>
+            <td><div class="score warn">45% a 65%</div><div class="bar"><span style="width:55%"></span></div></td>
+            <td>qwen3.6-plus tem SWE-bench alto (~77%) mas no Arena Code esta #11 (1470), 64 pontos abaixo do GLM-5.1 (#5, 1534). Para vibe coding agentic real, o GLM-5.1 e superior. Modelo mais forte do pacote Alibaba chega a ~94% de Opus no Arena, nao 82-90% como SWE-bench sugeria.</td>
           </tr>
           <tr>
             <td><strong>Consolidado</strong></td>
