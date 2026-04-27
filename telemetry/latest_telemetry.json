@@ -1,5 +1,5 @@
 {
-  "compiled_at": "2026-04-24T10:58:33-03:00",
+  "compiled_at": "2026-04-27T15:23:56-03:00",
   "hub_mode": "living_documentation",
   "refresh_model": {
     "current": "manual_run",
@@ -22,71 +22,52 @@
         "projects": "C:\\Users\\gusta\\.cursor\\projects"
       },
       "window": {
-        "full_start": "2026-03-25T15:24:35-03:00",
-        "last_7d_start": "2026-04-17T01:57:39-03:00",
-        "last_7d_end": "2026-04-24T01:57:39-03:00"
+        "full_start": "2026-03-30T13:44:45-03:00",
+        "last_7d_start": "2026-04-20T11:32:24-03:00",
+        "last_7d_end": "2026-04-27T11:32:24-03:00"
       },
       "usage": {
-        "events_total_all_time": 196117,
-        "events_last_7d": 117214,
-        "frontier_share_last_7d": 94.1,
+        "events_total_all_time": 198258,
+        "events_last_7d": 90643,
+        "frontier_share_last_7d": 89.8,
         "top_models_last_7d": [
           {
             "model": "claude-opus-4-7-xhigh",
-            "count": 74171,
-            "share_pct": 63.3
+            "count": 64346,
+            "share_pct": 71.0
           },
           {
-            "model": "claude-opus-4-7-high",
-            "count": 11542,
-            "share_pct": 9.8
+            "model": "composer-2",
+            "count": 9212,
+            "share_pct": 10.2
           },
           {
             "model": "claude-4.6-opus-max",
             "count": 7336,
-            "share_pct": 6.3
-          },
-          {
-            "model": "composer-2",
-            "count": 6896,
-            "share_pct": 5.9
-          },
-          {
-            "model": "claude-opus-4-7-thinking-high",
-            "count": 6557,
-            "share_pct": 5.6
+            "share_pct": 8.1
           },
           {
             "model": "claude-opus-4-7-max",
-            "count": 6256,
-            "share_pct": 5.3
+            "count": 6255,
+            "share_pct": 6.9
           },
           {
             "model": "gpt-5.3-codex-xhigh",
             "count": 1533,
-            "share_pct": 1.3
+            "share_pct": 1.7
           },
           {
             "model": "claude-opus-4-7-medium",
             "count": 1402,
-            "share_pct": 1.2
+            "share_pct": 1.5
           },
           {
-            "model": "claude-opus-4-7",
-            "count": 1074,
-            "share_pct": 0.9
-          },
-          {
-            "model": "claude-4.6-opus-high",
-            "count": 393,
-            "share_pct": 0.3
+            "model": "claude-opus-4-7-high",
+            "count": 559,
+            "share_pct": 0.6
           }
         ],
         "top_projects_last_7d": [
-          {
-            "project": "SERVIDOR-Drive-GnBots",
-            "count": 37069
-          },
           {
             "project": "empty-window / f-KLG-Bots",
             "count": 28125
@@ -96,28 +77,32 @@
             "count": 18887
           },
           {
-            "project": "f-KLG-Bots",
-            "count": 15419
+            "project": "SERVIDOR-Drive-GnBots",
+            "count": 16257
           },
           {
             "project": "c-Users-gusta-cursor",
-            "count": 11898
+            "count": 11899
+          },
+          {
+            "project": "f-KLG-Bots",
+            "count": 8473
           },
           {
             "project": "g-Work-Up-Cloud-projetos-Windows-Otimizado",
             "count": 3074
           },
           {
-            "project": "g-Work-Unitri-Projetos-Alterdata-Automation",
-            "count": 1462
+            "project": "g-Work-Movida-Git-RCA-Vetor-Abril2026",
+            "count": 2236
           },
           {
-            "project": "SERVIDOR-Drive-GnBots / empty-window",
-            "count": 1068
+            "project": "g-Work-Unitri-Projetos-Alterdata-Automation",
+            "count": 1402
           },
           {
             "project": "empty-window",
-            "count": 174
+            "count": 252
           },
           {
             "project": "g-Work-NTT-DATA-ABI",
@@ -126,12 +111,20 @@
         ],
         "daily_counts_last_14d": [
           {
+            "day": "2026-04-27 00:00:00",
+            "count": 2236
+          },
+          {
+            "day": "2026-04-26 00:00:00",
+            "count": 2
+          },
+          {
             "day": "2026-04-24 00:00:00",
-            "count": 181
+            "count": 259
           },
           {
             "day": "2026-04-23 00:00:00",
-            "count": 49822
+            "count": 49821
           },
           {
             "day": "2026-04-22 00:00:00",
@@ -143,19 +136,7 @@
           },
           {
             "day": "2026-04-20 00:00:00",
-            "count": 9944
-          },
-          {
-            "day": "2026-04-19 00:00:00",
-            "count": 4261
-          },
-          {
-            "day": "2026-04-18 00:00:00",
-            "count": 18357
-          },
-          {
-            "day": "2026-04-17 00:00:00",
-            "count": 3289
+            "count": 6965
           }
         ]
       }
@@ -201,15 +182,59 @@
       "id": "opencode_go",
       "label": "OpenCode Go",
       "kind": "manual_snapshot",
-      "status": "planned",
-      "notes": "Ainda nao entrou na telemetria real. Deixar preparado para ser ativado assim que voce comecar a usar.",
+      "status": "active",
+      "notes": "Telemetria extraida do banco local opencode.db em 27/04/2026. Cobre ~18h de uso desde 26/04 apos das 21:30.",
       "window": {
-        "snapshot_at": "2026-04-24T02:12:00-03:00"
+        "snapshot_at": "2026-04-27T15:22:00-03:00",
+        "first_session": "2026-04-26T21:30:16-03:00",
+        "last_session": "2026-04-27T15:22:09-03:00",
+        "duration_hours": 18
       },
       "usage": {
-        "plan": "OpenCode Go",
-        "state": "not_started",
-        "next_action": "Adicionar monitoramento quando o uso real comecar"
+        "version": "1.14.28",
+        "sessions": 8,
+        "messages": 522,
+        "parts": 2209,
+        "tool_calls": 680,
+        "file_edits": 68,
+        "file_reads": 168,
+        "bash_commands": 353,
+        "grep_searches": 14,
+        "reasoning_blocks": 412,
+        "questions_to_user": 1,
+        "code_additions": 644,
+        "code_deletions": 117,
+        "files_changed": 14,
+        "workspaces": [
+          "F:\\KLG Bots",
+          "G:\\Work\\Movida\\Git\\RCA_Vetor_Abril2026",
+          "G:\\Work\\Movida\\Projetos\\SigNoz",
+          "G:\\Work\\NTT DATA\\Projeto Compra Agora",
+          "G:\\Work\\Up Cloud\\projetos\\VibeCoding - Study Case"
+        ],
+        "top_sessions": [
+          {
+            "title": "Retomada KLG Bots validacao E2E Sprint 14",
+            "messages": 232,
+            "dir": "F:\\KLG Bots",
+            "duration_min": 1053,
+            "edits": 68,
+            "additions": 516,
+            "deletions": 117
+          },
+          {
+            "title": "SigNoz CS Brasil apresentacao comparativa",
+            "messages": 123,
+            "dir": "G:\\Work\\Movida\\Projetos\\SigNoz",
+            "duration_min": 39
+          },
+          {
+            "title": "Continuidade RCA Vetor Frotas rastreio causa raiz",
+            "messages": 70,
+            "dir": "G:\\Work\\Movida\\Git\\RCA_Vetor_Abril2026",
+            "duration_min": 86
+          }
+        ]
       }
     }
   ]

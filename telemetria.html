@@ -175,20 +175,20 @@
       <h2>Snapshot atual</h2>
       <div class="grid-4">
         <div class="metric">
-          <div class="metric-value">24/04/2026 10:58</div>
+          <div class="metric-value">27/04/2026 15:22</div>
           <div class="small">Ultima compilacao da telemetria</div>
         </div>
         <div class="metric">
           <div class="metric-value">4 fontes</div>
-          <div class="small">1 automatica + 3 snapshots manuais</div>
+          <div class="small">1 automatica + 3 snapshots manuais (OpenCode Go ativo)</div>
         </div>
         <div class="metric">
           <div class="metric-value warn">Cursor degradado</div>
           <div class="small">Uso atual limitado ao composer-2 segundo snapshot manual</div>
         </div>
         <div class="metric">
-          <div class="metric-value warn">ChatGPT Plus pressionado</div>
-          <div class="small">76% da janela de 5h e 12% da semanal consumidos no snapshot registrado</div>
+          <div class="metric-value good">OpenCode Go ativo</div>
+          <div class="small">8 sessoes, 522 mensagens, 680 tool calls desde 26/04</div>
         </div>
       </div>
     </section>
@@ -228,11 +228,15 @@
         </div>
         <div class="mini">
           <h3>OpenCode Go</h3>
-          <span class="status planned">planned</span>
-          <p>Placeholder de telemetria preparado para entrar quando o uso real comecar.</p>
+          <span class="status active" style="background:rgba(52,211,153,.12);color:#a7f3d0;">active</span>
+          <p>Telemetria extraida do banco local <code>opencode.db</code>. ~18h de uso desde 26/04.</p>
           <ul>
-            <li>Estado atual: <strong>not_started</strong></li>
-            <li>Proximo passo: adicionar monitoramento da ferramenta quando ativar o uso</li>
+            <li>Sessoes registradas: <strong>8</strong></li>
+            <li>Mensagens: <strong>522</strong> | Partes: <strong>2.209</strong></li>
+            <li>Chamadas de ferramenta: <strong>680</strong> (68 edicoes, 168 leituras, 353 bash)</li>
+            <li>Raciocinios: <strong>412</strong> blocos</li>
+            <li>Codigo alterado: <strong>+644 / -117</strong> linhas em 14 arquivos</li>
+            <li>Workspaces: KLG Bots, Movida RCA Vetor, SigNoz, NTT Data, VibeCoding Hub</li>
           </ul>
         </div>
       </div>

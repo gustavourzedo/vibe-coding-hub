@@ -41,15 +41,59 @@
       "id": "opencode_go",
       "label": "OpenCode Go",
       "kind": "manual_snapshot",
-      "status": "planned",
-      "notes": "Ainda nao entrou na telemetria real. Deixar preparado para ser ativado assim que voce comecar a usar.",
+      "status": "active",
+      "notes": "Telemetria extraida do banco local opencode.db em 27/04/2026. Cobre ~18h de uso desde 26/04 apos das 21:30.",
       "window": {
-        "snapshot_at": "2026-04-24T02:12:00-03:00"
+        "snapshot_at": "2026-04-27T15:22:00-03:00",
+        "first_session": "2026-04-26T21:30:16-03:00",
+        "last_session": "2026-04-27T15:22:09-03:00",
+        "duration_hours": 18
       },
       "usage": {
-        "plan": "OpenCode Go",
-        "state": "not_started",
-        "next_action": "Adicionar monitoramento quando o uso real comecar"
+        "version": "1.14.28",
+        "sessions": 8,
+        "messages": 522,
+        "parts": 2209,
+        "tool_calls": 680,
+        "file_edits": 68,
+        "file_reads": 168,
+        "bash_commands": 353,
+        "grep_searches": 14,
+        "reasoning_blocks": 412,
+        "questions_to_user": 1,
+        "code_additions": 644,
+        "code_deletions": 117,
+        "files_changed": 14,
+        "workspaces": [
+          "F:\\KLG Bots",
+          "G:\\Work\\Movida\\Git\\RCA_Vetor_Abril2026",
+          "G:\\Work\\Movida\\Projetos\\SigNoz",
+          "G:\\Work\\NTT DATA\\Projeto Compra Agora",
+          "G:\\Work\\Up Cloud\\projetos\\VibeCoding - Study Case"
+        ],
+        "top_sessions": [
+          {
+            "title": "Retomada KLG Bots validacao E2E Sprint 14",
+            "messages": 232,
+            "dir": "F:\\KLG Bots",
+            "duration_min": 1053,
+            "edits": 68,
+            "additions": 516,
+            "deletions": 117
+          },
+          {
+            "title": "SigNoz CS Brasil apresentacao comparativa",
+            "messages": 123,
+            "dir": "G:\\Work\\Movida\\Projetos\\SigNoz",
+            "duration_min": 39
+          },
+          {
+            "title": "Continuidade RCA Vetor Frotas rastreio causa raiz",
+            "messages": 70,
+            "dir": "G:\\Work\\Movida\\Git\\RCA_Vetor_Abril2026",
+            "duration_min": 86
+          }
+        ]
       }
     }
   ]
