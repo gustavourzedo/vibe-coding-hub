@@ -321,13 +321,13 @@
       <div class="meta-strip">
         <div class="meta-box">
           <div class="meta-label">Ultima compilacao desta home</div>
-          <div class="meta-value">25/04/2026 13:03</div>
-          <div class="subtle">Refaz ranking, mapa do hub e paginas profundas da rodada atual.</div>
+          <div class="meta-value">27/04/2026</div>
+          <div class="subtle">Revisao completa: precos, quotas, promos e telemetria do OpenCode Go.</div>
         </div>
         <div class="meta-box">
           <div class="meta-label">Ultima telemetria local</div>
-          <div class="meta-value">24/04/2026 10:58</div>
-          <div class="subtle">Snapshot consolidado de Cursor + fontes manuais atuais.</div>
+          <div class="meta-value">27/04/2026 15:22</div>
+          <div class="subtle">Cursor + OpenCode Go ativo + fontes manuais consolidadas.</div>
         </div>
         <div class="meta-box">
           <div class="meta-label">Publicacao oficial</div>
@@ -427,9 +427,11 @@
         `Consolidado` junta volume, nivel tecnico, previsibilidade e risco operacional.
       </p>
       <div class="callout">
-        <strong>Nota metodologica desta rodada:</strong> `Kiro` e `MiMo` agora entram explicitamente no ranking, mas ainda
+        <strong>Nota metodologica desta rodada (27/04):</strong> `Kiro` e `MiMo` agora entram explicitamente no ranking, mas ainda
         com leitura mais provisoria do que `GLM`, `Alibaba`, `OpenCode Go`, `Cursor` e `Claude Max`. O motivo nao e falta
         de relevancia tecnica; e falta de legibilidade comercial fina comparavel nas camadas de quota, billing e previsibilidade operacional.
+        <br /><br />
+        <strong>Correcoes desta rodada:</strong> (1) Alibaba Pro corrigido de ~US$ 50 para ¥200 = ~US$ 28. (2) GLM promo 1× off-peak prorrogada ate fim de junho (antes 30/04). (3) MiniMax renomeado de Coding Plan para Token Plan com M2.7 e Highspeed tiers. (4) OpenAI Codex: Pro $100 agora 2× (antes 10×) ate 31/05; GPT-5.5 e novo flagship. (5) OpenCode Go agora com telemetria ativa (8 sessoes, 522 mensagens). (6) Alibaba Lite descontinuado.
       </div>
       <table>
         <thead>
@@ -449,35 +451,35 @@
           <tr>
             <td><span class="rank top">1</span></td>
             <td><a class="doc-link" href="./glm.html"><strong>GLM Coding Plan</strong></a><span class="doc-hint">Pagina profunda pronta: Lite / Pro / Max</span></td>
-            <td>US$ 18 a US$ 160/mes</td>
+            <td>US$ 18 a US$ 160/mes<br /><span class="subtle">Descontos em trimestral e anual</span></td>
             <td>GLM-5.1, GLM-5-Turbo, GLM-4.7, GLM-4.5-Air</td>
-            <td>Quota em tokens totais; `GLM-5.1` e `GLM-5-Turbo` com multiplicadores; base URLs dedicadas do plano</td>
+            <td>Quota em tokens totais; `GLM-5.1` e `GLM-5-Turbo` com multiplicadores (3× pico, 1× off-peak promo ate fim de junho); planos legacy sendo descontinuados</td>
             <td><div class="coverage">75% a 95%</div><div class="bar"><span style="width:85%"></span></div></td>
             <td><div class="coverage">70% a 85%</div><div class="bar"><span style="width:78%"></span></div></td>
             <td><div class="coverage">70% a 90%</div><div class="bar"><span style="width:80%"></span></div></td>
-            <td>Melhor compra principal do hub hoje. Continua sendo a solucao mais equilibrada entre custo, previsibilidade, volume e nivel tecnico.</td>
+            <td>Melhor compra principal do hub hoje. Promo off-peak 1× estendida ate fim de junho. Planos legacy com auto-renew cancelado em 30/04.</td>
           </tr>
           <tr>
             <td><span class="rank top">2</span></td>
             <td><a class="doc-link" href="./alibaba.html"><strong>Alibaba Coding Plan Pro</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
-            <td>US$ 50/mes</td>
-            <td>qwen3.5-plus, kimi-k2.5, glm-5, MiniMax-M2.5 e outros</td>
-            <td>6.000 requests/5h, 45.000/semana, 90.000/mes; consumo real por task varia muito</td>
+            <td>¥200/mes (~US$ 28)<br /><span class="subtle">Lite descontinuado desde 20/03; qwen3.6-plus Pro exclusivo</span></td>
+            <td>qwen3.6-plus (1M ctx, Pro exclusivo), kimi-k2.5, glm-5, MiniMax-M2.5, DeepSeek V4 e outros</td>
+            <td>6.000 requests/5h, 45.000/semana, 90.000/mes; consumo real por task varia muito (5-10 simples, 10-30+ complexo)</td>
             <td><div class="coverage">80% a 110%</div><div class="bar"><span style="width:92%"></span></div></td>
             <td><div class="coverage">45% a 65%</div><div class="bar"><span style="width:55%"></span></div></td>
             <td><div class="coverage">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
-            <td>Melhor dark horse. A quota parece forte; o risco esta em qualidade pratica, contexto efetivo e consistencia.</td>
+            <td>Melhor dark horse. Preco real ~US$ 28/mes (antes US$ 50 estimado). A quota parece forte; o risco esta em qualidade pratica, contexto efetivo e consistencia. qwen3.6-plus agora Pro exclusivo com 1M tokens de contexto.</td>
           </tr>
           <tr>
             <td><span class="rank top">3</span></td>
-            <td><a class="doc-link" href="./opencode-go.html"><strong>OpenCode Go</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
+            <td><a class="doc-link" href="./opencode-go.html"><strong>OpenCode Go</strong></a><span class="doc-hint">Pagina profunda pronta | Telemetria ativa</span></td>
             <td>US$ 10/mes<br /><span class="subtle">US$ 5 no 1o mes</span></td>
-            <td>GLM-5 / 5.1, Kimi K2.5/2.6, MiniMax, MiMo, Qwen e DeepSeek V4 por variante</td>
-            <td>Assinatura com budget interno por valor equivalente de API; fallback opcional para Zen PAYG</td>
+            <td>GLM-5 / 5.1, Kimi K2.5/2.6, MiniMax M2.7, MiMo-V2.5, Qwen 3.5/3.6, DeepSeek V4 e outros</td>
+            <td>Assinatura com budget interno por valor (US$ 12/5h, US$ 30/semana, US$ 60/mes); fallback opcional para Zen PAYG</td>
             <td><div class="coverage">45% a 75%</div><div class="bar"><span style="width:60%"></span></div></td>
             <td><div class="coverage">50% a 70%</div><div class="bar"><span style="width:60%"></span></div></td>
             <td><div class="coverage">45% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
-            <td>Melhor MVP barato para medir uso diario real com varios open models bem servidos.</td>
+            <td>Melhor MVP barato para medir uso diario real. Telemetria ativa: 8 sessoes, 522 mensagens, 680 tool calls em ~18h de uso. Agora com modelos validados: GLM-5, Kimi K2.6, MiMo-V2.5 e DeepSeek V4.</td>
           </tr>
           <tr>
             <td><span class="rank mid">4</span></td>
@@ -592,24 +594,24 @@
           <tr>
             <td><span class="rank low">14</span></td>
             <td><a class="doc-link" href="./solucao_minimax_2026-04-24.html"><strong>MiniMax Token Plan</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
-            <td>US$ 10 a US$ 150/mes</td>
-            <td>MiniMax M2.x e afins</td>
-            <td>Requests por 5h e janela semanal 10x; leitura fortemente baseada em requests, nao em tokens</td>
+            <td>US$ 10 a US$ 150/mes<br /><span class="subtle">Highspeed tiers adicionados</span></td>
+            <td>MiniMax M2.7 (novo), Speech 2.8, Hailuo 2.3, Music 2.6</td>
+            <td>Requests por 5h e janela semanal 10x; renomeado de Coding Plan para Token Plan; Highspeed tiers com capacidade dedicada</td>
             <td><div class="coverage">60% a 95%</div><div class="bar"><span style="width:75%"></span></div></td>
-            <td><div class="coverage">40% a 60%</div><div class="bar"><span style="width:50%"></span></div></td>
+            <td><div class="coverage">40% a 65%</div><div class="bar"><span style="width:53%"></span></div></td>
             <td><div class="coverage">30% a 60%</div><div class="bar"><span style="width:44%"></span></div></td>
-            <td>Atrativa no papel para throughput. Ainda sem confianca suficiente como substituta principal de qualidade.</td>
+            <td>Atrativa no papel para throughput. M2.7 e novos Highspeed tiers melhoram a oferta, mas confianca tecnica ainda moderada como substituicao principal.</td>
           </tr>
           <tr>
             <td><span class="rank low">15</span></td>
             <td><a class="doc-link" href="./solucao_openai_chatgpt_codex_2026-04-24.html"><strong>OpenAI / ChatGPT / Codex</strong></a><span class="doc-hint">Pagina profunda pronta</span></td>
             <td>US$ 20 a US$ 200/mes</td>
-            <td>ChatGPT Plus/Pro, Codex, GPT-5.x e afins</td>
-            <td>Limites misturam 5h, semanal e credit/token logic no Codex; operacao menos legivel do que parece</td>
+            <td>ChatGPT Plus/Pro, Codex, GPT-5.5 (flagship), GPT-5.4, GPT-5.3-Codex e afins</td>
+            <td>Limites misturam 5h, semanal e credit/token logic no Codex; Pro $100 agora 2× Codex (ate 31/05); GPT-5.5 e novo flagship</td>
             <td><div class="coverage">10% a 85%</div><div class="bar"><span style="width:52%"></span></div></td>
             <td><div class="coverage">70% a 90%</div><div class="bar"><span style="width:82%"></span></div></td>
             <td><div class="coverage">10% a 75%</div><div class="bar"><span style="width:46%"></span></div></td>
-            <td>Produto forte, mas nao a rota mais barata nem a mais previsivel para reproduzir seu uso Opus-heavy.</td>
+            <td>Produto forte com GPT-5.5 como novo flagship, mas com promos em transicao (2× ate 31/05) e operacao opaca. Nao e a rota mais barata nem previsivel para uso Opus-heavy.</td>
           </tr>
           <tr>
             <td><span class="rank low">16</span></td>
@@ -725,10 +727,10 @@
       <h2>Base desta rodada</h2>
       <ul>
         <li>telemetria local do Cursor em `C:\Users\gusta\.cursor\ai-tracking\ai-code-tracking.db`</li>
+        <li>telemetria local do OpenCode Go em `C:\Users\gusta\.local\share\opencode\opencode.db` (8 sessoes, 522 mensagens, 680 tool calls)</li>
         <li>projetos de maior peso: `KLG Bots`, `GnBots` e `ClipForge`</li>
-        <li>snapshot manual atual de `ChatGPT Plus via Codex desktop`</li>
-        <li>documentacao oficial recente de Z.ai, Alibaba Cloud, Google, Anthropic, Windsurf, Factory, Devin, Ollama e outros</li>
-        <li>sinais de campo da comunidade quando ajudavam a dimensionar risco operacional real</li>
+        <li>documentacao oficial recente de Z.ai, Alibaba Cloud, Google, Anthropic, Windsurf, Factory, Devin, Ollama, MiniMax e outros</li>
+        <li>verificacao direta em 27/04: GLM (prorrogada ate junho), Alibaba (preco corrigido), OpenAI (promo 2×), MiniMax (Token Plan + Highspeed)</li>
       </ul>
       <p class="footer">
         Os percentuais desta home sao estimativas analiticas de aderencia ao seu benchmark e nao SLA contratual.
