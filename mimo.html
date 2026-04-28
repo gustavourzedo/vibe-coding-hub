@@ -142,11 +142,14 @@
     </section>
 
     <section class="card">
-      <h2>Benchmarks oficiais do MiMo V2.5 e V2.5-Pro</h2>
+      <h2>Benchmarks oficiais — V2.5-Pro, V2.5 e Base (MiMo-7B)</h2>
       <p>
         Aqui esta a principal atualizacao desta rodada: `MiMo V2.5-Pro` (27/04/2026) traz
-        <strong>Claw-Eval Pass^3 com ~70K tokens/trajectory</strong> — 40-60% menos tokens que Opus 4.6/Gemini 3.1 Pro/GPT-5.4
+        <strong>Claw-Eval Pass^3 com ~70K tokens/trajectory</strong> — 40-60% menos tokens que Opus 4.6/Gemini 3.1 Pro/GPT-5.4.
         em capability comparavel. `MiMo Coding Bench` esta fechando gap para Opus 4.6.
+        <br/><br/>
+        <strong>GitHub MiMo-7B series</strong> (repo oficial): AIME24 68.2% (base) → 80.1% (RL), LiveCodeBench v5 57.8% → 60.9%, v6 49.3% → 52.2%.
+        Source: <a href="https://github.com/XiaomiMiMo/MiMo/blob/main/README.md">GitHub MiMo README</a>.
       </p>
       <table>
         <thead>
@@ -244,9 +247,15 @@
       <h2>Comparativo por Plano — Dados Oficiais (28/04/2026)</h2>
       <p>
         Dados extraídos da página oficial <a href="https://mimo.xiaomi.com/mimo-v2-5-pro/">MiMo V2.5-Pro</a> (seção "Token Plan Updates").
-        Off-peak (16:00–24:00 UTC) = 20% desconto. TTS models gratuitos por tempo limitado.
-        Works with: OpenClaw, Claude Code, OpenCode, KiloCode.
+        <strong>Documentação oficial</strong>: <a href="https://platform.xiaomimimo.com/docs/en-US/tokenplan/subscription">platform.xiaomimimo.com/docs</a>.
       </p>
+      <div class="callout">
+        <strong>Nighttime Discount Rate:</strong> During off-peak hours (0:00–8:00 Beijing Time = <strong>16:00–24:00 UTC</strong>),
+        the consumption coefficient is <strong>0.8x</strong> (20% desconto).
+        <br/><br/>
+        <strong>Exemplo:</strong> MiMo-V2.5 = 1 credit/token → off-peak = <strong>0.8 credits/token</strong>.
+        MiMo-V2.5-Pro = 2 credits/token → off-peak = <strong>1.6 credits/token</strong>.
+      </div>
       <table>
         <thead>
           <tr>
