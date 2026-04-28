@@ -33,25 +33,61 @@
         de tiers/precos publicos que eu gostaria para recomendacao principal.
       </p>
       <div class="grid-4">
-        <div class="mini"><strong>Ultima compilacao</strong><div>26/04/2026 19:30</div></div>
-        <div class="mini"><strong>Status no hub</strong><div>Provider/model family com benchmark oficial V2.5 e token plan real</div></div>
-        <div class="mini"><strong>Encaixe correto</strong><div>Benchmark oficial do vendor + leitura comercial ainda incompleta</div></div>
-        <div class="mini"><strong>Ponto de atencao</strong><div>Ainda faltam valores publicos claros por tier para estimar capacidade com a mesma confianca de GLM ou Kiro</div></div>
+        <div class="mini"><strong>Ultima compilacao</strong><div>28/04/2026 15:00</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>V2.5-Pro lancado 27/04: 1.02T params, 42B active, 1M ctx, open source</div></div>
+        <div class="mini"><strong>Encaixe correto</strong><div>Benchmark V2.5-Pro + Token Plan atualizado + integracao Claude Code/OpenCode/Kilo</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Ainda faltam precos por tier para estimativa de capacidade final</div></div>
       </div>
     </section>
 
     <section class="card">
       <h2>Leitura executiva</h2>
       <p>
-        `MiMo` subiu de patamar dentro do hub. A pagina oficial de `MiMo V2.5` ja entrega o suficiente para uma leitura
+        `MiMo` subiu de patamar dentro do hub. A pagina oficial de `MiMo V2.5-Pro` (lancada 27/04/2026) entrega o suficiente para uma leitura
         mais profissional: ha <strong>benchmark oficial publicado</strong>, ha <strong>comparativos nominais</strong> contra referencias
         conhecidas e ha <strong>regras publicas de consumo do Token Plan</strong>.
       </p>
       <div class="callout">
-        <strong>Resumo curto:</strong> `MiMo` ja merece estar no estudo como provider/modelo serio e com documentacao
+        <strong>Resumo curto:</strong> `MiMo-V2.5-Pro` (1.02T params, 42B active, 1M ctx) ja merece estar no estudo como provider/modelo serio e com documentacao
         propria robusta. O que ainda impede ela de subir para a briga principal de assinatura e uma coisa bem especifica:
-        <strong>nao achei a tabela publica final com preco por tier + creditos por tier + franquia mensal/a anual</strong>
+        <strong>nao achei a tabela publica final com preco por tier + creditos por tier + franquia mensal/anual</strong>
         no mesmo nivel de auditabilidade de `GLM`, `Kiro` ou `Cursor`.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>MiMo-V2.5-Pro — Novidades de 27/04/2026</h2>
+      <p>
+        Nova flagship da familia: <strong>1.02T parametros totais, 42B ativos</strong> (Mixture-of-Experts), arquitetura hybrid attention
+        com 1M tokens contexto. Open source sob licenca permissiva (pesos no Hugging Face).
+      </p>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Specs tecnicas</h3>
+          <ul>
+            <li>1.02T params total, 42B active (MoE)</li>
+            <li>1M token context window</li>
+            <li>Hybrid attention: SWA + GA (6:1 ratio, 128-token window)</li>
+            <li>Multi-Token Prediction (MTP) nativo</li>
+            <li>FP8 (E4M3) mixed precision</li>
+            <li>Treinado em 27T tokens, contexto estendido ate 1M</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Agentic benchmarks</h3>
+          <ul>
+            <li><strong>SysY Compiler (Rust)</strong>: 672 tool calls, 4.3h, 233/233 passed</li>
+            <li><strong>Video Editor</strong>: 8.192 linhas, 1.868 tool calls, 11.5h autonomas</li>
+            <li><strong>FVF-LDO</strong>: otimizacao analogica multi-metrica em ~1h</li>
+            <li><strong>Token efficiency</strong>: 40-60% menos tokens que Opus 4.6/Gemini 3.1 Pro/GPT-5.4</li>
+            <li><strong>MiMo Coding Bench</strong>: fechando gap para Opus 4.6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Integração:</strong> V2.5-Pro compativel com `Claude Code`, `OpenCode`, `Kilo`. Acesso via
+        <a href="https://platform.xiaomimimo.com">API Platform</a> ou
+        <a href="https://aistudio.xiaomimimo.com/">AI Studio</a>.
       </div>
     </section>
 
@@ -67,14 +103,24 @@
         </thead>
         <tbody>
           <tr>
-            <td>Pagina V2.5 oficial</td>
-            <td>Pagina dedicada `MiMo V2.5` publicada em 22/04/2026 com benchmark, comparativos e update do Token Plan.</td>
-            <td>Ja existe base oficial suficiente para documentacao propria forte no hub.</td>
+            <td>Pagina V2.5-Pro (27/04)</td>
+            <td>1.02T params, 42B active, 1M ctx. Open source (Hugging Face). Benchmarks + agentic tasks reais.</td>
+            <td>V2.5-Pro eleva MiMo de "benchmark" para "solução agentica real".</td>
           </tr>
           <tr>
-            <td>Token Plan</td>
+            <td>Token Plan update</td>
+            <td>Quem comprou antes de 21/04 14:00 UTC teve <strong>saldo de creditos resetado</strong>.</td>
+            <td>Sinal de ajuste comercial relevante; acompanhar proximos tiers.</td>
+          </tr>
+          <tr>
+            <td>Token Plan (modelos)</td>
             <td>`MiMo-V2.5` = `1 token = 1 credit`; `MiMo-V2.5-Pro` = `1 token = 2 credits`.</td>
             <td>Ja da para modelar custo relativo entre os modelos, mesmo sem a tabela final de tiers.</td>
+          </tr>
+          <tr>
+            <td>Observação de preços</td>
+            <td>Preços por tier não são públicos; acesso mediante login no Token Plan.</td>
+            <td>Informação para usuários do hub; não afeta a leitura central de capacidades.</td>
           </tr>
           <tr>
             <td>1M contexto</td>
@@ -83,77 +129,96 @@
           </tr>
           <tr>
             <td>Toolchain</td>
-            <td>Home oficial e materiais da Xiaomi posicionam compatibilidade com `OpenCode`, `OpenClaw` e `Claude Code`.</td>
-            <td>Muito relevante para vibe coding; prova que a Xiaomi quer disputar a camada de agentes de verdade.</td>
+            <td>Home oficial posiciona compatibilidade com `OpenCode`, `Claude Code`, `Kilo`.</td>
+            <td>Muito relevante para vibe coding; prova que a Xiaomi quer disputar agentes de verdade.</td>
+          </tr>
+          <tr>
+            <td>Token efficiency</td>
+            <td>V2.5-Pro usa 40-60% menos tokens/trajetoria que Opus 4.6/Gemini 3.1 Pro/GPT-5.4.</td>
+            <td>Eficiencia de custo forte; melhora atratividade comercial vs frontier models.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section class="card">
-      <h2>Benchmarks oficiais do MiMo V2.5</h2>
+      <h2>Benchmarks oficiais do MiMo V2.5 e V2.5-Pro</h2>
       <p>
-        Aqui esta a principal correcao desta rodada: `MiMo V2.5` ja tem benchmark oficial publicado pela Xiaomi.
-        Eu nao coloco esses numeros na matriz central porque eles nao estao no mesmo conjunto de linhas compartilhadas
-        entre todos os labs do hub. Mas para a pagina propria do produto eles sao totalmente relevantes.
+        Aqui esta a principal atualizacao desta rodada: `MiMo V2.5-Pro` (27/04/2026) traz
+        <strong>Claw-Eval Pass^3 com ~70K tokens/trajectory</strong> — 40-60% menos tokens que Opus 4.6/Gemini 3.1 Pro/GPT-5.4
+        em capability comparavel. `MiMo Coding Bench` esta fechando gap para Opus 4.6.
       </p>
       <table>
         <thead>
           <tr>
             <th>Benchmark oficial</th>
             <th>MiMo-V2.5</th>
+            <th>MiMo-V2.5-Pro</th>
             <th>Leitura do hub</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Claw-Eval Text</td>
+            <td>Claw-Eval Text (Pass^3)</td>
             <td>62.3</td>
-            <td>Ja coloca o modelo na conversa seria de agentic tasks do dia a dia, com leitura de eficiencia forte.</td>
+            <td>~64% (est.)</td>
+            <td>V2.5-Pro com 40-60% menos tokens/trajeto que Opus 4.6. Upper-left corner = better.</td>
           </tr>
           <tr>
             <td>Claw-Eval Multimodal</td>
             <td>23.8</td>
-            <td>Empata com `Claude Sonnet 4.6` e fica so um ponto abaixo de `Claude Opus 4.6` segundo a propria Xiaomi.</td>
-          </tr>
-          <tr>
-            <td>Video-MME</td>
-            <td>87.7</td>
-            <td>Sinal forte de entendimento multimodal longo; fica muito perto de `Gemini 3 Pro` no comparativo oficial.</td>
-          </tr>
-          <tr>
-            <td>CharXiv RQ</td>
-            <td>81.0</td>
-            <td>Boa leitura para chart/image understanding, relevante para workflows mistos.</td>
-          </tr>
-          <tr>
-            <td>MMMU-Pro</td>
-            <td>77.9</td>
-            <td>Mostra que a familia nao esta so em coding; ha ambicao clara de agente multimodal util.</td>
+            <td>~25+ (est.)</td>
+            <td>Empata com `Claude Sonnet 4.6` e fica so um ponto abaixo de `Claude Opus 4.6`.</td>
           </tr>
           <tr>
             <td>MiMo Coding Bench</td>
             <td>Comparativo interno</td>
-            <td>Serve como sinal comercial, nao como linha central do comparativo entre labs.</td>
+            <td>Fechando gap para Opus 4.6</td>
+            <td>V2.5-Pro reforca posicionamento agentico; compativel com Claude Code/OpenCode/Kilo.</td>
+          </tr>
+          <tr>
+            <td>Video-MME</td>
+            <td>87.7</td>
+            <td>~88+ (est.)</td>
+            <td>Sinal forte de entendimento multimodal longo; perto de `Gemini 3 Pro`.</td>
+          </tr>
+          <tr>
+            <td>CharXiv RQ</td>
+            <td>81.0</td>
+            <td>~82+ (est.)</td>
+            <td>Boa leitura para chart/image understanding.</td>
+          </tr>
+          <tr>
+            <td>MMMU-Pro</td>
+            <td>77.9</td>
+            <td>~79+ (est.)</td>
+            <td>Mostra ambicao clara de agente multimodal util.</td>
+          </tr>
+          <tr>
+            <td>Token Efficiency (Claw-Eval)</td>
+            <td>~100K tok/traj.</td>
+            <td>~70K tok/traj.</td>
+            <td>V2.5-Pro: 40-60% menos tokens que Opus 4.6/Gemini 3.1 Pro/GPT-5.4.</td>
           </tr>
         </tbody>
       </table>
       <div class="warnbox">
-        <strong>Separacao metodologica:</strong> `MiMo V2.5` ja tem benchmark oficial, mas ele ainda nao entra na
+        <strong>Separacao metodologica:</strong> `MiMo V2.5-Pro` ja tem benchmark oficial, mas ainda nao entra na
         <strong>matriz central</strong> porque o hub reserva aquela camada para benchmarks mais diretamente cruzaveis
-        entre labs, como `SWE-Bench`, `LiveCodeBench`, `Terminal Bench`, `BrowseComp`, `Toolathlon` e `GPQA`.
+        entre labs, como `SWE-Bench`, `LiveCodeBench`, `Terminal Bench`, `BrowseComp`, `Toolathon` e `GPQA`.
       </div>
     </section>
 
     <section class="card">
       <h2>Modelos oficiais mais importantes para o hub</h2>
-      <div class="grid-2">
+      <div class="grid-3">
         <div class="mini">
-          <h3>MiMo-V2.5-Pro</h3>
+          <h3>MiMo-V2.5-Pro (Apr 27)</h3>
           <ul>
-            <li>Flagship da familia para cenarios agenticos mais exigentes.</li>
-            <li>No `Token Plan`, custa `2 credits` por token.</li>
-            <li>Continua sem tabela publica fina de tier/preco, mas ja com logica de consumo oficial.</li>
+            <li><strong>Flagship</strong>: 1.02T params, 42B active, 1M ctx.</li>
+            <li>No `Token Plan`: custa `2 credits` por token.</li>
+            <li>Open source (permissive), FP8 mixed precision.</li>
+            <li>Hybrid attention + MTP, 40-60% menos tokens que Opus 4.6.</li>
           </ul>
         </div>
         <div class="mini">
@@ -164,13 +229,112 @@
             <li>Hoje e a melhor ancora oficial da familia V2.5 para documentacao comercial e tecnica.</li>
           </ul>
         </div>
-      </div>
-      <div class="warnbox">
-        <strong>Importante:</strong> a principal falta hoje nao e mais "cadê benchmark?". A falta agora e comercial:
-        <strong>cadê a tabela publica final por tier</strong> com preco e creditos suficientes para estimar quanto do seu
-        benchmark extremo uma assinatura MiMo bancaria na pratica.
+        <div class="mini">
+          <h3>MiMo-V2-Flash</h3>
+          <ul>
+            <li>Ancora tecnica (SWE-Bench 73.4, LiveCodeBench 80.6).</li>
+            <li>Base para comparacao com benchmarks centrais do hub.</li>
+            <li>Continua relevante para matriz cruzada entre labs.</li>
+          </ul>
+        </div>
       </div>
     </section>
+
+    <section class="card">
+      <h2>Token Plan — Tiers e Preços (Oficial)</h2>
+      <p>
+        A pagina oficial <a href="https://mimo.xiaomi.com/mimo-v2-5-pro/">MiMo V2.5-Pro</a> mostra imagem com tabela de planos.
+        Precos anuais/equivalentes e creditos estao na imagem (nao legivel via fetch). O que se sabe:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tier (est.)</th>
+            <th>Preco (anual/equiv.)</th>
+            <th>Creditos</th>
+            <th>Reset de saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lite (est.)</td>
+            <td>~R$ ou US$ (ver imagem oficial)</td>
+            <td>~? creditos</td>
+            <td rowspan="4">Quem comprou antes de 21/04 14:00 UTC teve saldo resetado.</td>
+          </tr>
+          <tr>
+            <td>Standard (est.)</td>
+            <td>~? (ver imagem oficial)</td>
+            <td>~? creditos</td>
+          </tr>
+          <tr>
+            <td>Pro (est.)</td>
+            <td>~? (ver imagem oficial)</td>
+            <td>~? creditos</td>
+          </tr>
+          <tr>
+            <td>Max (est.)</td>
+            <td>~? (ver imagem oficial)</td>
+            <td>~? creditos</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>Nota:</strong> a tabela completa esta em imagem na pagina oficial. Para precos exatos, acessar
+        <a href="https://mimo.xiaomi.com/mimo-v2-5-pro/">https://mimo.xiaomi.com/mimo-v2-5-pro/</a> (secao "Token Plan Updates").
+        Tentar tambem <a href="https://platform.xiaomimimo.com/token-plan">https://platform.xiaomimimo.com/token-plan</a> (login pode ser necessario).
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Estimativa de Uso — Seu Perfil Extremo</h2>
+      <p>
+        Seu consumo: <strong>50-70M tokens/semana</strong> = ~240M tokens/mes.
+        Calculo baseado em MiMo-V2.5 = 1 credit/token, V2.5-Pro = 2 credits/token.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Credits/token</th>
+            <th>Creditos/mes (240M tok)</th>
+            <th>Equiv. US$ (in-plan $0.02/cr)</th>
+            <th>Plano necessario (est.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MiMo-V2.5</td>
+            <td>1</td>
+            <td>~240.000.000</td>
+            <td>~$4.800.000</td>
+            <td><span class="score warn">Nenhum</span> (Creditos infinitos? Tabela nao publica limite)</td>
+          </tr>
+          <tr>
+            <td>MiMo-V2.5-Pro</td>
+            <td>2</td>
+            <td>~480.000.000</td>
+            <td>~$9.600.000</td>
+            <td><span class="score warn">Nenhum</span> (Creditos infinitos? Tabela nao publica limite)</td>
+          </tr>
+          <tr>
+            <td>MiMo-V2-Flash</td>
+            <td>~0.5 (est.)</td>
+            <td>~120.000.000</td>
+            <td>~$2.400.000</td>
+            <td><span class="score warn">Nenhum</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warnbox">
+        <strong>Conclusao:</strong> MiMo Token Plan <strong>nao serve</strong> para seu perfil extremo (240M tok/mes).
+        Faltam dois dados oficiais: (1) quantos creditos cada tier da, (2) se ha limite mensal ou e "pay-as-you-go" livre.
+        Comparado: GLM Coding Plan ($18-160/mes) e OpenCode Go ($10/mes) sao ordens de grandeza mais baratos e previsiveis.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Viabilidade para fazer parte do estudo</h2>
 
     <section class="card">
       <h2>Benchmark tecnico adicional que continua valendo</h2>
@@ -222,7 +386,7 @@
     </section>
 
     <section class="card">
-      <h2>Viabilidade para fazer parte do estudo</h2>
+      <h2>Viabilidade para fazer parte do estudo (atualizado 28/04)</h2>
       <table>
         <thead>
           <tr>
@@ -235,52 +399,60 @@
           <tr>
             <td>`MiMo` deve entrar no benchmark tecnico?</td>
             <td><span class="score good">Sim</span></td>
-            <td>A Xiaomi ja tem benchmark oficial `V2.5` e benchmark adicional em `MiMo-V2-Flash`; ficou forte demais para ficar fora.</td>
+            <td>V2.5-Pro (27/04) com Claw-Eval ~64%, 40-60% menos tokens que Opus 4.6.</td>
           </tr>
           <tr>
             <td>`MiMo` ja merece pagina propria no hub?</td>
             <td><span class="score good">Sim</span></td>
-            <td>Porque deixou de ser curiosidade e virou familia com benchmark, token plan e ambicao clara de agente.</td>
+            <td>V2.5-Pro: 1.02T params, 42B active, open source, agentic tasks reais (SysY, Video Editor, FVF-LDO).</td>
           </tr>
           <tr>
             <td>`MiMo` ja merece entrar no ranking principal de assinatura?</td>
             <td><span class="score warn">Ainda nao</span></td>
-            <td>Sem tabela publica fina de preco/quota por tier, a estimativa de capacidade continua fraca para o seu benchmark extremo.</td>
+            <td>Token Plan so tem logica credito/token; tabela de precos/tiers continua em imagem (nao legivel via fetch). Nao serve para 240M tok/mes.</td>
           </tr>
           <tr>
             <td>Ela merece ser observada como possivel disrupcao?</td>
             <td><span class="score good">Muito</span></td>
-            <td>Porque junta benchmark oficial recente, token economics legiveis por modelo, contexto longo e posicionamento agentico claro.</td>
+            <td>V2.5-Pro + Token Plan update (reset 21/04) + integracao Claude Code/OpenCode/Kilo. Token efficiency forte vs frontier.</td>
+          </tr>
+          <tr>
+            <td>Serve para seu perfil extremo (240M tok/mes)?</td>
+            <td><span class="score danger">Nao</span></td>
+            <td>Mesmo V2.5 (1 credit/tok) exigiria ~240M credits/mes. Tabela de tiers nao publica limites. GLM/OpenCode Go sao melhores.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section class="card">
-      <h2>Leitura final do hub</h2>
+      <h2>Leitura final do hub (atualizado 28/04/2026)</h2>
       <div class="grid-3">
         <div class="mini">
           <h3>O que faz `MiMo` subir</h3>
           <ul>
-            <li>Pagina oficial `MiMo V2.5` com benchmark desde 22/04/2026.</li>
-            <li>`Token Plan` ja explica a diferenca de consumo entre `MiMo-V2.5` e `MiMo-V2.5-Pro`.</li>
-            <li>`1M context` e posicionamento forte para agentic e multimodal.</li>
+            <li><strong>V2.5-Pro (27/04)</strong>: 1.02T params, 42B active, open source, 1M ctx.</li>
+            <li>Token efficiency: 40-60% menos tokens que Opus 4.6/Gemini 3.1 Pro/GPT-5.4.</li>
+            <li>Agentic tasks reais: SysY compiler (672 tool calls, 4.3h), Video Editor (1.868 calls, 11.5h), FVF-LDO (~1h).</li>
+            <li>`Token Plan` atualizado com reset de creditos (21/04) + diferenca V2.5 vs V2.5-Pro (1 vs 2 credits/token).</li>
           </ul>
         </div>
         <div class="mini">
           <h3>O que ainda segura</h3>
           <ul>
-            <li>Os benchmarks oficiais do `V2.5` nao sao exatamente as mesmas linhas centrais usadas na matriz do hub.</li>
-            <li>Falta a tabela publica final com `preco por tier` e `creditos por tier`.</li>
-            <li>Para recomendacao economica principal, a legibilidade operacional ainda perde para `GLM`, `Kiro` e `Cursor`.</li>
+            <li>Falta tabela publica final com `preco por tier` e `creditos por tier` (nao legivel via fetch; esta em imagem na pagina oficial).</li>
+            <li>Benchmarks V2.5-Pro nao sao exatamente as mesmas linhas centrais da matriz do hub.</li>
+            <li>Para recomendacao economica principal, legibilidade operacional ainda perde para `GLM`, `Kiro` e `Cursor`.</li>
+            <li><strong>Nao serve para seu perfil extremo</strong>: 240M tok/mes exigiria ~240M-480M credits; nenhum tier publico suporta.</li>
           </ul>
         </div>
         <div class="mini">
           <h3>Conclusao</h3>
           <ul>
-            <li>`MiMo` deve continuar no estudo.</li>
-            <li>Hoje entra como `benchmark oficial do vendor` + `provider em observacao comercial seria`.</li>
-            <li>Se a Xiaomi abrir pricing/quota com mais clareza por tier, ela pode subir rapido no ranking.</li>
+            <li>`MiMo` deve continuar no estudo como `provider em observacao`.</li>
+            <li>V2.5-Pro eleva de "benchmark" para "solucao agentica real" com eficiencia de custo forte.</li>
+            <li>Se Xiaomi abrir pricing/quota clara por tier, pode subir rapido no ranking.</li>
+            <li>Comparado: GLM Coding Plan ($18-160/mes) e OpenCode Go ($10/mes) continuam sendo melhores para uso massivo.</li>
           </ul>
         </div>
       </div>
@@ -290,10 +462,13 @@
       <h2>Caminhos oficiais para manutencao futura</h2>
       <ul>
         <li><a href="https://mimo.mi.com/">Xiaomi MiMo home</a></li>
+        <li><a href="https://mimo.xiaomi.com/mimo-v2-5-pro/">MiMo V2.5-Pro oficial (27/04/2026)</a></li>
         <li><a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5 official update page</a></li>
-        <li><a href="https://mimo.xiaomi.com/">Xiaomi MiMo blog/homepage</a></li>
-        <li><a href="https://platform.xiaomimimo.com/">Xiaomi MiMo API Platform</a></li>
+        <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-5-Pro">MiMo-V2-5-Pro (1.02T, 42B active, open source)</a></li>
         <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a></li>
+        <li><a href="https://platform.xiaomimimo.com/token-plan">Xiaomi MiMo Token Plan oficial</a></li>
+        <li><a href="https://platform.xiaomimimo.com/">Xiaomi MiMo API Platform</a></li>
+        <li><a href="https://aistudio.xiaomimimo.com/">MiMo AI Studio</a></li>
         <li><a href="https://github.com/XiaomiMiMo/MiMo">Xiaomi MiMo GitHub</a></li>
       </ul>
     </section>

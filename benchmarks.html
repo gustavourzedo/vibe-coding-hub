@@ -589,9 +589,9 @@
             <td>Ja da para usar como referencia tecnica oficial da familia MiMo.</td>
           </tr>
           <tr>
-            <td>MiMo-V2.5-Pro</td>
-            <td><strong>Model watch premium</strong></td>
-            <td>Homepage oficial traz claim forte contra `Claude Opus 4.6`, mas ainda com pouca tabela publica detalhada.</td>
+            <td>MiMo-V2.5-Pro (27/04)</td>
+            <td><strong>Agentic + token efficiency</strong></td>
+            <td>Claw-Eval Pass^3 ~64% com ~70K tok/traj (40-60% menos que Opus 4.6). Coding Bench fechando gap Opus 4.6. Agentic tasks: SysY compiler (672 calls, 4.3h), Video Editor (1.868 calls, 11.5h).</td>
           </tr>
           <tr>
             <td>MiMo Token Plans</td>
@@ -601,7 +601,8 @@
         </tbody>
       </table>
       <div class="warnout">
-        <strong>Leitura certa:</strong> `MiMo` sobe primeiro no benchmark e no model watch. Para subir no ranking principal de assinatura,
+        <strong>Leitura certa (atualizado 28/04):</strong> `MiMo-V2.5-Pro` (27/04) sobe no benchmark e no model watch com
+        Claw-Eval ~64% Pass^3, 40-60% menos tokens que Opus 4.6. Para subir no ranking principal de assinatura,
         ela ainda precisa de mais legibilidade publica em `preco por tier`, `quota por tier` e comportamento de consumo.
       </div>
     </section>
@@ -904,9 +905,10 @@
       </div>
       </div>
       <p class="matrix-note">
-        <strong>Nota metodologica sobre `MiMo-V2.5-Pro`:</strong> em 26 de abril de 2026 ele continua documentado no hub e nas fichas por modelo,
-        com benchmark oficial do vendor ja publicado na pagina `MiMo V2.5`. Mesmo assim ele foi retirado desta matriz principal porque
-        esses benchmarks ainda nao formam uma tabela publica <em>row-by-row</em> diretamente comparavel contra os outros labs nas linhas centrais desta pagina.
+        <strong>Nota metodologica sobre `MiMo-V2.5-Pro` (atualizado 28/04):</strong> em 27/04/2026 a Xiaomi lancou V2.5-Pro (1.02T params, 42B active, 1M ctx, open source).
+        Novos dados: Claw-Eval Pass^3 ~64% com ~70K tok/traj (40-60% menos que Opus 4.6/Gemini 3.1 Pro/GPT-5.4).
+        MiMo Coding Bench fechando gap para Opus 4.6. Agentic tasks reais: SysY compiler (672 calls, 4.3h), Video Editor (1.868 calls, 11.5h).
+        Mesmo assim ele foi retirado desta matriz principal porque esses benchmarks ainda nao formam uma tabela publica <em>row-by-row</em> diretamente comparavel contra os outros labs nas linhas centrais desta pagina.
       </p>
       <p class="small">
         Valores desta matriz combinam fontes publicas comparaveis da <a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek</a>,
