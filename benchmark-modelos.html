@@ -177,6 +177,7 @@
       <div class="chip-row">
         <a class="chip" href="#mimo-v2-flash">MiMo-V2-Flash</a>
         <a class="chip" href="#mimo-v2-5-pro">MiMo-V2.5-Pro</a>
+        <a class="chip" href="#mimo-v2-5">MiMo-V2.5</a>
         <a class="chip" href="#ds-v4-pro-max">DS-V4-Pro Max</a>
         <a class="chip" href="#ds-v4-flash-max">DS-V4-Flash Max</a>
         <a class="chip" href="#k2-6-thinking">K2.6 Thinking</a>
@@ -195,7 +196,7 @@
     <section class="card grid-3">
       <div class="mini">
         <strong>Ultima compilacao</strong>
-        <div>26/04/2026 18:25</div>
+        <div>29/04/2026 11:10</div>
       </div>
       <div class="mini">
         <strong>Uso certo desta pagina</strong>
@@ -230,7 +231,7 @@
         <span class="tag mid">Benchmark oficial do vendor</span>
         <span class="tag risk">Fora da matriz central</span>
       </div>
-      <p>Modelo topo atual da Xiaomi MiMo. A correcao importante aqui e que ele ja nao esta mais num limbo de `claim-tracked` puro: a Xiaomi publicou em 22/04/2026 uma pagina oficial de `MiMo V2.5` com benchmark e logica de custo do `Token Plan`.</p>
+      <p>Modelo topo atual da Xiaomi MiMo. A leitura correta desta rodada e maior do que "benchmark oficial do vendor": a Xiaomi agora documenta oficialmente pricing, Token Plan, integracoes com `Zed` e `OpenCode` e rounds mensais estimados por tier.</p>
       <table>
         <thead><tr><th>Benchmark oficial</th><th>Valor</th><th>Leitura</th></tr></thead>
         <tbody>
@@ -249,9 +250,33 @@
       <ul>
         <li>No `Token Plan`, `MiMo-V2.5-Pro` consome `2 credits` por token.</li>
         <li>O update oficial diz que nao ha mais multiplicador extra para `1M context`.</li>
-        <li>Hoje ele serve como ficha benchmark oficial do vendor + model watch premium da familia MiMo.</li>
+        <li>O `Standard` publica ~`400` rodadas medias/complexas por mes; o `Pro`, ~`1400`; o `Max`, ~`3200`.</li>
+        <li>O Zed passou a ter integracao oficial documentada para o MiMo via provider `OpenAI-compatible`.</li>
+        <li>Hoje ele serve como ficha benchmark oficial do vendor + model watch premium + candidata seria a camada principal de volume do hub.</li>
       </ul>
-      <p class="small">Fontes principais: <a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5 official page</a>, <a href="https://mimo.mi.com/">MiMo home</a>, <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a>.</p>
+      <p class="small">Fontes principais: <a href="https://platform.xiaomimimo.com/docs/en-US/welcome">MiMo docs welcome</a>, <a href="https://platform.xiaomimimo.com/docs/en-US/pricing">MiMo pricing</a>, <a href="https://platform.xiaomimimo.com/docs/en-US/integration/zed">MiMo + Zed</a>, <a href="https://platform.xiaomimimo.com/docs/en-US/integration/opencode">MiMo + OpenCode</a> e <a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5 official page</a>.</p>
+    </section>
+
+    <section class="card model-card" id="mimo-v2-5">
+      <h2>MiMo-V2.5</h2>
+      <div>
+        <span class="tag mid">Benchmark parcial</span>
+        <span class="tag good">Volume candidate</span>
+      </div>
+      <p>Esta ficha entrou porque o `MiMo-V2.5` base virou muito importante para a tese comercial do hub. Ele usa o mesmo contexto de `1M`, a mesma familia V2.5 e custa metade do `V2.5-Pro` no `Token Plan`.</p>
+      <table>
+        <thead><tr><th>Sinal</th><th>Estado</th><th>Leitura</th></tr></thead>
+        <tbody>
+          <tr><td>Token Plan</td><td>1 credit/token</td><td>E a principal alavanca de runway da familia MiMo.</td></tr>
+          <tr><td>Contexto</td><td>1M / 128K output</td><td>Segura tasks long-horizon sem carregar o multiplicador do Pro.</td></tr>
+          <tr><td>Rounds mensais oficiais</td><td>~400 no Standard</td><td>Ajuda a transformar a analise de "tokens abstratos" em carga de agent mais legivel.</td></tr>
+          <tr><td>Sinal de campo</td><td>Promissor</td><td>Videos e relatos tecnicos desta rodada sugerem que, em varias tasks praticas, ele chega perto demais de `DeepSeek V4 Pro` para continuar tratado como simples modelo "mid".</td></tr>
+        </tbody>
+      </table>
+      <div class="warnout">
+        <strong>Leitura certa:</strong> o `MiMo-V2.5` ainda nao tem o mesmo pacote de prova publica que o `V2.5-Pro`, mas virou um dos modelos mais importantes do hub para tese de <strong>volume util por credito</strong>.
+      </div>
+      <p class="small">Fontes principais: <a href="https://platform.xiaomimimo.com/docs/en-US/pricing">MiMo pricing</a> e <a href="https://platform.xiaomimimo.com/docs/en-US/welcome">MiMo docs welcome</a>. Evidencia complementar de campo: <a href="https://www.youtube.com/watch?v=K6t2We1ma0A">MiMo vs GLM vs Qwen vs DeepSeek vs Kimi</a>.</p>
     </section>
 
     <section class="card model-card" id="ds-v4-pro-max">
@@ -260,7 +285,7 @@
         <span class="tag good">Benchmark forte</span>
         <span class="tag risk">Trilha comercial opaca</span>
       </div>
-      <p>O modelo mais “ruptura em potencial” desta rodada. O benchmark visual forte existe; o problema e a camada de produto, API e assinatura ainda nao estar tao legivel quanto o benchmark.</p>
+      <p>O modelo mais "ruptura em potencial" desta rodada. O benchmark visual forte existe; o problema e a camada de produto, API e assinatura ainda nao estar tao legivel quanto o benchmark.</p>
       <table>
         <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
         <tbody>
@@ -285,7 +310,7 @@
       <table>
         <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
         <tbody>
-          <tr><td>SWE-Bench Verified</td><td>79.0</td><td>Muito forte para uma variante “flash”.</td></tr>
+          <tr><td>SWE-Bench Verified</td><td>79.0</td><td>Muito forte para uma variante "flash".</td></tr>
           <tr><td>LiveCodeBench</td><td>91.6</td><td>Sinal de coding benchmark ainda premium.</td></tr>
           <tr><td>Terminal Bench 2.0</td><td>56.9</td><td>Cai em ferramental versus o Pro Max.</td></tr>
           <tr><td>BrowseComp</td><td>73.2</td><td>Agentic browse mais modesto.</td></tr>
@@ -353,7 +378,7 @@
           <tr><td>SWE-Bench Pro / Public</td><td>58.4</td><td>Base muito respeitavel para coding agent.</td></tr>
           <tr><td>SWE-Bench Multilingual</td><td>73.3</td><td>Segura bem multilinguagem.</td></tr>
           <tr><td>Terminal Bench 2.0</td><td>63.5</td><td>Bom ferramental, abaixo dos melhores GPTs.</td></tr>
-          <tr><td>BrowseComp</td><td>79.3</td><td>Boa capacidade de navegação/síntese.</td></tr>
+          <tr><td>BrowseComp</td><td>79.3</td><td>Boa capacidade de navegacao e sintese.</td></tr>
           <tr><td>Toolathlon</td><td>40.7</td><td>Tool use mais fraco que o restante do pacote.</td></tr>
           <tr><td>HLE w/tools</td><td>50.4</td><td>Ferramental ainda competitivo.</td></tr>
           <tr><td>GPQA Diamond</td><td>86.2</td><td>Raciocinio geral forte o bastante para o preço.</td></tr>
@@ -405,7 +430,7 @@
         <span class="tag good">Benchmark forte</span>
         <span class="tag good">Referencia premium</span>
       </div>
-      <p>Continua como ancora premium do hub para contexto longo, qualidade geral e “frontier de verdade”. Muito do raciocinio economico do estudo so faz sentido porque essa ficha existe como referencia.</p>
+      <p>Continua como ancora premium do hub para contexto longo, qualidade geral e "frontier de verdade". Muito do raciocinio economico do estudo so faz sentido porque essa ficha existe como referencia.</p>
       <table>
         <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
         <tbody>
@@ -445,7 +470,7 @@
         <span class="tag good">Benchmark forte</span>
         <span class="tag good">Ferramental premium</span>
       </div>
-      <p>O melhor argumento da OpenAI antes do salto do `GPT-5.5` para terminal e tools. Ainda e fortissimo, especialmente quando a questao e “agente que mexe nas coisas”.</p>
+      <p>O melhor argumento da OpenAI antes do salto do `GPT-5.5` para terminal e tools. Ainda e fortissimo, especialmente quando a questao e "agente que mexe nas coisas".</p>
       <table>
         <thead><tr><th>Benchmark</th><th>Valor</th><th>Leitura</th></tr></thead>
         <tbody>
@@ -472,7 +497,7 @@
         <tbody>
           <tr><td>SWE-Bench Pro / Public</td><td>58.6</td><td>Boa base de coding agent premium.</td></tr>
           <tr><td>Terminal Bench 2.0</td><td>82.7</td><td>Melhor linha desta matriz para terminal + tools.</td></tr>
-          <tr><td>BrowseComp</td><td>84.4</td><td>Muito forte para navegação e síntese.</td></tr>
+          <tr><td>BrowseComp</td><td>84.4</td><td>Muito forte para navegacao e sintese.</td></tr>
           <tr><td>Toolathlon</td><td>55.6</td><td>Melhor linha tool use da matriz principal.</td></tr>
           <tr><td>HLE w/tools</td><td>52.2</td><td>Ferramental premium muito estável.</td></tr>
           <tr><td>GPQA Diamond</td><td>93.6</td><td>Raciocinio geral no topo frontier.</td></tr>

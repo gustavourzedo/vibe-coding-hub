@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evidencia de Campo - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1420px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 30px; }
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .callout, .warnout {
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+    }
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: rgba(96,165,250,.08);
+      color: #f4f8ff;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+    .small { font-size: 13px; color: #8ea0c7; }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1420px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Evidencia de campo: desempenho x consumo agentico</h1>
+      <p>
+        Esta pagina registra o que o benchmark puro nao consegue contar sozinho:
+        <strong>como os modelos se comportam em uso agentico real</strong>, com IDE, tools, contexto longo,
+        loops de edicao e preocupacao com consumo.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>29/04/2026</div></div>
+        <div class="mini"><strong>Base principal</strong><div>Docs oficiais + Reddit + X + videos tecnicos + sua telemetria</div></div>
+        <div class="mini"><strong>Pergunta central</strong><div>Quem entrega mais trabalho util por quota, token ou credito?</div></div>
+        <div class="mini"><strong>Uso correto</strong><div>Decidir stack misto e papel operacional de cada modelo</div></div>
+      </div>
+      <div class="callout">
+        <strong>Regra metodologica:</strong> esta nao e uma pagina de "vencedor absoluto". E uma pagina de
+        <strong>papel operacional</strong>: precisao, volume premium, volume barato, exploracao e fallback.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Matriz consolidada</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Desempenho agentico percebido</th>
+            <th>Consumo percebido</th>
+            <th>Leitura pratica do hub</th>
+            <th>Nivel de confianca</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GLM-5.1</strong></td>
+            <td>Muito forte em planejamento, leitura de repo e coding pesado.</td>
+            <td><span class="danger">Alto</span>. O custo real sobe rapido em sessoes longas com tools, contexto grande e reasoning.</td>
+            <td>Melhor camada de precisao; ruim como motor principal de volume.</td>
+            <td>Alta: docs oficiais + telemetria propria + comunidade.</td>
+          </tr>
+          <tr>
+            <td><strong>Kimi K2.6</strong></td>
+            <td>Muito forte para mass edits, coding agentico e tarefas longas.</td>
+            <td><span class="warn">Medio-alto</span>. Ha varios relatos de burn alto, especialmente via output e sessoes longas.</td>
+            <td>Segunda frontier forte, menos convincente como assinatura economica central.</td>
+            <td>Media-alta: docs + Reddit + algum sinal em X.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5-Pro</strong></td>
+            <td>Muito forte em coding longo, long context e tarefas agenticas premium.</td>
+            <td><span class="warn">Medio</span>. A Xiaomi publica trajetorias com 40-60% menos tokens; os sinais de campo iniciais sao promissores, mas ainda com menos massa critica que GLM.</td>
+            <td>Melhor novo candidato a camada principal de volume premium.</td>
+            <td>Media: docs oficiais maduras + videos + relatos tecnicos reais.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5</strong></td>
+            <td>Surpreendentemente forte para o tier base da familia.</td>
+            <td><span class="good">Baixo a medio</span> dentro da familia, porque usa 1x credit/token.</td>
+            <td>Ponto doce potencial do stack MiMo. Entrou forte porque algumas leituras de campo o colocam perto demais de DeepSeek V4 Pro em tarefas praticas para continuar ignorado.</td>
+            <td>Media: docs oficiais + comparativos em video + sinais de comunidade.</td>
+          </tr>
+          <tr>
+            <td><strong>Qwen 3.6</strong></td>
+            <td>Bom para loops rapidos, exploracao e coding barato.</td>
+            <td><span class="good">Baixo a medio</span>, mas com relatos de excesso de reasoning e tool chatter versus Qwen 3.5.</td>
+            <td>Camada de throughput e exploracao; nao a camada premium principal.</td>
+            <td>Media: Reddit forte, menos telemetria propria.</td>
+          </tr>
+          <tr>
+            <td><strong>DeepSeek V4</strong></td>
+            <td>Bom o bastante para muito trabalho util e muito competitivo em benchmark.</td>
+            <td><span class="good">Baixo</span> em custo bruto. A historia mais consistente de custo-beneficio desta rodada.</td>
+            <td>Melhor workhorse barato de loop agentico; menos seguro como stack premium unica.</td>
+            <td>Alta: comunidade muito consistente + benchmark publico.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Registro de evidencia por modelo</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>GLM-5.1</h3>
+          <ul>
+            <li>Docs oficiais da Z.AI dizem que um prompt costuma acionar <strong>15-20 model calls</strong>, e que a disponibilidade real varia com complexidade, tamanho do repo e auto-accept.</li>
+            <li>A FAQ oficial recomenda reservar <code>GLM-5.1</code> para tasks complexas e usar <code>GLM-4.7</code> no resto por causa do burn.</li>
+            <li>Reddit ja tem reclamacoes diretas de consumo rapido no Coding Plan em sessoes pesadas.</li>
+            <li>No X, o tom dominante continua sendo "muito forte tecnicamente", especialmente em OpenClaw/Hermes Agent.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://docs.z.ai/devpack/overview">Z.AI DevPack Overview</a>,
+            <a href="https://docs.z.ai/devpack/faq">Z.AI DevPack FAQ</a>,
+            <a href="https://www.reddit.com/r/ZaiGLM/comments/1sgaa4e/token_system_broken/">Reddit: Token System Broken?</a>,
+            <a href="https://www.reddit.com/r/SillyTavernAI/comments/1si7po0/if_you_were_considering_the_coding_plan_for_glm_51/">Reddit: if you were considering GLM 5.1</a>,
+            <a href="https://x.com/NickHorob/status/2040576034538447136">X: Nick Horob</a>,
+            <a href="https://x.com/AndrewWarner/status/2041225506612560270">X: Andrew Warner</a>.
+          </p>
+        </div>
+
+        <div class="mini">
+          <h3>Kimi K2.6</h3>
+          <ul>
+            <li>Os relatos mais tecnicos convergem em "modelo muito forte para coding agentico", especialmente mass edits e tarefas longas.</li>
+            <li>Ao mesmo tempo, ha relatos de custo por task ficando alto e de quota semanal descendo rapido em uso real.</li>
+            <li>O sentimento geral nao e "barato", e sim "muito forte, mas vigiar consumo".</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://www.kimi.com/coding/docs/en/benefits.html">Kimi Code benefits</a>,
+            <a href="https://www.reddit.com/r/vibecoding/comments/1srjxex/has_anyone_tried_kimi_k26/">Reddit: has anyone tried Kimi K2.6?</a>,
+            <a href="https://www.reddit.com/r/kimi/comments/1sojem0/kimi_k26_worth_it/">Reddit: Kimi K2.6 worth it?</a>,
+            <a href="https://www.reddit.com/r/opencodeCLI/comments/1so29o0/kimi_k26_in_opencode_is_actually_really_damn_good/">Reddit: Kimi K2.6 in OpenCode</a>,
+            <a href="https://x.com/BuildFastWithAI/status/2043910777317572732">X: Build Fast with AI</a>.
+          </p>
+        </div>
+
+        <div class="mini">
+          <h3>MiMo-V2.5-Pro / MiMo-V2.5</h3>
+          <ul>
+            <li>A Xiaomi agora documenta pricing, Token Plan, rounds mensais, Zed e OpenCode oficialmente.</li>
+            <li>A pagina oficial do benchmark da familia insiste em trajetorias com <strong>40-60% menos tokens</strong> em Claw-Eval Pass^3.</li>
+            <li>Nos relatos tecnicos, o <code>MiMo-V2.5-Pro</code> aparece como potencialmente muito eficiente por token.</li>
+            <li>Os videos desta rodada reforcam a leitura de que o <code>MiMo-V2.5</code> base nao pode mais ser tratado como tier irrelevante.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://platform.xiaomimimo.com/docs/en-US/welcome">MiMo docs welcome</a>,
+            <a href="https://platform.xiaomimimo.com/docs/en-US/pricing">MiMo pricing</a>,
+            <a href="https://platform.xiaomimimo.com/docs/en-US/integration/zed">MiMo + Zed</a>,
+            <a href="https://platform.xiaomimimo.com/docs/en-US/integration/opencode">MiMo + OpenCode</a>,
+            <a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5 benchmark page</a>,
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sxbcyn/mimo_v25_pro/">Reddit: MiMo V2.5 Pro</a>,
+            <a href="https://www.reddit.com/r/LLMDevs/comments/1sthm3c/mimo_v25_pro_is_hitting_frontier_coding_scores_at/">Reddit: token efficiency thread</a>,
+            <a href="https://www.reddit.com/r/SillyTavernAI/comments/1su8tl5/do_not_skip_mimov25pro/">Reddit: do not skip MiMo V2.5 Pro</a>,
+            <a href="https://www.youtube.com/watch?v=TOOfrn-kR74">YouTube: MiMo 2.5 PRO Tested</a>,
+            <a href="https://www.youtube.com/watch?v=5JhSI_GTdi0">YouTube: MiMo V2.5 Pro Full Test</a>,
+            <a href="https://www.youtube.com/watch?v=K6t2We1ma0A">YouTube: MiMo vs GLM vs Qwen vs DeepSeek vs Kimi</a>.
+          </p>
+        </div>
+
+        <div class="mini">
+          <h3>Qwen 3.6</h3>
+          <ul>
+            <li>A narrativa dominante e eficiencia operacional alta, especialmente em velocidade e exploracao.</li>
+            <li>Ao mesmo tempo, ha relatos claros de aumento em reasoning tokens e tendencia a falar mais com tools do que o desejado.</li>
+            <li>Ele continua forte como camada de throughput e fallback inteligente, mas sem o mesmo peso premium de GLM ou MiMo Pro.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sn85dv/qwen_36_worse_adherence/">Reddit: Qwen 3.6 worse adherence?</a>,
+            <a href="https://www.reddit.com/r/Qwen_AI/comments/1sx649x/qwen_36_35b_excessive_thinking/">Reddit: excessive thinking</a>,
+            <a href="https://www.reddit.com/r/LocalLLM/comments/1st2aib/qwen_36_35b_a3b_on_rtx_5090_is_absurdly_fast_for/">Reddit: absurdly fast for coding</a>,
+            <a href="https://x.com/thePandaily/status/2039934004447850508">X: Pandaily on Qwen 3.6</a>.
+          </p>
+        </div>
+
+        <div class="mini">
+          <h3>DeepSeek V4</h3>
+          <ul>
+            <li>O tema dominante em comunidade nao e "melhor modelo do mundo", e sim <strong>valor absurdo por loop</strong>.</li>
+            <li>Ha varios relatos de tasks autonomas saindo por ordens de grandeza menores do que stacks premium.</li>
+            <li>Ele continua sendo o workhorse barato mais consistente desta rodada.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://www.reddit.com/r/vibecoding/comments/1sxx9dl/its_not_just_me_is_it_deepseek_v4_is_insanely/">Reddit: insanely cheap</a>,
+            <a href="https://www.reddit.com/r/DeepSeek/comments/1su7rzr/deepseek_v4_dropped_16t_params_and_1m_context/">Reddit: V4 cost example</a>,
+            <a href="https://www.reddit.com/r/opencodeCLI/comments/1swyres/is_deepseek_v4_pro_good_in_coding_i_need_an/">Reddit: is DeepSeek V4 Pro good in coding?</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que isso muda no hub</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>GLM</strong>
+          <p>Sai da leitura de "melhor assinatura principal isolada" e entra como <strong>camada de precisao</strong>.</p>
+        </div>
+        <div class="mini">
+          <strong>MiMo</strong>
+          <p>Entra de vez como <strong>nova camada principal de volume</strong>, com Standard como piloto serio e Pro como ponto de valor.</p>
+        </div>
+        <div class="mini">
+          <strong>OpenCode Go + DeepSeek</strong>
+          <p>Permanece como <strong>camada barata</strong> para loops, warm-up, triagem e tarefas mecanicas.</p>
+        </div>
+      </div>
+      <div class="warnout">
+        <strong>Resumo final:</strong> a melhor estrategia mista do hub hoje e
+        <strong>GLM para precisao + MiMo para volume + OpenCode Go para exploracao barata</strong>.
+      </div>
+    </section>
+  </div>
+</body>
+</html>

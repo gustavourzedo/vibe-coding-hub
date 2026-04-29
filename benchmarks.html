@@ -478,8 +478,8 @@
       </p>
 
       <div class="grid-4">
-        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 18:20</div></div>
-        <div class="mini"><strong>Base desta rodada</strong><div>DeepSeek X + OpenAI + Anthropic + Z.ai + Google + Moonshot</div></div>
+        <div class="mini"><strong>Ultima compilacao</strong><div>29/04/2026 12:20</div></div>
+        <div class="mini"><strong>Base desta rodada</strong><div>DeepSeek X + OpenAI + Anthropic + Z.ai + Google + Moonshot + Xiaomi MiMo Platform</div></div>
         <div class="mini"><strong>Uso correto desta pagina</strong><div>Comparar capacidade tecnica; nao substituir a analise de assinatura</div></div>
         <div class="mini"><strong>Ponto de atencao</strong><div>Benchmark de fornecedor e comparacao de effort nao sao verdade absoluta</div></div>
       </div>
@@ -595,16 +595,86 @@
           </tr>
           <tr>
             <td>MiMo Token Plans</td>
-            <td><strong>Comercial em observacao</strong></td>
-            <td>Ja existe produto comercial de assinaturas, mas o nivel de transparencia publica ainda nao bate GLM/Alibaba/Kiro.</td>
+            <td><strong>Comercial em maturacao</strong></td>
+            <td>Agora ja ha docs oficiais de pricing, tiers, rounds mensais e integracao com Zed/OpenCode. O ponto em observacao deixou de ser falta de doc e passou a ser comportamento de campo.</td>
           </tr>
         </tbody>
       </table>
       <div class="warnout">
-        <strong>Leitura certa (atualizado 28/04):</strong> `MiMo-V2.5-Pro` (27/04) sobe no benchmark e no model watch com
-        Claw-Eval ~64% Pass^3, 40-60% menos tokens que Opus 4.6. Para subir no ranking principal de assinatura,
-        ela ainda precisa de mais legibilidade publica em `preco por tier`, `quota por tier` e comportamento de consumo.
+        <strong>Leitura certa (atualizado 29/04):</strong> `MiMo-V2.5-Pro` (27/04) sobe no benchmark e no model watch com
+        Claw-Eval ~64% Pass^3, 40-60% menos tokens que Opus 4.6. Como a plataforma oficial agora documenta tiers, rounds e integracoes,
+        a pergunta principal mudou: nao e mais "sera que existe produto serio?", e sim "o consumo real de campo confirma a tese de volume?".
       </div>
+    </section>
+
+    <section class="card">
+      <h2>Matriz de campo: desempenho x consumo agentico</h2>
+      <p>
+        Esta matriz junta o que faltava ao benchmark numerico: <strong>relatos de consumo em tarefas agenticas</strong>.
+        Ela mistura docs oficiais, Reddit, X e os videos desta rodada. O objetivo nao e fingir precisao matematica, e sim
+        orientar decisao real de assinatura.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Desempenho agentico percebido</th>
+            <th>Consumo percebido</th>
+            <th>Leitura do hub</th>
+            <th>Evidencia principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GLM-5.1</strong></td>
+            <td>Forte em planejamento, repo reading e coding pesado.</td>
+            <td><span class="heat low">Alto</span> em sessoes longas com tools e contexto inflado.</td>
+            <td>Camada de precisao; ruim para carregar o volume inteiro sozinho.</td>
+            <td>Seu uso real + Reddit + docs GLM.</td>
+          </tr>
+          <tr>
+            <td><strong>K2.6 Thinking</strong></td>
+            <td>Muito forte para tools, mass edits e coding longo.</td>
+            <td><span class="heat mid">Medio-alto</span>; output e caro e ha relatos de burn pesado em algumas rotas.</td>
+            <td>Open contender forte, menos sedutor como compra economica.</td>
+            <td>Reddit/X + docs Kimi Code.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5-Pro</strong></td>
+            <td>Muito forte em coding longo e tarefas multimodais/agenticas nas demos oficiais.</td>
+            <td><span class="heat mid">Medio</span>; docs oficiais prometem 40-60% menos tokens/trajetoria em Claw-Eval e a comunidade ve sinais promissores.</td>
+            <td>Melhor nova camada de volume premium.</td>
+            <td>MiMo docs + benchmark page + videos + comunidade.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5</strong></td>
+            <td>Surpreendentemente forte para o tier base da familia.</td>
+            <td><span class="heat top">Baixo a medio</span> dentro da familia, por usar 1x credit/token.</td>
+            <td>Ponto doce potencial do stack MiMo. Entrou forte porque comparativos de campo o colocam perto demais de `DeepSeek V4 Pro` para ignorar.</td>
+            <td>Docs MiMo + videos + relatos tecnicos.</td>
+          </tr>
+          <tr>
+            <td><strong>Qwen 3.6</strong></td>
+            <td>Bom para loops rapidos, exploracao e coding barato.</td>
+            <td><span class="heat top">Baixo a medio</span>, mas alguns relatos dizem que ele fala demais com tools e reasoning.</td>
+            <td>Camada de throughput e exploracao; nao o frontier premium desta lista.</td>
+            <td>Reddit/X + disponibilidade real em stacks agregadas.</td>
+          </tr>
+          <tr>
+            <td><strong>DeepSeek V4</strong></td>
+            <td>Bom o bastante para muito trabalho util e muito forte em benchmark.</td>
+            <td><span class="heat top">Baixo</span> em custo bruto; comunidade insiste muito no valor por loop.</td>
+            <td>Melhor workhorse barato; menos seguro como stack premium unica.</td>
+            <td>Reddit/X + benchmark publico.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Videos desta rodada: <a href="https://www.youtube.com/watch?v=TOOfrn-kR74">MiMo 2.5 PRO Tested: Is It Intelligent?</a>,
+        <a href="https://www.youtube.com/watch?v=5JhSI_GTdi0">Xiaomi MiMo V2.5 Pro Full Test</a> e
+        <a href="https://www.youtube.com/watch?v=K6t2We1ma0A">MiMo 2.5 Pro vs GLM 5.1 vs Qwen 3.6 vs DeepSeek V4 vs Kimi K2.6</a>.
+      </p>
+      <p class="small">Leitura expandida em <a href="./evidencia-campo.html">/evidencia-campo</a>.</p>
     </section>
 
     <section class="card" id="compra-mental">
@@ -671,7 +741,7 @@
             <td>Open contender forte para agentic coding.</td>
             <td><span class="heat top">Ferramentas</span></td>
             <td><span class="heat mid">Output caro</span></td>
-            <td>Â¥6.50 input / Â¥27 output</td>
+            <td>CNY 6.50 input / CNY 27 output</td>
           </tr>
           <tr>
             <td><strong>DS-V4-Pro Max</strong></td>
@@ -683,7 +753,7 @@
           <tr>
             <td><strong>DS-V4-Flash Max</strong></td>
             <td>Variante mais leve e ainda forte.</td>
-            <td><span class="heat mid">EficiÃªncia</span></td>
+            <td><span class="heat mid">Eficiencia</span></td>
             <td><span class="heat risk">Preco/API opacos</span></td>
             <td>Nao revalidado oficialmente</td>
           </tr>
@@ -710,7 +780,7 @@
         </div>
         <div class="mini">
           <strong>Colunas realmente comparaveis</strong>
-          <div class="small">Modelos com alguma evidência publica compartilhada por benchmark reconhecido. Esta e a parte mais util para decidir nivel tecnico.</div>
+          <div class="small">Modelos com alguma evidencia publica compartilhada por benchmark reconhecido. Esta e a parte mais util para decidir nivel tecnico.</div>
         </div>
         <div class="mini">
           <strong>Navegacao da matriz</strong>
@@ -719,8 +789,8 @@
       </div>
       <div class="matrix-toolbar" aria-label="Controles da matriz">
         <div class="matrix-actions">
-          <button class="matrix-btn" type="button" data-matrix-scroll="left">← Ver anteriores</button>
-          <button class="matrix-btn" type="button" data-matrix-scroll="right">Ver proximos →</button>
+          <button class="matrix-btn" type="button" data-matrix-scroll="left">&larr; Ver anteriores</button>
+          <button class="matrix-btn" type="button" data-matrix-scroll="right">Ver proximos &rarr;</button>
         </div>
         <div class="matrix-jumps">
           <button class="matrix-pill" type="button" data-col-target="col-mimo-v2-flash">MiMo / DeepSeek</button>
@@ -1355,8 +1425,8 @@
           <div class="badge">Evidencia em observacao</div>
           <ul>
             <li><strong>`DeepSeek V4 Pro Max`</strong> e <strong>`Flash Max`</strong>: benchmark visual muito promissor, mas ainda sem trilha comercial/API oficial redonda nesta rodada.</li>
-            <li><strong>`Xiaomi MiMo`</strong>: evidence tecnica subiu bastante com `MiMo-V2-Flash`, mas a camada comercial ainda esta um degrau abaixo em auditabilidade publica.</li>
-            <li>Por isso entram no benchmark como <strong>modelo forte em observacao</strong>, nao como aposta comercial madura.</li>
+            <li><strong>`Xiaomi MiMo`</strong>: evidence tecnica subiu bastante com `MiMo-V2-Flash` e `V2.5-Pro`; a camada comercial agora esta documentada oficialmente.</li>
+            <li>O ponto em observacao deixou de ser falta de fonte e passou a ser telemetria propria de campo.</li>
           </ul>
         </div>
       </div>
@@ -1422,8 +1492,8 @@
           </tr>
           <tr>
             <td><strong>K2.6 Thinking</strong></td>
-            <td>famÃ­lia K2 Thinking documentada em <span class="mono">256K</span><br /><span class="small">o page de pricing do K2.6 foca mais em preco/capabilidade do que em ficha tecnica completa</span></td>
-            <td>cache hit <span class="mono">Â¥1.10 / MTok</span><br />input <span class="mono">Â¥6.50 / MTok</span><br />output <span class="mono">Â¥27.00 / MTok</span></td>
+            <td>familia K2 Thinking documentada em <span class="mono">256K</span><br /><span class="small">a pagina de pricing do K2.6 foca mais em preco/capabilidade do que em ficha tecnica completa</span></td>
+            <td>cache hit <span class="mono">CNY 1.10 / MTok</span><br />input <span class="mono">CNY 6.50 / MTok</span><br />output <span class="mono">CNY 27.00 / MTok</span></td>
             <td>Modelo caro em output e ainda muito dependente de como entra no produto final.</td>
           </tr>
           <tr>
@@ -1563,8 +1633,14 @@
         <li><a href="https://ai.google.dev/models/gemini">Gemini models</a></li>
         <li><a href="https://ai.google.dev/gemini-api/docs/gemini-3">Gemini 3 guide</a></li>
         <li><a href="https://deepmind.google/models/gemini/pro/">Gemini 3.1 Pro benchmarks</a></li>
-        <li><a href="https://mimo.mi.com/">Xiaomi MiMo home</a></li>
+        <li><a href="https://platform.xiaomimimo.com/docs/en-US/welcome">MiMo docs welcome</a></li>
+        <li><a href="https://platform.xiaomimimo.com/docs/en-US/pricing">MiMo docs pricing</a></li>
+        <li><a href="https://platform.xiaomimimo.com/docs/en-US/integration/tools-overview">MiMo tools overview</a></li>
+        <li><a href="https://platform.xiaomimimo.com/docs/en-US/integration/zed">MiMo + Zed</a></li>
+        <li><a href="https://platform.xiaomimimo.com/docs/en-US/integration/opencode">MiMo + OpenCode</a></li>
+        <li><a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5 benchmark page</a></li>
         <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a></li>
+        <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro">MiMo-V2.5-Pro model card</a></li>
         <li><a href="https://github.com/XiaomiMiMo/MiMo">Xiaomi MiMo GitHub</a></li>
         <li><a href="https://www.minimax.io/news/minimax-m27-en">MiniMax M2.7 benchmark post</a></li>
         <li><a href="https://www.alibabacloud.com/blog/602834">Qwen3-Max-Thinking benchmark post</a></li>

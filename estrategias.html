@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrategias de Assinatura - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1420px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.10));
+    }
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #8fd0ff;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .score { font-size: 28px; font-weight: 800; color: #fff; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: rgba(96,165,250,.08);
+      color: #f4f8ff;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+    .small { font-size: 13px; color: #8ea0c7; }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1420px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Estrategias de assinatura para vibe coding pesado</h1>
+      <p>
+        Esta pagina reorganiza o estudo do hub pelo jeito certo de decidir compra: nao apenas "qual fornecedor e melhor",
+        mas <strong>qual estrategia de assinatura faz sentido para o seu nivel de uso</strong>, para o seu apetite de risco
+        e para a sua meta de custo.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>29/04/2026 11:10</div></div>
+        <div class="mini"><strong>Benchmark base</strong><div>Sua semana extrema no Cursor = 100%</div></div>
+        <div class="mini"><strong>Leitura principal</strong><div>Decidir por tese de compra, nao por hype isolado</div></div>
+        <div class="mini"><strong>Entrada recomendada</strong><div>Comecar pelo stack misto `GLM + MiMo + OpenCode Go`, depois abrir a pagina de cada fornecedor</div></div>
+      </div>
+      <div class="callout">
+        <strong>Regra do hub:</strong> a estrategia boa e a que sustenta seu uso sem ansiedade operacional.
+        Nao basta o modelo ser forte; a combinacao entre quota, previsibilidade, UX e capacidade de escalar importa tanto quanto a nota tecnica.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <div class="grid-4">
+        <div class="mini">
+          <div class="kicker">Stack misto do momento</div>
+          <div class="score good">GLM + MiMo + Go</div>
+          <p>Melhor forma atual de separar precisao, volume e camada barata sem depender de uma unica quota sensivel.</p>
+        </div>
+        <div class="mini">
+          <div class="kicker">Precisao premium racional</div>
+          <div class="score warn">GLM</div>
+          <p>Continua muito forte tecnicamente, mas o hub agora trata o GLM como camada de precisao, nao de volume.</p>
+        </div>
+        <div class="mini">
+          <div class="kicker">Nova camada de volume</div>
+          <div class="score">MiMo</div>
+          <p>Standard virou piloto serio; Pro virou ponto de valor da familia para trabalho agentico pesado.</p>
+        </div>
+        <div class="mini">
+          <div class="kicker">Trilha barata</div>
+          <div class="score danger">OpenCode Go</div>
+          <p>Segue como melhor camada barata com `DeepSeek V4 Flash` e companhia para loops economicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Matriz de estrategias</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Estrategia</th>
+            <th>Objetivo</th>
+            <th>Stack recomendado</th>
+            <th>Quando faz sentido</th>
+            <th>Principal risco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Stack misto recomendado</strong></td>
+            <td>Separar precisao, volume e exploracao barata</td>
+            <td><a href="./glm.html">GLM current</a> + <a href="./mimo.html">MiMo Standard ou Pro</a> + <a href="./opencode-go.html">OpenCode Go</a></td>
+            <td>Quando voce quer manter frontier serio sem deixar uma unica assinatura queimar toda a cota sozinha.</td>
+            <td>Maior disciplina operacional para escolher modelo e camada certa por tarefa.</td>
+          </tr>
+          <tr>
+            <td><strong>Assinatura unica principal</strong></td>
+            <td>Ter uma compra central confiavel</td>
+            <td><a href="./glm.html">GLM Max</a> ou <a href="./mimo.html">MiMo Pro</a></td>
+            <td>Quando voce quer simplificar a operacao, aceitando escolher entre "precisao" e "volume" como tese principal.</td>
+            <td>GLM pode devorar quota; MiMo ainda tem menos telemetria de campo no hub.</td>
+          </tr>
+          <tr>
+            <td><strong>MVP de calibracao</strong></td>
+            <td>Medir seu uso diario real gastando pouco</td>
+            <td><a href="./opencode-go.html">OpenCode Go</a></td>
+            <td>Quando voce ainda esta descobrindo seu padrao de uso ou quer um plano satelite barato.</td>
+            <td>Quota insuficiente para semanas realmente extremas.</td>
+          </tr>
+          <tr>
+            <td><strong>Capacidade agressiva alternativa</strong></td>
+            <td>Maximizar volume por preco</td>
+            <td><a href="./alibaba.html">Alibaba Coding Plan Pro</a> + fallback disciplinado</td>
+            <td>Quando throughput pesa mais que previsibilidade absoluta.</td>
+            <td>Qualidade e consistencia variam mais entre modelos e contexto.</td>
+          </tr>
+          <tr>
+            <td><strong>Piloto volumetrico serio</strong></td>
+            <td>Testar se a MiMo sustenta seu mes melhor que o GLM</td>
+            <td><a href="./mimo.html">MiMo Standard</a> + <a href="./opencode-go.html">OpenCode Go</a></td>
+            <td>Quando voce quer validar com baixo risco a tese "MiMo base/pro entrega mais trabalho util por custo".</td>
+            <td>Se o seu padrao for muito perto da semana extrema, o Standard ainda pode ficar curto.</td>
+          </tr>
+          <tr>
+            <td><strong>Premium sem compromisso de custo</strong></td>
+            <td>Buscar o teto de qualidade e conforto</td>
+            <td><a href="./claude-max.html">Claude Max</a> + <a href="./cursor.html">Cursor</a> ou <a href="./openai-codex.html">Codex</a></td>
+            <td>Quando tempo e qualidade valem mais que eficiencia economica.</td>
+            <td>Custo muito alto para uso realmente pesado e continuo.</td>
+          </tr>
+          <tr>
+            <td><strong>Observacao comercial emergente</strong></td>
+            <td>Pilotar o que pode virar nova compra forte</td>
+            <td><a href="./kiro.html">Kiro</a> e adjacencias novas</td>
+            <td>Quando voce quer acompanhar ondas novas antes do mercado consolidar a leitura.</td>
+            <td>Menos historico de campo e documentacao mais jovem.</td>
+          </tr>
+          <tr>
+            <td><strong>Autonomia open-frontier</strong></td>
+            <td>Rodar frontier chinesa com menos dependencia de vendor fechado</td>
+            <td><a href="./ollama.html">Ollama Max</a> com `GLM` e `Kimi` como pilares</td>
+            <td>Quando a tese principal e combinar local-first, cloud burst e compatibilidade com agentes.</td>
+            <td>Previsibilidade pior do que token plan, porque o consumo depende de GPU time e duracao real das requests.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Configuracoes recomendadas por perfil</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>Perfil racional principal</h3>
+          <p><strong>Escolha:</strong> <a href="./glm.html">GLM current</a> + <a href="./mimo.html">MiMo Standard</a> + <a href="./opencode-go.html">Go</a>.</p>
+          <p class="small">Melhor se a meta e separar precisao de volume sem subir de cara para planos muito caros.</p>
+        </div>
+        <div class="mini">
+          <h3>Perfil exploratorio economico</h3>
+          <p><strong>Escolha:</strong> <a href="./mimo.html">MiMo Standard</a> + <a href="./opencode-go.html">OpenCode Go</a>.</p>
+          <p class="small">Melhor para medir se o MiMo realmente entrega mais trabalho util por credito do que o GLM no seu fluxo.</p>
+        </div>
+        <div class="mini">
+          <h3>Perfil volume acima de tudo</h3>
+          <p><strong>Escolha:</strong> <a href="./mimo.html">MiMo Pro</a> ou <a href="./alibaba.html">Alibaba Pro</a> como plano central, com fallback premium pequeno.</p>
+          <p class="small">MiMo tende a ser a tese mais limpa de volume; Alibaba segue forte onde throughput bruto vence tudo.</p>
+        </div>
+      </div>
+      <div class="warnout">
+        <strong>Leitura honesta do hub hoje:</strong> nenhuma estrategia economica replica 100% o que uma semana extrema de `Cursor + Opus heavy`
+        entrega quando o custo real implicito encosta em centenas de dolares. O que o estudo faz e encontrar a melhor aproximacao operacional
+        para esse comportamento.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Proximo passo recomendado</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Se a decisao e imediata</h3>
+          <ul>
+            <li>Abrir <a href="./glm.html">GLM</a>, <a href="./mimo.html">MiMo</a> e <a href="./opencode-go.html">OpenCode Go</a>.</li>
+            <li>Escolher entre stack misto, piloto serio de MiMo ou assinatura unica.</li>
+            <li>Usar <a href="./ranking.html">/ranking</a> para revisar risco operacional final.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Se a decisao pode ser calibrada</h3>
+          <ul>
+            <li>Rodar <a href="./telemetria.html">telemetria</a> por mais alguns dias.</li>
+            <li>Usar <a href="./benchmarks.html">benchmarks</a> para checar se o salto tecnico vale o preco.</li>
+            <li>Revisitar <a href="./atualizacao.html">playbook de atualizacao</a> para manter a tese viva.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
