@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews da Comunidade - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1440px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 30px; }
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .callout, .warnout {
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+    }
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: rgba(96,165,250,.08);
+      color: #f4f8ff;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .small { font-size: 13px; color: #8ea0c7; }
+    .score { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1440px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Reviews da comunidade e validacao de campo</h1>
+      <p>
+        Esta pagina existe para cobrir o que benchmark e pricing oficial nao conseguem responder sozinhos:
+        <strong>como modelos, IDEs e planos se comportam no uso real</strong>, com carga agentica, repos grandes,
+        loops de ferramenta, problemas de UX e consumo percebido por tarefa.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>29/04/2026</div></div>
+        <div class="mini"><strong>Regra da pagina</strong><div>Fonte oficial do fornecedor manda nos fatos; comunidade entra para comportamento real e dor pratica.</div></div>
+        <div class="mini"><strong>Escopo inicial</strong><div>Modelos, assinaturas, IDEs e harnesses com maior densidade de sinal nesta rodada.</div></div>
+        <div class="mini"><strong>Leitura correta</strong><div>Use junto com <a href="./benchmarks.html">/benchmarks</a>, <a href="./ranking.html">/ranking</a> e <a href="./estrategias.html">/estrategias</a>.</div></div>
+      </div>
+      <div class="callout">
+        <strong>Metodo do hub:</strong> docs oficiais respondem "o que o fornecedor vende". Reviews de Reddit, X, videos e telemetria respondem
+        "o que realmente acontece quando voce vibecoda por horas com contexto, tools, loops e stress de quota".
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Matriz rapida da comunidade</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>O que a comunidade elogia</th>
+            <th>O que a comunidade reclama</th>
+            <th>Leitura do hub</th>
+            <th>Confianca</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GLM-5.1</strong></td>
+            <td>Planejamento forte, leitura de repo, tasks criticas e boa sensacao de inteligencia.</td>
+            <td>Burn agressivo em sessoes agenticas pesadas; prompts longos viram muitas chamadas internas.</td>
+            <td>Camada de precisao, nao motor principal de volume.</td>
+            <td>Alta</td>
+          </tr>
+          <tr>
+            <td><strong>Kimi K2.6</strong></td>
+            <td>Mass edits, coding longo, boa performance em tarefas complexas.</td>
+            <td>Consumo pode subir rapido; varios relatos de custo alto por tarefa.</td>
+            <td>Segunda frontier forte, menos limpa como compra economica principal.</td>
+            <td>Media-alta</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5-Pro</strong></td>
+            <td>Long context, tasks agenticas premium, sinais de eficiencia promissora.</td>
+            <td>Ainda tem menos semanas de validacao publica do que GLM e DeepSeek; sample size menor.</td>
+            <td>Melhor novo candidato a volume premium no hub.</td>
+            <td>Media</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5</strong></td>
+            <td>Surpreendentemente perto do tier forte em alguns comparativos; 1x credit/token.</td>
+            <td>Ainda precisa de mais campo proprio do hub para fechar tese.</td>
+            <td>Ponto doce potencial da familia MiMo.</td>
+            <td>Media</td>
+          </tr>
+          <tr>
+            <td><strong>Qwen 3.6</strong></td>
+            <td>Velocidade, throughput, boa exploracao e custo bom por loop.</td>
+            <td>Mais reasoning/tool chatter do que o desejado em alguns relatos.</td>
+            <td>Workhorse de throughput; nao ancora premium principal.</td>
+            <td>Media</td>
+          </tr>
+          <tr>
+            <td><strong>DeepSeek V4</strong></td>
+            <td>Custo-beneficio muito forte e bom o bastante para muito trabalho util.</td>
+            <td>Menos consenso como melhor camada premium unica.</td>
+            <td>Melhor trilha barata de loop agentico.</td>
+            <td>Alta</td>
+          </tr>
+          <tr>
+            <td><strong>Alibaba Pro (Qwen)</strong></td>
+            <td>Capacidade por preco, Qwen oficial, refactors e sessoes medias bem servidas.</td>
+            <td>Caching confuso, produto instavel, UX/comercial mais fracos e menos previsibilidade por tarefa longa.</td>
+            <td>Dark horse serio de volume Qwen; nao plano universal perfeito.</td>
+            <td>Media-alta</td>
+          </tr>
+          <tr>
+            <td><strong>OpenCode Go</strong></td>
+            <td>Camada barata, flexibilidade e DeepSeek Flash rendendo muito em loop economico.</td>
+            <td>Plano nao segura vibe coding extremo sozinho; qualidade varia bastante por modelo.</td>
+            <td>Excelente terceira camada; nao assinatura principal unica.</td>
+            <td>Alta</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Modelos e assinaturas: o que o campo esta mostrando</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>GLM-5.1</h3>
+          <ul>
+            <li>Melhor quando a comunidade fala de planejamento, repo reading e tasks criticas.</li>
+            <li>Pior quando o assunto e eficiencia de quota em sessoes longas.</li>
+            <li>A propria doc oficial diz que uma query pode invocar 15-20 model calls; isso bate com a sua telemetria e com os relatos de burn.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://docs.z.ai/devpack/overview">Z.AI overview</a>,
+            <a href="https://docs.z.ai/devpack/faq">Z.AI FAQ</a>,
+            <a href="https://www.reddit.com/r/ZaiGLM/comments/1sgaa4e/token_system_broken/">Reddit: Token System Broken?</a>,
+            <a href="https://www.reddit.com/r/SillyTavernAI/comments/1si7po0/if_you_were_considering_the_coding_plan_for_glm_51/">Reddit: considering GLM 5.1</a>.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Kimi K2.6</h3>
+          <ul>
+            <li>Os relatos mais elogiosos falam de mass edits, coding longo e segunda frontier forte.</li>
+            <li>Os relatos mais criticos falam de burn alto em tarefas longas e output pesado.</li>
+            <li>O sentimento geral e "modelo forte", nao "plano economico".</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://www.kimi.com/coding/docs/en/benefits.html">Kimi Code benefits</a>,
+            <a href="https://www.reddit.com/r/vibecoding/comments/1srjxex/has_anyone_tried_kimi_k26/">Reddit: Kimi K2.6</a>,
+            <a href="https://www.reddit.com/r/kimi/comments/1sojem0/kimi_k26_worth_it/">Reddit: worth it?</a>,
+            <a href="https://www.reddit.com/r/opencodeCLI/comments/1so29o0/kimi_k26_in_opencode_is_actually_really_damn_good/">Reddit: Kimi in OpenCode</a>.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>MiMo-V2.5 / V2.5-Pro</h3>
+          <ul>
+            <li>A Xiaomi agora documenta pricing, Token Plan e integracoes oficiais com Zed/OpenCode; isso tirou a familia do limbo comercial.</li>
+            <li>A comunidade tecnica ja comeca a tratar o MiMo-Pro como candidato serio de eficiencia por token.</li>
+            <li>O MiMo base subiu porque varios comparativos de campo o colocam perto demais de workhorses mais caros para seguir ignorado.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://platform.xiaomimimo.com/docs/en-US/welcome">MiMo docs welcome</a>,
+            <a href="https://platform.xiaomimimo.com/docs/en-US/pricing">MiMo pricing</a>,
+            <a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo benchmark page</a>,
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sxbcyn/mimo_v25_pro/">Reddit: MiMo V2.5 Pro</a>,
+            <a href="https://www.reddit.com/r/LLMDevs/comments/1sthm3c/mimo_v25_pro_is_hitting_frontier_coding_scores_at/">Reddit: token efficiency</a>,
+            <a href="https://www.youtube.com/watch?v=K6t2We1ma0A">YouTube comparison</a>.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Qwen 3.6 / Alibaba Pro</h3>
+          <ul>
+            <li>Quando a comunidade fala bem do Alibaba, quase sempre esta falando de Qwen como motor principal.</li>
+            <li>Os elogios vao para throughput, refactors e custo nominal por volume.</li>
+            <li>As criticas vao para caching ruim, produto confuso e requests por tarefa mais altos do que o marketing sugere.</li>
+          </ul>
+          <p class="small">
+            Fontes:
+            <a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan">Alibaba Coding Plan</a>,
+            <a href="https://www.alibabacloud.com/help/en/model-studio/qwen-code">Qwen Code docs</a>,
+            <a href="https://www.reddit.com/r/opencodeCLI/comments/1s7inxw/alibaba_coding_plan/">Reddit: Alibaba Coding Plan</a>,
+            <a href="https://www.reddit.com/r/opencodeCLI/comments/1rlti8a/honest_review_of_alibaba_clouds_new_ai_coding_pro/">Reddit: honest review</a>,
+            <a href="https://www.reddit.com/r/Qwen_AI/comments/1skeeu5/goodbye_qwen_you_tried_but_you_failed/">Reddit: Goodbye Qwen</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>IDEs e harnesses: cobertura inicial de reviews</h2>
+      <div class="warnout">
+        <strong>Nota de cobertura:</strong> hoje a massa critica de sinal comunitario nesta pagina ainda e muito maior em modelos e planos do que em IDEs.
+        Mesmo assim, ja da para registrar alguns padroes uteis para trabalho pesado.
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Superficie</th>
+            <th>Sinal positivo mais repetido</th>
+            <th>Dor mais repetida</th>
+            <th>Leitura do hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Zed</strong></td>
+            <td>Editor rapido, parallel agents, threads por workspace e boa base para BYOK.</td>
+            <td>Ainda falta polish de AI tooling e git UX em comparacao com Cursor/stack mais maduro; alguns relatos de friccao em codebases grandes e feature gaps em Windows.</td>
+            <td>Melhor nova IDE principal para o seu stack, desde que voce aceite uma camada de configuracao maior.</td>
+          </tr>
+          <tr>
+            <td><strong>OpenCode</strong></td>
+            <td>Flexibilidade enorme de providers, Go barato e boa orquestracao economica.</td>
+            <td>Nao convence a mesma comunidade como IDE principal para todo mundo; qualidade da experiencia depende mais do setup e do modelo.</td>
+            <td>Melhor harness complementar e melhor camada barata; menos convincente como IDE unica premium.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Fontes:
+        <a href="https://www.reddit.com/r/ZedEditor/comments/1sss98u/introducing_parallel_agents_in_zed/">Zed parallel agents</a>,
+        <a href="https://www.reddit.com/r/ZedEditor/comments/1skq2n9/switching_from_vs_code_copilot_to_zed/">Switching from VS Code to Zed</a>,
+        <a href="https://www.reddit.com/r/ZedEditor/comments/1rnrxvm/external_agent_vs_zed_agent/">External agent vs Zed agent</a>,
+        <a href="https://www.reddit.com/r/ZedEditor/comments/1qt7jz1/i_just_tried_zed_for_the_first_time_and_im_really/">Zed first impressions</a>,
+        <a href="https://www.reddit.com/r/opencodeCLI/comments/1su7g3v/is_opencode_go_really_that_bad/">OpenCode Go really that bad?</a>,
+        <a href="https://www.reddit.com/r/opencodeCLI/comments/1s40z4p/opencode_go_plan_is_genuinely_the_worst_coding/">OpenCode Go worst coding plan?</a>,
+        <a href="https://www.reddit.com/r/opencodeCLI/comments/1syrg7h/opencode_go_no_fluff_opinions/">OpenCode Go no fluff</a>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Budget de US$ 50: MiMo Pro vs Alibaba Pro</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>MiMo Pro</h3>
+          <ul>
+            <li><strong>Preco:</strong> US$ 44 entrada / US$ 50 renovacao.</li>
+            <li><strong>Papel:</strong> camada principal de volume premium.</li>
+            <li><strong>Vantagem:</strong> credits legiveis, multiplicador por modelo claro e integracao oficial com Zed/OpenCode.</li>
+            <li><strong>Risco:</strong> menos massa critica de campo do que GLM/DeepSeek.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Alibaba Pro</h3>
+          <ul>
+            <li><strong>Preco:</strong> US$ 50/mensal.</li>
+            <li><strong>Papel:</strong> dark horse de volume Qwen.</li>
+            <li><strong>Vantagem:</strong> capacidade nominal grande e Qwen muito forte para throughput.</li>
+            <li><strong>Risco:</strong> requests por tarefa sobem rapido, caching e produto pesam contra.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Veredito do hub em 29/04:</strong> se a prioridade e <strong>capacidade primeiro</strong> com mais previsibilidade real por sessao,
+        <strong>MiMo Pro ganha</strong>. Se a prioridade e <strong>Qwen oficial + dark horse de volume por preco</strong>, Alibaba Pro continua muito forte,
+        mas com risco operacional claramente maior.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que aprendemos hoje e muda o hub</h2>
+      <ul>
+        <li><strong>GLM</strong> continua forte, mas nao pode mais ser tratado como melhor compra unica de volume para o seu caso.</li>
+        <li><strong>MiMo</strong> saiu da observacao e entrou na shortlist principal porque agora temos docs oficiais corretas e sinais de campo suficientes.</li>
+        <li><strong>Alibaba</strong> e um dark horse serio, mas o melhor uso dele parece ser como plano de volume para Qwen, nao como pacote multi-model perfeito.</li>
+        <li><strong>Community reviews</strong> precisavam virar uma camada propria do hub, separada de benchmark tecnico e pricing.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
