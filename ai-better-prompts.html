@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Better Prompts - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: rgba(14, 23, 42, 0.94);
+      --panel-2: rgba(20, 33, 60, 0.9);
+      --line: rgba(154, 176, 212, 0.18);
+      --text: #edf3ff;
+      --muted: #a7b7d9;
+      --accent: #71e4bd;
+      --accent-2: #6da8ff;
+      --warn: #f8cd68;
+      --danger: #ff8da1;
+      --shadow: 0 22px 70px rgba(0,0,0,.42);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(109,168,255,.18), transparent 26%),
+        radial-gradient(circle at 88% 0%, rgba(113,228,189,.14), transparent 24%),
+        linear-gradient(180deg, #060d19 0%, #08111f 100%);
+      line-height: 1.58;
+    }
+    .wrap { width: min(1440px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, var(--panel), rgba(10,18,34,.98));
+    }
+    .hero {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(255,255,255,.5), transparent 82%);
+      pointer-events: none;
+    }
+    .card { padding: 22px; margin-top: 22px; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.12; }
+    h1 { font-size: clamp(34px, 5vw, 60px); letter-spacing: -0.05em; max-width: 980px; position: relative; z-index: 1; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f7fbff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #b6d2ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 6px;
+      padding: 1px 5px;
+      color: #f4f8ff;
+    }
+    pre {
+      overflow: auto;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(3, 8, 18, .72);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #dbe8ff;
+      font-size: 13px;
+    }
+    .small { font-size: 13px; color: #90a4cb; }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(109,168,255,.12);
+      border: 1px solid rgba(109,168,255,.2);
+      color: #dce9ff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-copy { max-width: 960px; font-size: 18px; position: relative; z-index: 1; }
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mini, .feature {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      padding: 16px;
+    }
+    .score { font-size: 26px; font-weight: 850; color: #fff; margin-bottom: 6px; }
+    .badge {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 10px;
+    }
+    .badge.good { color: #baf7df; background: rgba(113,228,189,.12); }
+    .badge.warn { color: #ffe39f; background: rgba(248,205,104,.11); }
+    .badge.info { color: #cae0ff; background: rgba(109,168,255,.12); }
+    .callout, .warnout {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .callout { border-left: 4px solid var(--accent); background: rgba(113,228,189,.08); }
+    .warnout { border-left: 4px solid var(--warn); background: rgba(248,205,104,.09); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: rgba(109,168,255,.08); color: #f4f8ff; }
+    tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .link-list { display: grid; gap: 12px; margin-top: 10px; }
+    .link-pill {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      color: inherit;
+      text-decoration: none;
+    }
+    .link-pill:hover { text-decoration: none; border-color: rgba(109,168,255,.35); background: rgba(255,255,255,.055); }
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1440px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <div class="eyebrow">AI Better Prompts</div>
+      <h1>Receita de prompts para fazer agentes trabalharem melhor, gastando menos e errando menos.</h1>
+      <p class="hero-copy">
+        Esta pagina consolida o que aprendemos na pratica com KLG Bots, ClipForge, Zed, OpenCode, GLM, MiMo,
+        Codex, Claude e outros fluxos. O foco e operacional: estado certo, tarefa certa, ordem certa e
+        evidencia certa.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Regra 1</strong><div>Prompt bom e contrato operacional, nao frase bonita.</div></div>
+        <div class="mini"><strong>Regra 2</strong><div>Artefato precisa ser gerado antes de ser analisado.</div></div>
+        <div class="mini"><strong>Regra 3</strong><div>Caveman economiza so quando a etapa ja esta clara.</div></div>
+        <div class="mini"><strong>Regra 4</strong><div>Docs/state sao arquitetura em repos grandes.</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>A receita canonica</h2>
+      <div class="grid-3">
+        <div class="feature">
+          <div class="badge good">1. Estado</div>
+          <h3>Fixe a fonte de verdade</h3>
+          <p>Cite `AGENTS.md`, `CURRENT-STATE.md`, plano de sprint, logs, manifests e artefatos. Chat antigo nao e fonte final.</p>
+        </div>
+        <div class="feature">
+          <div class="badge info">2. Fase</div>
+          <h3>Diga se e retomada, decisao, execucao ou validacao</h3>
+          <p>Agente caro se perde quando precisa descobrir a fase sozinho.</p>
+        </div>
+        <div class="feature">
+          <div class="badge warn">3. Evidencia</div>
+          <h3>Defina o que prova sucesso</h3>
+          <p>Build, log, screenshot, manifest, teste, comando ou observacao visual. Cada um prova uma coisa diferente.</p>
+        </div>
+      </div>
+      <pre><code>Contexto:
+- &lt;fatos confirmados&gt;
+
+Fonte de verdade:
+- AGENTS.md
+- docs/CURRENT-STATE.md
+- docs/SPRINT-*.md relevante
+
+Objetivo desta fase:
+&lt;uma frase clara&gt;
+
+Tarefa:
+1. verificar estado atual
+2. executar a menor etapa segura
+3. validar com evidencia real
+4. atualizar docs/state se o estado real mudou
+
+Regras:
+- nao assumir artefato antes de gerar ou confirmar
+- nao expandir escopo
+- separar implementado, exercitado e validado
+
+Resposta final:
+- arquivos alterados
+- comandos executados
+- validacao
+- estado atualizado
+- proximo passo</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Quando usar caveman</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Use caveman quando</h3>
+          <ul>
+            <li>o estado ja esta claro</li>
+            <li>a tarefa e operacional</li>
+            <li>nao ha ambiguidade relevante</li>
+            <li>a resposta final deve ser compacta</li>
+            <li>o custo de interpretacao errada e baixo</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Evite caveman quando</h3>
+          <ul>
+            <li>a thread esta contaminada</li>
+            <li>o agente precisa reconstruir estado</li>
+            <li>ha diferenca sutil entre implementado e validado</li>
+            <li>voce esta corrigindo premissa falsa</li>
+            <li>ha artefatos, screenshots ou runtime envolvidos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warnout">
+        <strong>Substituto seguro:</strong> "Resposta curta e objetiva, mas priorize interpretacao correta sobre compressao."
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Matriz por modelo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo/familia</th>
+            <th>Melhor uso</th>
+            <th>Risco pratico</th>
+            <th>Prompt ideal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GLM</strong></td>
+            <td>Precisao, planejamento, RCA, menor etapa segura.</td>
+            <td>Burn alto em loops agenticos e threads longas.</td>
+            <td>Fonte de verdade + decisao fechada + criterio objetivo.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo</strong></td>
+            <td>Execucao longa e volume, especialmente no OpenCode.</td>
+            <td>Loops se o prompt nao sequencia artefatos/tools; Zed teve instabilidade com imagem/tool.</td>
+            <td>Passos obrigatorios + plano anti-loop + validacao objetiva.</td>
+          </tr>
+          <tr>
+            <td><strong>Kimi</strong></td>
+            <td>Mass edits, coding longo, refactors com plano definido.</td>
+            <td>Consumo pode subir em tarefas abertas.</td>
+            <td>Escopo por paths + validacao + nao refatorar fora.</td>
+          </tr>
+          <tr>
+            <td><strong>DeepSeek</strong></td>
+            <td>Loop barato, exploracao, patches pequenos.</td>
+            <td>Menos confiavel como fonte final em RCA sutil.</td>
+            <td>Tarefa unica + evidencia + parar no primeiro bloqueio real.</td>
+          </tr>
+          <tr>
+            <td><strong>Qwen/Alibaba</strong></td>
+            <td>Throughput, workhorse, volume com budget controlado.</td>
+            <td>Produto/harness podem custar mais que o modelo economiza.</td>
+            <td>Escopo dividido + comandos nao interativos + medicao por task.</td>
+          </tr>
+          <tr>
+            <td><strong>ChatGPT/Codex</strong></td>
+            <td>Engenharia equilibrada, revisao, execucao com shell e arquivos.</td>
+            <td>Thread longa sem state vira custo oculto.</td>
+            <td>Implemente + valide + preserve mudancas existentes.</td>
+          </tr>
+          <tr>
+            <td><strong>Opus/Sonnet</strong></td>
+            <td>Interpretacao, arquitetura, codigo complexo, revisao forte.</td>
+            <td>Caro se usado para mecanica simples.</td>
+            <td>Contexto rico para decisao; compacto so no final.</td>
+          </tr>
+          <tr>
+            <td><strong>Mini models</strong></td>
+            <td>Resumo, docs, patches triviais, formatacao.</td>
+            <td>Barato fica caro se decidir estado errado.</td>
+            <td>Entrada fechada + nao inferir alem dos fatos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Templates essenciais</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Retomada sem editar</h3>
+          <pre><code>Retomada de trabalho neste repo.
+Nao edite nada ainda.
+
+Leia primeiro:
+- AGENTS.md
+- docs/CURRENT-STATE.md
+- docs/SPRINT-*.md mais relevante
+
+Reconstrua:
+- objetivo atual
+- ultimo ponto validado
+- diferenca entre implementado, exercitado e validado
+- riscos
+- menor proxima etapa segura
+
+Resposta curta, mas nao use caveman full.</code></pre>
+        </div>
+        <div>
+          <h3>Execucao com estado vivo</h3>
+          <pre><code>Execute a etapa escolhida de ponta a ponta.
+
+Ordem:
+1. confirme estado atual
+2. aplique menor alteracao segura
+3. rode validacao minima real
+4. atualize docs/state se comportamento mudou
+
+Regras:
+- nao expandir escopo
+- nao assumir sucesso por build apenas
+- nao pedir confirmacao intermediaria se puder seguir</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Documentacao versionada</h2>
+      <p>Os documentos completos ficam em `ai-better-prompts/` para uso por agentes, IDEs e futuras recuperacoes de ambiente.</p>
+      <div class="link-list">
+        <a class="link-pill" href="./ai-better-prompts/README.md"><span><strong>README operacional</strong><br /><span class="small">Entrada principal da pasta de prompts.</span></span><span>&rarr;</span></a>
+        <a class="link-pill" href="./ai-better-prompts/general-recipe.md"><span><strong>Receita geral</strong><br /><span class="small">Estrutura canonica para qualquer LLM.</span></span><span>&rarr;</span></a>
+        <a class="link-pill" href="./ai-better-prompts/templates.md"><span><strong>Templates</strong><br /><span class="small">Prompts prontos por fase.</span></span><span>&rarr;</span></a>
+        <a class="link-pill" href="./ai-better-prompts/anti-patterns.md"><span><strong>Anti-padroes</strong><br /><span class="small">Erros que ja causaram loop, gasto e falsa conclusao.</span></span><span>&rarr;</span></a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

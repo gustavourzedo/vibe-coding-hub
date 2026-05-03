@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranking Consolidado - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1500px, calc(100% - 40px)); margin: 32px auto 56px; }
+
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.10));
+    }
+
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .small { font-size: 13px; color: #8ea0c7; }
+    .subtle { color: var(--muted); }
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini, .feature {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .feature strong, .mini strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #f7fbff;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(96,165,250,.08);
+      color: #f4f8ff;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+    }
+
+    tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    tr:hover td { background: rgba(110,231,183,.05); }
+
+    .rank {
+      display: inline-flex;
+      min-width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 700;
+      background: rgba(255,255,255,.08);
+    }
+
+    .rank.top { background: rgba(52,211,153,.15); color: #a7f3d0; }
+    .rank.mid { background: rgba(251,191,36,.15); color: #fde68a; }
+    .rank.low { background: rgba(251,113,133,.15); color: #fecdd3; }
+
+    .coverage {
+      font-weight: 700;
+      color: #f8fbff;
+    }
+
+    .bar {
+      margin-top: 8px;
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1500px); }
+      th, td { font-size: 13px; padding: 12px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Ranking consolidado do momento</h1>
+      <p>
+        Esta pagina voltou ao papel certo: ser a leitura mestra do estudo, com a tabela consolidada limpa,
+        a logica de estrategias de assinatura e a ponte para as paginas profundas. O benchmark de capacidade
+        continua sendo sua semana extrema no Cursor, tratada como <code>100%</code>.
+      </p>
+
+      <div class="grid-4">
+        <div class="feature">
+          <strong>Ultima compilacao</strong>
+          <div>29/04/2026</div>
+        </div>
+        <div class="feature">
+          <strong>Melhor stack misto</strong>
+          <div>GLM + MiMo + OpenCode Go</div>
+        </div>
+        <div class="feature">
+          <strong>Melhor camada de precisao</strong>
+          <div>GLM Coding Plan</div>
+        </div>
+        <div class="feature">
+          <strong>Melhor nova camada de volume</strong>
+          <div>Xiaomi MiMo</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Como ler a tabela:</strong> `capacidade` mede quanto da sua semana extrema a solucao tende a sustentar.
+        `qualidade tecnica` mede o quao perto ela chega do nivel de coding agent pesado que voce extraiu dos frontrunners.
+        `consolidado` mistura volume, nivel tecnico, previsibilidade e risco operacional.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Estrategias de assinatura</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Stack misto racional</strong>
+          <p><a href="./glm.html">GLM</a> + <a href="./mimo.html">MiMo</a> + <a href="./opencode-go.html">OpenCode Go</a> virou a leitura mais forte do hub para separar precisao, volume e camada barata.</p>
+        </div>
+        <div class="mini">
+          <strong>Camada de precisao</strong>
+          <p><a href="./glm.html">GLM Coding Plan</a> continua muito forte tecnicamente, mas o consumo de campo ficou agressivo demais para continuar sendo tratado como melhor motor de volume.</p>
+        </div>
+        <div class="mini">
+          <strong>MVP barato e serio</strong>
+          <p><a href="./opencode-go.html">OpenCode Go</a> continua sendo a melhor porta de entrada para medir uso real e sustentar a trilha barata com `DeepSeek V4 Flash`.</p>
+        </div>
+        <div class="mini">
+          <strong>Candidata comercial do momento</strong>
+          <p><a href="./mimo.html">Xiaomi MiMo</a> saiu do campo da curiosidade e entrou na shortlist principal por ter docs oficiais maduras, integracao com Zed/OpenCode e Token Plan legivel.</p>
+        </div>
+        <div class="mini">
+          <strong>Evidencia de campo</strong>
+          <p><a href="./evidencia-campo.html">A nova matriz de campo</a> concentra a parte que faltava ao benchmark: qualidade percebida, burn e papel operacional por modelo.</p>
+        </div>
+        <div class="mini">
+          <strong>Reviews da comunidade</strong>
+          <p><a href="./reviews-comunidade.html">A nova tela de reviews</a> amplia o campo para modelos, planos, IDEs e harnesses, sempre com docs oficiais mandando nos fatos e a comunidade validando uso real.</p>
+        </div>
+        <div class="mini">
+          <strong>Referencia premium de qualidade</strong>
+          <p><a href="./claude-max.html">Claude Max</a> continua sendo o teto de referencia, mas nao a melhor compra economica.</p>
+        </div>
+        <div class="mini">
+          <strong>Referencia pratica de IDE</strong>
+          <p><a href="./cursor.html">Cursor</a> continua sendo a ancora de UX e benchmark operacional do seu uso extremo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tabela comparativa final</h2>
+      <div class="warnout">
+        <strong>Nota metodologica:</strong> `MiMo` ainda tem menos semanas de telemetria propria do que `GLM` e `OpenCode Go`,
+        mas a plataforma oficial da Xiaomi e a triangulacao de comunidade/videos melhoraram a base de evidencia o bastante
+        para muda-lo de "observacao" para "camada comercial principal em piloto serio".
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Solucao</th>
+            <th>Preco base</th>
+            <th>Modelos / assinatura</th>
+            <th>Como quota e cobrada</th>
+            <th>Capacidade</th>
+            <th>Qualidade tecnica</th>
+            <th>Consolidado</th>
+            <th>Leitura final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank top">1</span></td>
+            <td><a href="./glm.html"><strong>GLM Coding Plan</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 18 a US$ 160/mes</td>
+            <td>GLM-5.1, GLM-5-Turbo, GLM-4.7, GLM-4.5-Air</td>
+            <td>Quota em tokens totais; GLM-5.1 e GLM-5-Turbo com multiplicadores (3x pico, 1x off-peak promo)</td>
+            <td><div class="coverage">55% a 85%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td><div class="coverage">75% a 88%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td><div class="coverage">68% a 85%</div><div class="bar"><span style="width:76%"></span></div></td>
+            <td>Melhor camada de precisao do hub. Continua fortissimo, mas a queima de quota em campo derrubou a tese de "motor unico" para o seu caso.</td>
+          </tr>
+          <tr>
+            <td><span class="rank top">2</span></td>
+            <td><a href="./mimo.html"><strong>Xiaomi MiMo</strong></a><div class="small">Pagina profunda pronta | Docs oficiais de pricing e integracao revisadas</div></td>
+            <td>US$ 6 a US$ 100/mes</td>
+            <td>MiMo-V2.5-Pro, MiMo-V2.5, MiMo-V2-Flash e stack MiMo</td>
+            <td>Token Plan por creditos; V2.5 = 1 credit/token, V2.5-Pro = 2 credits/token; off-peak 0.8x; rounds mensais oficiais por tier</td>
+            <td><div class="coverage">65% a 100%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td><div class="coverage">62% a 85%</div><div class="bar"><span style="width:74%"></span></div></td>
+            <td><div class="coverage">68% a 88%</div><div class="bar"><span style="width:78%"></span></div></td>
+            <td>Melhor nova camada de volume do hub. `Standard` ja virou piloto serio; `Pro` virou compra forte.</td>
+          </tr>
+          <tr>
+            <td><span class="rank top">3</span></td>
+            <td><a href="./opencode-go.html"><strong>OpenCode Go</strong></a><div class="small">Pagina profunda pronta | Telemetria ativa</div></td>
+            <td>US$ 10/mes</td>
+            <td>GLM-5 / 5.1, Kimi K2.5/2.6, MiniMax M2.7, MiMo-V2.5, Qwen 3.5/3.6, DeepSeek V4 e outros</td>
+            <td>Budget interno por valor (US$ 12/5h, US$ 30/semana, US$ 60/mes); fallback opcional para Zen</td>
+            <td><div class="coverage">50% a 80%</div><div class="bar"><span style="width:65%"></span></div></td>
+            <td><div class="coverage">50% a 72%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td><div class="coverage">50% a 75%</div><div class="bar"><span style="width:64%"></span></div></td>
+            <td>Melhor MVP barato e daily driver economico serio.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">4</span></td>
+            <td><a href="./alibaba.html"><strong>Alibaba Coding Plan Pro</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 50/mes</td>
+            <td>qwen3.6-plus, kimi-k2.5, glm-5, MiniMax-M2.5, DeepSeek V4 e outros</td>
+            <td>6.000 requests/5h, 45.000/semana, 90.000/mes; consumo real varia muito por task</td>
+            <td><div class="coverage">80% a 105%</div><div class="bar"><span style="width:90%"></span></div></td>
+            <td><div class="coverage">50% a 70%</div><div class="bar"><span style="width:60%"></span></div></td>
+            <td><div class="coverage">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td>Melhor dark horse de capacidade pelo preco, mas hoje a leitura de MiMo ficou mais limpa para o seu caso.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">5</span></td>
+            <td><a href="./google-ai.html"><strong>Google AI Pro / Ultra</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 19.99 a US$ 249.99/mes</td>
+            <td>Gemini CLI, Gemini Code Assist, Jules, Gemini 3 Pro</td>
+            <td>1.500 ou 2.000 requests/dia por usuario para CLI + agent mode; 120 req/min</td>
+            <td><div class="coverage">35% a 80%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="coverage">50% a 75%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td><div class="coverage">35% a 70%</div><div class="bar"><span style="width:54%"></span></div></td>
+            <td>Nova candidata real, com mais transparencia do que antes.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">6</span></td>
+            <td><a href="./cursor.html"><strong>Cursor Pro / Pro+ / Ultra</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 20 a US$ 200/mes</td>
+            <td>IDE agentica com OpenAI, Claude, Gemini, MCPs e cloud agents</td>
+            <td>Uso incluido por plano + overage; Pro+ 3x e Ultra 20x</td>
+            <td><div class="coverage">20% a 105%</div><div class="bar"><span style="width:70%"></span></div></td>
+            <td><div class="coverage">80% a 95%</div><div class="bar"><span style="width:88%"></span></div></td>
+            <td><div class="coverage">30% a 90%</div><div class="bar"><span style="width:64%"></span></div></td>
+            <td>Melhor experiencia pratica de IDE, mas nao a melhor tese economica.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">7</span></td>
+            <td><a href="./claude-max.html"><strong>Claude Max</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 100 a US$ 200/mes</td>
+            <td>Claude web/desktop/mobile + Claude Code</td>
+            <td>5x ou 20x do Pro por sessao; limites semanais e caps adicionais</td>
+            <td><div class="coverage">85% a 100%</div><div class="bar"><span style="width:92%"></span></div></td>
+            <td><div class="coverage">95% a 100%</div><div class="bar"><span style="width:98%"></span></div></td>
+            <td><div class="coverage">85% a 100%</div><div class="bar"><span style="width:92%"></span></div></td>
+            <td>Melhor referencia premium de qualidade.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">8</span></td>
+            <td><a href="./kiro.html"><strong>Kiro (AWS)</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 0 a US$ 200/mes</td>
+            <td>Kiro IDE, Kiro CLI, ACP IDEs; Sonnet, Opus e Haiku</td>
+            <td>Creditos incluidos + overage por credito</td>
+            <td><div class="coverage">25% a 80%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="coverage">75% a 90%</div><div class="bar"><span style="width:84%"></span></div></td>
+            <td><div class="coverage">35% a 75%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td>Produto serio, mas billing menos intuitivo para o seu caso.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">9</span></td>
+            <td><a href="./factory.html"><strong>Factory Pro / Max</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 20 a US$ 200/mes</td>
+            <td>Workspace agentico com desktop, web, CLI e frontier models</td>
+            <td>Planos por workspace; Max promete 10x usage do Pro, sem quota simples</td>
+            <td><div class="coverage">40% a 85%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td><div class="coverage">75% a 90%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td><div class="coverage">45% a 80%</div><div class="bar"><span style="width:66%"></span></div></td>
+            <td>Workspace premium forte, mais plataforma do que tese economica.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">10</span></td>
+            <td><a href="./windsurf.html"><strong>Windsurf Pro / Max</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 20 a US$ 200/mes</td>
+            <td>SWE-1.6, SWE-1.5, Adaptive, Claude/GPT/BYOK</td>
+            <td>Budget diario e semanal por tokens/modelo; extra usage na API price</td>
+            <td><div class="coverage">35% a 85%</div><div class="bar"><span style="width:56%"></span></div></td>
+            <td><div class="coverage">55% a 80%</div><div class="bar"><span style="width:66%"></span></div></td>
+            <td><div class="coverage">35% a 70%</div><div class="bar"><span style="width:52%"></span></div></td>
+            <td>IDE relevante, mas com risco alto de friccao operacional.</td>
+          </tr>
+          <tr>
+            <td><span class="rank mid">11</span></td>
+            <td><a href="./ollama.html"><strong>Ollama Pro / Max</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 20 a US$ 100/mes</td>
+            <td>Open models locais e cloud, com privacidade forte</td>
+            <td>Uso cloud medido por utilizacao real da infra; local sempre ilimitado</td>
+            <td><div class="coverage">45% a 85%</div><div class="bar"><span style="width:64%"></span></div></td>
+            <td><div class="coverage">45% a 70%</div><div class="bar"><span style="width:56%"></span></div></td>
+            <td><div class="coverage">45% a 75%</div><div class="bar"><span style="width:60%"></span></div></td>
+            <td>Alternativa real para estrategia open-model cloud.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">12</span></td>
+            <td><a href="./minimax.html"><strong>MiniMax Token Plan</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 10 a US$ 150/mes</td>
+            <td>MiniMax M2.7, Speech 2.8, Hailuo 2.3, Music 2.6</td>
+            <td>Requests por 5h e janela semanal 10x; Highspeed tiers com capacidade dedicada</td>
+            <td><div class="coverage">60% a 95%</div><div class="bar"><span style="width:75%"></span></div></td>
+            <td><div class="coverage">40% a 65%</div><div class="bar"><span style="width:53%"></span></div></td>
+            <td><div class="coverage">30% a 60%</div><div class="bar"><span style="width:44%"></span></div></td>
+            <td>Atrativa no papel para throughput, mas ainda moderada como substituicao principal.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">13</span></td>
+            <td><a href="./devin.html"><strong>Devin Pro / Max / Teams</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 20 a US$ 200/mes</td>
+            <td>Agente autonomo com ACUs e sessoes mais delegadas</td>
+            <td>Quota incluida + PAYG; billing ainda precisa ser revalidado a cada rodada</td>
+            <td><div class="coverage">20% a 70%</div><div class="bar"><span style="width:46%"></span></div></td>
+            <td><div class="coverage">70% a 90%</div><div class="bar"><span style="width:78%"></span></div></td>
+            <td><div class="coverage">20% a 60%</div><div class="bar"><span style="width:40%"></span></div></td>
+            <td>Boa referencia de autonomia, fraca como resposta economica principal.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">14</span></td>
+            <td><a href="./kimi.html"><strong>Kimi Code / Membership</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>Varia por membership</td>
+            <td>K2.6 e stack Kimi Code</td>
+            <td>Limite depende muito de tokens nao-cacheados e weekly window</td>
+            <td><div class="coverage">25% a 55%</div><div class="bar"><span style="width:40%"></span></div></td>
+            <td><div class="coverage">60% a 75%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td><div class="coverage">25% a 50%</div><div class="bar"><span style="width:38%"></span></div></td>
+            <td>Promissor em fluxos certos, mas ainda arriscado demais como plano principal.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">15</span></td>
+            <td><a href="./openai-codex.html"><strong>OpenAI / ChatGPT / Codex</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 20 a US$ 200/mes</td>
+            <td>ChatGPT Plus/Pro, Codex, GPT-5.5, GPT-5.4, GPT-5.3-Codex</td>
+            <td>Limites misturam 5h, semanal e logica de credito no Codex</td>
+            <td><div class="coverage">10% a 85%</div><div class="bar"><span style="width:52%"></span></div></td>
+            <td><div class="coverage">70% a 90%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td><div class="coverage">10% a 75%</div><div class="bar"><span style="width:46%"></span></div></td>
+            <td>Produto forte, mas ainda opaco e menos previsivel para o problema economico central do hub.</td>
+          </tr>
+          <tr>
+            <td><span class="rank low">16</span></td>
+            <td><a href="./chutes.html"><strong>Chutes Pro / Plus</strong></a><div class="small">Pagina profunda pronta</div></td>
+            <td>US$ 10 a US$ 20/mes</td>
+            <td>Infra hibrida com acesso a modelos e PAYG alem da franquia</td>
+            <td>Assinatura leve + uso adicional por demanda</td>
+            <td><div class="coverage">35% a 80%</div><div class="bar"><span style="width:56%"></span></div></td>
+            <td><div class="coverage">40% a 65%</div><div class="bar"><span style="width:52%"></span></div></td>
+            <td><div class="coverage">30% a 60%</div><div class="bar"><span style="width:45%"></span></div></td>
+            <td>Vale como estrategia hibrida barata, nao como substituto principal previsivel.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Mapa de paginas</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <strong>Paginas principais</strong>
+          <ul>
+            <li><a href="./telemetria.html">Telemetria</a></li>
+            <li><a href="./benchmarks.html">Benchmarks</a></li>
+            <li><a href="./harnesses.html">IDEs e harnesses</a></li>
+            <li><a href="./orquestradores.html">Orquestradores</a></li>
+            <li><a href="./solucoes-auditadas.html">Solucoes auditadas</a></li>
+          </ul>
+        </div>
+        <div class="mini">
+          <strong>Paginas profundas mais importantes</strong>
+          <ul>
+            <li><a href="./glm.html">GLM Coding Plan</a></li>
+            <li><a href="./alibaba.html">Alibaba Coding Plan Pro</a></li>
+            <li><a href="./opencode-go.html">OpenCode Go</a></li>
+            <li><a href="./mimo.html">Xiaomi MiMo</a></li>
+            <li><a href="./cursor.html">Cursor</a></li>
+            <li><a href="./claude-max.html">Claude Max</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

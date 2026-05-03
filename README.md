@@ -6,6 +6,32 @@ Documentacao viva para comparar assinaturas, modelos, IDEs, harnesses e telemetr
 
 Abra `index.html` para a home publica ou `ranking.html` para a comparacao detalhada.
 
+Guia operacional de prompts:
+`ai-better-prompts.html`
+
+Plano de refatoracao frontend:
+`docs/FRONTEND_REFACTOR_PLAN.md`
+
+Estrategia de descoberta por IA:
+`docs/AI_DISCOVERY_STRATEGY.md`
+
+Contexto/state para outra IA continuar:
+`docs/PROJECT_CONTEXT_STATE.md`
+
+Prompt de handoff para outra IDE/agente:
+`docs/NEXT_AGENT_PROMPT.md`
+
+MVP visual da refatoracao:
+`frontend-mvp/`
+
+O MVP ja cobre as paginas canonicas listadas em `ai-content-map.json`, renderizando o conteudo HTML existente dentro do novo shell Next.js.
+
+```powershell
+cd frontend-mvp
+npm install
+npm run dev -- --hostname 127.0.0.1 --port 3100
+```
+
 Publicacao oficial:
 https://vibe-coding-hub-vercel.vercel.app/
 
@@ -17,6 +43,7 @@ https://vibe-coding-hub-vercel.vercel.app/
 - Comparativo de IDEs, apps e harnesses.
 - Comparativo de orquestradores e workflows de agentes.
 - Telemetria local preparada para consolidar Cursor, Codex desktop e futuras ferramentas.
+- Receita de prompts agenticos em `ai-better-prompts/`, com guias por fase, modelo e IDE.
 
 ## Publicacao
 

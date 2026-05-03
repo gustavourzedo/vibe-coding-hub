@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmark de Capacidade dos Modelos - Hub de Agentes</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap {
+      width: min(1500px, calc(100% - 40px));
+      margin: 32px auto 56px;
+    }
+
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21, 31, 56, 0.94), rgba(16, 24, 43, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px 30px;
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.16), rgba(110, 231, 183, 0.1));
+    }
+
+    .card {
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -0.03em;
+    }
+
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .score { font-size: 26px; font-weight: 700; color: white; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110, 231, 183, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251, 191, 36, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { color: #f4f8ff; background: rgba(96,165,250,.08); }
+
+    .small { font-size: 13px; color: #8ea0c7; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(96, 165, 250, 0.12);
+      border: 1px solid rgba(96, 165, 250, 0.28);
+      color: #dceaff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .heat {
+      display: inline-block;
+      min-width: 74px;
+      padding: 6px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .heat.top { background: rgba(52, 211, 153, 0.16); color: #a7f3d0; }
+    .heat.mid { background: rgba(96, 165, 250, 0.16); color: #bfdbfe; }
+    .heat.low { background: rgba(251, 191, 36, 0.16); color: #fde68a; }
+    .heat.risk { background: rgba(251, 113, 133, 0.16); color: #fecdd3; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1500px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Benchmark de Capacidade dos Modelos</h1>
+      <p>
+        Pagina dedicada a olhar <strong>modelo por modelo</strong>, separando benchmark tecnico de assinatura.
+        A ideia aqui e facilitar a compra mental: primeiro entendemos <strong>quem e forte em que</strong>, depois cruzamos
+        isso com <strong>contexto</strong>, <strong>preco de API</strong> e <strong>maturidade pratica</strong>.
+      </p>
+
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>25/04/2026 13:03</div></div>
+        <div class="mini"><strong>Base desta rodada</strong><div>DeepSeek X + OpenAI + Anthropic + Z.ai + Google + Moonshot</div></div>
+        <div class="mini"><strong>Uso correto desta pagina</strong><div>Comparar capacidade tecnica; nao substituir a analise de assinatura</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Benchmark de fornecedor e comparacao de effort nao sao verdade absoluta</div></div>
+      </div>
+
+      <div class="warnout">
+        <strong>Como ler com honestidade:</strong> esta pagina agora mistura um comparativo publico da DeepSeek com tabelas oficiais da OpenAI,
+        Anthropic, Z.ai, Google e Moonshot. Isso melhora a cobertura dos modelos centrais do hub, mas alguns numeros ainda nao sao 100% comparaveis
+        porque nem todos os labs publicam exatamente os mesmos benchmarks, com o mesmo harness e o mesmo effort.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura Rapida</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Melhor leitura para long context</strong>
+          <div class="score good">Opus 4.6</div>
+          <p class="small">Continua sendo a ancora premium mais clara para contexto longo e consistencia pesada.</p>
+        </div>
+        <div class="mini">
+          <strong>Melhor leitura para terminal / agentic</strong>
+          <div class="score good">GPT-5.5</div>
+          <p class="small">Na pagina oficial da OpenAI, ele sobe para `82.7` em `Terminal-Bench 2.0` e `84.4` em `BrowseComp`.</p>
+        </div>
+        <div class="mini">
+          <strong>Modelo mais interessante para vigiar</strong>
+          <div class="score warn">DeepSeek V4 Pro Max</div>
+          <p class="small">Aparece muito forte no benchmark, mas ainda sem API V4 oficial clara na documentacao da DeepSeek.</p>
+        </div>
+        <div class="mini">
+          <strong>Nova familia para vigiar</strong>
+          <div class="score warn">Xiaomi MiMo</div>
+          <p class="small">Ja saiu do campo de curiosidade. A Xiaomi agora tem family marketing, token plans e benchmark oficial forte o bastante para entrar no radar do hub.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cobertura de Modelos Nesta Pagina</h2>
+      <div class="grid-4">
+        <div class="mini"><strong>Claude</strong><div class="small">Opus 4.6 e Opus 4.7</div></div>
+        <div class="mini"><strong>OpenAI</strong><div class="small">GPT-5.4 e GPT-5.5</div></div>
+        <div class="mini"><strong>Z.ai / GLM</strong><div class="small">GLM-5.1 Thinking</div></div>
+        <div class="mini"><strong>Moonshot / Kimi</strong><div class="small">K2.6 Thinking</div></div>
+        <div class="mini"><strong>Google</strong><div class="small">Gemini-3.1-Pro High</div></div>
+        <div class="mini"><strong>DeepSeek</strong><div class="small">DS-V4-Pro Max e DS-V4-Flash Max</div></div>
+        <div class="mini"><strong>Xiaomi MiMo</strong><div class="small">MiMo-V2-Flash auditado; V2.5-Pro em observacao forte</div></div>
+        <div class="mini"><strong>Tipo de evidencia</strong><div class="small">Oficial quando possivel; comparativo publico quando necessario</div></div>
+        <div class="mini"><strong>Objetivo</strong><div class="small">Entender o papel tecnico de cada modelo antes da assinatura</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Entrada nova: Xiaomi MiMo</h2>
+      <p>
+        `MiMo` passou a merecer lugar nesta pagina por dois motivos: a Xiaomi ja posiciona oficialmente a familia
+        como `agentic`, `long-horizon` e integrada a harnesses relevantes, e o card oficial de `MiMo-V2-Flash`
+        no Hugging Face ja traz benchmark suficiente para nao tratar mais a marca como puro rumor.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Camada</th>
+            <th>Estado atual no hub</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MiMo-V2-Flash</td>
+            <td><strong>Benchmark auditavel</strong></td>
+            <td>Ja da para usar como referencia tecnica oficial da familia MiMo.</td>
+          </tr>
+          <tr>
+            <td>MiMo-V2.5-Pro</td>
+            <td><strong>Model watch premium</strong></td>
+            <td>Homepage oficial traz claim forte contra `Claude Opus 4.6`, mas ainda com pouca tabela publica detalhada.</td>
+          </tr>
+          <tr>
+            <td>MiMo Token Plans</td>
+            <td><strong>Comercial em observacao</strong></td>
+            <td>Ja existe produto comercial de assinaturas, mas o nivel de transparencia publica ainda nao bate GLM/Alibaba/Kiro.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warnout">
+        <strong>Leitura certa:</strong> `MiMo` sobe primeiro no benchmark e no model watch. Para subir no ranking principal de assinatura,
+        ela ainda precisa de mais legibilidade publica em `preco por tier`, `quota por tier` e comportamento de consumo.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Painel de Compra Mental</h2>
+      <p>
+        Esta camada resume o papel natural de cada modelo quando a pergunta e: <strong>quem parece mais forte tecnicamente</strong>,
+        antes de misturar isso com assinatura, UX, quota ou integracao.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Leitura curta</th>
+            <th>Forca dominante</th>
+            <th>Risco principal</th>
+            <th>Custo de API</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Opus-4.6 Max</strong></td>
+            <td>Referencia premium para comparar tudo.</td>
+            <td><span class="heat top">Long context</span></td>
+            <td><span class="heat risk">Preco alto</span></td>
+            <td>US$ 5 input / US$ 25 output</td>
+          </tr>
+          <tr>
+            <td><strong>Opus-4.7</strong></td>
+            <td>Subida relevante em engenharia sobre o 4.6.</td>
+            <td><span class="heat top">Software engineering</span></td>
+            <td><span class="heat risk">Preco alto</span></td>
+            <td>US$ 5 input / US$ 25 output</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-5.4 xHigh</strong></td>
+            <td>Melhor cara de agente ferramental premium.</td>
+            <td><span class="heat top">Terminal + tools</span></td>
+            <td><span class="heat mid">Assinatura pouco legivel</span></td>
+            <td>US$ 2.50 input / US$ 15 output</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-5.5</strong></td>
+            <td>Agente ferramental mais forte desta rodada.</td>
+            <td><span class="heat top">Terminal + browse</span></td>
+            <td><span class="heat risk">Preco premium</span></td>
+            <td>US$ 5 input / US$ 30 output</td>
+          </tr>
+          <tr>
+            <td><strong>Gemini-3.1-Pro High</strong></td>
+            <td>Muito forte em raciocinio geral e browse.</td>
+            <td><span class="heat top">Reasoning</span></td>
+            <td><span class="heat low">Produto ainda irregular</span></td>
+            <td>US$ 2 input / US$ 12 output</td>
+          </tr>
+          <tr>
+            <td><strong>GLM-5.1 Thinking</strong></td>
+            <td>Melhor equilibrio entre tecnica e custo.</td>
+            <td><span class="heat top">Custo-beneficio</span></td>
+            <td><span class="heat low">Abaixo do topo absoluto</span></td>
+            <td>US$ 1.40 input / US$ 4.40 output</td>
+          </tr>
+          <tr>
+            <td><strong>K2.6 Thinking</strong></td>
+            <td>Open contender forte para agentic coding.</td>
+            <td><span class="heat top">Ferramentas</span></td>
+            <td><span class="heat mid">Output caro</span></td>
+            <td>Â¥6.50 input / Â¥27 output</td>
+          </tr>
+          <tr>
+            <td><strong>DS-V4-Pro Max</strong></td>
+            <td>Modelo para vigiar muito de perto.</td>
+            <td><span class="heat top">Benchmark geral</span></td>
+            <td><span class="heat risk">Preco/API opacos</span></td>
+            <td>Nao revalidado oficialmente</td>
+          </tr>
+          <tr>
+            <td><strong>DS-V4-Flash Max</strong></td>
+            <td>Variante mais leve e ainda forte.</td>
+            <td><span class="heat mid">EficiÃªncia</span></td>
+            <td><span class="heat risk">Preco/API opacos</span></td>
+            <td>Nao revalidado oficialmente</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo Visual Consolidado</h2>
+      <p>
+        Em vez de tentar resumir tudo numa media unica, esta tabela junta os eixos que mais interessam para vibe coding pesado:
+        `coding`, `agentic execution`, `tool use`, `reasoning` e `long context`. Ela combina fontes oficiais e comparativos
+        publicos, deixando as lacunas visiveis quando nao encontrei um numero comparavel o bastante.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>DS-V4-Pro Max</th>
+            <th>DS-V4-Flash Max</th>
+            <th>K2.6 Thinking</th>
+            <th>GLM-5.1 Thinking</th>
+            <th>Opus-4.6 Max</th>
+            <th>Opus-4.7</th>
+            <th>GPT-5.4 xHigh</th>
+            <th>GPT-5.5</th>
+            <th>Gemini-3.1-Pro High</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SWE-Bench Pro / Public</strong><br /><span class="small">coding agent</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><strong>58.4</strong><br /><span class="small">Z.ai oficial</span></td>
+            <td>-</td>
+            <td>64.3<br /><span class="small">OpenAI comparativo</span></td>
+            <td>57.7<br /><span class="small">OpenAI oficial</span></td>
+            <td>58.6<br /><span class="small">OpenAI oficial</span></td>
+            <td>54.2<br /><span class="small">OpenAI comparativo</span></td>
+          </tr>
+          <tr>
+            <td><strong>GPQA Diamond</strong><br /><span class="small">raciocinio geral</span></td>
+            <td>90.1</td>
+            <td>88.1</td>
+            <td>90.5</td>
+            <td>86.2</td>
+            <td>91.3</td>
+            <td>94.2<br /><span class="small">OpenAI comparativo</span></td>
+            <td>93.0</td>
+            <td>93.6<br /><span class="small">OpenAI oficial</span></td>
+            <td><strong>94.3</strong></td>
+          </tr>
+          <tr>
+            <td><strong>LiveCodeBench</strong><br /><span class="small">coding benchmark</span></td>
+            <td><strong>93.5</strong></td>
+            <td>91.6</td>
+            <td>89.6</td>
+            <td>-</td>
+            <td>88.8</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>91.7</td>
+          </tr>
+          <tr>
+            <td><strong>MRCR 1M / Graphwalks 1M</strong><br /><span class="small">long context indicativo</span></td>
+            <td>83.5<br /><span class="small">MRCR</span></td>
+            <td>78.7<br /><span class="small">MRCR</span></td>
+            <td>-</td>
+            <td>-</td>
+            <td><strong>92.9</strong><br /><span class="small">MRCR</span></td>
+            <td>-</td>
+            <td>9.4<br /><span class="small">Graphwalks</span></td>
+            <td>45.4<br /><span class="small">Graphwalks</span></td>
+            <td>76.3<br /><span class="small">MRCR</span></td>
+          </tr>
+          <tr>
+            <td><strong>CorpusQA 1M</strong><br /><span class="small">reasoning em contexto longo</span></td>
+            <td>62.0</td>
+            <td>60.5</td>
+            <td>-</td>
+            <td>-</td>
+            <td><strong>71.7</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>53.8</td>
+          </tr>
+          <tr>
+            <td><strong>Terminal Bench 2.0</strong><br /><span class="small">terminal + tools</span></td>
+            <td>67.9</td>
+            <td>56.9</td>
+            <td>66.7</td>
+            <td>63.5</td>
+            <td>65.4</td>
+            <td>69.4<br /><span class="small">OpenAI comparativo</span></td>
+            <td>75.1</td>
+            <td><strong>82.7</strong><br /><span class="small">OpenAI oficial</span></td>
+            <td>68.5<br /><span class="small">OpenAI comparativo</span></td>
+          </tr>
+          <tr>
+            <td><strong>SWE Verified</strong><br /><span class="small">resolucao de issues</span></td>
+            <td>80.6</td>
+            <td>79.0</td>
+            <td>80.2</td>
+            <td>-</td>
+            <td><strong>80.8</strong></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>80.6</td>
+          </tr>
+          <tr>
+            <td><strong>BrowseComp</strong><br /><span class="small">agentic browse + synthesis</span></td>
+            <td>83.4</td>
+            <td>73.2</td>
+            <td>83.2</td>
+            <td>79.3</td>
+            <td>83.7</td>
+            <td>79.3<br /><span class="small">OpenAI comparativo</span></td>
+            <td>82.7<br /><span class="small">OpenAI oficial</span></td>
+            <td>84.4<br /><span class="small">OpenAI oficial</span></td>
+            <td><strong>85.9</strong><br /><span class="small">OpenAI comparativo</span></td>
+          </tr>
+          <tr>
+            <td><strong>HLE w/tools</strong><br /><span class="small">reasoning com ferramentas</span></td>
+            <td>48.2</td>
+            <td>45.1</td>
+            <td><strong>54.0</strong></td>
+            <td>50.4</td>
+            <td>53.1</td>
+            <td>54.7<br /><span class="small">OpenAI comparativo</span></td>
+            <td>52.0</td>
+            <td>52.2<br /><span class="small">OpenAI oficial</span></td>
+            <td>51.6</td>
+          </tr>
+          <tr>
+            <td><strong>Toolathlon</strong><br /><span class="small">tool use geral</span></td>
+            <td>51.8</td>
+            <td>47.8</td>
+            <td>50.0</td>
+            <td>40.7</td>
+            <td>47.2</td>
+            <td>-</td>
+            <td>54.6</td>
+            <td><strong>55.6</strong><br /><span class="small">OpenAI oficial</span></td>
+            <td>48.8<br /><span class="small">OpenAI comparativo</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Valores desta tabela combinam o card publicado pela DeepSeek no X em <a href="https://x.com/deepseek_ai/status/2047516922263285776">2047516922263285776</a>,
+        a pagina oficial de <a href="https://openai.com/index/introducing-gpt-5-5/">GPT-5.5</a>, a pagina oficial de <a href="https://openai.com/index/introducing-gpt-5-4/">GPT-5.4</a>,
+        a pagina oficial de <a href="https://www.anthropic.com/news/claude-opus-4-6?id=ClaudeOpus4.6">Claude Opus 4.6</a>, a de <a href="https://www.anthropic.com/news/claude-opus-4-7">Claude Opus 4.7</a>
+        e a documentacao oficial de <a href="https://docs.z.ai/guides/llm/glm-5.1">GLM-5.1</a>. Onde ha `-`, nao usei um numero comparavel o bastante nesta pagina.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Leitura por Cenario de Uso</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <div class="badge">Se voce quer o mais parecido com frontier premium</div>
+          <ul>
+            <li><strong>`Opus-4.6`</strong> continua sendo a ancora mais forte de qualidade geral e contexto longo.</li>
+            <li><strong>`Opus-4.7`</strong> sobe bastante em software engineering e tarefas dificeis.</li>
+            <li><strong>`GPT-5.5`</strong> passou a ser a leitura mais agressiva para terminal, browse e tool use.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="badge">Se voce quer o melhor equilibrio tecnico por dolar</div>
+          <ul>
+            <li><strong>`GLM-5.1`</strong> e a leitura mais limpa desta pagina para custo-beneficio serio.</li>
+            <li><strong>`Gemini-3.1-Pro`</strong> tambem fica competitivo em API, mas com produto final menos redondo para o hub.</li>
+            <li><strong>`K2.6`</strong> pode ser forte, mas o output pesa e a operacionalizacao ainda e mais instavel.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="badge">Se voce quer vigiar a proxima ruptura</div>
+          <ul>
+            <li><strong>`DeepSeek V4 Pro Max`</strong> e o nome mais quente para acompanhar.</li>
+            <li><strong>`Xiaomi MiMo V2.5-Pro`</strong> entrou no mesmo radar de observacao forte.</li>
+            <li><strong>`K2.6`</strong> tambem merece vigia continua porque o produto oficial insiste muito em long-range coding e agent autonomy.</li>
+            <li>O problema do DeepSeek nao esta no benchmark; esta em faltar trilha comercial clara para entrar forte no hub.</li>
+            <li>Se aparecer assinatura, workspace ou API V4 oficial redonda, ele sobe rapido de relevancia.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mapa de Evidencia por Modelo</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <div class="badge">Evidencia forte</div>
+          <ul>
+            <li><strong>`GPT-5.4`</strong>: pagina oficial OpenAI com tabela ampla.</li>
+            <li><strong>`GPT-5.5`</strong>: pagina oficial OpenAI com tabela ampla e comparacao direta com Opus 4.7 e Gemini 3.1 Pro.</li>
+            <li><strong>`Opus 4.6`</strong>: pagina oficial Anthropic com benchmark e contexto longo bem documentados.</li>
+            <li><strong>`GLM-5.1`</strong>: doc oficial Z.ai com SWE-Bench Pro e posicionamento claro para coding agent.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="badge">Evidencia media</div>
+          <ul>
+            <li><strong>`Opus 4.7`</strong>: forte em docs oficiais, mas menos tabelas publicas completas do que GPT-5.5 e Opus 4.6.</li>
+            <li><strong>`Gemini 3.1 Pro`</strong>: aparece bem em comparativos oficiais de terceiros e em blog oficial do Google, mas com menos profundidade publica em coding.</li>
+            <li><strong>`K2.6`</strong>: produto oficial forte, com claims claros de coding longo e agent autonomy, mas poucos quadros oficiais tao completos quanto OpenAI e Anthropic.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="badge">Evidencia em observacao</div>
+          <ul>
+            <li><strong>`DeepSeek V4 Pro Max`</strong> e <strong>`Flash Max`</strong>: benchmark visual muito promissor, mas ainda sem trilha comercial/API oficial redonda nesta rodada.</li>
+            <li><strong>`Xiaomi MiMo`</strong>: evidence tecnica subiu bastante com `MiMo-V2-Flash`, mas a camada comercial ainda esta um degrau abaixo em auditabilidade publica.</li>
+            <li>Por isso entram no benchmark como <strong>modelo forte em observacao</strong>, nao como aposta comercial madura.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quem Comprar Mentalmente para Cada Tipo de Trabalho</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Se o foco e long context real</strong>
+          <ul>
+            <li>`Opus 4.6` e a referencia mais forte neste card.</li>
+            <li>`DeepSeek V4 Pro Max` fica logo atras, mas ainda abaixo com folga perceptivel em 1M context.</li>
+            <li>`Gemini 3.1 Pro` aparece mais fraco nesse recorte especifico de long context.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <strong>Se o foco e coding/terminal/agentic</strong>
+          <ul>
+            <li>`GPT-5.4 xHigh` e muito forte em `Terminal Bench 2.0` e `Toolathlon`.</li>
+            <li>`K2.6 Thinking` vai bem em `HLE w/tools` e `SWE Pro` no card.</li>
+            <li>`DeepSeek V4 Pro Max` aparece muito bem distribuido e forte em `LiveCodeBench`.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <strong>Se o foco e custo/tecnica</strong>
+          <ul>
+            <li>`GLM-5.1` continua impressionando pelo preco muito menor que `Opus` e `GPT-5.4`.</li>
+            <li>`Gemini 3.1 Pro` tambem fica numa faixa de API mais barata que `Opus` e `GPT-5.4`.</li>
+            <li>`DeepSeek V4` ainda nao da para precificar direito porque a API V4 nao apareceu oficialmente nas docs consultadas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Contexto, API e Custo</h2>
+      <p>
+        Esta tabela nao mede assinatura. Ela mede o <strong>modelo</strong>: contexto conhecido, custo oficial de API e
+        observacao pratica para o hub.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Contexto conhecido</th>
+            <th>Preco de API</th>
+            <th>Leitura pratica para o hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DS-V4-Pro Max</strong></td>
+            <td>nao revalidado em doc oficial de API V4</td>
+            <td>nao encontrado oficialmente ate 24/04/2026</td>
+            <td>Muito interessante tecnicamente, ainda fraco em maturidade comercial oficial para o hub.</td>
+          </tr>
+          <tr>
+            <td><strong>DS-V4-Flash Max</strong></td>
+            <td>nao revalidado em doc oficial de API V4</td>
+            <td>nao encontrado oficialmente ate 24/04/2026</td>
+            <td>Mesmo problema do Pro Max: benchmark forte, camada comercial/API ainda opaca.</td>
+          </tr>
+          <tr>
+            <td><strong>K2.6 Thinking</strong></td>
+            <td>famÃ­lia K2 Thinking documentada em <span class="mono">256K</span><br /><span class="small">o page de pricing do K2.6 foca mais em preco/capabilidade do que em ficha tecnica completa</span></td>
+            <td>cache hit <span class="mono">Â¥1.10 / MTok</span><br />input <span class="mono">Â¥6.50 / MTok</span><br />output <span class="mono">Â¥27.00 / MTok</span></td>
+            <td>Modelo caro em output e ainda muito dependente de como entra no produto final.</td>
+          </tr>
+          <tr>
+            <td><strong>GLM-5.1 Thinking</strong></td>
+            <td><span class="mono">200K</span> input / <span class="mono">128K</span> output</td>
+            <td>input <span class="mono">US$ 1.40 / MTok</span><br />cached <span class="mono">US$ 0.26 / MTok</span><br />output <span class="mono">US$ 4.40 / MTok</span></td>
+            <td>Continua sendo uma das leituras mais fortes de custo/tecnica do hub inteiro.</td>
+          </tr>
+          <tr>
+            <td><strong>Opus-4.6 Max</strong></td>
+            <td><span class="mono">1M</span> beta / <span class="mono">128K</span> output</td>
+            <td>input <span class="mono">US$ 5.00 / MTok</span><br />output <span class="mono">US$ 25.00 / MTok</span></td>
+            <td>Melhor referencia premium, mas muito caro para ser sua base economica principal.</td>
+          </tr>
+          <tr>
+            <td><strong>Opus-4.7</strong></td>
+            <td>seguindo a linha premium da familia Opus<br /><span class="small">melhorias fortes em engenharia e visao</span></td>
+            <td>input <span class="mono">US$ 5.00 / MTok</span><br />output <span class="mono">US$ 25.00 / MTok</span></td>
+            <td>Sobe bem em software engineering sobre o 4.6, mas continua premium na mesma faixa de preco.</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-5.4 xHigh</strong></td>
+            <td><span class="mono">1.05M</span> input / <span class="mono">128K</span> output<br /><span class="small">acima de 272K em Standard/Flex/Batch tem uplift de preco</span></td>
+            <td>input <span class="mono">US$ 2.50 / MTok</span><br />cached <span class="mono">US$ 0.25 / MTok</span><br />output <span class="mono">US$ 15.00 / MTok</span></td>
+            <td>Fortissimo tecnicamente, com custo abaixo de Opus e acima de GLM/Gemini.</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-5.5</strong></td>
+            <td><span class="mono">1M</span> contexto<br /><span class="small">GPT-5.5 Pro tambem foi anunciado, mas aqui foco no tier base do modelo</span></td>
+            <td>input <span class="mono">US$ 5.00 / MTok</span><br />output <span class="mono">US$ 30.00 / MTok</span></td>
+            <td>Leitura hoje de melhor agente ferramental da pagina, com custo ja claramente premium.</td>
+          </tr>
+          <tr>
+            <td><strong>Gemini-3.1-Pro High</strong></td>
+            <td><span class="mono">1,048,576</span> input / <span class="mono">65,536</span> output</td>
+            <td>input <span class="mono">US$ 2.00 / MTok</span><br />output <span class="mono">US$ 12.00 / MTok</span></td>
+            <td>Melhor do card em varios benchmarks de razao geral; custo de API fica numa faixa competitiva.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Resumo Modelo a Modelo</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>DeepSeek V4 Pro Max</h3>
+          <ul>
+            <li>Bem forte em `LiveCodeBench`, `SWE Verified`, `BrowseComp` e `Toolathlon`.</li>
+            <li>Long context aparece forte, mas ainda abaixo de `Opus 4.6`.</li>
+            <li>Problema para o hub: benchmark forte, precificacao/API V4 ainda sem trilha oficial clara na doc consultada.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>DeepSeek V4 Flash Max</h3>
+          <ul>
+            <li>Versao mais leve e ainda muito forte em varios testes.</li>
+            <li>Cai mais em terminal/agentic do que o `Pro Max`.</li>
+            <li>Mesmo gargalo comercial do V4 Pro Max.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>K2.6 Thinking</h3>
+          <ul>
+            <li>Card mostra comportamento muito bom em agentic coding.</li>
+            <li>Tem uma das melhores leituras em `HLE w/tools` e `SWE Pro`.</li>
+            <li>Em API, o output e caro e a leitura de assinatura continua mais complicada.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>GLM-5.1 Thinking</h3>
+          <ul>
+            <li>Fica abaixo dos melhores fechados no topo absoluto, mas entrega valor absurdo por dolar.</li>
+            <li>Segue muito forte como base racional para coding pesado.</li>
+            <li>Para o hub, ele continua sendo o melhor ponto de equilibrio entre tecnica e custo.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Opus-4.6 Max</h3>
+          <ul>
+            <li>Continua como referencia premium para long context e qualidade geral.</li>
+            <li>Excelente para medir "o que e frontier de verdade" no seu benchmark.</li>
+            <li>O custo de API explica por que o hub tenta te levar para alternativas mais baratas.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Opus-4.7</h3>
+          <ul>
+            <li>E a leitura mais forte da familia Opus para software engineering nesta rodada.</li>
+            <li>Sobe sobre o 4.6 principalmente nos casos mais dificeis e supervisionados de perto.</li>
+            <li>Continua premium no mesmo patamar de preco da familia.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>GPT-5.4 xHigh</h3>
+          <ul>
+            <li>Brilha muito em `Terminal Bench 2.0` e `Toolathlon`.</li>
+            <li>Tem contexto enorme e custo menor que Opus.</li>
+            <li>Se a OpenAI tivesse limites mais legiveis por assinatura, ela subiria mais no hub.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>GPT-5.5</h3>
+          <ul>
+            <li>Passou a ser a referencia mais forte desta pagina para terminal, browse e execucao agentica.</li>
+            <li>Tambem sobe sobre o GPT-5.4 em raciocinio e benchmarks profissionais.</li>
+            <li>O preco de API deixa claro que ele ja entra em territorio premium serio.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Gemini-3.1-Pro High</h3>
+          <ul>
+            <li>Forte em razao geral e tambem muito competitivo em `BrowseComp`.</li>
+            <li>API mais barata que `GPT-5.4` e bem mais barata que `Opus`.</li>
+            <li>Para o hub, continua interessante, mas o produto/assinatura ainda nao venceu os melhores caminhos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fontes para Atualizacao Futura</h2>
+      <ul>
+        <li><a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek benchmark card no X</a></li>
+        <li><a href="https://api-docs.deepseek.com/quick_start/pricing">DeepSeek API pricing</a></li>
+        <li><a href="https://platform.moonshot.cn/">Moonshot / Kimi platform</a></li>
+        <li><a href="https://platform.moonshot.cn/docs/intro">Moonshot docs intro</a></li>
+        <li><a href="https://docs.z.ai/guides/llm/glm-5.1">GLM-5.1 overview</a></li>
+        <li><a href="https://docs.z.ai/guides/overview/pricing">Z.ai pricing</a></li>
+        <li><a href="https://www.anthropic.com/news/claude-opus-4-6">Claude Opus 4.6</a></li>
+        <li><a href="https://openai.com/api/pricing/">OpenAI API pricing</a></li>
+        <li><a href="https://openai.com/index/introducing-gpt-5-4/">Introducing GPT-5.4</a></li>
+        <li><a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a></li>
+        <li><a href="https://ai.google.dev/models/gemini">Gemini models</a></li>
+        <li><a href="https://ai.google.dev/gemini-api/docs/gemini-3">Gemini 3 guide</a></li>
+        <li><a href="https://platform.xiaomimimo.com/docs/en-US/welcome">MiMo docs welcome</a></li>
+        <li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash">MiMo-V2-Flash official model card</a></li>
+        <li><a href="https://github.com/XiaomiMiMo/MiMo">Xiaomi MiMo GitHub</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

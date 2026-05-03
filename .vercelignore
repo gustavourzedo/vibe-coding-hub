@@ -2,5 +2,6 @@
 .gitignore
 .vercel
 *.md
+!ai-better-prompts/**/*.md
 scripts/
 telemetry/

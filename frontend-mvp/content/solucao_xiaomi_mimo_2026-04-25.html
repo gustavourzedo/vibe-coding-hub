@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaomi MiMo - Documentacao Viva</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+    .wrap { width: min(1280px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21, 31, 56, 0.94), rgba(16, 24, 43, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 28px 30px; }
+    .card { padding: 20px; margin-top: 20px; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+    .score { font-size: 28px; font-weight: 700; color: white; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110, 231, 183, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .warnbox {
+      border-left: 4px solid var(--warn);
+      background: rgba(251, 191, 36, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: #f4f8ff; background: rgba(96,165,250,.08); }
+    .small { font-size: 13px; color: #8ea0c7; }
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1280px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Xiaomi MiMo</h1>
+      <p>
+        Pagina viva da familia <code>MiMo</code>, agora alinhada ao mesmo padrao de leitura do <code>GLM</code>.
+        O ponto principal desta rodada e simples: a MiMo deixou de ser apenas "model watch" e passou a entrar
+        como estrategia comercial real, porque a familia <code>V2.5</code> ganhou pagina oficial robusta,
+        <code>Token Plan</code> com tiers legiveis e um flagship <code>V2.5-Pro</code> que elevou bastante
+        a ambicao agentica do stack.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>29/04/2026</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Camada principal de volume em piloto serio, com docs oficiais maduras de pricing e integracao</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Token Plan legivel, suporte oficial a Zed/OpenCode e runway muito mais alto que GLM no seu uso agentico</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Benchmark cruzavel entre labs ainda e mais raso do que GLM e ainda falta telemetria propria de varias semanas</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        A MiMo subiu de nivel porque agora temos quatro camadas importantes ao mesmo tempo: benchmark oficial do vendor,
+        docs publicas de pricing e Token Plan, integracao oficial com `Zed` e `OpenCode` e sinais de comunidade de que
+        a familia `V2.5` pode entregar mais trabalho util por credito do que o `GLM` em sessoes agenticas longas.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> a familia <code>MiMo</code> deixou de ser apenas "model watch". Hoje ela e uma
+        tese comercial valida para <strong>camada principal de volume</strong>, enquanto o <code>GLM</code> fica mais forte
+        como <strong>camada de precisao</strong>. O melhor ponto de entrada para testar isso no seu caso e o
+        <code>Standard</code>.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos e quota</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Creditos / mes</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lite</td>
+            <td>US$ 5.28 entrada / US$ 6 renovacao</td>
+            <td>60.000.000</td>
+            <td>Plano leve. Fica abaixo do seu uso extremo mesmo usando o modelo mais barato da familia.</td>
+          </tr>
+          <tr>
+            <td>Standard</td>
+            <td>US$ 14.08 entrada / US$ 16 renovacao</td>
+            <td>200.000.000</td>
+            <td>Plano intermediario forte para uso serio, mas ainda apertado para o seu benchmark semanal mais pesado.</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 44 entrada / US$ 50 renovacao</td>
+            <td>700.000.000</td>
+            <td>Melhor ponto de valor da familia. Ja cobre seu uso extremo estimado mesmo no V2.5-Pro.</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>US$ 88 entrada / US$ 100 renovacao</td>
+            <td>1.600.000.000</td>
+            <td>Folga muito alta. Entra mais como opcao de margem e conforto do que como minima compra racional.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Os planos agora estao documentados oficialmente na plataforma da Xiaomi MiMo e nao dependem mais de leitura indireta em landing page.
+      </p>
+      <div class="callout">
+        <strong>Traducao operacional da doc oficial:</strong> o `Standard` publica cerca de <code>400</code> rodadas medias/complexas por mes;
+        o `Pro`, <code>1400</code>; e o `Max`, <code>3200</code>. Isso transforma a leitura do MiMo de "billing abstrato"
+        para "capacidade de coding agent com runway minimamente legivel".
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno das assinaturas</h2>
+      <p>
+        Aqui vale a mesma regra da familia GLM: <strong>o tier nao muda a inteligencia do modelo</strong>.
+        O que muda e quanta liberdade voce tem para rodar o stack sem bater no limite duro de creditos.
+        No caso da MiMo, isso fica ainda mais visivel porque o <code>V2.5</code> custa <code>1 credit/token</code>
+        e o <code>V2.5-Pro</code> custa <code>2 credits/token</code>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Assinatura</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Lite</strong><br /><span class="small">US$ 6 renovacao</span></td>
+            <td><div class="score warn">15% a 30%</div><div class="bar"><span style="width:24%"></span></div></td>
+            <td><div class="score warn">60% a 75%</div><div class="bar"><span style="width:66%"></span></div></td>
+            <td><div class="score warn">20% a 35%</div><div class="bar"><span style="width:28%"></span></div></td>
+            <td>Boa porta de entrada na familia. Nao aguenta seu benchmark extremo com conforto.</td>
+          </tr>
+          <tr>
+            <td><strong>Standard</strong><br /><span class="small">US$ 16 renovacao</span></td>
+            <td><div class="score warn">45% a 65%</div><div class="bar"><span style="width:55%"></span></div></td>
+            <td><div class="score good">62% a 80%</div><div class="bar"><span style="width:70%"></span></div></td>
+            <td><div class="score good">48% a 68%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td>Virou o melhor piloto serio da familia. Ja permite testar de verdade a tese "MiMo como volume + GLM como precisao" sem saltar direto para o plano caro.</td>
+          </tr>
+          <tr>
+            <td><strong>Pro</strong><br /><span class="small">US$ 50 renovacao</span></td>
+            <td><div class="score good">78% a 98%</div><div class="bar"><span style="width:86%"></span></div></td>
+            <td><div class="score good">65% a 84%</div><div class="bar"><span style="width:74%"></span></div></td>
+            <td><div class="score good">72% a 90%</div><div class="bar"><span style="width:80%"></span></div></td>
+            <td>Melhor compra da familia. E o ponto em que a MiMo deixa de ser piloto e passa a ser camada principal de volume do stack.</td>
+          </tr>
+          <tr>
+            <td><strong>Max</strong><br /><span class="small">US$ 100 renovacao</span></td>
+            <td><div class="score good">90% a 100%</div><div class="bar"><span style="width:95%"></span></div></td>
+            <td><div class="score good">65% a 85%</div><div class="bar"><span style="width:75%"></span></div></td>
+            <td><div class="score good">75% a 92%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td>Quase elimina ansiedade de credito dentro da familia. Faz sentido se a MiMo virar stack principal mesmo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Como o Token Plan funciona de verdade</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que a doc oficial finalmente deixa claro</h3>
+          <ul>
+            <li><code>MiMo-V2.5</code> custa 1 credit por token.</li>
+            <li><code>MiMo-V2.5-Pro</code> custa 2 credits por token.</li>
+            <li>Ha desconto off-peak de <code>0.8x</code> entre <code>00:00 e 08:00</code> no horario de Beijing, o que vira <code>13:00-21:00 BRT</code>.</li>
+            <li>O contexto de 1M tokens nao carrega multiplicador extra no Token Plan atual.</li>
+            <li>A mesma quota e compartilhada entre todas as IDEs e tools conectadas ao Token Plan.</li>
+            <li>Quando a quota acaba, o servico para; nao continua consumindo saldo silenciosamente.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que isso significa no seu caso</h3>
+          <ul>
+            <li>Se voce rodar mais no <code>V2.5</code>, a folga de credito dobra em relacao ao <code>V2.5-Pro</code>.</li>
+            <li>No <code>Standard</code>, 200M credits viram 200M tokens de <code>MiMo-V2.5</code> ou 100M de <code>MiMo-V2.5-Pro</code>.</li>
+            <li>No <code>Pro</code>, 700M credits ja colocam a MiMo numa zona muito mais confortavel para uso agentico pesado do que o GLM Lite/Current.</li>
+            <li>O risco principal deixa de ser "nao cabe no papel" e passa a ser "quao eficiente ele sera no seu workflow real por tarefa".</li>
+            <li>Se a eficiencia de campo se confirmar, o MiMo vira o pulmão de volume mais serio do hub.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Integracao oficial com IDEs e tools</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Superficie</th>
+            <th>Como entra</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zed</td>
+            <td>Provider <code>OpenAI-compatible</code> com base URL do <code>Token Plan</code> ou da API PAYG.</td>
+            <td>Importante porque agora a Xiaomi documenta o caminho oficialmente. No Zed, o MiMo deixa de ser gambiarra.</td>
+          </tr>
+          <tr>
+            <td>OpenCode</td>
+            <td>CLI/plugin oficial com suporte a PAYG e <code>Token Plan</code>; imagens entram por <code>modalities.input</code>.</td>
+            <td>Hoje e uma das melhores superficies para explorar o MiMo como camada agentica real.</td>
+          </tr>
+          <tr>
+            <td>Ecossistema de coding tools</td>
+            <td>Docs oficiais citam OpenClaw, Claude Code, OpenCode e KiloCode.</td>
+            <td>A Xiaomi esta se posicionando claramente para harnesses de coding, nao so para API generica.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Por que cada assinatura recebe essas faixas</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Lite</strong>
+          <p>
+            A capacidade e baixa porque os 60M credits acabam rapido no seu padrao. A aderencia tecnica nao despenca
+            porque o modelo continua bom, mas o consolidado cai pois a franquia nao acompanha o seu ritmo de uso.
+          </p>
+        </div>
+        <div class="mini">
+          <strong>Standard</strong>
+          <p>
+            O Standard ja fica interessante para uso real, mas ainda fica vulneravel se o mes tiver varias sessoes
+            muito proximas do extremo. Ele e menos "plano principal" e mais "mid-tier serio".
+          </p>
+        </div>
+        <div class="mini">
+          <strong>Pro e Max</strong>
+          <p>
+            O salto real da familia acontece no <code>Pro</code>. A partir dali, a MiMo entra no jogo de verdade.
+            O <code>Max</code> nao melhora a inteligencia; ele so compra margem operacional extra.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Benchmark resumido desta familia</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Capacidade da familia</strong>
+          <div class="score good">15% a 100%</div>
+          <div class="bar"><span style="width:76%"></span></div>
+          <p class="small">A faixa e larga porque o Lite e limitado, enquanto Pro e Max ja brigam de verdade pelo seu caso.</p>
+        </div>
+        <div class="mini">
+          <strong>Aderencia tecnica pratica da familia</strong>
+          <div class="score good">60% a 85%</div>
+          <div class="bar"><span style="width:72%"></span></div>
+          <p class="small">A qualidade sobe muito com a familia V2.5-Pro, mas ainda falta mais validacao de campo do que em stacks mais maduros.</p>
+        </div>
+        <div class="mini">
+          <strong>Consolidado da familia</strong>
+          <div class="score good">20% a 92%</div>
+          <div class="bar"><span style="width:68%"></span></div>
+          <p class="small">A familia deixou de ser observacao e passou a ser estrategia comercial real, com Pro como ponto de virada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Matriz de campo: qualidade x consumo agentico</h2>
+      <p>
+        Esta e a matriz que faltava no hub: ela mistura docs oficiais, relatos tecnicos de Reddit/X e os comparativos em video
+        desta rodada para responder a pergunta mais importante do seu caso: <strong>quem resolve mais trabalho util por custo e por quota real</strong>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Qualidade agentica percebida</th>
+            <th>Consumo percebido em tarefas agenticas</th>
+            <th>Leitura do hub hoje</th>
+            <th>Tipo de evidencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GLM-5.1</strong></td>
+            <td>Alta em planejamento, leitura de repo e coding serio.</td>
+            <td><strong>Alta</strong>. A comunidade reclama de quota queimando rapido em sessoes com contexto grande e tools; a sua telemetria confirmou esse risco.</td>
+            <td>Melhor camada de precisao; ruim como motor principal de volume.</td>
+            <td>Docs oficiais + Reddit/X + seu uso real no Zed.</td>
+          </tr>
+          <tr>
+            <td><strong>Kimi K2.6</strong></td>
+            <td>Alta para mass edits, coding com tools e agentes longos.</td>
+            <td><strong>Media para alta</strong>. Ha relatos de ser token-hungry em certas rotas e de ter output caro.</td>
+            <td>Segunda frontier forte, mas ainda sem convencer como melhor compra economica.</td>
+            <td>Reddit/X + docs Kimi Code.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5-Pro</strong></td>
+            <td>Alta. Muito forte em tasks long-horizon e coding agentico nas demos oficiais.</td>
+            <td><strong>Media</strong>. A Xiaomi publica 40-60% menos tokens por trajetoria em Claw-Eval Pass^3; relatos de comunidade tambem sugerem eficiencia promissora, embora ainda mista.</td>
+            <td>Melhor candidato novo para camada principal de volume premium.</td>
+            <td>Docs oficiais + videos + comunidade.</td>
+          </tr>
+          <tr>
+            <td><strong>MiMo-V2.5</strong></td>
+            <td>Media para alta. Nao e o topo da familia, mas ja aparece em relatos e videos como forte demais para ser tratado como tier "lite".</td>
+            <td><strong>Baixa para media</strong> dentro da familia, por custar 1x credit/token.</td>
+            <td>Pode ser o ponto doce do stack MiMo para volume. Entrou forte porque algumas leituras de campo sugerem desempenho surpreendentemente proximo de `DeepSeek V4 Pro` em tarefas praticas.</td>
+            <td>Docs oficiais + comparativos em video + sinais de comunidade.</td>
+          </tr>
+          <tr>
+            <td><strong>Qwen 3.6</strong></td>
+            <td>Media para alta. Muito bom para loops rapidos e coding barato.</td>
+            <td><strong>Baixa para media</strong>, mas alguns relatos dizem que ele pode ficar mais falante com tools do que o `Qwen 3.5`.</td>
+            <td>Excelente camada de exploracao e throughput; menos convincente como stack principal premium.</td>
+            <td>Reddit/X + oferta real em OpenCode Go/Alibaba.</td>
+          </tr>
+          <tr>
+            <td><strong>DeepSeek V4</strong></td>
+            <td>Media para alta, com qualidade forte o bastante para muito trabalho util.</td>
+            <td><strong>Baixa</strong> em custo bruto. A comunidade insiste que e um dos melhores workhorses para loops agenticos baratos.</td>
+            <td>Melhor camada barata de loop agentico; ainda nao a leitura mais segura como stack premium unica.</td>
+            <td>Reddit/X + benchmark publico.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warnbox">
+        <strong>Leitura metodologica:</strong> a comunidade ainda nao deu para `MiMo` o mesmo volume de validacao de campo que ja existe para `GLM` e `DeepSeek`.
+        Mesmo assim, o conjunto "docs oficiais maduras + pricing legivel + videos de comparacao + relatos tecnicos reais" foi suficiente para tirar a familia do limbo.
+      </div>
+      <p class="small">Para a leitura completa de Reddit, X, videos e telemetria, veja <a href="./evidencia-campo.html">/evidencia-campo</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Configuracao recomendada para voce</h2>
+      <ul>
+        <li><strong>Piloto recomendado:</strong> MiMo Standard.</li>
+        <li><strong>Plano principal dentro da familia:</strong> MiMo Pro.</li>
+        <li><strong>Modelo principal:</strong> MiMo-V2.5-Pro para tasks mais criticas.</li>
+        <li><strong>Escalada de volume:</strong> MiMo-V2.5 quando a meta for maximizar runway por credito.</li>
+        <li><strong>Horario inteligente:</strong> priorizar janela off-peak quando fizer sentido para comprar mais folga.</li>
+      </ul>
+      <div class="callout">
+        <strong>Resumo pratico:</strong> a tese mais forte hoje ja nao e "GLM sozinho". E <strong>GLM como precisao + MiMo como volume + OpenCode Go como trilha barata</strong>.
+        Se voce quer validar a familia com risco baixo, o `Standard` e o melhor ponto de entrada.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Manutencao futura</h2>
+      <p>Revisar esta pagina sempre que houver mudanca em qualquer um destes pontos:</p>
+      <ul>
+        <li>preco por tier, creditos por tier ou regra do Token Plan</li>
+        <li>multiplicador off-peak e janelas horarias</li>
+        <li>flagship da familia V2.5-Pro e benchmarks oficiais do vendor</li>
+        <li>evidencia de comunidade e integracao com OpenCode, Claude Code e outros harnesses</li>
+      </ul>
+      <p class="small">
+        Fontes-base desta pagina agora ficam centralizadas nas docs oficiais da Xiaomi MiMo Platform, nao mais em paginas soltas de marketing:
+        <a href="https://platform.xiaomimimo.com/docs/en-US/welcome">welcome</a>,
+        <a href="https://platform.xiaomimimo.com/docs/en-US/pricing">pricing</a>,
+        <a href="https://platform.xiaomimimo.com/docs/en-US/integration/tools-overview">tools overview</a>,
+        <a href="https://platform.xiaomimimo.com/docs/en-US/integration/zed">zed</a>,
+        <a href="https://platform.xiaomimimo.com/docs/en-US/integration/opencode">opencode</a>,
+        mais a pagina de benchmark/comparativo <a href="https://mimo.xiaomi.com/mimo-v2-5/">MiMo V2.5</a>,
+        o card <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro">MiMo-V2.5-Pro</a> e os videos
+        <a href="https://www.youtube.com/watch?v=TOOfrn-kR74">MiMo 2.5 PRO Tested</a>,
+        <a href="https://www.youtube.com/watch?v=5JhSI_GTdi0">MiMo V2.5 Pro Full Test</a> e
+        <a href="https://www.youtube.com/watch?v=K6t2We1ma0A">MiMo vs GLM vs Qwen vs DeepSeek vs Kimi</a>.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

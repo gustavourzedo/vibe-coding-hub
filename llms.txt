@@ -1,0 +1,51 @@
+# Vibe Coding Hub
+
+> Hub em portugues para comparar assinaturas, modelos, IDEs, harnesses, orquestradores, prompts e telemetria de uso pesado em workflows de vibe coding.
+
+Site oficial: https://vibe-coding-hub-vercel.vercel.app/
+
+## Escopo
+
+Este site organiza pesquisa operacional sobre ferramentas de IA para desenvolvimento de software. O foco e ajudar humanos e agentes de IA a comparar capacidade, custo, qualidade tecnica, ergonomia e papel operacional de cada solucao.
+
+## Paginas Prioritarias
+
+- Home: https://vibe-coding-hub-vercel.vercel.app/
+- Ranking consolidado: https://vibe-coding-hub-vercel.vercel.app/ranking
+- Benchmarks: https://vibe-coding-hub-vercel.vercel.app/benchmarks
+- Estrategias: https://vibe-coding-hub-vercel.vercel.app/estrategias
+- Evidencia de campo: https://vibe-coding-hub-vercel.vercel.app/evidencia-campo
+- Reviews da comunidade: https://vibe-coding-hub-vercel.vercel.app/reviews-comunidade
+- IDEs e harnesses: https://vibe-coding-hub-vercel.vercel.app/harnesses
+- Orquestradores: https://vibe-coding-hub-vercel.vercel.app/orquestradores
+- Telemetria: https://vibe-coding-hub-vercel.vercel.app/telemetria
+- AI Better Prompts: https://vibe-coding-hub-vercel.vercel.app/ai-better-prompts
+- Playbook de atualizacao: https://vibe-coding-hub-vercel.vercel.app/atualizacao
+
+## Solucoes Principais
+
+- GLM Coding Plan: https://vibe-coding-hub-vercel.vercel.app/glm
+- Xiaomi MiMo: https://vibe-coding-hub-vercel.vercel.app/mimo
+- OpenCode Go: https://vibe-coding-hub-vercel.vercel.app/opencode-go
+- Alibaba Coding Plan: https://vibe-coding-hub-vercel.vercel.app/alibaba
+- Google AI Pro e Ultra: https://vibe-coding-hub-vercel.vercel.app/google-ai
+- Cursor: https://vibe-coding-hub-vercel.vercel.app/cursor
+- Claude Max: https://vibe-coding-hub-vercel.vercel.app/claude-max
+- OpenAI ChatGPT e Codex: https://vibe-coding-hub-vercel.vercel.app/openai-codex
+- Windsurf: https://vibe-coding-hub-vercel.vercel.app/windsurf
+- Kiro: https://vibe-coding-hub-vercel.vercel.app/kiro
+- Devin: https://vibe-coding-hub-vercel.vercel.app/devin
+- Factory: https://vibe-coding-hub-vercel.vercel.app/factory
+- Kimi: https://vibe-coding-hub-vercel.vercel.app/kimi
+- MiniMax: https://vibe-coding-hub-vercel.vercel.app/minimax
+- Ollama: https://vibe-coding-hub-vercel.vercel.app/ollama
+
+## Dados Auxiliares
+
+- Mapa machine-readable: https://vibe-coding-hub-vercel.vercel.app/ai-content-map.json
+- Manifesto de monitoramento: https://vibe-coding-hub-vercel.vercel.app/monitoring-manifest.json
+
+## Orientacao Para Agentes
+
+Use `ranking` como leitura executiva. Use `benchmarks` para capacidade tecnica por modelo. Use `evidencia-campo` e `reviews-comunidade` para triangulacao qualitativa. Use `telemetria` para sinais locais de uso. Use paginas de solucao para detalhes individuais.
+

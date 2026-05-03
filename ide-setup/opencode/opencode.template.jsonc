@@ -1,0 +1,147 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 12000
+  },
+  "watcher": {
+    "ignore": [
+      ".git/**",
+      "node_modules/**",
+      "bin/**",
+      "obj/**",
+      "dist/**",
+      "build/**",
+      "coverage/**",
+      "logs/**",
+      "graphify-out/**",
+      "runtime-snapshots/**",
+      "dual_screenshots/**",
+      "_tmp/**",
+      "tmp/**",
+      ".venv/**",
+      "venv/**"
+    ]
+  },
+  "permission": {
+    "doom_loop": "deny",
+    "bash": {
+      "*": "allow",
+      "adb *": "allow",
+      "*adb.exe*": "allow",
+      "dotnet run *": "allow",
+      "*klgbots.exe*": "allow",
+      "*ldconsole*": "allow",
+      "Start-Process *": "allow"
+    }
+  },
+  "provider": {
+    "zai-glm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ZAI GLM",
+      "options": {
+        "baseURL": "https://api.z.ai/api/coding/paas/v4",
+        "apiKey": "{env:Z_AI_API_KEY}"
+      },
+      "models": {
+        "glm-5.1": {
+          "name": "GLM 5.1"
+        },
+        "glm-4.7": {
+          "name": "GLM 4.7"
+        }
+      }
+    },
+    "xiaomi-mimo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Xiaomi MiMo",
+      "options": {
+        "baseURL": "https://token-plan-sgp.xiaomimimo.com/v1",
+        "apiKey": "{env:XIAOMI_MIMO_API_KEY}"
+      },
+      "models": {
+        "mimo-v2.5-pro": {
+          "name": "MiMo V2.5 Pro"
+        },
+        "mimo-v2.5": {
+          "name": "MiMo V2.5"
+        }
+      }
+    }
+  },
+  "instructions": [
+    "AGENTS.md",
+    ".cursor/rules/*.md"
+  ],
+  "mcp": {
+    "sequential-thinking": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "zai-mcp-server": {
+      "type": "local",
+      "command": ["npx", "-y", "@z_ai/mcp-server@latest"],
+      "environment": {
+        "Z_AI_API_KEY": "{env:Z_AI_API_KEY}",
+        "Z_AI_MODE": "{env:Z_AI_MODE}"
+      },
+      "enabled": true
+    },
+    "web-search-prime": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:Z_AI_API_KEY}"
+      },
+      "enabled": true
+    },
+    "web-reader": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_reader/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:Z_AI_API_KEY}"
+      },
+      "enabled": true
+    },
+    "zread": {
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/zread/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:Z_AI_API_KEY}"
+      },
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@latest"],
+      "enabled": true
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest", "--autoConnect"],
+      "enabled": true
+    },
+    "filesystem": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\gusta",
+        "C:\\LDPlayer",
+        "D:\\",
+        "E:\\",
+        "F:\\",
+        "G:\\"
+      ],
+      "enabled": true
+    }
+  }
+}

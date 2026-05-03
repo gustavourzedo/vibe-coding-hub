@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chutes - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:#fbbf24; }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Chutes</h1>
+      <p>
+        Pagina viva da alternativa `Chutes`. Ela segue mais forte como `infra hibrida` com assinatura leve e
+        pay-as-you-go do que como coding plan flat realmente previsivel.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Estrategia hibrida, nao plano principal</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Custo de entrada baixo</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Assinatura + PAYG, nao flat puro</div></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Chutes` continua util no hub como alternativa para quem quer uma camada barata e flexivel de acesso a modelos,
+        mas ele nao resolve sozinho a pergunta principal deste projeto.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> boa infra barata. Fraca como assinatura previsivel para substituir o seu uso extremo.
+      </div>
+    </section>
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score">35% a 80%</div><div class="bar"><span style="width: 56%"></span></div></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score">40% a 65%</div><div class="bar"><span style="width: 52%"></span></div></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score">30% a 60%</div><div class="bar"><span style="width: 45%"></span></div></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Comparativo interno da solucao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modo</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Assinatura leve</strong></td>
+            <td><div class="score">25% a 50%</div><div class="bar"><span style="width:36%"></span></div></td>
+            <td><div class="score">35% a 55%</div><div class="bar"><span style="width:44%"></span></div></td>
+            <td><div class="score">25% a 40%</div><div class="bar"><span style="width:32%"></span></div></td>
+            <td>Boa entrada, pouca previsibilidade como solucao final.</td>
+          </tr>
+          <tr>
+            <td><strong>Assinatura + PAYG</strong></td>
+            <td><div class="score">35% a 80%</div><div class="bar"><span style="width:56%"></span></div></td>
+            <td><div class="score">40% a 65%</div><div class="bar"><span style="width:52%"></span></div></td>
+            <td><div class="score">30% a 60%</div><div class="bar"><span style="width:45%"></span></div></td>
+            <td>E o jeito mais realista de a solucao operar no seu caso.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos de manutencao futura</h2>
+      <ul>
+        <li><a href="https://chutes.ai/">Chutes home</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

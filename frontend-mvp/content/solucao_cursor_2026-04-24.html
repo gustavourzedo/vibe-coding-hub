@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursor - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Cursor</h1>
+      <p>
+        Pagina viva do `Cursor` como assinatura e IDE agentica. Ele e a referencia pratica do seu benchmark extremo:
+        uma semana real de uso pesado com modelos frontier, sem ficar gerenciando token a token, ate a quota principal estourar.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 19:05</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Referencia pratica do benchmark, nao melhor compra economica</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>IDE integrada, frontier models, MCP, skills, hooks e cloud agents</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Assinatura com uso incluido + on-demand/overage, nao flat simples</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        O `Cursor` continua sendo uma das superficies mais fortes para vibe coding pesado. A razao de ele nao vencer
+        a tese economica do hub e simples: o proprio seu uso mostrou que, quando a semana fica extrema, ele deixa de
+        parecer uma assinatura previsivel e vira uma combinacao de plano, quota, modelo, modo e possivel consumo adicional.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> excelente como IDE e referencia de experiencia; menos atraente como solucao de menor custo
+        para reproduzir uma semana que chegou perto de US$ 1.000 equivalentes em consumo frontier.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos oficiais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>O que muda</th>
+            <th>Leitura para seu caso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 20/mes</td>
+            <td>Extended limits on Agent, frontier models, MCPs, skills, hooks e cloud agents.</td>
+            <td>Bom plano de entrada, mas baixo para seu benchmark extremo.</td>
+          </tr>
+          <tr>
+            <td>Pro+</td>
+            <td>US$ 60/mes</td>
+            <td>3x usage on all OpenAI, Claude, Gemini models.</td>
+            <td>Plano recomendado pelo proprio Cursor para daily agent users, mas ainda exige cuidado em semanas extremas.</td>
+          </tr>
+          <tr>
+            <td>Ultra</td>
+            <td>US$ 200/mes</td>
+            <td>20x usage on all OpenAI, Claude, Gemini models e prioridade em novos recursos.</td>
+            <td>O tier que mais se aproxima da sua semana extrema dentro do Cursor, mas ja compete em preco com Claude Max e Factory Max.</td>
+          </tr>
+          <tr>
+            <td>Teams</td>
+            <td>US$ 40/usuario/mes</td>
+            <td>Colaboracao, billing centralizado, analytics, privacy controls, RBAC e SAML/OIDC SSO.</td>
+            <td>Mais relevante para equipe do que para resolver custo individual de vibe coding pesado.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">A pagina oficial tambem informa que todo plano inclui um montante de model usage e que uso on-demand permite continuar apos o incluso, cobrado em arrears.</p>
+    </section>
+
+    <section class="card">
+      <h2>Benchmark resumido da familia Cursor</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td><div class="score warn">20% a 45%</div><div class="bar"><span style="width:34%"></span></div></td>
+            <td><div class="score good">80% a 95%</div><div class="bar"><span style="width:88%"></span></div></td>
+            <td><div class="score warn">30% a 55%</div><div class="bar"><span style="width:42%"></span></div></td>
+            <td>Boa qualidade, pouca folga para repetir sua semana extrema.</td>
+          </tr>
+          <tr>
+            <td><strong>Pro+</strong></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="score good">80% a 95%</div><div class="bar"><span style="width:88%"></span></div></td>
+            <td><div class="score warn">50% a 75%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td>O melhor meio-termo dentro do Cursor se voce quiser continuar no produto.</td>
+          </tr>
+          <tr>
+            <td><strong>Ultra</strong></td>
+            <td><div class="score good">80% a 105%</div><div class="bar"><span style="width:92%"></span></div></td>
+            <td><div class="score good">85% a 95%</div><div class="bar"><span style="width:90%"></span></div></td>
+            <td><div class="score good">75% a 90%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td>Melhor Cursor para o benchmark extremo, mas perde a tese de menor custo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Por que ele entra como referencia e nao como vencedor economico</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que ele faz muito bem</h3>
+          <ul>
+            <li>Entrega uma IDE integrada, familiar para quem vem do VS Code.</li>
+            <li>Acessa modelos frontier de OpenAI, Claude e Gemini dentro do mesmo produto.</li>
+            <li>Tem agentes, cloud agents, MCPs, skills e hooks no mesmo fluxo.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que pesa contra</h3>
+          <ul>
+            <li>O plano oficial usa modelo de uso incluido + on-demand, nao uma franquia flat simples.</li>
+            <li>O seu caso real ja demonstrou que semanas extremas podem estourar quota com facilidade.</li>
+            <li>Para gastar o minimo possivel, GLM/Alibaba/OpenCode Go continuam mais interessantes como estrategia de compra.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://www.cursor.com/en/pricing">Cursor pricing</a></li>
+        <li><a href="https://docs.cursor.com/account/pricing">Cursor pricing docs</a></li>
+        <li><a href="https://docs.cursor.com/account/usage">Cursor usage docs</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

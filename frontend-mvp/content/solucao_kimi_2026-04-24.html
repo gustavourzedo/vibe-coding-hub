@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kimi - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .warn { color:#fbbf24; }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Kimi</h1>
+      <p>
+        Pagina viva da frente `Kimi Code / Kimi Membership`. O Kimi segue tecnicamente interessante e barato no papel,
+        mas continua sendo um caso classico onde `mecanica de cobranca` e `dependencia de cache` podem destruir uma
+        conta aparentemente boa no plano de assinatura.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Promissor, mas arriscado para plano principal</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Preco agressivo e qualidade razoavel</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Weekly drain e taxa de cache definem tudo</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Kimi` so sobe muito no ranking se a sua taxa real de cache for excelente. Sem essa condicao, os limites
+        semanais podem evaporar justamente nos fluxos longos e agenticos que caracterizam seu trabalho pesado.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> barato e tecnicamente interessante, mas perigoso como compra principal sem medicao real.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura consolidada do estudo</h2>
+      <ul>
+        <li>No estudo-base, `Andante` foi lido como ~`1M tokens nao-cacheados / 5h` e `4M / semana` em testes empiricos citados.</li>
+        <li>O limite relevante depende de `tokens nao-cacheados`; portanto, quem reaproveita muito contexto leva vantagem.</li>
+        <li>Como seu workload real e agentico, longo e com muito tool use, a chance de weekly drain rapido segue alta.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno dos tiers Kimi</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Andante</strong></td>
+            <td><div class="score warn">10% a 25%</div><div class="bar"><span style="width:18%"></span></div></td>
+            <td><div class="score warn">55% a 70%</div><div class="bar"><span style="width:62%"></span></div></td>
+            <td><div class="score warn">10% a 20%</div><div class="bar"><span style="width:16%"></span></div></td>
+            <td>Barato demais para o seu extremo sem cache excelente.</td>
+          </tr>
+          <tr>
+            <td><strong>Moderato</strong></td>
+            <td><div class="score warn">15% a 35%</div><div class="bar"><span style="width:24%"></span></div></td>
+            <td><div class="score warn">55% a 72%</div><div class="bar"><span style="width:64%"></span></div></td>
+            <td><div class="score warn">15% a 28%</div><div class="bar"><span style="width:22%"></span></div></td>
+            <td>Melhora, mas ainda depende demais de cache.</td>
+          </tr>
+          <tr>
+            <td><strong>Allegretto</strong></td>
+            <td><div class="score warn">25% a 55%</div><div class="bar"><span style="width:40%"></span></div></td>
+            <td><div class="score warn">60% a 75%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td><div class="score warn">25% a 50%</div><div class="bar"><span style="width:38%"></span></div></td>
+            <td>O tier mais plausivel da familia, ainda arriscado sem medir o seu cache real.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score warn">25% a 55%</div><div class="bar"><span style="width: 40%"></span></div><p class="small">Pode subir muito se cache for otimo, mas nao da para assumir isso.</p></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score warn">60% a 75%</div><div class="bar"><span style="width: 68%"></span></div><p class="small">Boa o bastante para entrar no radar, nao boa o bastante para comprar no escuro.</p></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score warn">25% a 50%</div><div class="bar"><span style="width: 38%"></span></div><p class="small">Continua abaixo das melhores assinaturas do hub.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos de manutencao futura</h2>
+      <ul>
+        <li><a href="https://www.kimi.com/membership/pricing">Kimi membership pricing</a></li>
+        <li><a href="https://www.kimi.com/code/docs/en/benefits.html">Kimi Code benefits</a></li>
+        <li><a href="https://www.kimi.com/code/docs/en/kimi-code/faq.html">Kimi Code FAQ</a></li>
+        <li><a href="https://www.kimi.com/resources/kimi-k2-6-pricing">Kimi K2.6 pricing</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Coding Sustentavel - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1380px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 30px; background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.10)); }
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+    }
+    .tag.good { color: #baf7df; background: rgba(52,211,153,.12); }
+    .tag.warn { color: #fde8a5; background: rgba(251,191,36,.12); }
+    .tag.risk { color: #ffd1da; background: rgba(251,113,133,.12); }
+    .tag.info { color: #dceaff; background: rgba(96,165,250,.12); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: #f4f8ff;
+      background: rgba(96,165,250,.08);
+    }
+
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .small { font-size: 13px; color: #8ea0c7; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1380px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Vibe coding sustentavel: dicas, truques e ferramentas</h1>
+      <p>
+        Esta pagina existe para responder uma pergunta diferente do ranking: <strong>como fazer vibe coding pesado sem
+        deixar custo, contexto e qualidade escaparem da mao</strong>. Aqui entram `Caveman`, `Graphify`, MCPs uteis,
+        stacks de navegador e rotinas para reduzir token burn sem perder profundidade tecnica.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>28/04/2026 12:45</div></div>
+        <div class="mini"><strong>Foco</strong><div>Menos desperdicio de tokens, mais contexto duravel e verificacao real</div></div>
+        <div class="mini"><strong>Perfis que mais ganham</strong><div>Codex, Cursor, Claude Code, OpenCode e Gemini CLI</div></div>
+        <div class="mini"><strong>Regra central</strong><div>Comprimir texto, estruturar contexto e dar olhos ao agente</div></div>
+      </div>
+      <div class="callout">
+        <strong>Tese da pagina:</strong> vibe coding sustentavel nao nasce so do modelo certo. Ele nasce da combinacao entre
+        <strong>compressao</strong>, <strong>contexto estruturado</strong>, <strong>ferramentas de verificacao</strong> e
+        <strong>higiene operacional</strong>.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Os 5 principios do vibe coding sustentavel</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <h3>1. Reduza linguagem inutil</h3>
+          <p>Todo texto floreado do agente vira custo recorrente. Ferramentas como `Caveman` atacam exatamente esse desperdicio.</p>
+        </div>
+        <div class="mini">
+          <h3>2. Troque contexto bruto por contexto estruturado</h3>
+          <p>Mapas, grafos e memoria duravel escalam melhor do que despejar o repositorio inteiro no prompt.</p>
+        </div>
+        <div class="mini">
+          <h3>3. Dê olhos ao agente</h3>
+          <p>Browser tools e MCPs de navegador reduzem o ciclo cego de gerar, errar, reinterpretar e gastar tokens de novo.</p>
+        </div>
+        <div class="mini">
+          <h3>4. Use MCP certo para o tipo de problema</h3>
+          <p>`Context7` para docs atuais, `Sequential Thinking` para planos, `Filesystem` para escopo local e `DevTools` para runtime real.</p>
+        </div>
+        <div class="mini">
+          <h3>5. Verifique cedo</h3>
+          <p>Quanto mais tarde voce detecta que a tese do agente estava errada, mais caro fica o retrabalho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caveman</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <span class="tag good">Ferramenta real</span>
+          <span class="tag info">Multiplataforma</span>
+          <h3>Como funciona</h3>
+          <p>
+            `Caveman` e uma skill/plugin de compressao de linguagem para agentes de coding. A ideia e simples:
+            fazer o agente falar muito menos, mantendo substancia tecnica. O projeto hoje se posiciona como
+            `~65% a 75% fewer output tokens`, com suporte a `Claude Code`, `Codex`, `Gemini CLI`, `Cursor`,
+            `Windsurf`, `Cline`, `Copilot` e outros via `npx skills`.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Como usar em IDEs</h3>
+          <ul>
+            <li>`Codex`: plugin/skill e hook repo-local para auto-ativacao.</li>
+            <li>`Cursor`: `npx skills add JuliusBrussee/caveman -a cursor`.</li>
+            <li>`Claude Code`: plugin de marketplace com ativacao forte.</li>
+            <li>`Gemini CLI`: extensao oficial do projeto.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Quando ele ajuda mais:</strong> sessoes longas com muita explicacao desnecessaria, reviews extensos,
+        debugging iterativo e agentes que narram demais o que estao fazendo.
+      </div>
+      <div class="warnout">
+        <strong>Onde tomar cuidado:</strong> compressao demais pode piorar onboarding, handoff e raciocinios que pedem
+        explicacao longa para humanos. O ideal e usar `Caveman` como modo de execucao, nao como unica linguagem do projeto.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Graphify</h2>
+      <div class="warnout">
+        <strong>Correcao importante:</strong> o nome/dominio que faz sentido hoje para esta tese e
+        <strong>`graphify.homes`</strong>. Se voce vinha chamando de `graphify.net`, vale atualizar a referencia no hub
+        para evitar ambiguidade publica.
+      </div>
+      <div class="grid-2">
+        <div class="mini">
+          <span class="tag good">Hospedado + OSS</span>
+          <span class="tag info">Arquitetura</span>
+          <h3>Como funciona</h3>
+          <p>
+            `Graphify` transforma codigo, docs, PDFs, screenshots, diagramas e transcricoes em um grafo consultavel.
+            Em vez de so fazer chunk + retrieval, ele modela estrutura, relacoes e artefatos exportaveis como
+            `graph.html`, `graph.json` e `GRAPH_REPORT.md`.
+          </p>
+        </div>
+        <div class="mini">
+          <h3>Como usar em IDEs</h3>
+          <ul>
+            <li>Hosted: subir um ZIP e explorar o grafo no navegador.</li>
+            <li>Open-source/local: usar a tooling do projeto para integrar com `Claude Code`, `Codex`, `OpenCode`, `Cursor` e `Gemini CLI`.</li>
+            <li>Melhor uso: bases grandes, legadas ou multimodais, onde keyword search ja nao basta.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Onde ele brilha no vibe coding:</strong> arquitetura, debugging de dependencia cruzada,
+        impacto de mudanca, descoberta de "god nodes", e reducao de contexto repetido entre sessoes.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>MCPs que mais ajudam no custo e na qualidade</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ferramenta</th>
+            <th>Tipo</th>
+            <th>Para que serve</th>
+            <th>Como ajuda no vibe coding</th>
+            <th>Leitura do hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Context7</strong></td>
+            <td>Docs MCP</td>
+            <td>Trazer docs atualizadas e version-specific para o prompt</td>
+            <td>Reduz hallucinated APIs, evita gastar rodada com docs velhas e encurta debugging de framework/lib</td>
+            <td><span class="tag good">Quase obrigatorio</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sequential Thinking</strong></td>
+            <td>Reasoning MCP</td>
+            <td>Forcar plano passo a passo com revisao, branching e verificacao</td>
+            <td>Barateia tarefas complexas porque evita "sair gerando" cedo demais</td>
+            <td><span class="tag good">Otimo para problemas dificeis</span></td>
+          </tr>
+          <tr>
+            <td><strong>Chrome DevTools MCP</strong></td>
+            <td>Navegador oficial</td>
+            <td>Dar visao real do runtime web ao agente</td>
+            <td>Reduz o ciclo cego de front-end, melhora debugging de layout, rede, console e performance</td>
+            <td><span class="tag good">Muito valioso para web</span></td>
+          </tr>
+          <tr>
+            <td><strong>Filesystem MCP</strong></td>
+            <td>Workspace MCP</td>
+            <td>Ler, escrever, mover e buscar arquivos dentro de roots permitidos</td>
+            <td>Melhora escopo, reduz alucinacao sobre arquivos e torna o agente mais deterministico</td>
+            <td><span class="tag good">Fundacao util</span></td>
+          </tr>
+          <tr>
+            <td><strong>Playwright MCP</strong></td>
+            <td>Navegador community</td>
+            <td>Automacao e verificacao de fluxos em browser</td>
+            <td>Ajuda muito em testes E2E e reproducao de bug, mas costuma gastar mais contexto do que uma boa ferramenta de DevTools bem usada</td>
+            <td><span class="tag warn">Muito util, mas use com criterio</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warnout">
+        <strong>Nota de metodo:</strong> `Context7`, `Sequential Thinking` e `Filesystem` entram aqui como escolhas muito
+        seguras. `Chrome DevTools MCP` e oficial do time do Chrome. `Playwright MCP` eu trataria mais como
+        <strong>padrao comunitario forte</strong> do que como padrao oficial unico.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como encaixar isso nas IDEs e superfícies do hub</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Superficie</th>
+            <th>Stack mais natural</th>
+            <th>O que colocar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Codex</strong></td>
+            <td>Compressao + docs + browser</td>
+            <td>`Caveman`, `Context7`, `Filesystem`, `Chrome DevTools MCP`, e `Sequential Thinking` para tarefas grandes</td>
+          </tr>
+          <tr>
+            <td><strong>Cursor</strong></td>
+            <td>Docs + planning + browser</td>
+            <td>`Context7`, `Sequential Thinking`, `Chrome DevTools MCP`; `Caveman` entra bem para reduzir verbosidade</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Code</strong></td>
+            <td>Compressao + spec-driven</td>
+            <td>`Caveman` combina especialmente bem aqui; `Graphify` e `Context7` complementam a camada de contexto</td>
+          </tr>
+          <tr>
+            <td><strong>OpenCode / Gemini CLI</strong></td>
+            <td>Stack economica + docs atuais</td>
+            <td>`Context7`, `Filesystem`, `Caveman` e navegador so quando o bug realmente pede verificacao visual</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>4 stacks praticas de vibe coding sustentavel</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Stack economica para dia a dia</h3>
+          <ul>
+            <li>Assinatura: `OpenCode Go` ou `GLM Pro`.</li>
+            <li>Ferramentas: `Context7` + `Filesystem` + `Caveman`.</li>
+            <li>Boa para: CRUD, backend, scripts, refactors curtos.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Stack web app com verificacao real</h3>
+          <ul>
+            <li>Assinatura: `GLM`, `Codex` ou `Cursor`.</li>
+            <li>Ferramentas: `Context7` + `Chrome DevTools MCP` + `Sequential Thinking`.</li>
+            <li>Boa para: front-end, layout, forms, performance e bugs que so aparecem no runtime.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Stack para repositorio grande e confuso</h3>
+          <ul>
+            <li>Assinatura: qualquer uma que sustente sessao longa.</li>
+            <li>Ferramentas: `Graphify` + `Filesystem` + `Context7`.</li>
+            <li>Boa para: legado, monorepo, onboarding e arqueologia arquitetural.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Stack de frontier open-model</h3>
+          <ul>
+            <li>Assinatura: `Ollama Max` ou stack equivalente open-frontier.</li>
+            <li>Ferramentas: `Context7` + `Graphify` + navegador so quando necessario.</li>
+            <li>Boa para: autonomia sobre `GLM`, `Kimi`, `Qwen` e workflows menos dependentes de vendor fechado.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Regras praticas para gastar menos</h2>
+      <ul>
+        <li>Prefira pedir <strong>plano antes de patch grande</strong> em tarefas ambíguas.</li>
+        <li>Evite mandar o repositorio inteiro quando um grafo, mapa ou resumo local resolve.</li>
+        <li>Use `Context7` cedo quando a tarefa depende de framework ou API viva.</li>
+        <li>Use browser MCP para confirmar bug visual antes de abrir loops longos de tentativa e erro.</li>
+        <li>Comprima saidas recorrentes e handoffs com `Caveman`, mas preserve um modo normal para docs e decisoes humanas.</li>
+        <li>Transforme aprendizados persistentes em memoria, regras ou artefatos exportaveis em vez de repetir o contexto na unha.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://getcaveman.dev/">Caveman ecosystem</a></li>
+        <li><a href="https://github.com/JuliusBrussee/caveman">Caveman GitHub</a></li>
+        <li><a href="https://graphify.homes/en">Graphify hosted product</a></li>
+        <li><a href="https://context7.com/docs/overview">Context7 docs</a></li>
+        <li><a href="https://github.com/modelcontextprotocol/servers/blob/main/src/sequentialthinking/README.md">Sequential Thinking MCP</a></li>
+        <li><a href="https://developer.chrome.com/blog/chrome-devtools-mcp">Chrome DevTools MCP blog</a></li>
+        <li><a href="https://github.com/modelcontextprotocol/servers">Official MCP servers repo</a></li>
+        <li><a href="https://github.com/modelcontextprotocol/servers/blob/main/src/filesystem/README.md">Filesystem MCP server</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

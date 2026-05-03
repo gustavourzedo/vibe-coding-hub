@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Arena - Leitura Operacional no Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+    .wrap { width: min(1380px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 28px 30px; background: linear-gradient(135deg, rgba(96,165,250,.16), rgba(110,231,183,.1)); }
+    .card { padding: 20px; margin-top: 20px; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f4f8ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 13px; color: #8ea0c7; }
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 16px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(96,165,250,.26);
+      background: rgba(255,255,255,.05);
+      color: #eef4ff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .cta:hover {
+      text-decoration: none;
+      border-color: rgba(110,231,183,.45);
+      background: rgba(255,255,255,.08);
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #dfeaff;
+      background: rgba(255,255,255,.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+    @media (max-width: 1100px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1380px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./benchmarks.html">Voltar para benchmarks</a></div>
+
+    <section class="hero">
+      <h1>Code Arena no Metodo do Hub</h1>
+      <p>
+        O <strong>Code Arena</strong> e hoje um dos melhores sinais publicos de capacidade em codigo, especialmente pela
+        natureza comparativa e pelo formato de leaderboard vivo. Mas ele tem uma pegada diferente dos benchmarks estruturados
+        da matriz principal: ele e mais operacional, mais dinamico e mais sensivel ao momento.
+      </p>
+      <div class="warnout">
+        <strong>Limitacao tecnica importante:</strong> o `arena.ai/leaderboard/code` <strong>nao pode ser embedado por iframe</strong> dentro deste hub.
+        O proprio site publica `Content-Security-Policy: frame-ancestors https://huggingface.co/ https://*.static.hf.space/`
+        e `X-Frame-Options: SAMEORIGIN`, o que bloqueia embedding neste dominio.
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="https://arena.ai/leaderboard/code" target="_blank" rel="noreferrer">Abrir Code Arena</a>
+        <a class="cta" href="https://arena.ai/leaderboard/code?q=mimo" target="_blank" rel="noreferrer">Buscar MiMo no Arena</a>
+        <a class="cta" href="https://arena.ai/leaderboard/code?q=glm" target="_blank" rel="noreferrer">Buscar GLM no Arena</a>
+        <a class="cta" href="https://arena.ai/leaderboard/code?q=gpt" target="_blank" rel="noreferrer">Buscar GPT no Arena</a>
+      </div>
+    </section>
+
+    <section class="card grid-3">
+      <div class="mini">
+        <strong>Ultima leitura do hub</strong>
+        <div class="small">26/04/2026 18:30</div>
+      </div>
+      <div class="mini">
+        <strong>Melhor uso</strong>
+        <div class="small">Comparar “forca em codigo agora” de forma dinamica, sobretudo quando um modelo acabou de lancar.</div>
+      </div>
+      <div class="mini">
+        <strong>Pior uso</strong>
+        <div class="small">Substituir sozinho o ranking do hub ou virar unica base para compra de assinatura.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como encaixar o Arena no hub</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que o Arena faz muito bem</h3>
+          <ul>
+            <li>Funciona como radar rapido de momentum em coding agent.</li>
+            <li>Ajuda a detectar quando um modelo novo realmente chegou forte o bastante para subir no estudo.</li>
+            <li>E muito bom para validar ou desafiar claims de marketing recentes.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que o Arena nao resolve sozinho</h3>
+          <ul>
+            <li>Nao substitui benchmark row-by-row oficial por benchmark conhecido.</li>
+            <li>Nao responde quota, billing, throttling, contexto real e UX do harness.</li>
+            <li>Nao basta para subir um modelo no ranking de assinatura sem triangulacao adicional.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fluxo recomendado</h2>
+      <ol>
+        <li>Abra o <a href="https://arena.ai/leaderboard/code" target="_blank" rel="noreferrer">Code Arena</a> e pesquise o modelo.</li>
+        <li>Compare o posicionamento dele com a matriz principal em <a href="./benchmarks.html">/benchmarks</a>.</li>
+        <li>Abra a ficha do modelo em <a href="./benchmark-modelos.html">/benchmark-modelos</a> para ver benchmark oficial e maturidade da evidencia.</li>
+        <li>So depois use isso para pressionar ou recalibrar o ranking de assinatura em <a href="./ranking.html">/ranking</a>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Integracao futura economica</h2>
+      <p>
+        Como o embed direto nao e permitido, o caminho economico correto para “dinamizar” o Arena dentro do hub e criar um
+        pequeno coletor externo que grave snapshots relevantes, em vez de tentar burlar o bloqueio visual do site.
+      </p>
+      <div class="callout">
+        <strong>Arquitetura recomendada:</strong> `cron` ou `n8n` + `Playwright` ou `requests` para coletar snapshot do leaderboard,
+        salvar em `SQLite/JSON`, calcular diff de ranking dos modelos que importam para o hub e publicar um resumo estatico.
+      </div>
+      <ul>
+        <li>Servidor 1: captura snapshots 1 ou 2 vezes ao dia.</li>
+        <li>Servidor 2: LLM local pequeno so para resumir mudancas materiais.</li>
+        <li>Site: consome JSON estatico gerado por essa rotina e mostra “ultima leitura do Arena”.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Queries operacionais uteis</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Modelos do hub para vigiar</h3>
+          <ul>
+            <li><a href="https://arena.ai/leaderboard/code?q=mimo" target="_blank" rel="noreferrer"><code>q=mimo</code></a></li>
+            <li><a href="https://arena.ai/leaderboard/code?q=glm" target="_blank" rel="noreferrer"><code>q=glm</code></a></li>
+            <li><a href="https://arena.ai/leaderboard/code?q=gpt" target="_blank" rel="noreferrer"><code>q=gpt</code></a></li>
+            <li><a href="https://arena.ai/leaderboard/code?q=opus" target="_blank" rel="noreferrer"><code>q=opus</code></a></li>
+            <li><a href="https://arena.ai/leaderboard/code?q=gemini" target="_blank" rel="noreferrer"><code>q=gemini</code></a></li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quando virar alerta no hub</h3>
+          <ul>
+            <li>Modelo novo entra no top range de coding sem ainda estar forte no ranking do hub.</li>
+            <li>Modelo observado sobe varias posicoes em pouco tempo.</li>
+            <li>Modelo comercialmente relevante do hub some ou cai muito no Arena.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

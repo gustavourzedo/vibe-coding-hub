@@ -1,0 +1,276 @@
+{
+  "site": {
+    "name": "Vibe Coding Hub",
+    "baseUrl": "https://vibe-coding-hub-vercel.vercel.app",
+    "language": "pt-BR",
+    "description": "Hub para comparar assinaturas, modelos, IDEs, harnesses, orquestradores, prompts e telemetria de vibe coding."
+  },
+  "canonicalPages": [
+    {
+      "slug": "",
+      "source": "index.html",
+      "title": "Vibe Coding Hub",
+      "category": "home",
+      "priority": 1,
+      "tags": ["hub", "overview", "vibe coding"]
+    },
+    {
+      "slug": "ranking",
+      "source": "ranking.html",
+      "title": "Ranking Consolidado - Vibe Coding Hub",
+      "category": "ranking",
+      "priority": 1,
+      "tags": ["ranking", "assinaturas", "estrategia"]
+    },
+    {
+      "slug": "benchmarks",
+      "source": "benchmarks.html",
+      "title": "Benchmark de Capacidade dos Modelos - Hub de Agentes",
+      "category": "benchmark",
+      "priority": 1,
+      "tags": ["benchmark", "modelos", "capacidade tecnica"]
+    },
+    {
+      "slug": "estrategias",
+      "source": "estrategias.html",
+      "title": "Estrategias de Assinatura - Vibe Coding Hub",
+      "category": "strategy",
+      "priority": 2,
+      "tags": ["assinaturas", "stack", "custo"]
+    },
+    {
+      "slug": "evidencia-campo",
+      "source": "evidencia-campo.html",
+      "title": "Evidencia de Campo - Vibe Coding Hub",
+      "category": "evidence",
+      "priority": 2,
+      "tags": ["campo", "uso real", "qualidade percebida"]
+    },
+    {
+      "slug": "reviews-comunidade",
+      "source": "reviews-comunidade.html",
+      "title": "Reviews da Comunidade - Vibe Coding Hub",
+      "category": "evidence",
+      "priority": 2,
+      "tags": ["reviews", "comunidade", "triangulacao"]
+    },
+    {
+      "slug": "harnesses",
+      "source": "harnesses.html",
+      "title": "IDEs e Harnesses para Vibe Coding - Hub Vivo",
+      "category": "tools",
+      "priority": 2,
+      "tags": ["ide", "harness", "workflow"]
+    },
+    {
+      "slug": "orquestradores",
+      "source": "orquestradores.html",
+      "title": "Orquestradores e Workflows de Agentes - Hub Vibe Coding",
+      "category": "tools",
+      "priority": 2,
+      "tags": ["orquestradores", "agentes", "workflow"]
+    },
+    {
+      "slug": "telemetria",
+      "source": "telemetria.html",
+      "title": "Hub de Agentes - Telemetria",
+      "category": "telemetry",
+      "priority": 2,
+      "tags": ["telemetria", "uso local", "metricas"]
+    },
+    {
+      "slug": "ai-better-prompts",
+      "source": "ai-better-prompts.html",
+      "title": "AI Better Prompts - Vibe Coding Hub",
+      "category": "prompting",
+      "priority": 2,
+      "tags": ["prompts", "agentes", "metodologia"]
+    },
+    {
+      "slug": "atualizacao",
+      "source": "atualizacao.html",
+      "title": "Playbook de Atualizacao - Vibe Coding Hub",
+      "category": "operations",
+      "priority": 3,
+      "tags": ["atualizacao", "playbook", "manutencao"]
+    },
+    {
+      "slug": "glm",
+      "source": "glm.html",
+      "title": "GLM Coding Plan - Documentacao Viva",
+      "category": "solution",
+      "priority": 2,
+      "tags": ["glm", "coding plan", "solucao"]
+    },
+    {
+      "slug": "mimo",
+      "source": "mimo.html",
+      "title": "Xiaomi MiMo - Documentacao Viva",
+      "category": "solution",
+      "priority": 2,
+      "tags": ["xiaomi", "mimo", "solucao"]
+    },
+    {
+      "slug": "opencode-go",
+      "source": "opencode-go.html",
+      "title": "OpenCode Go - Documentacao Viva",
+      "category": "solution",
+      "priority": 2,
+      "tags": ["opencode", "go", "solucao"]
+    },
+    {
+      "slug": "alibaba",
+      "source": "alibaba.html",
+      "title": "Alibaba Coding Plan - Vibe Coding Hub",
+      "category": "solution",
+      "priority": 3,
+      "tags": ["alibaba", "coding plan", "solucao"]
+    },
+    {
+      "slug": "google-ai",
+      "source": "google-ai.html",
+      "title": "Google AI Pro e Ultra - Documentacao Viva",
+      "category": "solution",
+      "priority": 3,
+      "tags": ["google ai", "pro", "ultra"]
+    },
+    {
+      "slug": "cursor",
+      "source": "cursor.html",
+      "title": "Cursor - Documentacao Viva",
+      "category": "solution",
+      "priority": 3,
+      "tags": ["cursor", "ide", "solucao"]
+    },
+    {
+      "slug": "claude-max",
+      "source": "claude-max.html",
+      "title": "Claude Max - Documentacao Viva",
+      "category": "solution",
+      "priority": 3,
+      "tags": ["claude", "anthropic", "max"]
+    },
+    {
+      "slug": "openai-codex",
+      "source": "openai-codex.html",
+      "title": "OpenAI - ChatGPT e Codex - Documentacao Viva",
+      "category": "solution",
+      "priority": 3,
+      "tags": ["openai", "chatgpt", "codex"]
+    },
+    {
+      "slug": "windsurf",
+      "source": "windsurf.html",
+      "title": "Windsurf - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["windsurf", "ide", "solucao"]
+    },
+    {
+      "slug": "kiro",
+      "source": "kiro.html",
+      "title": "Kiro (AWS) - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["kiro", "aws", "solucao"]
+    },
+    {
+      "slug": "devin",
+      "source": "devin.html",
+      "title": "Devin - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["devin", "agent", "solucao"]
+    },
+    {
+      "slug": "factory",
+      "source": "factory.html",
+      "title": "Factory - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["factory", "agent", "solucao"]
+    },
+    {
+      "slug": "kimi",
+      "source": "kimi.html",
+      "title": "Kimi - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["kimi", "modelo", "solucao"]
+    },
+    {
+      "slug": "minimax",
+      "source": "minimax.html",
+      "title": "MiniMax - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["minimax", "modelo", "solucao"]
+    },
+    {
+      "slug": "ollama",
+      "source": "ollama.html",
+      "title": "Ollama - Documentacao Viva",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["ollama", "local", "modelos"]
+    },
+    {
+      "slug": "arena-code",
+      "source": "arena-code.html",
+      "title": "Code Arena - Leitura Operacional no Hub",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["arena code", "benchmark", "solucao"]
+    },
+    {
+      "slug": "vibe-sustentavel",
+      "source": "vibe-sustentavel.html",
+      "title": "Vibe Coding Sustentavel - Vibe Coding Hub",
+      "category": "strategy",
+      "priority": 3,
+      "tags": ["sustentavel", "operacao", "custo"]
+    },
+    {
+      "slug": "solucoes-auditadas",
+      "source": "solucoes-auditadas.html",
+      "title": "Solucoes Adicionais Auditadas - Hub de Agentes",
+      "category": "solution",
+      "priority": 4,
+      "tags": ["solucoes", "auditoria", "adicionais"]
+    },
+    {
+      "slug": "benchmark-modelos",
+      "source": "benchmark-modelos.html",
+      "title": "Fichas Benchmark dos Modelos - Hub de Agentes",
+      "category": "benchmark",
+      "priority": 3,
+      "tags": ["fichas", "benchmark", "modelos"]
+    }
+  ],
+  "legacyAliases": [
+    {
+      "source": "analise_final_assinaturas_vibe_coding_2026-04-24.html",
+      "canonicalSlug": "ranking"
+    },
+    {
+      "source": "benchmark_modelos_capacidade_tecnica_2026-04-24.html",
+      "canonicalSlug": "benchmarks"
+    },
+    {
+      "source": "comparativo_ide_harness_agentes_2026-04-24.html",
+      "canonicalSlug": "harnesses"
+    },
+    {
+      "source": "comparativo_orquestradores_agentes_2026-04-24.html",
+      "canonicalSlug": "orquestradores"
+    },
+    {
+      "source": "telemetria_hub_agentes_2026-04-24.html",
+      "canonicalSlug": "telemetria"
+    },
+    {
+      "source": "solucoes_adicionais_auditadas_2026-04-24.html",
+      "canonicalSlug": "solucoes-auditadas"
+    }
+  ]
+}

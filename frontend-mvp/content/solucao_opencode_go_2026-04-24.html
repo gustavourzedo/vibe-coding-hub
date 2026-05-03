@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenCode Go - Documentacao Viva</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(1320px, calc(100% - 40px));
+      margin: 32px auto 56px;
+    }
+
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21, 31, 56, 0.94), rgba(16, 24, 43, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero { padding: 30px; }
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -0.03em;
+    }
+
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f4f8ff; }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    a {
+      color: #9fcbff;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .meta, .mini, .pill {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .meta strong, .mini strong, .pill strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f4f8ff;
+    }
+
+    .score {
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+
+    .callout, .warnout {
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110, 231, 183, 0.08);
+    }
+
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251, 191, 36, 0.08);
+    }
+
+    .dangerout {
+      border-left: 4px solid var(--danger);
+      background: rgba(251, 113, 133, 0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      margin-top: 12px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 880px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      vertical-align: top;
+    }
+
+    th {
+      color: #f4f8ff;
+      background: rgba(96, 165, 250, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 8px; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #eaf2ff;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #8ea0c7;
+    }
+
+    .source-list a {
+      word-break: break-word;
+    }
+
+    @media (max-width: 1100px) {
+      .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        width: min(100% - 20px, 1320px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>OpenCode Go</h1>
+      <p>
+        Documentacao viva da solucao <code>OpenCode Go</code>, agora revisada com foco no que a OpenCode
+        esta publicando oficialmente no site, nas docs e na landing local de marketing. O objetivo aqui e
+        separar o que e <strong>quota-base contratual</strong>, o que e <strong>promo temporaria</strong> e
+        o que isso significa na pratica para o seu benchmark extremo de vibe coding.
+      </p>
+
+      <div class="grid-3" style="margin-top: 18px;">
+        <div class="meta">
+          <strong>Ultima compilacao</strong>
+          <div>26/04/2026</div>
+        </div>
+        <div class="meta">
+          <strong>Status no estudo</strong>
+          <div>MVP barato forte, agora melhor documentado</div>
+        </div>
+        <div class="meta">
+          <strong>Atualizar quando</strong>
+          <div>Mudanca de preco, janelas de uso, lista de modelos ou promo do Go</div>
+        </div>
+      </div>
+
+      <div class="grid-4" style="margin-top: 18px;">
+        <div class="pill">
+          <strong>Preco atual</strong>
+          US$ 5 no primeiro mes, depois US$ 10/mes
+        </div>
+        <div class="pill">
+          <strong>Base de cobranca</strong>
+          Assinatura + teto de uso equivalente a credito/API
+        </div>
+        <div class="pill">
+          <strong>Ponto forte novo</strong>
+          Tabela oficial por modelo muito mais rica do que parecia antes
+        </div>
+        <div class="pill">
+          <strong>Ponto sensivel</strong>
+          Promos pontuais podem confundir a leitura se voce misturar com quota-base
+        </div>
+      </div>
+
+      <div class="warnout">
+        <strong>Leitura certa do "3x usage" do Kimi K2.6:</strong> a docs base do Go continuam publicando
+        <code>1.150</code> requests por 5h para <code>Kimi K2.6</code>. Ja a landing oficial em portugues
+        mostrava, em <strong>26 de abril de 2026</strong>, a faixa promocional
+        <code>"limite de uso 3x maior ate 27 de abril"</code> e o grafico com
+        <code>3.450 Kimi K2.6 (3x usage)</code>. Entao o numero oficial mais seguro e:
+        base contratual = <code>1.150/5h</code>, promo vigente = <code>3.450/5h</code>.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        O <code>OpenCode Go</code> ficou melhor no estudo depois desta revisao porque a OpenCode hoje deixa
+        muito mais visivel a logica de uso por modelo do que parecia nas leituras anteriores. Nao e uma
+        assinatura "infinita", mas tambem nao e so API crua: voce compra um pacote mensal barato com teto
+        de uso equivalente e uma curadoria forte de modelos de coding open e low-cost.
+      </p>
+      <div class="callout">
+        <strong>Leitura pratica para o seu caso:</strong> como assinatura de baixo custo para dia a dia e
+        dimensionamento real de uso, ele subiu de qualidade documental. Como substituto pleno do seu
+        padrao Opus-heavy, continua limitado mais por capacidade efetiva do que por marketing.
+      </div>
+      <div class="dangerout">
+        <strong>Regra metodologica importante:</strong> promo temporaria do site nao deve virar quota-base do
+        ranking sem nota explicita. Nesta pagina, sempre que houver divergencia entre landing e docs, a
+        docs entram como referencia-base e a landing entra como camada promocional.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Notas do estudo</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Capacidade</strong>
+          <div class="score warn">50% a 80%</div>
+          <div class="bar"><span style="width:65%"></span></div>
+          <p class="small">Subiu um pouco por causa da evidencia oficial melhor e da promo atual do Kimi K2.6, mas ainda abaixo de um plano realmente feito para burst extremo.</p>
+        </div>
+        <div class="mini">
+          <strong>Qualidade tecnica</strong>
+          <div class="score warn">50% a 72%</div>
+          <div class="bar"><span style="width:62%"></span></div>
+          <p class="small">Continua dependente da qualidade dos open models curados e do tipo de task que voce esta rodando.</p>
+        </div>
+        <div class="mini">
+          <strong>Consolidado</strong>
+          <div class="score warn">50% a 75%</div>
+          <div class="bar"><span style="width:64%"></span></div>
+          <p class="small">Melhor plano economico serio do que parecia. Ainda melhor como MVP e daily driver barato do que como substituto final do extremo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quota-base oficial do Go</h2>
+      <p>
+        A docs do <code>OpenCode Go</code> descrevem o plano como um teto de uso em janelas especificas.
+        Isso e a base mais importante para o hub, porque e o que tende a continuar valendo mesmo quando a
+        landing estiver rodando campanha promocional.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Janela</th>
+              <th>Quota oficial</th>
+              <th>Leitura pratica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5 horas</td>
+              <td>US$ 12 de uso equivalente</td>
+              <td>Janela curta que define o quanto voce consegue burstar sem fallback externo.</td>
+            </tr>
+            <tr>
+              <td>Semanal</td>
+              <td>US$ 30 de uso equivalente</td>
+              <td>Segura bem o uso leve a moderado, mas limita semanas muito agressivas.</td>
+            </tr>
+            <tr>
+              <td>Mensal</td>
+              <td>US$ 60 de uso equivalente</td>
+              <td>Boa para assinatura barata; curta para quem faz vibe coding muito acima do comum.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>Resumo operacional:</strong> o Go continua sendo, na pratica, uma assinatura com "budget pool"
+        embutido. Modelos baratos rendem muito; modelos caros drenam a janela rapido.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Promo atual do Kimi K2.6</h2>
+      <p>
+        A landing oficial em portugues do Go mostra a mensagem
+        <code>Novo Kimi K2.6: limite de uso 3x maior ate 27 de abril</code> e, no grafico visual,
+        publica o numero <code>3.450 Kimi K2.6 (3x usage)</code>.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cenario</th>
+              <th>Requests por 5h</th>
+              <th>Requests por semana</th>
+              <th>Requests por mes</th>
+              <th>Leitura</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Base docs</td>
+              <td>1.150</td>
+              <td>2.880</td>
+              <td>5.750</td>
+              <td>Base contratual mais segura para o hub.</td>
+            </tr>
+            <tr>
+              <td>Promo 3x no site</td>
+              <td>3.450</td>
+              <td>~8.640</td>
+              <td>~17.250</td>
+              <td>Semana e mes aqui sao extrapolacao analitica do multiplicador 3x; o site deixa explicito o 5h, nao as outras janelas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warnout">
+        <strong>Resposta direta para sua duvida:</strong> esse <code>3x</code> permite usar
+        <code>3.450 requests em 5h</code> de <code>Kimi K2.6</code> enquanto a promo estiver ativa.
+        Se o multiplicador valer linearmente nas demais janelas, a leitura analitica fica em torno de
+        <code>8.640/semana</code> e <code>17.250/mes</code>, mas isso eu trataria como
+        <strong>estimativa de estudo</strong>, nao como garantia contratual.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Requests oficiais por modelo</h2>
+      <p>
+        Esta e a melhor parte nova da revisao: o Go hoje ja publica um mapa oficial bem concreto de quantas
+        requests cada modelo rende dentro do pacote. Isso deixa a leitura de capacidade muito mais profissional.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Requests por 5h</th>
+              <th>Requests por semana</th>
+              <th>Requests por mes</th>
+              <th>Observacao</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Big Pickle</td><td>200</td><td>500</td><td>1.000</td><td>Faixa gratuita/base simples.</td></tr>
+            <tr><td>GLM-5.1</td><td>880</td><td>2.200</td><td>4.400</td><td>Modelo mais caro no pool entre os low-cost fortes.</td></tr>
+            <tr><td>Kimi K2.6</td><td>1.150</td><td>2.880</td><td>5.750</td><td>Base docs; promo atual mostra 3.450 por 5h.</td></tr>
+            <tr><td>MiMo-V2.5-Pro</td><td>1.290</td><td>3.225</td><td>6.450</td><td>MiMo premium dentro do pool.</td></tr>
+            <tr><td>DeepSeek V4 Pro</td><td>1.300</td><td>3.250</td><td>6.500</td><td>Melhor para tasks pesadas do que o Flash, com custo maior.</td></tr>
+            <tr><td>Qwen3.6 Plus</td><td>3.300</td><td>8.250</td><td>16.500</td><td>Boa folga para daily driver barato.</td></tr>
+            <tr><td>MiniMax M2.7</td><td>3.400</td><td>8.500</td><td>17.000</td><td>Faixa muito boa de volume.</td></tr>
+            <tr><td>DeepSeek V4 Flash</td><td>7.450</td><td>18.625</td><td>37.250</td><td>Modelo de altissima folga dentro do Go.</td></tr>
+            <tr><td>Qwen3.5 Plus</td><td>10.200</td><td>25.500</td><td>51.000</td><td>Maior rendimento volumetrico listado na landing atual.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">
+        Nota: esta tabela combina a docs oficial do Go com a landing oficial em portugues, que explicita
+        alguns modelos de forma mais visual do que a docs.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Leitura de viabilidade para o seu benchmark</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Quando ele faz muito sentido</h3>
+          <ul>
+            <li>Quando voce quer medir uso diario real sem entrar logo em um plano caro.</li>
+            <li>Quando aceita roteamento por modelos low-cost mais eficientes por request.</li>
+            <li>Quando quer fallback opcional de continuidade sem trocar de stack.</li>
+            <li>Quando a meta e descobrir se o seu gargalo principal e qualidade ou volume.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Quando ele deixa de ser suficiente</h3>
+          <ul>
+            <li>Quando voce quer rodar a semana extrema inteira sem olhar para quota.</li>
+            <li>Quando precisa de frontier fechado de topo como referencia constante, nao eventual.</li>
+            <li>Quando bursts muito agressivos precisam continuar mesmo depois do teto-base do Go.</li>
+            <li>Quando sua prioridade maior e previsibilidade operacional sem depender de promo ou fallback.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Conclusao revisada:</strong> o OpenCode Go continua nao sendo o melhor substituto pleno do seu
+        uso Opus-heavy. Mas, depois desta revisao, ele ficou mais forte como
+        <strong>assinatura MVP seria</strong> e tambem como possivel <strong>daily driver economico</strong>
+        para muita gente que nao esta sempre no extremo absoluto.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como manter esta pagina atualizada</h2>
+      <div class="grid-2">
+        <div class="mini source-list">
+          <strong>Fontes oficiais para revisar</strong>
+          <ul>
+            <li><a href="https://opencode.ai/br/go" target="_blank" rel="noreferrer">https://opencode.ai/br/go</a></li>
+            <li><a href="https://opencode.ai/docs/go/" target="_blank" rel="noreferrer">https://opencode.ai/docs/go/</a></li>
+            <li><a href="https://opencode.ai/docs/pt-br/go/" target="_blank" rel="noreferrer">https://opencode.ai/docs/pt-br/go/</a></li>
+            <li><a href="https://opencode.ai/zen" target="_blank" rel="noreferrer">https://opencode.ai/zen</a></li>
+          </ul>
+        </div>
+        <div class="mini">
+          <strong>Checklist de manutencao</strong>
+          <ul>
+            <li>Verificar se o preco promocional de entrada mudou.</li>
+            <li>Verificar se os tetos de 5h, semana e mes continuam em US$ 12 / 30 / 60.</li>
+            <li>Verificar se a promo do Kimi K2.6 expirou ou virou quota permanente.</li>
+            <li>Verificar se a lista de modelos e os request counts foram alterados.</li>
+            <li>Atualizar a data de compilacao desta pagina no mesmo commit da mudanca.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

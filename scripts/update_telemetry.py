@@ -3,8 +3,9 @@ from __future__ import annotations
 import json
 import sqlite3
 from collections import Counter, defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
+import json as json_lib
 
 
 ROOT = Path(r"G:\Work\Up Cloud\projetos\VibeCoding - Study Case")
@@ -13,6 +14,7 @@ MANUAL_PATH = TELEMETRY_DIR / "manual_sources.json"
 OUTPUT_PATH = TELEMETRY_DIR / "latest_telemetry.json"
 CURSOR_DB = Path(r"C:\Users\gusta\.cursor\ai-tracking\ai-code-tracking.db")
 CURSOR_PROJECTS = Path(r"C:\Users\gusta\.cursor\projects")
+OPENCODE_DB = Path(r"C:\Users\gusta\.local\share\opencode\opencode.db")
 
 
 def iso_now() -> str:
@@ -145,10 +147,162 @@ def build_cursor_telemetry() -> dict:
     }
 
 
+def build_opencode_telemetry() -> dict:
+    if not OPENCODE_DB.exists():
+        return {
+            "id": "opencode_go",
+            "label": "OpenCode",
+            "kind": "desktop_app",
+            "status": "missing",
+            "notes": "Banco local do OpenCode nao encontrado.",
+        }
+
+    conn = sqlite3.connect(str(OPENCODE_DB))
+    cur = conn.cursor()
+    max_updated = cur.execute("select max(time_updated) from session").fetchone()[0]
+    min_created = cur.execute("select min(time_created) from session").fetchone()[0]
+    total_sessions = cur.execute("select count(*) from session").fetchone()[0]
+    total_messages = cur.execute("select count(*) from message").fetchone()[0]
+
+    def summarize_window(hours: int) -> dict:
+        start = max_updated - (hours * 60 * 60 * 1000)
+        rows = cur.execute(
+            "select data from message where time_created >= ? order by time_created asc",
+            (start,),
+        ).fetchall()
+
+        role_counts = Counter()
+        provider_counts = Counter()
+        model_counts = Counter()
+        provider_model_user = Counter()
+        provider_model_assistant = Counter()
+        token_totals = defaultdict(int)
+
+        for (data_str,) in rows:
+            try:
+                data = json_lib.loads(data_str)
+            except Exception:
+                continue
+
+            role = data.get("role", "unknown")
+            role_counts[role] += 1
+
+            if role == "assistant":
+                provider = data.get("providerID") or data.get("model", {}).get("providerID") or "unknown"
+                model = data.get("modelID") or data.get("model", {}).get("modelID") or "unknown"
+                provider_model_assistant[(provider, model)] += 1
+                tokens = data.get("tokens") or {}
+                token_totals["total"] += int(tokens.get("total") or 0)
+                token_totals["input"] += int(tokens.get("input") or 0)
+                token_totals["output"] += int(tokens.get("output") or 0)
+                token_totals["reasoning"] += int(tokens.get("reasoning") or 0)
+                cache = tokens.get("cache") or {}
+                token_totals["cache_read"] += int(cache.get("read") or 0)
+                token_totals["cache_write"] += int(cache.get("write") or 0)
+            else:
+                provider = data.get("model", {}).get("providerID") or data.get("providerID") or "unknown"
+                model = data.get("model", {}).get("modelID") or data.get("modelID") or "unknown"
+                provider_model_user[(provider, model)] += 1
+
+            provider_counts[provider] += 1
+            model_counts[model] += 1
+
+        return {
+            "messages_total": len(rows),
+            "user_messages": role_counts.get("user", 0),
+            "assistant_messages": role_counts.get("assistant", 0),
+            "provider_counts": [
+                {"provider": provider, "count": count}
+                for provider, count in provider_counts.most_common(10)
+            ],
+            "model_counts": [
+                {"model": model, "count": count}
+                for model, count in model_counts.most_common(12)
+            ],
+            "user_provider_model": [
+                {"provider": provider, "model": model, "count": count}
+                for (provider, model), count in provider_model_user.most_common(12)
+            ],
+            "assistant_provider_model": [
+                {"provider": provider, "model": model, "count": count}
+                for (provider, model), count in provider_model_assistant.most_common(12)
+            ],
+            "assistant_tokens": dict(token_totals),
+        }
+
+    last_24h = summarize_window(24)
+    last_7d = summarize_window(24 * 7)
+
+    top_sessions_rows = cur.execute(
+        """
+        select
+          s.title,
+          s.directory,
+          s.time_created,
+          s.time_updated,
+          sum(case when json_extract(m.data, '$.role')='user' then 1 else 0 end) as user_msgs,
+          sum(case when json_extract(m.data, '$.role')='assistant' then 1 else 0 end) as assistant_msgs,
+          sum(coalesce(json_extract(m.data, '$.tokens.total'),0)) as total_tokens,
+          sum(coalesce(json_extract(m.data, '$.tokens.input'),0)) as input_tokens,
+          sum(coalesce(json_extract(m.data, '$.tokens.output'),0)) as output_tokens
+        from session s
+        left join message m on m.session_id = s.id
+        where s.time_updated >= ?
+        group by s.id
+        order by user_msgs desc, s.time_updated desc
+        limit 10
+        """,
+        (max_updated - (7 * 24 * 60 * 60 * 1000),),
+    ).fetchall()
+
+    top_sessions = []
+    for title, directory, time_created, time_updated, user_msgs, assistant_msgs, total_tokens, input_tokens, output_tokens in top_sessions_rows:
+        top_sessions.append(
+            {
+                "title": title,
+                "dir": directory,
+                "user_messages": int(user_msgs or 0),
+                "assistant_messages": int(assistant_msgs or 0),
+                "total_tokens": int(total_tokens or 0),
+                "input_tokens": int(input_tokens or 0),
+                "output_tokens": int(output_tokens or 0),
+                "duration_min": round(((time_updated or 0) - (time_created or 0)) / 60000) if time_created and time_updated else 0,
+            }
+        )
+
+    conn.close()
+
+    return {
+        "id": "opencode_go",
+        "label": "OpenCode / OpenCode Go",
+        "kind": "desktop_app",
+        "status": "active",
+        "notes": "Telemetria compilada automaticamente do banco local opencode.db. Providers free e Go aparecem separados dentro do mesmo app.",
+        "paths": {
+            "db": str(OPENCODE_DB),
+        },
+        "window": {
+            "full_start": datetime.fromtimestamp(min_created / 1000, tz=timezone.utc).astimezone().isoformat(timespec="seconds"),
+            "last_seen": datetime.fromtimestamp(max_updated / 1000, tz=timezone.utc).astimezone().isoformat(timespec="seconds"),
+        },
+        "usage": {
+            "sessions_total": total_sessions,
+            "messages_total_all_time": total_messages,
+            "last_24h": last_24h,
+            "last_7d": last_7d,
+            "top_sessions_last_7d": top_sessions,
+        },
+    }
+
+
 def build_payload() -> dict:
     manual = load_manual()
-    sources = [build_cursor_telemetry()]
-    sources.extend(manual.get("sources", []))
+    sources = [build_cursor_telemetry(), build_opencode_telemetry()]
+    manual_sources = [
+        src for src in manual.get("sources", [])
+        if src.get("id") not in {"opencode_go", "cursor"}
+    ]
+    sources.extend(manual_sources)
 
     return {
         "compiled_at": iso_now(),

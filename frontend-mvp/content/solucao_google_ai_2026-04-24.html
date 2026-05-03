@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google AI Pro e Ultra - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Google AI Pro, Ultra e Antigravity</h1>
+      <p>
+        Pagina viva da frente Google para coding: `Gemini Code Assist`, `Gemini CLI`, `Jules` e `Google Antigravity`
+        dentro dos planos `Google AI Pro` e `Google AI Ultra`. Esta foi a descoberta nova mais interessante da rodada
+        porque a Google finalmente deixou quotas relevantes de coding mais objetivas na documentacao oficial.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 18:35</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Nova candidata real, mas com risco operacional medio</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Quotas oficiais mais claras para CLI, agent mode e bundle Antigravity</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Antigravity tem estrutura oficial de plano, mas sem quota numerica publica detalhada</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        A familia `Google AI` deixou de ser so "Gemini no chat" e virou uma camada com `CLI`, `Code Assist IDE`,
+        `Jules` e `Antigravity`. Isso a coloca no radar do hub. O ponto novo desta revisao e que `Antigravity`
+        nao deve mais ser lido so como "beneficio difuso": ele tem pagina oficial propria de pricing e merece leitura
+        separada dentro do mesmo ecossistema Google.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> `Google AI Pro` merece teste; `Google AI Ultra` e robusto, mas caro demais
+        para a tese principal. `Antigravity` subiu de importancia no estudo, mas a Google ainda nao publica a quota
+        numerica fina dele com a mesma clareza que publica para `Gemini CLI` e `Code Assist`.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Precos e quotas oficiais de coding</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Gemini CLI / Code Assist</th>
+            <th>Notas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google AI Pro</td>
+            <td>US$ 19.99/mes</td>
+            <td>1.500 requests por usuario por dia; 120 requests por minuto; uso compartilhado entre CLI e agent mode</td>
+            <td>Inclui 1.000 AI credits mensais em Flow/Whisk, 5 TB, Jules com limites maiores e Antigravity com limites maiores</td>
+          </tr>
+          <tr>
+            <td>Google AI Ultra</td>
+            <td>US$ 249.99/mes</td>
+            <td>2.000 requests por usuario por dia; 120 requests por minuto; bucket combinado CLI + agent mode</td>
+            <td>Inclui 25.000 AI credits, 30 TB, maiores limites em Jules, Antigravity, AI Studio e bundle premium mais amplo</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        A doc tambem lista `contexto local de 1.000.000 tokens` e `20.000` repositorios de customization para Gemini Code Assist.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Antigravity: planos e o que ja esta oficial</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>O que a pagina oficial mostra</th>
+            <th>Leitura para o estudo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Antigravity Individual</td>
+            <td>US$ 0/mes</td>
+            <td>Acesso a agent models como `Gemini 3.1 Pro`, `Gemini 3 Flash`, `Claude Sonnet`, `Claude Opus 4.6` e `gpt-oss-120b`; `Unlimited Tab completions`; `Unlimited Command requests`; `Generous weekly rate limits`.</td>
+            <td>Plano real e oficial. Entra como porta de entrada forte, mas sem quota numerica publica detalhada.</td>
+          </tr>
+          <tr>
+            <td>Antigravity Developer</td>
+            <td>Via Google One</td>
+            <td>`Everything in Individual`, `More generous rate limits` e `Flexible AI credit pool`.</td>
+            <td>Plano relevante para o hub. A pagina oficial confirma a existencia e os extras, mas nao expone publicamente o teto numerico fino de uso.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Nas paginas oficiais do `Google AI Pro` e `Google AI Ultra`, a Google tambem afirma que quotas de agentes no
+        `Antigravity` sao renovadas a cada `5 horas`, com `much higher limits` no `Pro` e `highest usage limits` no `Ultra`.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno dos planos Google AI</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI Pro</strong></td>
+            <td><div class="score warn">35% a 60%</div><div class="bar"><span style="width:48%"></span></div></td>
+            <td><div class="score warn">50% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="score warn">35% a 55%</div><div class="bar"><span style="width:46%"></span></div></td>
+            <td>Entra forte pelo custo, pelas quotas oficiais de coding e pelo bundle que aumenta limites no Antigravity.</td>
+          </tr>
+          <tr>
+            <td><strong>AI Ultra</strong></td>
+            <td><div class="score good">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td><div class="score good">60% a 75%</div><div class="bar"><span style="width:66%"></span></div></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td>Mais robusto, com o maior patamar de limites do bundle Google, mas tambem bem mais caro para a tese principal.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>O que realmente interessa para coding</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Aspectos fortes</h3>
+          <ul>
+            <li>Quota oficial de requests ficou bem mais clara do que em muitos concorrentes.</li>
+            <li>`Gemini CLI` e `Gemini Code Assist` compartilham bucket, o que facilita leitura de consumo.</li>
+            <li>`Jules` e `Antigravity` aproximam o bundle de um ecossistema de agente, nao so de IDE extension.</li>
+            <li>`Antigravity` agora tem pagina oficial propria de pricing, o que reduz a ambiguidade de produto.</li>
+            <li>Google informa que, no plano pago, seus dados nao sao usados para treinar os modelos.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Aspectos fracos</h3>
+          <ul>
+            <li>O bundle mistura beneficios que nao sao diretamente coding.</li>
+            <li>A qualidade em coding agent pesado ainda nao tem reputacao tao estavel quanto Claude ou GLM no seu caso.</li>
+            <li>Ha sinais recorrentes de provisionamento inconsistente, resets esquisitos e percepcao de quota menor do que o esperado.</li>
+            <li>No `Antigravity`, a Google ainda nao publica abertamente o numero exato de requests/tasks do plano `Developer`.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score warn">35% a 80%</div><div class="bar"><span style="width: 58%"></span></div><p class="small">O range e largo porque `Pro`, `Ultra` e `Antigravity Developer` nao expÃµem a mesma granularidade de quota publica.</p></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score warn">50% a 75%</div><div class="bar"><span style="width: 62%"></span></div><p class="small">Boa o bastante para merecer teste, especialmente quando o fluxo passa por `Antigravity`, mas ainda nao no grupo de maior confianca do hub.</p></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score warn">35% a 70%</div><div class="bar"><span style="width: 54%"></span></div><p class="small">Candidata real, agora com leitura mais completa do bundle + produto Antigravity.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Por que Pro, Ultra e Antigravity recebem leituras diferentes</h2>
+      <div class="grid-2">
+        <div class="mini"><h3>AI Pro e Antigravity Developer</h3><p>O tier nao troca o cerebro do modelo; ele muda a folga operacional e o quanto voce consegue sustentar o melhor fluxo sem bater em atrito cedo. No `Antigravity Developer`, a existencia do plano ja esta clara, mas o numero fino de quota ainda nao.</p></div>
+        <div class="mini"><h3>AI Ultra</h3><p>Sobe bem em folga e por isso melhora a aderencia tecnica pratica, mas a relacao custo-beneficio ja nao bate as melhores compras do hub.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sinais de campo e hipoteses validadas</h2>
+      <ul>
+        <li>Documentacao oficial confirmou os buckets de `1.500` e `2.000` requests/dia para paid tiers.</li>
+        <li>A pagina oficial de pricing do `Antigravity` confirma `Individual plan` e `Developer plan via Google One`, encerrando a duvida sobre ele ser ou nao um produto com pricing proprio.</li>
+        <li>As paginas oficiais de beneficios do Google dizem que as quotas de agentes do `Antigravity` se renovam a cada `5 horas`, com `much higher limits` no `Pro` e `highest usage limits` no `Ultra`.</li>
+        <li>No GitHub e no forum da Google, apareceram relatos de contas `Pro` presas em quotas menores e de sessao precisando reiniciar para reconhecer o plano.</li>
+        <li>No Reddit, tambem apareceram reclamacoes sobre resets estranhos e sobre o comportamento de weekly limit em experiencias mais agenticas como Antigravity.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://antigravity.google/pricing">Antigravity pricing</a></li>
+        <li><a href="https://one.google.com/about/google-ai-plans/">Google AI plans</a></li>
+        <li><a href="https://developers.google.com/gemini-code-assist/resources/quotas">Gemini Code Assist quotas</a></li>
+        <li><a href="https://developers.google.com/gemini-code-assist/resources/faqs">Gemini Code Assist FAQ</a></li>
+        <li><a href="https://support.google.com/googleone/answer/14534406?hl=en">Google AI Pro benefits</a></li>
+        <li><a href="https://support.google.com/googleone/answer/16286513?hl=en">Google AI Ultra benefits</a></li>
+        <li><a href="https://support.google.com/googleone/answer/16105039?hl=en">Google One benefit restrictions</a></li>
+        <li><a href="https://github.com/google-gemini/gemini-cli/issues/21395">Gemini CLI issue 21395</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devin - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Devin</h1>
+      <p>
+        Pagina viva da familia `Devin`, que em 2026 passou a ter planos pessoais e continua sendo uma das referencias
+        de `agente autonomo`. Ela entrou no hub nao porque seja a melhor compra principal para voce, mas porque ajuda a
+        calibrar o custo real de autonomia mais profunda em um produto de agente dedicado.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Referencia de autonomia, nao de custo/beneficio</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Fluxo centrado em agente, com sessoes paralelas em Teams</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Custo por ACU e modelo mental diferente do resto do hub</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Devin` e importante para o hub porque representa uma classe diferente de produto: mais orientado a
+        delegacao/autonomia do que a uso manual de coding agent no estilo Cursor/Codex/OpenCode.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> excelente para entender o preco da autonomia. Fraco como resposta principal
+        para o seu objetivo de `gastar o minimo ficando perto do seu uso Opus-heavy`.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos e cobranca</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 20/mes</td>
+            <td>Quota incluida + pay-as-you-go quando passar da franquia; tambem inclui quota de uso do Windsurf IDE</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>US$ 200/mes</td>
+            <td>Mais quota Devin e mais quota Windsurf IDE</td>
+          </tr>
+          <tr>
+            <td>Teams</td>
+            <td>US$ 80/mes</td>
+            <td>Uso colaborativo, membros ilimitados, billing centralizado e quota incluida segundo a pagina publica de pricing.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Ha uma divergencia importante para manutencao: a pagina publica de pricing mostra `Teams` a US$ 80/mes com quota
+        incluida, enquanto a doc de billing ainda descreve `Core` como PAYG e usa `US$ 2.25 por ACU`, alem de citar um
+        formato `Teams` de US$ 500/mes com 250 ACUs. Para decisao publica, esta pagina usa a pagina de pricing como fonte
+        primaria e marca a doc de billing como ponto de revalidacao.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno da familia Devin</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td><div class="score warn">20% a 40%</div><div class="bar"><span style="width:30%"></span></div></td>
+            <td><div class="score warn">65% a 80%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td><div class="score warn">20% a 35%</div><div class="bar"><span style="width:28%"></span></div></td>
+            <td>Melhor para conhecer o produto do que para resolver o seu caso.</td>
+          </tr>
+          <tr>
+            <td><strong>Max</strong></td>
+            <td><div class="score warn">35% a 60%</div><div class="bar"><span style="width:48%"></span></div></td>
+            <td><div class="score good">75% a 90%</div><div class="bar"><span style="width:80%"></span></div></td>
+            <td><div class="score warn">30% a 55%</div><div class="bar"><span style="width:42%"></span></div></td>
+            <td>Autonomia maior, custo mais dificil de defender para o objetivo do hub.</td>
+          </tr>
+          <tr>
+            <td><strong>Teams</strong></td>
+            <td><div class="score warn">30% a 70%</div><div class="bar"><span style="width:50%"></span></div></td>
+            <td><div class="score good">70% a 90%</div><div class="bar"><span style="width:78%"></span></div></td>
+            <td><div class="score warn">30% a 60%</div><div class="bar"><span style="width:44%"></span></div></td>
+            <td>Mais coerente para times e paralelismo do que para sua compra pessoal central.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Como os ACUs funcionam</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que os docs dizem</h3>
+          <ul>
+            <li>`ACU` mede o trabalho do Devin: planejamento, contexto, steps, browser, execucao de codigo e mais.</li>
+            <li>Devin nao consome ACUs enquanto espera sua resposta, espera testes ou esta apenas clonando repositorios.</li>
+              <li>A doc de billing ainda usa `Core` e `ACU`; a pagina publica de pricing atual usa `Free`, `Pro`, `Max`, `Teams` e `Enterprise`.</li>
+            <li>Existem analytics proprios de consumo por sessao e por organizacao.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que isso muda para o hub</h3>
+          <ul>
+            <li>Comparar Devin com GLM ou Alibaba nao e apples-to-apples.</li>
+            <li>Ele pode entregar autonomia forte, mas a economia por `tarefa` precisa ser excelente para justificar o custo.</li>
+            <li>Seu caso hoje parece mais alinhado a `coding agent pesado no comando do usuario` do que a `delegacao profunda por ACU`.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score warn">20% a 70%</div><div class="bar"><span style="width: 46%"></span></div><p class="small">Depende demais da classe de tarefa e de como os ACUs drenam no seu fluxo.</p></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score good">70% a 90%</div><div class="bar"><span style="width: 78%"></span></div><p class="small">Pode ser muito bom em tarefas bem delegaveis e paralelizaveis.</p></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score warn">20% a 60%</div><div class="bar"><span style="width: 40%"></span></div><p class="small">Nao entra bem como melhor compra do seu hub hoje.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://devin.ai/pricing">Devin pricing</a></li>
+        <li><a href="https://docs.devin.ai/admin/billing">Devin billing</a></li>
+        <li><a href="https://docs.devin.ai/get-started">Getting started</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

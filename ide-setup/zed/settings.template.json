@@ -1,0 +1,145 @@
+{
+  "agent": {
+    "default_model": {
+      "provider": "Xiaomi MiMo",
+      "model": "mimo-v2.5",
+      "enable_thinking": false
+    },
+    "tool_permissions": {
+      "default": "allow"
+    },
+    "play_sound_when_agent_done": "when_hidden",
+    "expand_terminal_card": true
+  },
+  "language_models": {
+    "openai_compatible": {
+      "ZAI GLM": {
+        "api_url": "https://api.z.ai/api/coding/paas/v4",
+        "available_models": [
+          {
+            "name": "glm-5.1",
+            "max_tokens": 204800,
+            "max_output_tokens": 131072,
+            "max_completion_tokens": 131072,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          },
+          {
+            "name": "glm-4.7",
+            "max_tokens": 204800,
+            "max_output_tokens": 131072,
+            "max_completion_tokens": 131072,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          }
+        ]
+      },
+      "Xiaomi MiMo": {
+        "api_url": "https://token-plan-sgp.xiaomimimo.com/v1",
+        "available_models": [
+          {
+            "name": "mimo-v2.5-pro",
+            "max_tokens": 1048576,
+            "max_output_tokens": 131072,
+            "max_completion_tokens": 131072,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          },
+          {
+            "name": "mimo-v2.5",
+            "max_tokens": 1048576,
+            "max_output_tokens": 131072,
+            "max_completion_tokens": 131072,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    },
+    "cursor": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "context_servers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "zai-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@z_ai/mcp-server@latest"],
+      "env": {
+        "Z_AI_API_KEY": "${env:Z_AI_API_KEY}",
+        "Z_AI_MODE": "${env:Z_AI_MODE}"
+      }
+    },
+    "web-search-prime": {
+      "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:Z_AI_API_KEY}"
+      }
+    },
+    "web-reader": {
+      "url": "https://api.z.ai/api/mcp/web_reader/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:Z_AI_API_KEY}"
+      }
+    },
+    "zread": {
+      "url": "https://api.z.ai/api/mcp/zread/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:Z_AI_API_KEY}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--autoConnect"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "G:\\Work", "F:\\KLG Bots"]
+    }
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "base_keymap": "Cursor"
+}

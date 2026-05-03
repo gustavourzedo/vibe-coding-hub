@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alibaba Coding Plan - Vibe Coding Hub</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --good: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+
+    .wrap { width: min(1320px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 30px; }
+    .card { padding: 22px; margin-top: 22px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .score { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .callout, .warnout {
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110,231,183,.08);
+    }
+    .warnout {
+      border-left: 4px solid var(--warn);
+      background: rgba(251,191,36,.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: #f4f8ff; background: rgba(96,165,250,.08); }
+    tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+    }
+
+    .small { font-size: 13px; color: #8ea0c7; }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1320px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Alibaba Cloud Coding Plan Pro</h1>
+      <p>
+        A Alibaba continua sendo um <strong>dark horse serio</strong>, mas a leitura correta ficou mais dura:
+        o valor real do plano esta em ser <strong>casa de volume para Qwen</strong>, nao em virar uma assinatura universal
+        perfeita para GLM, Kimi, MiniMax e cia no mesmo pacote.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>29/04/2026 16:55</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Dark horse de volume Qwen</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Muita capacidade nominal por US$ 50 e ecossistema Qwen oficial</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Requests por tarefa, caching e operacao real sao bem menos limpos do que o marketing sugere</div></div>
+      </div>
+      <div class="callout">
+        <strong>Resumo curto:</strong> a Alibaba sobe quando a pergunta e "como consigo muito throughput com Qwen por um preco forte?".
+        Ela cai quando a pergunta e "qual assinatura me da maior previsibilidade por sessao longa de vibe coding pesado?".
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que o plano e oficialmente</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Quota oficial</th>
+            <th>Leitura correta da doc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Coding Plan Pro</strong></td>
+            <td>US$ 50 / mes</td>
+            <td>6.000 requests / 5h, 45.000 / semana, 90.000 / mes</td>
+            <td>A propria Alibaba diz que tarefa simples usa ~5-10 requests e tarefa complexa usa 10-30+; entao o numero bruto de requests nao pode ser lido como queries humanas puras.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warnout">
+        <strong>Traducao operacional:</strong> o numero bonito e "90.000 requests / mes". O numero que importa para voce e
+        <strong>quantas tarefas reais isso banca</strong> quando o agente le repo, pensa, roda tools, testa e corrige.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Qwen e o centro da tese</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Onde o plano parece forte</h3>
+          <ul>
+            <li><code>Qwen 3.5 Plus</code> e <code>Qwen 3.6 Plus</code> sao os nomes que mais aparecem com relatos positivos de uso real.</li>
+            <li>A comunidade elogia throughput, refactors e a sensacao de muita capacidade por dolar.</li>
+            <li>Quando as pessoas dizem que a Alibaba "funciona", normalmente estao descrevendo um workflow fortemente apoiado em Qwen.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Onde o plano fica mais fraco</h3>
+          <ul>
+            <li>Os sinais comunitarios pioram quando a tese vira "pacote multi-model" com GLM, Kimi e MiniMax dentro do mesmo plano.</li>
+            <li>Ha mais relatos de loops, lentidao, degradacao ou estranheza fora da trilha Qwen.</li>
+            <li>Por isso o hub agora prefere tratar a Alibaba como "volume Qwen", nao como assinatura universal.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que e o free de verdade</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que ainda faz sentido contar</h3>
+          <ul>
+            <li><strong>Model Studio free quota:</strong> 1 milhao de tokens gratis para alguns modelos na regiao Singapore.</li>
+            <li><strong>Validade:</strong> 90 dias apos ativar o Model Studio.</li>
+            <li><strong>Controle de gasto:</strong> a opcao <code>Free quota only</code> existe para evitar cobranca acidental.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que nao deve mais sustentar decisao</h3>
+          <ul>
+            <li>A doc de ajuda ainda cita OAuth free, mas o proprio repositorio do Qwen Code indicou mudancas e descontinuacao recente desse tier.</li>
+            <li>Entao a leitura segura hoje e tratar o free como <strong>quota de teste</strong>, nao como plano gratis mensal serio.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>O que a comunidade esta vendo na pratica</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ponto</th>
+            <th>Sinal de campo</th>
+            <th>Leitura do hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Capacidade</strong></td>
+            <td>Relatos de heavy refactors, sessoes longas e uso diario razoavel com Qwen; ha exemplos de consumo mensal ainda confortavel dentro do Pro.</td>
+            <td>O plano tem capacidade real forte; o problema nao e falta de volume nominal.</td>
+          </tr>
+          <tr>
+            <td><strong>Caching</strong></td>
+            <td>Esse e o tema mais repetido nos reviews tecnicos: sem KV/input caching comparavel a Anthropic, o custo real de sessoes longas sobe muito.</td>
+            <td>Isso explica por que o plano parece gigante no papel e menos milagroso em repos grandes.</td>
+          </tr>
+          <tr>
+            <td><strong>Requests por tarefa</strong></td>
+            <td>Comunidade relata tarefas pequenas/medias que podem queimar dezenas ou ate ~100 calls quando ha TDD, testes, loops e iteracao.</td>
+            <td>A unidade util nao e "requests totais", e sim "requests por tarefa real".</td>
+          </tr>
+          <tr>
+            <td><strong>Operacao</strong></td>
+            <td>Ha muita confusao com key certa, base URL certa, lineup e disponibilidade/comercial do plano.</td>
+            <td>Produto mais fraco do que MiMo e GLM em previsibilidade de compra e operacao.</td>
+          </tr>
+          <tr>
+            <td><strong>Multi-model</strong></td>
+            <td>Qwen vai bem; sinais de GLM, Kimi e MiniMax dentro do pacote sao mais mistos.</td>
+            <td>A compra fica melhor se voce pensar "Qwen official volume plan" e nao "plano de tudo para todos".</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Para a consolidacao completa de Reddit, X e impressao de campo do hub, veja <a href="./reviews-comunidade.html">/reviews-comunidade</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade, qualidade e consolidado</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Capacidade</strong>
+          <div class="score good">72% a 96%</div>
+          <div class="bar"><span style="width:84%"></span></div>
+          <p class="small">A quota oficial e grande e a trilha Qwen entrega bastante volume util.</p>
+        </div>
+        <div class="mini">
+          <strong>Qualidade tecnica</strong>
+          <div class="score warn">52% a 72%</div>
+          <div class="bar"><span style="width:62%"></span></div>
+          <p class="small">Boa para throughput e refactor, menos limpa para sessao premium critica unica.</p>
+        </div>
+        <div class="mini">
+          <strong>Consolidado</strong>
+          <div class="score warn">58% a 78%</div>
+          <div class="bar"><span style="width:68%"></span></div>
+          <p class="small">Dark horse serio, mas com mais risco operacional do que MiMo Pro no budget de US$ 50.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Comparacao direta: Alibaba Pro vs MiMo Pro no budget de US$ 50</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Onde a Alibaba ganha</h3>
+          <ul>
+            <li>Qwen oficial.</li>
+            <li>Capacidade nominal muito agressiva por preco.</li>
+            <li>Boa opcao se sua tese principal for throughput e refactor em Qwen.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Onde a MiMo ganha</h3>
+          <ul>
+            <li>Credits mais legiveis e previsiveis.</li>
+            <li>Melhor narrativa atual de volume premium dentro do hub.</li>
+            <li>Menor risco de "numero bonito por requests, mas consumo real por tarefa inflado".</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Veredito do hub para 29/04:</strong> com <strong>budget de US$ 50 focado em capacidade primeiro</strong>,
+        a compra mais forte hoje passa a ser <strong>MiMo Pro</strong>. A Alibaba Pro continua muito relevante,
+        mas como aposta mais especifica em <strong>Qwen + dark horse de volume</strong>.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como eu usaria no seu stack</h2>
+      <ul>
+        <li>Usaria Alibaba Pro se a pergunta fosse "quero uma segunda trilha forte para Qwen e volume, sabendo que vou babysittar mais o produto".</li>
+        <li>Usaria MiMo Pro se a pergunta fosse "quero mais runway previsivel para sessoes agenticas pesadas abaixo de US$ 50".</li>
+        <li>Continuaria tratando <code>GLM</code> como camada de precisao e <code>OpenCode Go + DeepSeek Flash</code> como terceira camada barata.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Fontes oficiais e de campo</h2>
+      <ul>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/coding-plan">Alibaba Coding Plan</a></li>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/qwen-code">Qwen Code docs</a></li>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/model-pricing">Alibaba Model Pricing</a></li>
+        <li><a href="https://www.alibabacloud.com/help/en/model-studio/text-generation-model/">Alibaba text generation models</a></li>
+        <li><a href="https://github.com/QwenLM/qwen-code">Qwen Code GitHub</a></li>
+        <li><a href="https://www.reddit.com/r/opencodeCLI/comments/1s7inxw/alibaba_coding_plan/">Reddit: Alibaba Coding Plan</a></li>
+        <li><a href="https://www.reddit.com/r/opencodeCLI/comments/1rlti8a/honest_review_of_alibaba_clouds_new_ai_coding_pro/">Reddit: honest review after 2 days</a></li>
+        <li><a href="https://www.reddit.com/r/opencodeCLI/comments/1rgcvv2/alibaba_coding_plan_sounds_too_good_to_be_true/">Reddit: sounds too good to be true?</a></li>
+        <li><a href="https://www.reddit.com/r/Qwen_AI/comments/1skeeu5/goodbye_qwen_you_tried_but_you_failed/">Reddit: Goodbye Qwen</a></li>
+        <li><a href="https://www.reddit.com/r/Qwen_AI/comments/1slf03s/qwen_coding_plan/">Reddit: Qwen coding plan</a></li>
+        <li><a href="https://www.reddit.com/r/ZaiGLM/comments/1rtiqrl/is_the_alibaba_pro_coding_plan_worth_it_china_or/">Reddit: Alibaba Pro worth it?</a></li>
+        <li><a href="https://www.infoworld.com/article/4054914/qwen-code-is-good-but-not-great.html">InfoWorld: Qwen Code is good but not great</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

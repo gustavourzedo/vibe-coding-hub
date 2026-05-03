@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hub de Agentes - Telemetria</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --danger: #fb7185;
+      --good: #34d399;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.55;
+    }
+
+    .wrap {
+      width: min(1380px, calc(100% - 40px));
+      margin: 32px auto 48px;
+    }
+
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21, 31, 56, 0.94), rgba(16, 24, 43, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero { padding: 28px 30px; }
+    .card { padding: 20px; margin-top: 20px; }
+
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f4f8ff; }
+
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .grid-4, .grid-3, .grid-2 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .metric, .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-top: 6px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .status.active { color: #a7f3d0; background: rgba(52,211,153,.12); }
+    .status.degraded { color: #fde68a; background: rgba(251,191,36,.12); }
+    .status.planned { color: #bfdbfe; background: rgba(96,165,250,.12); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { color: #f4f8ff; background: rgba(96,165,250,.08); }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: #e9f1ff;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(96,165,250,.18), rgba(110,231,183,.12));
+    }
+
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .small { font-size: 13px; color: #8ea0c7; }
+
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1380px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>Telemetria do Hub de Agentes</h1>
+      <p>
+        Esta pagina concentra a leitura operacional do que voce esta usando no dia a dia. O objetivo nao e so medir quota:
+        e registrar contexto de uso, estado atual das ferramentas e gerar uma base semanal para recalibrar o ranking do hub.
+      </p>
+      <div class="actions">
+        <button class="btn primary" onclick="window.location.reload()">Recarregar pagina</button>
+        <a class="btn" href="telemetry/latest_telemetry.json">Abrir arquivo de telemetria</a>
+        <a class="btn" href="scripts/update_telemetry.py">Abrir script gerador</a>
+        <a class="btn" href="scripts/update_telemetry.ps1">Abrir atalho PowerShell</a>
+      </div>
+      <p class="small" style="margin-top:12px;">
+        Observacao: em HTML local puro, o navegador nao executa o script de atualizacao diretamente. O fluxo atual e:
+        abrir o arquivo do script, executar localmente e depois recarregar a pagina. O proximo passo natural e ligar isso a uma tarefa agendada semanal do Windows.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Snapshot atual</h2>
+      <div class="grid-4">
+        <div class="metric">
+          <div class="metric-value">27/04/2026 15:22</div>
+          <div class="small">Ultima compilacao da telemetria</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">4 fontes</div>
+          <div class="small">1 automatica + 3 snapshots manuais (OpenCode Go ativo)</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value warn">Cursor degradado</div>
+          <div class="small">Uso atual limitado ao composer-2 segundo snapshot manual</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value good">OpenCode Go ativo</div>
+          <div class="small">8 sessoes, 522 mensagens, 680 tool calls desde 26/04</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ferramentas monitoradas</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Cursor</h3>
+          <span class="status active">active</span>
+          <p>Telemetria automatica vinda do banco local <code>ai-code-tracking.db</code>.</p>
+          <ul>
+            <li>Janela compilada: 17/04/2026 01:57 ate 24/04/2026 01:57</li>
+            <li>Eventos na janela: <strong>117.214</strong></li>
+            <li>Top projetos: GnBots, KLG Bots e ClipForge / c-Users-gusta-cursor</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>ChatGPT Plus + Codex Desktop</h3>
+          <span class="status active">active</span>
+          <p>Snapshot manual da licenca pessoal OpenAI usada em trabalho real.</p>
+          <ul>
+            <li>5h restantes: <strong>24%</strong></li>
+            <li>Semanal restante: <strong>88%</strong></li>
+            <li>Contexto do snapshot: estudo pesado + KLG Bots</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Cursor - estado operacional</h3>
+          <span class="status degraded">degraded</span>
+          <p>Snapshot manual de situacao atual da ferramenta.</p>
+          <ul>
+            <li>Membership: <strong>enterprise</strong></li>
+            <li>Modo atual: <strong>composer-2 only</strong></li>
+            <li>Motivo: quota principal estourada</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>OpenCode Go</h3>
+          <span class="status active" style="background:rgba(52,211,153,.12);color:#a7f3d0;">active</span>
+          <p>Telemetria extraida do banco local <code>opencode.db</code>. ~18h de uso desde 26/04.</p>
+          <ul>
+            <li>Sessoes registradas: <strong>8</strong></li>
+            <li>Mensagens: <strong>522</strong> | Partes: <strong>2.209</strong></li>
+            <li>Chamadas de ferramenta: <strong>680</strong> (68 edicoes, 168 leituras, 353 bash)</li>
+            <li>Raciocinios: <strong>412</strong> blocos</li>
+            <li>Codigo alterado: <strong>+644 / -117</strong> linhas em 14 arquivos</li>
+            <li>Workspaces: KLG Bots, Movida RCA Vetor, SigNoz, NTT Data, VibeCoding Hub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cursor - leitura automatica dos ultimos 7 dias</h2>
+      <div class="grid-3">
+        <div class="metric">
+          <div class="metric-value">117.214</div>
+          <div class="small">eventos rastreados</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">17/04 a 24/04</div>
+          <div class="small">janela usada nesta compilacao</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">94,1%</div>
+          <div class="small">share frontier nesta janela, util como telemetria, nao mais como destaque da home</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:20px;">Top modelos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Eventos</th>
+            <th>Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>claude-opus-4-7-xhigh</td><td>74.171</td><td>63,3%</td></tr>
+          <tr><td>claude-opus-4-7-high</td><td>11.542</td><td>9,8%</td></tr>
+          <tr><td>claude-4.6-opus-max</td><td>7.336</td><td>6,3%</td></tr>
+          <tr><td>composer-2</td><td>6.896</td><td>5,9%</td></tr>
+          <tr><td>claude-opus-4-7-thinking-high</td><td>6.557</td><td>5,6%</td></tr>
+          <tr><td>claude-opus-4-7-max</td><td>6.256</td><td>5,3%</td></tr>
+          <tr><td>gpt-5.3-codex-xhigh</td><td>1.533</td><td>1,3%</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:20px;">Top projetos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Projeto</th>
+            <th>Eventos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SERVIDOR-Drive-GnBots</td><td>37.069</td></tr>
+          <tr><td>empty-window / f-KLG-Bots</td><td>28.125</td></tr>
+          <tr><td>c-Users-gusta-cursor / empty-window</td><td>18.887</td></tr>
+          <tr><td>f-KLG-Bots</td><td>15.419</td></tr>
+          <tr><td>c-Users-gusta-cursor</td><td>11.898</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Como vamos evoluir esta tela</h2>
+      <ul>
+        <li>Trocar snapshots manuais por conectores mais estruturados sempre que encontrarmos fontes locais confiaveis.</li>
+        <li>Adicionar novos monitores por codigo no script gerador, nao pela interface.</li>
+        <li>Manter a interface web simples: visualizar, comparar e recarregar.</li>
+        <li>Gerar um novo snapshot semanal para recalibrar o ranking do hub.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Arquitetura inicial do monitoramento</h2>
+      <ul>
+        <li><code>scripts/update_telemetry.py</code>: compila fontes automaticas e manuais.</li>
+        <li><code>telemetry/manual_sources.json</code>: snapshots manuais e placeholders para novas ferramentas.</li>
+        <li><code>telemetry/latest_telemetry.json</code>: artefato consolidado da rodada mais recente.</li>
+        <li>Proximo passo sugerido: agendar execucao semanal no Windows Task Scheduler.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

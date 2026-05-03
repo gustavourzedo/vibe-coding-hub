@@ -1,0 +1,407 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0f14;
+  --foreground: #eef3f6;
+  --surface: #101820;
+  --surface-strong: #14212a;
+  --surface-soft: #17232c;
+  --line: #293945;
+  --line-strong: #3b5261;
+  --muted: #93a4ad;
+  --muted-strong: #bac7cd;
+  --accent: #42d9a6;
+  --accent-2: #5aa7ff;
+  --warning: #f1bf5b;
+  --danger: #ef6d75;
+  --good: #68df8e;
+  --focus: #d2f95f;
+  --surface-glass: rgba(16, 24, 32, 0.72);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(66, 217, 166, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(90, 167, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, #0b0f14 0%, #0d141a 48%, #080b10 100%);
+  background-size: 44px 44px, 44px 44px, auto;
+  color: var(--foreground);
+  font-family: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(66, 217, 166, 0.3);
+}
+
+.scanline {
+  background-image: linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 11px,
+    rgba(255, 255, 255, 0.035) 12px
+  );
+  background-size: 100% 12px;
+}
+
+.legacy-content {
+  color: var(--muted-strong);
+  line-height: 1.72;
+  overflow-x: auto;
+}
+
+.legacy-content > * + * {
+  margin-top: 1rem;
+}
+
+.legacy-content .wrap,
+.legacy-content .container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.legacy-content .hero,
+.legacy-content .card,
+.legacy-content .mini,
+.legacy-content .feature,
+.legacy-content .stat,
+.legacy-content .nav-card,
+.legacy-content .callout,
+.legacy-content .warnout {
+  border: 1px solid rgba(82, 113, 132, 0.62);
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)),
+    var(--surface-glass);
+  box-shadow: none;
+  padding: 1rem;
+}
+
+.legacy-content .hero,
+.legacy-content .card {
+  margin-top: 1rem;
+}
+
+.legacy-content h1,
+.legacy-content h2,
+.legacy-content h3 {
+  color: white;
+  line-height: 1.18;
+}
+
+.legacy-content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.55rem);
+  font-weight: 650;
+}
+
+.legacy-content h2 {
+  margin-top: 2rem;
+  font-size: 1.45rem;
+  font-weight: 650;
+}
+
+.legacy-content h3 {
+  margin-top: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+.legacy-content p {
+  color: var(--muted-strong);
+}
+
+.legacy-content a {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(90, 167, 255, 0.35);
+  text-underline-offset: 3px;
+}
+
+.legacy-content code,
+.legacy-content .mono {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.1rem 0.28rem;
+  color: white;
+  font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  font-size: 0.92em;
+}
+
+.legacy-content ul,
+.legacy-content ol {
+  margin-left: 1.25rem;
+}
+
+.legacy-content li + li {
+  margin-top: 0.35rem;
+}
+
+.legacy-content table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(9, 14, 19, 0.72);
+  font-size: 0.84rem;
+  scrollbar-color: var(--line-strong) rgba(255, 255, 255, 0.04);
+  -webkit-overflow-scrolling: touch;
+}
+
+.legacy-content table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.legacy-content table::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 999px;
+}
+
+.legacy-content table::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+
+.legacy-content th,
+.legacy-content td {
+  border-bottom: 1px solid var(--line);
+  min-width: 108px;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.legacy-content th {
+  background: rgba(90, 167, 255, 0.08);
+  color: white;
+  font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.legacy-content tbody tr {
+  transition: background 120ms ease;
+}
+
+.legacy-content tbody tr:hover td {
+  background: rgba(66, 217, 166, 0.04);
+}
+
+.legacy-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.legacy-content td strong,
+.legacy-content td b {
+  color: white;
+}
+
+.legacy-content td a {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(90, 167, 255, 0.3);
+  text-underline-offset: 2px;
+}
+
+.legacy-content img,
+.legacy-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.legacy-content .grid-4,
+.legacy-content .grid-3,
+.legacy-content .grid-2,
+.legacy-content .hero-actions,
+.legacy-content .summary-strip,
+.legacy-content .jump-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.legacy-content .small {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.legacy-content > a:first-child,
+.legacy-content .small:first-child {
+  display: none;
+}
+
+.dock-shell {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+
+.page-action-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-action-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(66, 217, 166, 0.08), transparent 42%, rgba(90, 167, 255, 0.08));
+  pointer-events: none;
+}
+
+.page-action-panel > * {
+  position: relative;
+}
+
+@media (min-width: 960px) {
+  .legacy-content table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+    overflow: visible !important;
+    font-size: 0.76rem;
+  }
+
+  .legacy-content th,
+  .legacy-content td {
+    min-width: 0 !important;
+    padding: 0.45rem 0.55rem;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+.signal-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.signal-grid::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background:
+    linear-gradient(90deg, transparent, rgba(66, 217, 166, 0.16), transparent),
+    linear-gradient(180deg, transparent, rgba(90, 167, 255, 0.1), transparent);
+  opacity: 0.6;
+  transform: translateX(-55%);
+  animation: signal-sweep 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.signal-grid > * {
+  position: relative;
+}
+
+.route-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.route-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.route-card:hover::after {
+  transform: scaleX(1);
+}
+
+.pulse-dot {
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 1px solid rgba(66, 217, 166, 0.35);
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
+@keyframes signal-sweep {
+  0%,
+  18% {
+    transform: translateX(-65%);
+  }
+
+  55%,
+  100% {
+    transform: translateX(65%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.72);
+  }
+
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Factory - Documentacao Viva</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#151f38; --line:#2a3960; --text:#e7edf9; --muted:#9fb0d4; --accent:#6ee7b7; --accent-2:#60a5fa; --warn:#fbbf24; --good:#34d399; --shadow:0 18px 60px rgba(0,0,0,.35); }
+    * { box-sizing:border-box; } body { margin:0; font-family:"Segoe UI","Inter",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(96,165,250,.15), transparent 28%),radial-gradient(circle at top right, rgba(110,231,183,.12), transparent 24%),linear-gradient(180deg,#09101d 0%,#0b1020 100%); line-height:1.58; }
+    .wrap { width:min(1280px, calc(100% - 40px)); margin:32px auto 56px; } .hero,.card { background:linear-gradient(180deg, rgba(21,31,56,.94), rgba(16,24,43,.98)); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); } .hero { padding:28px 30px; } .card { padding:20px; margin-top:20px; }
+    h1,h2,h3 { margin:0 0 12px; line-height:1.15; } h1 { font-size:clamp(30px,4vw,46px); letter-spacing:-0.03em; } h2 { font-size:24px; } h3 { font-size:18px; color:#f3f7ff; }
+    p { margin:0 0 12px; color:var(--muted); } a { color:#9fcbff; text-decoration:none; } a:hover { text-decoration:underline; }
+    .grid-4,.grid-3,.grid-2 { display:grid; gap:16px; } .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:18px; } .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .mini { border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; background:rgba(255,255,255,.04); } .score { font-size:28px; font-weight:700; color:white; } .good { color:var(--good); } .warn { color:var(--warn); }
+    .bar { width:100%; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:8px; } .bar span { display:block; height:100%; background:linear-gradient(90deg, var(--accent-2), var(--accent)); }
+    .callout { border-left:4px solid var(--accent); background:rgba(110,231,183,.08); border-radius:12px; padding:14px 16px; margin-top:14px; }
+    ul { margin:10px 0 0 18px; padding:0; color:var(--muted); } li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; } th,td { padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; vertical-align:top; } th { color:#f4f8ff; background:rgba(96,165,250,.08); }
+    .small { font-size:13px; color:#8ea0c7; }
+    @media (max-width:1100px) { .grid-4,.grid-3,.grid-2 { grid-template-columns:1fr; } .wrap { width:min(100% - 20px, 1280px); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+    <section class="hero">
+      <h1>Factory</h1>
+      <p>
+        Pagina viva da `Factory`, uma plataforma AI-native de desenvolvimento que hoje compete muito mais com
+        `Cursor`, `Windsurf` e workspaces agenticos premium do que com coding plans flat tradicionais. Ela merece
+        lugar no hub porque entrega interface, agentes em background e acesso a frontier models num pacote proprio.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 14:51</div></div>
+        <div class="mini"><strong>Status no hub</strong><div>Workspace premium relevante</div></div>
+        <div class="mini"><strong>Ponto forte</strong><div>Desktop, web, CLI e agentes locais/cloud</div></div>
+        <div class="mini"><strong>Ponto de atencao</strong><div>Quota numerica menos explicita do que em coding plans puros</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        `Factory` entra bem no hub como opcao para quem quer um ambiente de agente serio, com boa curadoria de modelos
+        e plataforma propria. Ela fica abaixo do GLM e do Alibaba no problema central porque seu beneficio e mais
+        `workspace premium` do que `maxima previsibilidade por dolar`.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> forte para quem valoriza experiencia e plataforma. Menos forte como resposta direta
+        para "qual assinatura me leva mais perto do meu Opus-heavy pelo menor preco".
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos atuais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>O que a pagina oficial promete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pro</td>
+            <td>US$ 20/mes</td>
+            <td>Workspace completo para individuos e pequenos times, compute dedicado com frontier models, desktop/web/CLI, agentes locais e cloud, analytics e at&eacute; 2 membros incluidos</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>US$ 200/mes</td>
+            <td>Tudo do Pro + `10x usage` do Pro, capacidade reservada expandida, early access e cap de 5 seats</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno da familia Factory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td><div class="score warn">40% a 65%</div><div class="bar"><span style="width:52%"></span></div></td>
+            <td><div class="score good">70% a 85%</div><div class="bar"><span style="width:76%"></span></div></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td>Entrega muito por US$ 20, mas com pouca visibilidade objetiva de franquia.</td>
+          </tr>
+          <tr>
+            <td><strong>Max</strong></td>
+            <td><div class="score good">60% a 85%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td><div class="score good">80% a 90%</div><div class="bar"><span style="width:84%"></span></div></td>
+            <td><div class="score warn">55% a 80%</div><div class="bar"><span style="width:68%"></span></div></td>
+            <td>Sobe muito como workspace premium, menos como compra racional por dolar.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Modelos e camada tecnica</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que a doc publica</h3>
+          <ul>
+            <li>Suporte a frontier e open models, incluindo `Claude Opus`, `Claude Sonnet`, `GPT-5.4`, `GPT-5.3-Codex` e `Gemini`.</li>
+            <li>O guia de modelos da propria Factory recomenda `Claude Opus 4.7` como topo para trabalho muito dificil.</li>
+            <li>Tambem explicita multiplicadores internos de modelos, o que indica uma camada de custo/roteamento propria.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que isso significa</h3>
+          <ul>
+            <li>Em qualidade, a Factory pode chegar muito perto do frontier porque o stack de modelos e muito bom.</li>
+            <li>Mas a pagina de pricing nao deixa um numero objetivo de quota como GLM, Alibaba ou Google Code Assist.</li>
+            <li>Para o seu hub, ela sobe mais por `plataforma + experiencia + modelos` do que por `previsibilidade economica`.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Capacidade e qualidade estimadas</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Capacidade</strong><div class="score warn">40% a 85%</div><div class="bar"><span style="width: 62%"></span></div><p class="small">Range largo porque a pagina oficial nao abre uma quota numerica simples.</p></div>
+        <div class="mini"><strong>Qualidade tecnica</strong><div class="score good">75% a 90%</div><div class="bar"><span style="width: 82%"></span></div><p class="small">Muito boa, puxada pela camada de modelos de alto nivel.</p></div>
+        <div class="mini"><strong>Consolidado</strong><div class="score warn">45% a 80%</div><div class="bar"><span style="width: 66%"></span></div><p class="small">Forte, mas mais caro e menos legivel do que as melhores compras do hub.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Por que Pro e Max recebem essas faixas</h2>
+      <div class="grid-2">
+        <div class="mini"><h3>Pro</h3><p>O valor de entrada e bom, mas a quota pouco explicita segura a nota de capacidade e tambem a aderencia tecnica pratica no uso real.</p></div>
+        <div class="mini"><h3>Max</h3><p>O workspace fica bem mais folgado, o que melhora a aderencia pratica, mas o preco move a discussao para plataforma premium.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Caminhos oficiais para manutencao futura</h2>
+      <ul>
+        <li><a href="https://factory.ai/pricing">Factory pricing</a></li>
+        <li><a href="https://docs.factory.ai/cli/user-guides/choosing-your-model">Choosing your model</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

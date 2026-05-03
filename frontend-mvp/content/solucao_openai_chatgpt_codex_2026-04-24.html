@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenAI - ChatGPT e Codex - Documentacao Viva</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #151f38;
+      --line: #2a3960;
+      --text: #e7edf9;
+      --muted: #9fb0d4;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --warn: #fbbf24;
+      --danger: #fb7185;
+      --good: #34d399;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.15), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 24%),
+        linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+      line-height: 1.58;
+    }
+    .wrap { width: min(1280px, calc(100% - 40px)); margin: 32px auto 56px; }
+    .hero, .card {
+      background: linear-gradient(180deg, rgba(21, 31, 56, 0.94), rgba(16, 24, 43, 0.98));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 28px 30px; }
+    .card { padding: 20px; margin-top: 20px; }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
+    h1 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.03em; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; color: #f3f7ff; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    a { color: #9fcbff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mini {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+    .score { font-size: 28px; font-weight: 700; color: white; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--muted); }
+    li { margin-bottom: 8px; }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: rgba(110, 231, 183, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: #f4f8ff; background: rgba(96,165,250,.08); }
+    .small { font-size: 13px; color: #8ea0c7; }
+    @media (max-width: 1100px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1280px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="small"><a href="./index.html">Voltar para o hub principal</a></div>
+
+    <section class="hero">
+      <h1>OpenAI - ChatGPT e Codex</h1>
+      <p>
+        Documentacao viva consolidada para a camada OpenAI do estudo. O objetivo desta pagina e registrar com clareza
+        como os planos funcionam, onde ha mais opacidade, como o Codex e medido hoje e por que a OpenAI nao foi a melhor
+        resposta de custo-beneficio para o seu benchmark extremo, embora continue sendo forte tecnicamente.
+      </p>
+      <div class="grid-4">
+        <div class="mini"><strong>Ultima compilacao</strong><div>24/04/2026 16:20</div></div>
+        <div class="mini"><strong>Fonte base local</strong><div><code>openai_aprendizados_2026-04-24.md</code></div></div>
+        <div class="mini"><strong>Posicao no estudo</strong><div>Forte tecnicamente, mas com baixa previsibilidade operacional</div></div>
+        <div class="mini"><strong>Telemetria adicional</strong><div>Snapshot manual do ChatGPT Plus via Codex desktop</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Leitura executiva</h2>
+      <p>
+        A OpenAI continua muito relevante na qualidade tecnica, mas a estrutura de limites hoje mistura <code>3h</code>, <code>5h</code>,
+        limites semanais, promocoes temporarias e credit/token metering no Codex. Isso torna a leitura operacional mais opaca do que
+        em algumas alternativas concorrentes, especialmente quando o objetivo e comprar com previsibilidade para uso pesado.
+      </p>
+      <div class="callout">
+        <strong>Resumo curto:</strong> `Plus` e insuficiente para o seu uso intenso. `Pro` melhora muito, mas ainda nao vence o estudo em
+        custo-previsibilidade. `Codex` e forte, mas a propria OpenAI hoje mistura creditos, janelas e guardrails de forma menos direta do que parece.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Planos pessoais</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Preco</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ChatGPT Plus</td>
+            <td>US$ 20/mes</td>
+            <td>Bom para uso pessoal moderado. API nao incluida. No seu caso real, o snapshot mostrou pressao muito rapida de quota.</td>
+          </tr>
+          <tr>
+            <td>ChatGPT Pro US$ 100</td>
+            <td>US$ 100/mes</td>
+            <td>5x os limites do Plus segundo a comunicacao oficial. Sobe bastante de patamar, mas ainda com opacidade relevante.</td>
+          </tr>
+          <tr>
+            <td>ChatGPT Pro US$ 200</td>
+            <td>US$ 200/mes</td>
+            <td>20x o Plus como leitura confiavel. Tier pessoal forte da OpenAI, mas ja encosta em faixa de custo onde outras opcoes ficam mais interessantes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Promocoes e beneficios vigentes em 24/04/2026</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>Pro US$ 100</h3>
+          <ul>
+            <li>Leitura oficial: `5x` os limites do Plus.</li>
+            <li>Promocao observada: `10x Codex usage vs. Plus ate 31/05/2026`.</li>
+            <li>Isso melhora bastante a folga do plano, mas precisa ser lido como beneficio temporal.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Pro US$ 200</h3>
+          <ul>
+            <li>Leitura mais segura: `20x Plus ongoing`.</li>
+            <li>Tambem apareceu trecho antigo falando em `25x higher Codex 5-hour limits through March 31`.</li>
+            <li>Como a pagina foi lida em `24/04/2026`, tratei o `20x ongoing` como referencia confiavel e os `25x` como temporalmente inconsistentes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Comparativo interno dos planos OpenAI</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Capacidade</th>
+            <th>Aderencia tecnica pratica</th>
+            <th>Consolidado</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plus</strong></td>
+            <td><div class="score warn">10% a 25%</div><div class="bar"><span style="width:18%"></span></div></td>
+            <td><div class="score good">65% a 80%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td><div class="score warn">10% a 25%</div><div class="bar"><span style="width:18%"></span></div></td>
+            <td>Boa qualidade por interacao, pouca folga para o seu dia pesado.</td>
+          </tr>
+          <tr>
+            <td><strong>Pro US$ 100</strong></td>
+            <td><div class="score warn">45% a 70%</div><div class="bar"><span style="width:58%"></span></div></td>
+            <td><div class="score good">70% a 85%</div><div class="bar"><span style="width:78%"></span></div></td>
+            <td><div class="score warn">35% a 65%</div><div class="bar"><span style="width:50%"></span></div></td>
+            <td>Ja entra em jogo serio, mas continua opaco para compra racional.</td>
+          </tr>
+          <tr>
+            <td><strong>Pro US$ 200</strong></td>
+            <td><div class="score good">70% a 95%</div><div class="bar"><span style="width:82%"></span></div></td>
+            <td><div class="score good">75% a 90%</div><div class="bar"><span style="width:84%"></span></div></td>
+            <td><div class="score warn">60% a 85%</div><div class="bar"><span style="width:72%"></span></div></td>
+            <td>Premium forte, mas ja encosta em faixas onde outras opcoes do hub ficam mais compraveis.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Limites do ChatGPT normal</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Camada</th>
+            <th>Limite observado</th>
+            <th>Contexto</th>
+            <th>Leitura para o hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>GPT-5.3 Instant</strong></td>
+            <td>`Free`: ate 10 mensagens / 5h<br />`Plus/Business`: ate 160 mensagens / 3h</td>
+            <td>`Plus / Business`: 32K</td>
+            <td>Serve bem para uso mais leve e rapido, mas nao e a camada que explica o seu objetivo de coding pesado.</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-5.5 Thinking</strong></td>
+            <td>`Plus/Business`: ate 3.000 mensagens por semana<br />`Go`: 10 mensagens / 5h com Thinking habilitado</td>
+            <td>`todos os pagos`: 256K<br />`Pro manual`: 400K</td>
+            <td>Importante porque mostra que a OpenAI tambem usa limite semanal forte mesmo antes de entrar na camada Codex.</td>
+          </tr>
+          <tr>
+            <td><strong>Pro / Business</strong></td>
+            <td>`unlimited subject to abuse guardrails` para GPT-5 em varias superficies</td>
+            <td>varia por modo e superficie</td>
+            <td>Boa folga nominal, mas ainda insuficiente para transformar a OpenAI na assinatura mais previsivel do hub.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Como os limites funcionam na pratica</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>O que ficou claro</h3>
+          <ul>
+            <li>A OpenAI nao usa uma unica regra de limite para tudo.</li>
+            <li>Ela mistura janelas de 3 horas, 5 horas, semanas e unlimited subject to guardrails.</li>
+            <li>O multiplicador do plano nao e identico em todas as superficies.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>O que isso piora</h3>
+          <ul>
+            <li>Previsibilidade de compra.</li>
+            <li>Facilidade de estimar custo real para uso muito pesado.</li>
+            <li>Comparacao direta com coding plans de quota mais explicita.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Codex em 2026</h2>
+      <p>
+        O principal aprendizado foi que, desde <strong>02/04/2026</strong>, o `Codex` passou a ser comunicado de forma mais explicita por
+        <strong>input tokens, cached input tokens e output tokens</strong>. Ou seja, ele deixou de ser entendido principalmente por mensagens
+        e passou a ficar muito mais proximo de uma logica de credit/token usage.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Ponto</th>
+            <th>Leitura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Modelo de medicao</td>
+            <td>Token / credit based</td>
+          </tr>
+          <tr>
+            <td>Modelos citados no rate card</td>
+            <td>GPT-5.5, GPT-5.4, GPT-5.4-Mini, GPT-5.3-Codex, GPT-5.2, GPT-5.3-Codex-Spark</td>
+          </tr>
+          <tr>
+            <td>Leitura de custo da propria OpenAI</td>
+            <td>Em media, US$ 100 a US$ 200 por developer por mes</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Limites do Codex por plano</h2>
+      <p>
+        A documentacao oficial nao e perfeitamente uniforme, mas uma coisa ficou clara: o `Codex` usa janelas de
+        <strong>5 horas</strong> e um <strong>shared weekly limit</strong>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Plano</th>
+            <th>Uso local por 5h</th>
+            <th>Cloud tasks por 5h</th>
+            <th>Leitura pratica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plus</strong></td>
+            <td>~30 a 150 local messages</td>
+            <td>~5 a 40 cloud tasks</td>
+            <td>Aguenta sessoes focadas, mas nao um dia inteiro pesado de varios projetos sem muito atrito.</td>
+          </tr>
+          <tr>
+            <td><strong>Pro</strong></td>
+            <td>~300 a 1.500 local messages</td>
+            <td>~50 a 400 cloud tasks</td>
+            <td>Ja entra bem melhor em trabalho real multi-projeto, mas continua muito dependente do tamanho das tasks e do contexto carregado.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Na mesma documentacao aparece tambem a nota `For a limited time, enjoy 2x Codex rate limits with Pro subscriptions`.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Business e Enterprise</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <h3>ChatGPT Business</h3>
+          <ul>
+            <li>Preco observado no estudo: `US$ 20 / usuario / mes`.</li>
+            <li>Mensagens e interacoes descritas como `unlimited`, subject to abuse guardrails.</li>
+            <li>Desde `02/04/2026`, o Business passou a ter dois tipos de assento: `ChatGPT normal` e `Codex-only`.</li>
+            <li>Se a workspace compra credits, o usuario pode continuar usando recursos avancados apos o limite incluido.</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>Enterprise</h3>
+          <ul>
+            <li>Preco sob contato comercial.</li>
+            <li>Shared credit pool no contrato.</li>
+            <li>Sem per-seat caps por padrao.</li>
+            <li>Admins podem aplicar spend controls por grupo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Telemetria do seu caso</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <strong>Plano observado</strong>
+          <div class="score warn">Plus</div>
+          <p class="small">Via Codex desktop.</p>
+        </div>
+        <div class="mini">
+          <strong>5h usadas</strong>
+          <div class="score warn">76%</div>
+          <p class="small">Restavam 24% no snapshot manual.</p>
+        </div>
+        <div class="mini">
+          <strong>Semanal usada</strong>
+          <div class="score warn">12%</div>
+          <p class="small">Restavam 88% no snapshot manual.</p>
+        </div>
+      </div>
+      <p style="margin-top:14px;">
+        Esse snapshot foi registrado durante trabalho real, combinando o estudo pesado e uso no `KLG Bots`. Para o hub,
+        ele e muito mais valioso como evidencia de operacao do que como benchmark absoluto.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Por que a OpenAI nao venceu o estudo</h2>
+      <ul>
+        <li>Seu objetivo e chegar o mais perto possivel do benchmark Opus-heavy gastando o minimo possivel.</li>
+        <li>A OpenAI melhora muito com Pro, mas nao se torna automaticamente a opcao mais previsivel.</li>
+        <li>O ecossistema mistura limites relativos, creditos, promocoes e guardrails de abuso.</li>
+        <li>Isso piora comparacao economica e planejamento em relacao a GLM Max e alguns coding plans mais transparentes.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Por que esses tiers recebem faixas diferentes</h2>
+      <div class="grid-3">
+        <div class="mini"><strong>Plus</strong><p>A inteligencia do modelo nao e o problema; o problema e a franquia observada no seu uso real.</p></div>
+        <div class="mini"><strong>Pro US$ 100</strong><p>Sobe bem em capacidade e tambem na aderencia tecnica pratica, mas ainda sofre com a menor previsibilidade do modelo de limite.</p></div>
+        <div class="mini"><strong>Pro US$ 200</strong><p>Resolve melhor a liberdade de uso e por isso sobe a aderencia pratica, mas ja deixa de ser uma escolha economica para este hub.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pontos de atencao para manutencao futura</h2>
+      <ul>
+        <li>Revalidar a pagina de Pro tiers, porque houve inconsistencia temporal entre beneficios promocionais.</li>
+        <li>Revalidar limites de `GPT-5.3 Instant` e `GPT-5.5 Thinking` no ChatGPT, porque a OpenAI muda isso com frequencia.</li>
+        <li>Conferir se o Codex continua medido da mesma forma no rate card.</li>
+        <li>Conferir se os ranges de `local messages` e `cloud tasks` por 5h continuam os mesmos na pagina oficial do Codex.</li>
+        <li>Conferir se o split de assentos `ChatGPT normal` vs `Codex-only` segue igual no Business.</li>
+        <li>Atualizar sempre com data absoluta quando houver beneficio temporario.</li>
+        <li>Se voce migrar para Pro 100 ou 200, registrar telemetria real no hub para recalibrar capacidade e consolidado.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Fontes oficiais para atualizacao</h2>
+      <ul>
+        <li><a href="https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus%3F.eps">What is ChatGPT Plus?</a></li>
+        <li><a href="https://help.openai.com/en/articles/9793128-what-is-chatgpt-pro%253F.docx">About ChatGPT Pro tiers</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/">Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/11909943-gpt-5-1-in-chatgpt">GPT-5.3 and GPT-5.5 in ChatGPT</a></li>
+        <li><a href="https://openai.com/business/chatgpt-pricing/">ChatGPT Business pricing</a></li>
+        <li><a href="https://help.openai.com/en/articles/11487671-flexible-pricing-for-chatgpt-enterprise-plans">Flexible pricing for Business / Enterprise / Edu</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
