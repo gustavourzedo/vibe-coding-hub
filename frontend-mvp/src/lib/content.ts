@@ -80,7 +80,7 @@ export const executiveStats = [
   { label: "Paginas canonicas", value: "30", tone: "info" },
   { label: "Shell Next", value: "Ativo", tone: "good" },
   { label: "Busca IA", value: "llms + JSON", tone: "info" },
-  { label: "Conteudo", value: "Legado vivo", tone: "warning" },
+  { label: "Conteudo", value: "Atualizado Mai/26", tone: "good" },
 ] as const;
 
 export const primaryGroups: HubGroup[] = [
