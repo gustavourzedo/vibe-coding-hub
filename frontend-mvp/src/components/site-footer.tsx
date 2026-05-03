@@ -40,6 +40,7 @@ export function SiteFooter() {
               <p className="font-mono text-[0.7rem] uppercase text-[var(--accent)]">Recursos</p>
               <div className="mt-3 grid gap-2">
                 <FooterLink href="/harnesses">IDEs e Harnesses</FooterLink>
+                <FooterLink href="/mcp-skills-plugins">MCPs, Skills, Plugins</FooterLink>
                 <FooterLink href="/ai-better-prompts">Better Prompts</FooterLink>
                 <FooterLink href="/ai-index">AI Index</FooterLink>
               </div>

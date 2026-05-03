@@ -231,7 +231,7 @@
       <div class="grid-3" style="margin-top: 18px;">
         <div class="meta">
           <strong>Ultima compilacao</strong>
-          <div>27/04/2026 (telemetria ativa validada)</div>
+          <div>03/05/2026 (telemetria ativa validada)</div>
         </div>
         <div class="meta">
           <strong>Status no estudo</strong>
@@ -262,13 +262,8 @@
         </div>
       </div>
 
-      <div class="warnout">
-        <strong>Leitura certa do "3x usage" do Kimi K2.6:</strong> a docs base do Go continuam publicando
-        <code>1.150</code> requests por 5h para <code>Kimi K2.6</code>. Ja a landing oficial em portugues
-        mostrava, em <strong>26 de abril de 2026</strong>, a faixa promocional
-        <code>"limite de uso 3x maior ate 27 de abril"</code> e o grafico com
-        <code>3.450 Kimi K2.6 (3x usage)</code>. Entao o numero oficial mais seguro e:
-        base contratual = <code>1.150/5h</code>, promo vigente = <code>3.450/5h</code>.
+      <div class="callout">
+        <strong>Status da promo 3x do Kimi K2.6:</strong> a promocao "limite de uso 3x maior ate 27 de abril" <strong>expirou</strong> em 27/04/2026. O preco e os limites atuais do Kimi K2.6 seguem a base contratual padrao, sem multiplicador promocional vigente.
       </div>
     </section>
 
@@ -358,47 +353,14 @@
     </section>
 
     <section class="card">
-      <h2>Promo atual do Kimi K2.6</h2>
+      <h2>Promo do Kimi K2.6 - Expirada</h2>
       <p>
-        A landing oficial em portugues do Go mostra a mensagem
-        <code>Novo Kimi K2.6: limite de uso 3x maior ate 27 de abril</code> e, no grafico visual,
-        publica o numero <code>3.450 Kimi K2.6 (3x usage)</code>.
+        A promocao "limite de uso 3x maior" do Kimi K2.6 encerrou em 27/04/2026. O preco e os limites
+        atuais seguem a base contratual padrao. Abaixo, o historico da promo para referencia.
       </p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Cenario</th>
-              <th>Requests por 5h</th>
-              <th>Requests por semana</th>
-              <th>Requests por mes</th>
-              <th>Leitura</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Base docs</td>
-              <td>1.150</td>
-              <td>2.880</td>
-              <td>5.750</td>
-              <td>Base contratual mais segura para o hub.</td>
-            </tr>
-            <tr>
-              <td>Promo 3x no site</td>
-              <td>3.450</td>
-              <td>~8.640</td>
-              <td>~17.250</td>
-              <td>Semana e mes aqui sao extrapolacao analitica do multiplicador 3x; o site deixa explicito o 5h, nao as outras janelas.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <div class="warnout">
-        <strong>Resposta direta para sua duvida:</strong> esse <code>3x</code> permite usar
-        <code>3.450 requests em 5h</code> de <code>Kimi K2.6</code> enquanto a promo estiver ativa.
-        Se o multiplicador valer linearmente nas demais janelas, a leitura analitica fica em torno de
-        <code>8.640/semana</code> e <code>17.250/mes</code>, mas isso eu trataria como
-        <strong>estimativa de estudo</strong>, nao como garantia contratual.
+        <strong>Promo expirada em 27/04/2026.</strong> Utilize agora a base contratual padrao:
+        <code>1.150 requests/5h</code> para <code>Kimi K2.6</code>, sem multiplicador promocional.
       </div>
     </section>
 
@@ -420,21 +382,25 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Big Pickle</td><td>200</td><td>500</td><td>1.000</td><td>Faixa gratuita/base simples.</td></tr>
-            <tr><td>GLM-5.1</td><td>880</td><td>2.200</td><td>4.400</td><td>Modelo mais caro no pool entre os low-cost fortes.</td></tr>
-            <tr><td>Kimi K2.6</td><td>1.150</td><td>2.880</td><td>5.750</td><td>Base docs; promo atual mostra 3.450 por 5h.</td></tr>
-            <tr><td>MiMo-V2.5-Pro</td><td>1.290</td><td>3.225</td><td>6.450</td><td>MiMo premium dentro do pool.</td></tr>
-            <tr><td>DeepSeek V4 Pro</td><td>1.300</td><td>3.250</td><td>6.500</td><td>Melhor para tasks pesadas do que o Flash, com custo maior.</td></tr>
-            <tr><td>Qwen3.6 Plus</td><td>3.300</td><td>8.250</td><td>16.500</td><td>Boa folga para daily driver barato.</td></tr>
-            <tr><td>MiniMax M2.7</td><td>3.400</td><td>8.500</td><td>17.000</td><td>Faixa muito boa de volume.</td></tr>
-            <tr><td>DeepSeek V4 Flash</td><td>7.450</td><td>18.625</td><td>37.250</td><td>Modelo de altissima folga dentro do Go.</td></tr>
-            <tr><td>Qwen3.5 Plus</td><td>10.200</td><td>25.500</td><td>51.000</td><td>Maior rendimento volumetrico listado na landing atual.</td></tr>
+            <tr><td>GLM-5 (Zhipu)</td><td>-</td><td>-</td><td>-</td><td>Modelo Zhipu de custo moderado.</td></tr>
+            <tr><td>GLM-5.1 (Zhipu)</td><td>880</td><td>2.200</td><td>4.400</td><td>Modelo mais caro no pool entre os low-cost fortes.</td></tr>
+            <tr><td>Kimi K2.5 (Moonshot)</td><td>-</td><td>-</td><td>-</td><td>Versao anterior do Kimi.</td></tr>
+            <tr><td>Kimi K2.6 (Moonshot)</td><td>1.150</td><td>2.880</td><td>5.750</td><td>Base docs; promocao 3x expirou em 27/04.</td></tr>
+            <tr><td>MiMo-V2-Pro (Xiaomi)</td><td>-</td><td>-</td><td>-</td><td>MiMo premium da versao anterior.</td></tr>
+            <tr><td>MiMo-V2-Omni (Xiaomi)</td><td>-</td><td>-</td><td>-</td><td>MiMo multimodal.</td></tr>
+            <tr><td>MiMo-V2.5-Pro (Xiaomi)</td><td>1.290</td><td>3.225</td><td>6.450</td><td>MiMo premium dentro do pool.</td></tr>
+            <tr><td>MiMo-V2.5 (Xiaomi)</td><td>-</td><td>-</td><td>-</td><td>MiMo base da versao atual.</td></tr>
+            <tr><td>MiniMax M2.5 (MiniMax)</td><td>-</td><td>-</td><td>-</td><td>Versao anterior do MiniMax.</td></tr>
+            <tr><td>MiniMax M2.7 (MiniMax)</td><td>3.400</td><td>8.500</td><td>17.000</td><td>Faixa muito boa de volume.</td></tr>
+            <tr><td>Qwen3.5 Plus (Alibaba)</td><td>10.200</td><td>25.500</td><td>51.000</td><td>Maior rendimento volumetrico listado.</td></tr>
+            <tr><td>Qwen3.6 Plus (Alibaba)</td><td>3.300</td><td>8.250</td><td>16.500</td><td>Boa folga para daily driver barato.</td></tr>
+            <tr><td>DeepSeek V4 Pro (DeepSeek)</td><td>1.300</td><td>3.250</td><td>6.500</td><td>Melhor para tasks pesadas do que o Flash.</td></tr>
+            <tr><td>DeepSeek V4 Flash (DeepSeek)</td><td>7.450</td><td>18.625</td><td>37.250</td><td>Modelo de altissima folga dentro do Go.</td></tr>
           </tbody>
         </table>
       </div>
       <p class="small">
-        Nota: esta tabela combina a docs oficial do Go com a landing oficial em portugues, que explicita
-        alguns modelos de forma mais visual do que a docs.
+        Nota: esta tabela reflete os 14 modelos disponiveis no Go conforme a landing e docs atuais.
       </p>
     </section>
 
@@ -485,7 +451,7 @@
           <ul>
             <li>Verificar se o preco promocional de entrada mudou.</li>
             <li>Verificar se os tetos de 5h, semana e mes continuam em US$ 12 / 30 / 60.</li>
-            <li>Verificar se a promo do Kimi K2.6 expirou ou virou quota permanente.</li>
+            <li>Promo do Kimi K2.6 expirou em 27/04/2026. Verificar se novas promos surgiram.</li>
             <li>Verificar se a lista de modelos e os request counts foram alterados.</li>
             <li>Atualizar a data de compilacao desta pagina no mesmo commit da mudanca.</li>
           </ul>

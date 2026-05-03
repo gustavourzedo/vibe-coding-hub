@@ -1,0 +1,1659 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Vibe Coding Hub" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e9]: Vibe Coding Hub
+      - navigation [ref=e10]:
+        - link "Inicio" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - link "Ranking" [ref=e12] [cursor=pointer]:
+          - /url: /ranking
+        - link "Benchmarks" [ref=e13] [cursor=pointer]:
+          - /url: /benchmarks
+        - link "IDEs e Agentes" [ref=e14] [cursor=pointer]:
+          - /url: /harnesses
+        - link "Telemetria" [ref=e15] [cursor=pointer]:
+          - /url: /telemetria
+        - link "Prompts" [ref=e16] [cursor=pointer]:
+          - /url: /ai-better-prompts
+        - link "Para IA" [ref=e17] [cursor=pointer]:
+          - /url: /ai-index
+      - generic [ref=e18]:
+        - button "Abrir busca rapida (Ctrl+K)" [ref=e19]:
+          - img [ref=e20]
+          - generic [ref=e23]: Buscar...
+          - generic [ref=e24]: Ctrl+K
+        - link "Abrir AI Index" [ref=e25] [cursor=pointer]:
+          - /url: /ai-index
+          - img [ref=e26]
+  - main [ref=e30]:
+    - navigation "Breadcrumbs" [ref=e31]:
+      - link "Hub" [ref=e33] [cursor=pointer]:
+        - /url: /
+        - img [ref=e34]
+        - text: Hub
+      - generic [ref=e37]:
+        - img [ref=e38]
+        - generic [ref=e40]: Benchmark
+      - generic [ref=e41]:
+        - img [ref=e42]
+        - generic [ref=e44]: Benchmark de Capacidade dos Modelos - Hub de Agentes
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: Benchmarks
+        - heading "Benchmark de capacidade dos modelos." [level=1] [ref=e48]
+        - paragraph [ref=e49]: Comparacao tecnica baseada em avaliacoes publicas, arena code, SWE-bench e uso real de campo. Foco em coding pesado.
+      - generic [ref=e50]:
+        - generic [ref=e51]: Caminho rapido
+        - generic [ref=e52]: Ranking para decidir.
+        - generic [ref=e53]: Benchmarks para comparar.
+        - generic [ref=e54]: AI Index para orientar agentes.
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - link "Home" [ref=e58] [cursor=pointer]:
+          - /url: /
+          - img [ref=e59]
+          - text: Home
+        - link "Buscar" [ref=e62] [cursor=pointer]:
+          - /url: /#search
+          - img [ref=e63]
+          - text: Buscar
+        - link "AI Index" [ref=e66] [cursor=pointer]:
+          - /url: /ai-index
+          - img [ref=e67]
+          - text: AI Index
+      - generic [ref=e70]:
+        - generic [ref=e71]: Relacionados
+        - link "Fichas Benchmark dos Modelos - Hub de Agentes" [ref=e72] [cursor=pointer]:
+          - /url: /benchmark-modelos
+        - link "Vibe Coding Hub" [ref=e73] [cursor=pointer]:
+          - /url: /
+        - link "Ranking Consolidado" [ref=e74] [cursor=pointer]:
+          - /url: /ranking
+        - link "Estrategias de Assinatura" [ref=e75] [cursor=pointer]:
+          - /url: /estrategias
+      - link "Voltar para a pagina inicial" [ref=e76] [cursor=pointer]:
+        - /url: /
+        - img [ref=e77]
+        - text: Voltar para a pagina inicial
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - img [ref=e82]
+        - generic [ref=e84]:
+          - heading "Modelos rastreados" [level=2] [ref=e85]
+          - paragraph [ref=e86]: Os modelos mais relevantes para vibe coding pesado.
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - heading "GLM-5.1" [level=3] [ref=e91]
+              - paragraph [ref=e92]: GLM
+            - generic [ref=e93]: frontier
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - paragraph [ref=e96]: Contexto
+              - paragraph [ref=e97]: 1M
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: Coding
+              - paragraph [ref=e100]: SWE-bench ~72%
+            - generic [ref=e101]:
+              - paragraph [ref=e102]: Notas
+              - paragraph [ref=e103]: Motor principal do hub
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - heading "MiMo-V2.5-Pro" [level=3] [ref=e107]
+              - paragraph [ref=e108]: Xiaomi
+            - generic [ref=e109]: frontier
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - paragraph [ref=e112]: Contexto
+              - paragraph [ref=e113]: 128K
+            - generic [ref=e114]:
+              - paragraph [ref=e115]: Coding
+              - paragraph [ref=e116]: MiMo-7B benchmarks oficiais
+            - generic [ref=e117]:
+              - paragraph [ref=e118]: Notas
+              - paragraph [ref=e119]: Pro com 2 credits/token
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - heading "Claude Opus 4.7" [level=3] [ref=e123]
+              - paragraph [ref=e124]: Anthropic
+            - generic [ref=e125]: frontier
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - paragraph [ref=e128]: Contexto
+              - paragraph [ref=e129]: 200K
+            - generic [ref=e130]:
+              - paragraph [ref=e131]: Coding
+              - paragraph [ref=e132]: SWE-bench ~79%
+            - generic [ref=e133]:
+              - paragraph [ref=e134]: Notas
+              - paragraph [ref=e135]: Referencia premium
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - heading "GPT-5.5" [level=3] [ref=e139]
+              - paragraph [ref=e140]: OpenAI
+            - generic [ref=e141]: frontier
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - paragraph [ref=e144]: Contexto
+              - paragraph [ref=e145]: 256K
+            - generic [ref=e146]:
+              - paragraph [ref=e147]: Coding
+              - paragraph [ref=e148]: Arena Code top-5
+            - generic [ref=e149]:
+              - paragraph [ref=e150]: Notas
+              - paragraph [ref=e151]: Codex desktop incluido
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - heading "Gemini 3 Pro" [level=3] [ref=e155]
+              - paragraph [ref=e156]: Google
+            - generic [ref=e157]: frontier
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - paragraph [ref=e160]: Contexto
+              - paragraph [ref=e161]: 1M+
+            - generic [ref=e162]:
+              - paragraph [ref=e163]: Coding
+              - paragraph [ref=e164]: MMLU/GPQA forte
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: Notas
+              - paragraph [ref=e167]: CLI + Code Assist
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - heading "qwen3.6-plus" [level=3] [ref=e171]
+              - paragraph [ref=e172]: Alibaba
+            - generic [ref=e173]: strong
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - paragraph [ref=e176]: Contexto
+              - paragraph [ref=e177]: 1M
+            - generic [ref=e178]:
+              - paragraph [ref=e179]: Coding
+              - paragraph [ref=e180]: ~82-90% Opus
+            - generic [ref=e181]:
+              - paragraph [ref=e182]: Notas
+              - paragraph [ref=e183]: Capacidade alta, custo medio
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - heading "Kimi K2.6" [level=3] [ref=e187]
+              - paragraph [ref=e188]: Moonshot
+            - generic [ref=e189]: strong
+          - generic [ref=e190]:
+            - generic [ref=e191]:
+              - paragraph [ref=e192]: Contexto
+              - paragraph [ref=e193]: 128K
+            - generic [ref=e194]:
+              - paragraph [ref=e195]: Coding
+              - paragraph [ref=e196]: Arena Code forte
+            - generic [ref=e197]:
+              - paragraph [ref=e198]: Notas
+              - paragraph [ref=e199]: Stack Kimi Code
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - heading "DeepSeek V4" [level=3] [ref=e203]
+              - paragraph [ref=e204]: DeepSeek
+            - generic [ref=e205]: strong
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - paragraph [ref=e208]: Contexto
+              - paragraph [ref=e209]: 128K
+            - generic [ref=e210]:
+              - paragraph [ref=e211]: Coding
+              - paragraph [ref=e212]: SWE-bench competitivo
+            - generic [ref=e213]:
+              - paragraph [ref=e214]: Notas
+              - paragraph [ref=e215]: Open-weight forte
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e218]:
+              - heading "MiniMax M2.7" [level=3] [ref=e219]
+              - paragraph [ref=e220]: MiniMax
+            - generic [ref=e221]: mid
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - paragraph [ref=e224]: Contexto
+              - paragraph [ref=e225]: 256K
+            - generic [ref=e226]:
+              - paragraph [ref=e227]: Coding
+              - paragraph [ref=e228]: Arena mid-range
+            - generic [ref=e229]:
+              - paragraph [ref=e230]: Notas
+              - paragraph [ref=e231]: Throughput alto
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - heading "SWE-1.6" [level=3] [ref=e235]
+              - paragraph [ref=e236]: Windsurf
+            - generic [ref=e237]: mid
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - paragraph [ref=e240]: Contexto
+              - paragraph [ref=e241]: 128K
+            - generic [ref=e242]:
+              - paragraph [ref=e243]: Coding
+              - paragraph [ref=e244]: Proprietario
+            - generic [ref=e245]:
+              - paragraph [ref=e246]: Notas
+              - paragraph [ref=e247]: IDE Windsurf
+    - generic [ref=e248]:
+      - generic [ref=e249]:
+        - heading "Conteudo editorial completo" [level=2] [ref=e250]
+        - generic [ref=e251]: legado preservado
+      - article [ref=e252]:
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - heading "Benchmark de Capacidade dos Modelos" [level=1] [ref=e255]
+            - paragraph [ref=e256]:
+              - text: Pagina dedicada a olhar
+              - strong [ref=e257]: modelo por modelo
+              - text: ", separando benchmark tecnico de assinatura. A ideia aqui e facilitar a compra mental: primeiro entendemos"
+              - strong [ref=e258]: quem e forte em que
+              - text: ", depois cruzamos isso com"
+              - strong [ref=e259]: contexto
+              - text: ","
+              - strong [ref=e260]: preco de API
+              - text: e
+              - strong [ref=e261]: maturidade pratica
+              - text: .
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - strong [ref=e264]: Ultima compilacao
+                - generic [ref=e265]: 29/04/2026 12:20
+              - generic [ref=e266]:
+                - strong [ref=e267]: Base desta rodada
+                - generic [ref=e268]: DeepSeek X + OpenAI + Anthropic + Z.ai + Google + Moonshot + Xiaomi MiMo Platform
+              - generic [ref=e269]:
+                - strong [ref=e270]: Uso correto desta pagina
+                - generic [ref=e271]: Comparar capacidade tecnica; nao substituir a analise de assinatura
+              - generic [ref=e272]:
+                - strong [ref=e273]: Ponto de atencao
+                - generic [ref=e274]: Benchmark de fornecedor e comparacao de effort nao sao verdade absoluta
+            - generic [ref=e275]:
+              - link "Primeira leitura Matriz numerica central So os modelos com comparabilidade mais seria." [ref=e276] [cursor=pointer]:
+                - /url: "#matriz-central"
+                - text: Primeira leitura
+                - strong [ref=e277]: Matriz numerica central
+                - generic [ref=e278]: So os modelos com comparabilidade mais seria.
+              - link "Cobertura total Catalogo completo do estudo Todos os modelos relevantes citados nas paginas do hub." [ref=e279] [cursor=pointer]:
+                - /url: "#catalogo-completo"
+                - text: Cobertura total
+                - strong [ref=e280]: Catalogo completo do estudo
+                - generic [ref=e281]: Todos os modelos relevantes citados nas paginas do hub.
+              - link "Por modelo Fichas benchmark dos modelos Abrir uma pagina dedicada com fontes e benchmark de cada coluna da matriz." [ref=e282] [cursor=pointer]:
+                - /url: /benchmark-modelos
+                - text: Por modelo
+                - strong [ref=e283]: Fichas benchmark dos modelos
+                - generic [ref=e284]: Abrir uma pagina dedicada com fontes e benchmark de cada coluna da matriz.
+              - link "Arena Code Arena operacional Como usar o leaderboard do Arena dentro do metodo do hub." [ref=e285] [cursor=pointer]:
+                - /url: /arena-code
+                - text: Arena
+                - strong [ref=e286]: Code Arena operacional
+                - generic [ref=e287]: Como usar o leaderboard do Arena dentro do metodo do hub.
+              - link "Campo Reviews da comunidade O que users tecnicos estao relatando sobre consumo, UX, IDEs e planos alem dos benchmarks." [ref=e288] [cursor=pointer]:
+                - /url: /reviews-comunidade
+                - text: Campo
+                - strong [ref=e289]: Reviews da comunidade
+                - generic [ref=e290]: O que users tecnicos estao relatando sobre consumo, UX, IDEs e planos alem dos benchmarks.
+              - link "Leitura rapida Painel de compra mental Qual modelo tende a brilhar em cada tese." [ref=e291] [cursor=pointer]:
+                - /url: "#compra-mental"
+                - text: Leitura rapida
+                - strong [ref=e292]: Painel de compra mental
+                - generic [ref=e293]: Qual modelo tende a brilhar em cada tese.
+              - link "Manutencao Fontes e revalidacao Links oficiais para atualizar a pagina depois." [ref=e294] [cursor=pointer]:
+                - /url: "#fontes-futuras"
+                - text: Manutencao
+                - strong [ref=e295]: Fontes e revalidacao
+                - generic [ref=e296]: Links oficiais para atualizar a pagina depois.
+            - generic [ref=e297]:
+              - strong [ref=e298]: "Como ler com honestidade:"
+              - text: esta pagina agora mistura um comparativo publico da DeepSeek com tabelas oficiais da OpenAI, Anthropic, Z.ai, Google e Moonshot. Isso melhora a cobertura dos modelos centrais do hub, mas alguns numeros ainda nao sao 100% comparaveis porque nem todos os labs publicam exatamente os mesmos benchmarks, com o mesmo harness e o mesmo effort.
+          - generic [ref=e299]:
+            - heading "Leitura Rapida" [level=2] [ref=e300]
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - strong [ref=e303]: Melhor leitura para long context
+                - generic [ref=e304]: Opus 4.6
+                - paragraph [ref=e305]: Continua sendo a ancora premium mais clara para contexto longo e consistencia pesada.
+              - generic [ref=e306]:
+                - strong [ref=e307]: Melhor leitura para terminal / agentic
+                - generic [ref=e308]: GPT-5.5
+                - paragraph [ref=e309]: "Na pagina oficial da OpenAI, ele sobe para `82.7` em `Terminal-Bench 2.0` e `84.4` em `BrowseComp`."
+              - generic [ref=e310]:
+                - strong [ref=e311]: Modelo mais interessante para vigiar
+                - generic [ref=e312]: DeepSeek V4 Pro Max
+                - paragraph [ref=e313]: Aparece muito forte no benchmark, mas ainda sem API V4 oficial clara na documentacao da DeepSeek.
+              - generic [ref=e314]:
+                - strong [ref=e315]: Nova familia para vigiar
+                - generic [ref=e316]: Xiaomi MiMo
+                - paragraph [ref=e317]: Ja saiu do campo de curiosidade. A Xiaomi agora tem family marketing, token plans e benchmark oficial forte o bastante para entrar no radar do hub.
+          - generic [ref=e318]:
+            - heading "Cobertura de Modelos Nesta Pagina" [level=2] [ref=e319]
+            - generic [ref=e320]:
+              - generic [ref=e321]:
+                - strong [ref=e322]: Claude
+                - generic [ref=e323]: Opus 4.6 e Opus 4.7
+              - generic [ref=e324]:
+                - strong [ref=e325]: OpenAI
+                - generic [ref=e326]: GPT-5.4 e GPT-5.5
+              - generic [ref=e327]:
+                - strong [ref=e328]: Z.ai / GLM
+                - generic [ref=e329]: GLM-5.1 Thinking
+              - generic [ref=e330]:
+                - strong [ref=e331]: Moonshot / Kimi
+                - generic [ref=e332]: K2.6 Thinking
+              - generic [ref=e333]:
+                - strong [ref=e334]: Google
+                - generic [ref=e335]: Gemini-3.1-Pro High
+              - generic [ref=e336]:
+                - strong [ref=e337]: DeepSeek
+                - generic [ref=e338]: DS-V4-Pro Max e DS-V4-Flash Max
+              - generic [ref=e339]:
+                - strong [ref=e340]: Xiaomi MiMo
+                - generic [ref=e341]: MiMo-V2-Flash auditado; V2.5-Pro em observacao forte
+              - generic [ref=e342]:
+                - strong [ref=e343]: Tipo de evidencia
+                - generic [ref=e344]: Oficial quando possivel; comparativo publico quando necessario
+              - generic [ref=e345]:
+                - strong [ref=e346]: Cobertura central
+                - generic [ref=e347]: 10 modelos na matriz numerica comparavel
+              - generic [ref=e348]:
+                - strong [ref=e349]: Cobertura total do estudo
+                - generic [ref=e350]: 33 modelos catalogados na camada estendida
+              - generic [ref=e351]:
+                - strong [ref=e352]: Objetivo
+                - generic [ref=e353]: Entender o papel tecnico de cada modelo antes da assinatura
+          - generic [ref=e354]:
+            - 'heading "Entrada nova: Xiaomi MiMo" [level=2] [ref=e355]'
+            - paragraph [ref=e356]: "`MiMo` passou a merecer lugar nesta pagina por dois motivos: a Xiaomi ja posiciona oficialmente a familia como `agentic`, `long-horizon` e integrada a harnesses relevantes, e o card oficial de `MiMo-V2-Flash` no Hugging Face ja traz benchmark suficiente para nao tratar mais a marca como puro rumor."
+            - table [ref=e357]:
+              - rowgroup [ref=e358]:
+                - row "Camada Estado atual no hub Leitura pratica" [ref=e359]:
+                  - columnheader "Camada" [ref=e360]
+                  - columnheader "Estado atual no hub" [ref=e361]
+                  - columnheader "Leitura pratica" [ref=e362]
+              - rowgroup [ref=e363]:
+                - row "MiMo-V2-Flash Benchmark auditavel Ja da para usar como referencia tecnica oficial da familia MiMo." [ref=e364]:
+                  - cell "MiMo-V2-Flash" [ref=e365]
+                  - cell "Benchmark auditavel" [ref=e366]:
+                    - strong [ref=e367]: Benchmark auditavel
+                  - cell "Ja da para usar como referencia tecnica oficial da familia MiMo." [ref=e368]
+                - 'row "MiMo-V2.5-Pro (27/04) Agentic + token efficiency Claw-Eval Pass^3 ~64% com ~70K tok/traj (40-60% menos que Opus 4.6). Coding Bench fechando gap Opus 4.6. Agentic tasks: SysY compiler (672 calls, 4.3h), Video Editor (1.868 calls, 11.5h)." [ref=e369]':
+                  - cell "MiMo-V2.5-Pro (27/04)" [ref=e370]
+                  - cell "Agentic + token efficiency" [ref=e371]:
+                    - strong [ref=e372]: Agentic + token efficiency
+                  - 'cell "Claw-Eval Pass^3 ~64% com ~70K tok/traj (40-60% menos que Opus 4.6). Coding Bench fechando gap Opus 4.6. Agentic tasks: SysY compiler (672 calls, 4.3h), Video Editor (1.868 calls, 11.5h)." [ref=e373]'
+                - row "MiMo Token Plans Comercial em maturacao Agora ja ha docs oficiais de pricing, tiers, rounds mensais e integracao com Zed/OpenCode. O ponto em observacao deixou de ser falta de doc e passou a ser comportamento de campo." [ref=e374]:
+                  - cell "MiMo Token Plans" [ref=e375]
+                  - cell "Comercial em maturacao" [ref=e376]:
+                    - strong [ref=e377]: Comercial em maturacao
+                  - cell "Agora ja ha docs oficiais de pricing, tiers, rounds mensais e integracao com Zed/OpenCode. O ponto em observacao deixou de ser falta de doc e passou a ser comportamento de campo." [ref=e378]
+            - generic [ref=e379]:
+              - strong [ref=e380]: "Leitura certa (atualizado 29/04):"
+              - text: "`MiMo-V2.5-Pro` (27/04) sobe no benchmark e no model watch com Claw-Eval ~64% Pass^3, 40-60% menos tokens que Opus 4.6. Como a plataforma oficial agora documenta tiers, rounds e integracoes, a pergunta principal mudou: nao e mais \"sera que existe produto serio?\", e sim \"o consumo real de campo confirma a tese de volume?\"."
+          - generic [ref=e381]:
+            - 'heading "Matriz de campo: desempenho x consumo agentico" [level=2] [ref=e382]'
+            - paragraph [ref=e383]:
+              - text: "Esta matriz junta o que faltava ao benchmark numerico:"
+              - strong [ref=e384]: relatos de consumo em tarefas agenticas
+              - text: . Ela mistura docs oficiais, Reddit, X e os videos desta rodada. O objetivo nao e fingir precisao matematica, e sim orientar decisao real de assinatura.
+            - table [ref=e385]:
+              - rowgroup [ref=e386]:
+                - row "Modelo Desempenho agentico percebido Consumo percebido Leitura do hub Evidencia principal" [ref=e387]:
+                  - columnheader "Modelo" [ref=e388]
+                  - columnheader "Desempenho agentico percebido" [ref=e389]
+                  - columnheader "Consumo percebido" [ref=e390]
+                  - columnheader "Leitura do hub" [ref=e391]
+                  - columnheader "Evidencia principal" [ref=e392]
+              - rowgroup [ref=e393]:
+                - row "GLM-5.1 Forte em planejamento, repo reading e coding pesado. Alto em sessoes longas com tools e contexto inflado. Camada de precisao; ruim para carregar o volume inteiro sozinho. Seu uso real + Reddit + docs GLM." [ref=e394]:
+                  - cell "GLM-5.1" [ref=e395]:
+                    - strong [ref=e396]: GLM-5.1
+                  - cell "Forte em planejamento, repo reading e coding pesado." [ref=e397]
+                  - cell "Alto em sessoes longas com tools e contexto inflado." [ref=e398]
+                  - cell "Camada de precisao; ruim para carregar o volume inteiro sozinho." [ref=e399]
+                  - cell "Seu uso real + Reddit + docs GLM." [ref=e400]
+                - row "K2.6 Thinking Muito forte para tools, mass edits e coding longo. Medio-alto; output e caro e ha relatos de burn pesado em algumas rotas. Open contender forte, menos sedutor como compra economica. Reddit/X + docs Kimi Code." [ref=e401]:
+                  - cell "K2.6 Thinking" [ref=e402]:
+                    - strong [ref=e403]: K2.6 Thinking
+                  - cell "Muito forte para tools, mass edits e coding longo." [ref=e404]
+                  - cell "Medio-alto; output e caro e ha relatos de burn pesado em algumas rotas." [ref=e405]
+                  - cell "Open contender forte, menos sedutor como compra economica." [ref=e406]
+                  - cell "Reddit/X + docs Kimi Code." [ref=e407]
+                - row "MiMo-V2.5-Pro Muito forte em coding longo e tarefas multimodais/agenticas nas demos oficiais. Medio; docs oficiais prometem 40-60% menos tokens/trajetoria em Claw-Eval e a comunidade ve sinais promissores. Melhor nova camada de volume premium. MiMo docs + benchmark page + videos + comunidade." [ref=e408]:
+                  - cell "MiMo-V2.5-Pro" [ref=e409]:
+                    - strong [ref=e410]: MiMo-V2.5-Pro
+                  - cell "Muito forte em coding longo e tarefas multimodais/agenticas nas demos oficiais." [ref=e411]
+                  - cell "Medio; docs oficiais prometem 40-60% menos tokens/trajetoria em Claw-Eval e a comunidade ve sinais promissores." [ref=e412]
+                  - cell "Melhor nova camada de volume premium." [ref=e413]
+                  - cell "MiMo docs + benchmark page + videos + comunidade." [ref=e414]
+                - 'row "MiMo-V2.5 Surpreendentemente forte para o tier base da familia. Baixo a medio dentro da familia, por usar 1x credit/token. Ponto doce potencial do stack MiMo. Entrou forte porque comparativos de campo o colocam perto demais de `DeepSeek V4 Pro` para ignorar. Docs MiMo + videos + relatos tecnicos." [ref=e415]':
+                  - cell "MiMo-V2.5" [ref=e416]:
+                    - strong [ref=e417]: MiMo-V2.5
+                  - cell "Surpreendentemente forte para o tier base da familia." [ref=e418]
+                  - cell "Baixo a medio dentro da familia, por usar 1x credit/token." [ref=e419]
+                  - 'cell "Ponto doce potencial do stack MiMo. Entrou forte porque comparativos de campo o colocam perto demais de `DeepSeek V4 Pro` para ignorar." [ref=e420]'
+                  - cell "Docs MiMo + videos + relatos tecnicos." [ref=e421]
+                - row "Qwen 3.6 Bom para loops rapidos, exploracao e coding barato. Baixo a medio, mas alguns relatos dizem que ele fala demais com tools e reasoning. Camada de throughput e exploracao; nao o frontier premium desta lista. Reddit/X + disponibilidade real em stacks agregadas." [ref=e422]:
+                  - cell "Qwen 3.6" [ref=e423]:
+                    - strong [ref=e424]: Qwen 3.6
+                  - cell "Bom para loops rapidos, exploracao e coding barato." [ref=e425]
+                  - cell "Baixo a medio, mas alguns relatos dizem que ele fala demais com tools e reasoning." [ref=e426]
+                  - cell "Camada de throughput e exploracao; nao o frontier premium desta lista." [ref=e427]
+                  - cell "Reddit/X + disponibilidade real em stacks agregadas." [ref=e428]
+                - row "DeepSeek V4 Bom o bastante para muito trabalho util e muito forte em benchmark. Baixo em custo bruto; comunidade insiste muito no valor por loop. Melhor workhorse barato; menos seguro como stack premium unica. Reddit/X + benchmark publico." [ref=e429]:
+                  - cell "DeepSeek V4" [ref=e430]:
+                    - strong [ref=e431]: DeepSeek V4
+                  - cell "Bom o bastante para muito trabalho util e muito forte em benchmark." [ref=e432]
+                  - cell "Baixo em custo bruto; comunidade insiste muito no valor por loop." [ref=e433]
+                  - cell "Melhor workhorse barato; menos seguro como stack premium unica." [ref=e434]
+                  - cell "Reddit/X + benchmark publico." [ref=e435]
+            - paragraph [ref=e436]:
+              - text: "Videos desta rodada:"
+              - 'link "MiMo 2.5 PRO Tested: Is It Intelligent?" [ref=e437] [cursor=pointer]':
+                - /url: https://www.youtube.com/watch?v=TOOfrn-kR74
+              - text: ","
+              - link "Xiaomi MiMo V2.5 Pro Full Test" [ref=e438] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=5JhSI_GTdi0
+              - text: e
+              - link "MiMo 2.5 Pro vs GLM 5.1 vs Qwen 3.6 vs DeepSeek V4 vs Kimi K2.6" [ref=e439] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=K6t2We1ma0A
+              - text: .
+            - paragraph [ref=e440]:
+              - text: Leitura expandida em
+              - link "/evidencia-campo" [ref=e441] [cursor=pointer]:
+                - /url: /evidencia-campo
+              - text: .
+          - generic [ref=e442]:
+            - heading "Painel de Compra Mental" [level=2] [ref=e443]
+            - paragraph [ref=e444]:
+              - text: "Esta camada resume o papel natural de cada modelo quando a pergunta e:"
+              - strong [ref=e445]: quem parece mais forte tecnicamente
+              - text: ", antes de misturar isso com assinatura, UX, quota ou integracao."
+            - table [ref=e446]:
+              - rowgroup [ref=e447]:
+                - row "Modelo Leitura curta Forca dominante Risco principal Custo de API" [ref=e448]:
+                  - columnheader "Modelo" [ref=e449]
+                  - columnheader "Leitura curta" [ref=e450]
+                  - columnheader "Forca dominante" [ref=e451]
+                  - columnheader "Risco principal" [ref=e452]
+                  - columnheader "Custo de API" [ref=e453]
+              - rowgroup [ref=e454]:
+                - row "Opus-4.6 Max Referencia premium para comparar tudo. Long context Preco alto US$ 5 input / US$ 25 output" [ref=e455]:
+                  - cell "Opus-4.6 Max" [ref=e456]:
+                    - strong [ref=e457]: Opus-4.6 Max
+                  - cell "Referencia premium para comparar tudo." [ref=e458]
+                  - cell "Long context" [ref=e459]
+                  - cell "Preco alto" [ref=e460]
+                  - cell "US$ 5 input / US$ 25 output" [ref=e461]
+                - row "Opus-4.7 Subida relevante em engenharia sobre o 4.6. Software engineering Preco alto US$ 5 input / US$ 25 output" [ref=e462]:
+                  - cell "Opus-4.7" [ref=e463]:
+                    - strong [ref=e464]: Opus-4.7
+                  - cell "Subida relevante em engenharia sobre o 4.6." [ref=e465]
+                  - cell "Software engineering" [ref=e466]
+                  - cell "Preco alto" [ref=e467]
+                  - cell "US$ 5 input / US$ 25 output" [ref=e468]
+                - row "GPT-5.4 xHigh Melhor cara de agente ferramental premium. Terminal + tools Assinatura pouco legivel US$ 2.50 input / US$ 15 output" [ref=e469]:
+                  - cell "GPT-5.4 xHigh" [ref=e470]:
+                    - strong [ref=e471]: GPT-5.4 xHigh
+                  - cell "Melhor cara de agente ferramental premium." [ref=e472]
+                  - cell "Terminal + tools" [ref=e473]
+                  - cell "Assinatura pouco legivel" [ref=e474]
+                  - cell "US$ 2.50 input / US$ 15 output" [ref=e475]
+                - row "GPT-5.5 Agente ferramental mais forte desta rodada. Terminal + browse Preco premium US$ 5 input / US$ 30 output" [ref=e476]:
+                  - cell "GPT-5.5" [ref=e477]:
+                    - strong [ref=e478]: GPT-5.5
+                  - cell "Agente ferramental mais forte desta rodada." [ref=e479]
+                  - cell "Terminal + browse" [ref=e480]
+                  - cell "Preco premium" [ref=e481]
+                  - cell "US$ 5 input / US$ 30 output" [ref=e482]
+                - row "Gemini-3.1-Pro High Muito forte em raciocinio geral e browse. Reasoning Produto ainda irregular US$ 2 input / US$ 12 output" [ref=e483]:
+                  - cell "Gemini-3.1-Pro High" [ref=e484]:
+                    - strong [ref=e485]: Gemini-3.1-Pro High
+                  - cell "Muito forte em raciocinio geral e browse." [ref=e486]
+                  - cell "Reasoning" [ref=e487]
+                  - cell "Produto ainda irregular" [ref=e488]
+                  - cell "US$ 2 input / US$ 12 output" [ref=e489]
+                - row "GLM-5.1 Thinking Melhor equilibrio entre tecnica e custo. Custo-beneficio Abaixo do topo absoluto US$ 1.40 input / US$ 4.40 output" [ref=e490]:
+                  - cell "GLM-5.1 Thinking" [ref=e491]:
+                    - strong [ref=e492]: GLM-5.1 Thinking
+                  - cell "Melhor equilibrio entre tecnica e custo." [ref=e493]
+                  - cell "Custo-beneficio" [ref=e494]
+                  - cell "Abaixo do topo absoluto" [ref=e495]
+                  - cell "US$ 1.40 input / US$ 4.40 output" [ref=e496]
+                - row "K2.6 Thinking Open contender forte para agentic coding. Ferramentas Output caro CNY 6.50 input / CNY 27 output" [ref=e497]:
+                  - cell "K2.6 Thinking" [ref=e498]:
+                    - strong [ref=e499]: K2.6 Thinking
+                  - cell "Open contender forte para agentic coding." [ref=e500]
+                  - cell "Ferramentas" [ref=e501]
+                  - cell "Output caro" [ref=e502]
+                  - cell "CNY 6.50 input / CNY 27 output" [ref=e503]
+                - row "DS-V4-Pro Max Modelo para vigiar muito de perto. Benchmark geral Preco/API opacos Nao revalidado oficialmente" [ref=e504]:
+                  - cell "DS-V4-Pro Max" [ref=e505]:
+                    - strong [ref=e506]: DS-V4-Pro Max
+                  - cell "Modelo para vigiar muito de perto." [ref=e507]
+                  - cell "Benchmark geral" [ref=e508]
+                  - cell "Preco/API opacos" [ref=e509]
+                  - cell "Nao revalidado oficialmente" [ref=e510]
+                - row "DS-V4-Flash Max Variante mais leve e ainda forte. Eficiencia Preco/API opacos Nao revalidado oficialmente" [ref=e511]:
+                  - cell "DS-V4-Flash Max" [ref=e512]:
+                    - strong [ref=e513]: DS-V4-Flash Max
+                  - cell "Variante mais leve e ainda forte." [ref=e514]
+                  - cell "Eficiencia" [ref=e515]
+                  - cell "Preco/API opacos" [ref=e516]
+                  - cell "Nao revalidado oficialmente" [ref=e517]
+          - generic [ref=e518]:
+            - heading "Matriz Numerica Central" [level=2] [ref=e519]
+            - paragraph [ref=e520]:
+              - text: "Esta matriz agora segue uma regra mais dura:"
+              - strong [ref=e521]: so entram benchmarks publicos realmente cruzaveis entre labs
+              - text: ", com preferencia para `SWE-Bench`, `LiveCodeBench`, `Terminal-Bench`, `BrowseComp`, `Toolathlon`, `GPQA` e variantes amplamente reconhecidas no ecossistema. Ela continua sendo a leitura principal da pagina; o catalogo logo abaixo cobre"
+              - strong [ref=e522]: todos os modelos do estudo
+              - text: ", inclusive quando a evidencia ainda nao e comparavel o bastante para esta camada central."
+            - generic [ref=e523]:
+              - strong [ref=e524]: "Regra desta matriz:"
+              - text: benchmark interno puro de produto nao entra aqui sozinho. Se um numero nao e compartilhado publicamente em benchmark reconhecido e comparavel, ele fica no catalogo estendido e na leitura de produto, nao nesta mesa principal.
+            - generic [ref=e525]:
+              - generic [ref=e526]:
+                - strong [ref=e527]: Benchmarks desta matriz
+                - generic [ref=e528]: "So linhas publicas e cruzaveis entre labs: `SWE-Bench`, `LiveCodeBench`, `Terminal Bench`, `BrowseComp`, `Toolathlon`, `HLE w/tools` e `GPQA`."
+              - generic [ref=e529]:
+                - strong [ref=e530]: Colunas realmente comparaveis
+                - generic [ref=e531]: Modelos com alguma evidencia publica compartilhada por benchmark reconhecido. Esta e a parte mais util para decidir nivel tecnico.
+              - generic [ref=e532]:
+                - strong [ref=e533]: Navegacao da matriz
+                - generic [ref=e534]: Use os saltos por familia e os botoes laterais para percorrer a grade sem perder o benchmark da esquerda. A leitura fica bem melhor no desktop e no mobile horizontal.
+            - generic "Controles da matriz" [ref=e535]:
+              - generic [ref=e536]:
+                - button "← Ver anteriores" [ref=e537]
+                - button "Ver proximos →" [ref=e538]
+              - generic [ref=e539]:
+                - button "MiMo / DeepSeek" [ref=e540]
+                - button "Kimi / GLM" [ref=e541]
+                - button "MiniMax / Qwen" [ref=e542]
+                - button "Opus / GPT" [ref=e543]
+                - button "Gemini" [ref=e544]
+                - link "Fichas por modelo" [ref=e545] [cursor=pointer]:
+                  - /url: /benchmark-modelos
+                - link "Arena Code" [ref=e546] [cursor=pointer]:
+                  - /url: /arena-code
+            - table [ref=e549]:
+              - rowgroup [ref=e550]:
+                - row "Benchmark MiMo-V2-Flash DS-V4-Pro Max DS-V4-Flash Max K2.6 Thinking GLM-4.7 GLM-5.1 Thinking MiniMax M2.7 Qwen3-Max Thinking Opus-4.6 Max Opus-4.7 GPT-5.4 xHigh GPT-5.5 Gemini-3.1-Pro High" [ref=e551]:
+                  - columnheader "Benchmark" [ref=e552]
+                  - columnheader "MiMo-V2-Flash" [ref=e553]:
+                    - link "MiMo-V2-Flash" [ref=e554] [cursor=pointer]:
+                      - /url: /benchmark-modelos#mimo-v2-flash
+                  - columnheader "DS-V4-Pro Max" [ref=e555]:
+                    - link "DS-V4-Pro Max" [ref=e556] [cursor=pointer]:
+                      - /url: /benchmark-modelos#ds-v4-pro-max
+                  - columnheader "DS-V4-Flash Max" [ref=e557]:
+                    - link "DS-V4-Flash Max" [ref=e558] [cursor=pointer]:
+                      - /url: /benchmark-modelos#ds-v4-flash-max
+                  - columnheader "K2.6 Thinking" [ref=e559]:
+                    - link "K2.6 Thinking" [ref=e560] [cursor=pointer]:
+                      - /url: /benchmark-modelos#k2-6-thinking
+                  - columnheader "GLM-4.7" [ref=e561]:
+                    - link "GLM-4.7" [ref=e562] [cursor=pointer]:
+                      - /url: /benchmark-modelos#glm-4-7
+                  - columnheader "GLM-5.1 Thinking" [ref=e563]:
+                    - link "GLM-5.1 Thinking" [ref=e564] [cursor=pointer]:
+                      - /url: /benchmark-modelos#glm-5-1-thinking
+                  - columnheader "MiniMax M2.7" [ref=e565]:
+                    - link "MiniMax M2.7" [ref=e566] [cursor=pointer]:
+                      - /url: /benchmark-modelos#minimax-m2-7
+                  - columnheader "Qwen3-Max Thinking" [ref=e567]:
+                    - link "Qwen3-Max Thinking" [ref=e568] [cursor=pointer]:
+                      - /url: /benchmark-modelos#qwen3-max-thinking
+                  - columnheader "Opus-4.6 Max" [ref=e569]:
+                    - link "Opus-4.6 Max" [ref=e570] [cursor=pointer]:
+                      - /url: /benchmark-modelos#opus-4-6-max
+                  - columnheader "Opus-4.7" [ref=e571]:
+                    - link "Opus-4.7" [ref=e572] [cursor=pointer]:
+                      - /url: /benchmark-modelos#opus-4-7
+                  - columnheader "GPT-5.4 xHigh" [ref=e573]:
+                    - link "GPT-5.4 xHigh" [ref=e574] [cursor=pointer]:
+                      - /url: /benchmark-modelos#gpt-5-4-xhigh
+                  - columnheader "GPT-5.5" [ref=e575]:
+                    - link "GPT-5.5" [ref=e576] [cursor=pointer]:
+                      - /url: /benchmark-modelos#gpt-5-5
+                  - columnheader "Gemini-3.1-Pro High" [ref=e577]:
+                    - link "Gemini-3.1-Pro High" [ref=e578] [cursor=pointer]:
+                      - /url: /benchmark-modelos#gemini-3-1-pro-high
+              - rowgroup [ref=e579]:
+                - row "SWE-Bench Pro / Public coding agent - - - 58.6 Kimi oficial - 58.4 Z.ai oficial - - 53.4 Kimi comparativo 64.3 OpenAI comparativo 57.7 OpenAI oficial 58.6 OpenAI oficial 54.2 OpenAI comparativo" [ref=e580]:
+                  - cell "SWE-Bench Pro / Public coding agent" [ref=e581]:
+                    - strong [ref=e582]: SWE-Bench Pro / Public
+                    - text: coding agent
+                  - cell "-" [ref=e583]
+                  - cell "-" [ref=e584]
+                  - cell "-" [ref=e585]
+                  - cell "58.6 Kimi oficial" [ref=e586]:
+                    - text: "58.6"
+                    - text: Kimi oficial
+                  - cell "-" [ref=e587]
+                  - cell "58.4 Z.ai oficial" [ref=e588]:
+                    - strong [ref=e589]: "58.4"
+                    - text: Z.ai oficial
+                  - cell "-" [ref=e590]
+                  - cell "-" [ref=e591]
+                  - cell "53.4 Kimi comparativo" [ref=e592]:
+                    - text: "53.4"
+                    - text: Kimi comparativo
+                  - cell "64.3 OpenAI comparativo" [ref=e593]:
+                    - text: "64.3"
+                    - text: OpenAI comparativo
+                  - cell "57.7 OpenAI oficial" [ref=e594]:
+                    - text: "57.7"
+                    - text: OpenAI oficial
+                  - cell "58.6 OpenAI oficial" [ref=e595]:
+                    - text: "58.6"
+                    - text: OpenAI oficial
+                  - cell "54.2 OpenAI comparativo" [ref=e596]:
+                    - text: "54.2"
+                    - text: OpenAI comparativo
+                - row "SWE-Bench Verified resolucao de issues reais - 80.6 79.0 80.2 73.8 Z.ai oficial - - 75.3 Qwen oficial 80.8 - - - 80.6" [ref=e597]:
+                  - cell "SWE-Bench Verified resolucao de issues reais" [ref=e598]:
+                    - strong [ref=e599]: SWE-Bench Verified
+                    - text: resolucao de issues reais
+                  - cell "-" [ref=e600]
+                  - cell "80.6" [ref=e601]
+                  - cell "79.0" [ref=e602]
+                  - cell "80.2" [ref=e603]
+                  - cell "73.8 Z.ai oficial" [ref=e604]:
+                    - text: "73.8"
+                    - text: Z.ai oficial
+                  - cell "-" [ref=e605]
+                  - cell "-" [ref=e606]
+                  - cell "75.3 Qwen oficial" [ref=e607]:
+                    - text: "75.3"
+                    - text: Qwen oficial
+                  - cell "80.8" [ref=e608]:
+                    - strong [ref=e609]: "80.8"
+                  - cell "-" [ref=e610]
+                  - cell "-" [ref=e611]
+                  - cell "-" [ref=e612]
+                  - cell "80.6" [ref=e613]
+                - row "SWE-Bench Multilingual coding agent multilanguage - 76.2 73.3 76.7 66.7 Z.ai oficial 73.3 76.5 MiniMax oficial - 77.8 Kimi comparativo - - - 76.9 Kimi comparativo" [ref=e614]:
+                  - cell "SWE-Bench Multilingual coding agent multilanguage" [ref=e615]:
+                    - strong [ref=e616]: SWE-Bench Multilingual
+                    - text: coding agent multilanguage
+                  - cell "-" [ref=e617]
+                  - cell "76.2" [ref=e618]
+                  - cell "73.3" [ref=e619]
+                  - cell "76.7" [ref=e620]
+                  - cell "66.7 Z.ai oficial" [ref=e621]:
+                    - text: "66.7"
+                    - text: Z.ai oficial
+                  - cell "73.3" [ref=e622]
+                  - cell "76.5 MiniMax oficial" [ref=e623]:
+                    - text: "76.5"
+                    - text: MiniMax oficial
+                  - cell "-" [ref=e624]
+                  - cell "77.8 Kimi comparativo" [ref=e625]:
+                    - strong [ref=e626]: "77.8"
+                    - text: Kimi comparativo
+                  - cell "-" [ref=e627]
+                  - cell "-" [ref=e628]
+                  - cell "-" [ref=e629]
+                  - cell "76.9 Kimi comparativo" [ref=e630]:
+                    - text: "76.9"
+                    - text: Kimi comparativo
+                - row "LiveCodeBench coding benchmark 30.8 MiMo HF oficial 93.5 91.6 89.6 84.9 Z.ai oficial - - 85.9 Qwen oficial 88.8 - - - 91.7" [ref=e631]:
+                  - cell "LiveCodeBench coding benchmark" [ref=e632]:
+                    - strong [ref=e633]: LiveCodeBench
+                    - text: coding benchmark
+                  - cell "30.8 MiMo HF oficial" [ref=e634]:
+                    - text: "30.8"
+                    - text: MiMo HF oficial
+                  - cell "93.5" [ref=e635]:
+                    - strong [ref=e636]: "93.5"
+                  - cell "91.6" [ref=e637]
+                  - cell "89.6" [ref=e638]
+                  - cell "84.9 Z.ai oficial" [ref=e639]:
+                    - text: "84.9"
+                    - text: Z.ai oficial
+                  - cell "-" [ref=e640]
+                  - cell "-" [ref=e641]
+                  - cell "85.9 Qwen oficial" [ref=e642]:
+                    - text: "85.9"
+                    - text: Qwen oficial
+                  - cell "88.8" [ref=e643]
+                  - cell "-" [ref=e644]
+                  - cell "-" [ref=e645]
+                  - cell "-" [ref=e646]
+                  - cell "91.7" [ref=e647]
+                - row "Terminal Bench 2.0 terminal + tools - 67.9 56.9 66.7 41.0 Z.ai oficial 63.5 57.0 MiniMax oficial - 65.4 69.4 OpenAI comparativo 75.1 82.7 OpenAI oficial 68.5 Google oficial" [ref=e648]:
+                  - cell "Terminal Bench 2.0 terminal + tools" [ref=e649]:
+                    - strong [ref=e650]: Terminal Bench 2.0
+                    - text: terminal + tools
+                  - cell "-" [ref=e651]
+                  - cell "67.9" [ref=e652]
+                  - cell "56.9" [ref=e653]
+                  - cell "66.7" [ref=e654]
+                  - cell "41.0 Z.ai oficial" [ref=e655]:
+                    - text: "41.0"
+                    - text: Z.ai oficial
+                  - cell "63.5" [ref=e656]
+                  - cell "57.0 MiniMax oficial" [ref=e657]:
+                    - text: "57.0"
+                    - text: MiniMax oficial
+                  - cell "-" [ref=e658]
+                  - cell "65.4" [ref=e659]
+                  - cell "69.4 OpenAI comparativo" [ref=e660]:
+                    - text: "69.4"
+                    - text: OpenAI comparativo
+                  - cell "75.1" [ref=e661]
+                  - cell "82.7 OpenAI oficial" [ref=e662]:
+                    - strong [ref=e663]: "82.7"
+                    - text: OpenAI oficial
+                  - cell "68.5 Google oficial" [ref=e664]:
+                    - text: "68.5"
+                    - text: Google oficial
+                - row "BrowseComp agentic browse + synthesis - 83.4 73.2 83.2 67.0 Z.ai oficial 79.3 - - 83.7 79.3 OpenAI comparativo 82.7 OpenAI oficial 84.4 OpenAI oficial 85.9 Google oficial" [ref=e665]:
+                  - cell "BrowseComp agentic browse + synthesis" [ref=e666]:
+                    - strong [ref=e667]: BrowseComp
+                    - text: agentic browse + synthesis
+                  - cell "-" [ref=e668]
+                  - cell "83.4" [ref=e669]
+                  - cell "73.2" [ref=e670]
+                  - cell "83.2" [ref=e671]
+                  - cell "67.0 Z.ai oficial" [ref=e672]:
+                    - text: "67.0"
+                    - text: Z.ai oficial
+                  - cell "79.3" [ref=e673]
+                  - cell "-" [ref=e674]
+                  - cell "-" [ref=e675]
+                  - cell "83.7" [ref=e676]
+                  - cell "79.3 OpenAI comparativo" [ref=e677]:
+                    - text: "79.3"
+                    - text: OpenAI comparativo
+                  - cell "82.7 OpenAI oficial" [ref=e678]:
+                    - text: "82.7"
+                    - text: OpenAI oficial
+                  - cell "84.4 OpenAI oficial" [ref=e679]:
+                    - text: "84.4"
+                    - text: OpenAI oficial
+                  - cell "85.9 Google oficial" [ref=e680]:
+                    - strong [ref=e681]: "85.9"
+                    - text: Google oficial
+                - row "Toolathlon tool use geral - 51.8 47.8 50.0 - 40.7 46.3 MiniMax oficial - 47.2 - 54.6 55.6 OpenAI oficial 48.8 OpenAI comparativo" [ref=e682]:
+                  - cell "Toolathlon tool use geral" [ref=e683]:
+                    - strong [ref=e684]: Toolathlon
+                    - text: tool use geral
+                  - cell "-" [ref=e685]
+                  - cell "51.8" [ref=e686]
+                  - cell "47.8" [ref=e687]
+                  - cell "50.0" [ref=e688]
+                  - cell "-" [ref=e689]
+                  - cell "40.7" [ref=e690]
+                  - cell "46.3 MiniMax oficial" [ref=e691]:
+                    - text: "46.3"
+                    - text: MiniMax oficial
+                  - cell "-" [ref=e692]
+                  - cell "47.2" [ref=e693]
+                  - cell "-" [ref=e694]
+                  - cell "54.6" [ref=e695]
+                  - cell "55.6 OpenAI oficial" [ref=e696]:
+                    - strong [ref=e697]: "55.6"
+                    - text: OpenAI oficial
+                  - cell "48.8 OpenAI comparativo" [ref=e698]:
+                    - text: "48.8"
+                    - text: OpenAI comparativo
+                - row "HLE w/tools reasoning com ferramentas - 48.2 45.1 54.0 - 50.4 - 49.8 Qwen oficial 53.1 54.7 OpenAI comparativo 52.0 52.2 OpenAI oficial 51.6" [ref=e699]:
+                  - cell "HLE w/tools reasoning com ferramentas" [ref=e700]:
+                    - strong [ref=e701]: HLE w/tools
+                    - text: reasoning com ferramentas
+                  - cell "-" [ref=e702]
+                  - cell "48.2" [ref=e703]
+                  - cell "45.1" [ref=e704]
+                  - cell "54.0" [ref=e705]:
+                    - strong [ref=e706]: "54.0"
+                  - cell "-" [ref=e707]
+                  - cell "50.4" [ref=e708]
+                  - cell "-" [ref=e709]
+                  - cell "49.8 Qwen oficial" [ref=e710]:
+                    - text: "49.8"
+                    - text: Qwen oficial
+                  - cell "53.1" [ref=e711]
+                  - cell "54.7 OpenAI comparativo" [ref=e712]:
+                    - text: "54.7"
+                    - text: OpenAI comparativo
+                  - cell "52.0" [ref=e713]
+                  - cell "52.2 OpenAI oficial" [ref=e714]:
+                    - text: "52.2"
+                    - text: OpenAI oficial
+                  - cell "51.6" [ref=e715]
+                - row "GPQA Diamond raciocinio geral 55.1 MiMo HF oficial 90.1 88.1 90.5 - 86.2 - 87.4 Qwen oficial 91.3 94.2 OpenAI comparativo 93.0 93.6 OpenAI oficial 94.3 Google oficial" [ref=e716]:
+                  - cell "GPQA Diamond raciocinio geral" [ref=e717]:
+                    - strong [ref=e718]: GPQA Diamond
+                    - text: raciocinio geral
+                  - cell "55.1 MiMo HF oficial" [ref=e719]:
+                    - text: "55.1"
+                    - text: MiMo HF oficial
+                  - cell "90.1" [ref=e720]
+                  - cell "88.1" [ref=e721]
+                  - cell "90.5" [ref=e722]
+                  - cell "-" [ref=e723]
+                  - cell "86.2" [ref=e724]
+                  - cell "-" [ref=e725]
+                  - cell "87.4 Qwen oficial" [ref=e726]:
+                    - text: "87.4"
+                    - text: Qwen oficial
+                  - cell "91.3" [ref=e727]
+                  - cell "94.2 OpenAI comparativo" [ref=e728]:
+                    - text: "94.2"
+                    - text: OpenAI comparativo
+                  - cell "93.0" [ref=e729]
+                  - cell "93.6 OpenAI oficial" [ref=e730]:
+                    - text: "93.6"
+                    - text: OpenAI oficial
+                  - cell "94.3 Google oficial" [ref=e731]:
+                    - strong [ref=e732]: "94.3"
+                    - text: Google oficial
+            - paragraph [ref=e733]:
+              - strong [ref=e734]: "Nota metodologica sobre `MiMo-V2.5-Pro` (atualizado 28/04):"
+              - text: "em 27/04/2026 a Xiaomi lancou V2.5-Pro (1.02T params, 42B active, 1M ctx, open source). Novos dados: Claw-Eval Pass^3 ~64% com ~70K tok/traj (40-60% menos que Opus 4.6/Gemini 3.1 Pro/GPT-5.4). MiMo Coding Bench fechando gap para Opus 4.6. Agentic tasks reais: SysY compiler (672 calls, 4.3h), Video Editor (1.868 calls, 11.5h). Mesmo assim ele foi retirado desta matriz principal porque esses benchmarks ainda nao formam uma tabela publica"
+              - emphasis [ref=e735]: row-by-row
+              - text: diretamente comparavel contra os outros labs nas linhas centrais desta pagina.
+            - paragraph [ref=e736]:
+              - text: Valores desta matriz combinam fontes publicas comparaveis da
+              - link "DeepSeek" [ref=e737] [cursor=pointer]:
+                - /url: https://x.com/deepseek_ai/status/2047516922263285776
+              - text: ", do"
+              - link "Kimi K2.6" [ref=e738] [cursor=pointer]:
+                - /url: https://www.kimi.com/blog/kimi-k2-6
+              - text: ", da"
+              - link "Gemini 3.1 Pro" [ref=e739] [cursor=pointer]:
+                - /url: https://deepmind.google/models/gemini/pro/
+              - text: ", do"
+              - link "GLM-5.1" [ref=e740] [cursor=pointer]:
+                - /url: https://docs.z.ai/guides/llm/glm-5.1
+              - text: ", do"
+              - link "GLM-4.7" [ref=e741] [cursor=pointer]:
+                - /url: https://docs.z.ai/guides/llm/glm-4.7
+              - text: ", do"
+              - link "GPT-5.5" [ref=e742] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-gpt-5-5/
+              - text: ", do"
+              - link "GPT-5.4" [ref=e743] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-gpt-5-4/
+              - text: ", do"
+              - link "Claude Opus 4.6" [ref=e744] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-opus-4-6?id=ClaudeOpus4.6
+              - text: ", do"
+              - link "Claude Opus 4.7" [ref=e745] [cursor=pointer]:
+                - /url: https://www.anthropic.com/news/claude-opus-4-7
+              - text: ", do"
+              - link "MiMo-V2-Flash" [ref=e746] [cursor=pointer]:
+                - /url: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash
+              - text: ", do"
+              - link "MiniMax M2.7" [ref=e747] [cursor=pointer]:
+                - /url: https://www.minimax.io/news/minimax-m27-en
+              - text: e do
+              - link "Qwen3-Max-Thinking" [ref=e748] [cursor=pointer]:
+                - /url: https://www.alibabacloud.com/blog/602834
+              - text: ". Onde ha `-`, preferi deixar vazio a inventar comparabilidade que nao esta claramente publicada."
+          - generic [ref=e749]:
+            - heading "Catalogo Completo de Modelos do Estudo" [level=2] [ref=e750]
+            - paragraph [ref=e751]:
+              - text: "Esta camada resolve exatamente a lacuna que voce apontou: ela inclui"
+              - strong [ref=e752]: todos os modelos relevantes ja citados no hub
+              - text: . Aqui o objetivo nao e fingir que todo mundo tem score comparavel; e deixar claro
+              - strong [ref=e753]: quem esta no estudo
+              - text: ", qual a"
+              - strong [ref=e754]: forca principal
+              - text: ", que tipo de"
+              - strong [ref=e755]: evidencia publica
+              - text: existe e como cada modelo entra nas solucoes do hub.
+            - generic [ref=e756]: Benchmark forte Benchmark parcial Catalogado por produto/comercial Precificacao ou API ainda opaca
+            - table [ref=e758]:
+              - rowgroup [ref=e759]:
+                - row "Modelo Familia / lab Papel tecnico no hub Evidencia publica Preco / sinal de API Onde aparece no estudo Leitura pratica" [ref=e760]:
+                  - columnheader "Modelo" [ref=e761]
+                  - columnheader "Familia / lab" [ref=e762]
+                  - columnheader "Papel tecnico no hub" [ref=e763]
+                  - columnheader "Evidencia publica" [ref=e764]
+                  - columnheader "Preco / sinal de API" [ref=e765]
+                  - columnheader "Onde aparece no estudo" [ref=e766]
+                  - columnheader "Leitura pratica" [ref=e767]
+              - rowgroup [ref=e768]:
+                - row "Claude / Anthropic" [ref=e769]:
+                  - cell "Claude / Anthropic" [ref=e770]
+                - row "Opus-4.6 Max Anthropic / Claude Referencia premium de contexto longo e qualidade geral Benchmark forte US$ 5 input / US$ 25 output Claude Max, Cursor, Kiro, comparativo central Ancora tecnica do hub para medir frontier premium de verdade." [ref=e771]:
+                  - cell "Opus-4.6 Max" [ref=e772]:
+                    - strong [ref=e773]: Opus-4.6 Max
+                  - cell "Anthropic / Claude" [ref=e774]
+                  - cell "Referencia premium de contexto longo e qualidade geral" [ref=e775]
+                  - cell "Benchmark forte" [ref=e776]
+                  - cell "US$ 5 input / US$ 25 output" [ref=e777]
+                  - cell "Claude Max, Cursor, Kiro, comparativo central" [ref=e778]
+                  - cell "Ancora tecnica do hub para medir frontier premium de verdade." [ref=e779]
+                - row "Opus-4.7 Anthropic / Claude Software engineering premium no topo da familia Benchmark forte US$ 5 input / US$ 25 output Claude Max, Cursor, telemetria, comparativo central Melhor leitura Anthropic para engenharia pesada nesta rodada." [ref=e780]:
+                  - cell "Opus-4.7" [ref=e781]:
+                    - strong [ref=e782]: Opus-4.7
+                  - cell "Anthropic / Claude" [ref=e783]
+                  - cell "Software engineering premium no topo da familia" [ref=e784]
+                  - cell "Benchmark forte" [ref=e785]
+                  - cell "US$ 5 input / US$ 25 output" [ref=e786]
+                  - cell "Claude Max, Cursor, telemetria, comparativo central" [ref=e787]
+                  - cell "Melhor leitura Anthropic para engenharia pesada nesta rodada." [ref=e788]
+                - row "Opus-4.5 Anthropic / Claude Tier premium anterior ainda citado em IDEs agenticas Catalogado Faixa premium Anthropic Kiro Presenca relevante no ecossistema, mas sem benchmark proprio consolidado aqui." [ref=e789]:
+                  - cell "Opus-4.5" [ref=e790]:
+                    - strong [ref=e791]: Opus-4.5
+                  - cell "Anthropic / Claude" [ref=e792]
+                  - cell "Tier premium anterior ainda citado em IDEs agenticas" [ref=e793]
+                  - cell "Catalogado" [ref=e794]
+                  - cell "Faixa premium Anthropic" [ref=e795]
+                  - cell "Kiro" [ref=e796]
+                  - cell "Presenca relevante no ecossistema, mas sem benchmark proprio consolidado aqui." [ref=e797]
+                - row "Sonnet 4.5 Anthropic / Claude Modelo intermediario forte para fluxo diario Catalogado Faixa intermediaria Anthropic Kiro, Cursor, harnesses Mais importante como superficie de produto do que como benchmark deste painel." [ref=e798]:
+                  - cell "Sonnet 4.5" [ref=e799]:
+                    - strong [ref=e800]: Sonnet 4.5
+                  - cell "Anthropic / Claude" [ref=e801]
+                  - cell "Modelo intermediario forte para fluxo diario" [ref=e802]
+                  - cell "Catalogado" [ref=e803]
+                  - cell "Faixa intermediaria Anthropic" [ref=e804]
+                  - cell "Kiro, Cursor, harnesses" [ref=e805]
+                  - cell "Mais importante como superficie de produto do que como benchmark deste painel." [ref=e806]
+                - row "Sonnet 4 Anthropic / Claude Base forte para coding premium moderado Catalogado Faixa intermediaria Anthropic Kiro Relevante porque impacta billing e fallback em suites como Kiro." [ref=e807]:
+                  - cell "Sonnet 4" [ref=e808]:
+                    - strong [ref=e809]: Sonnet 4
+                  - cell "Anthropic / Claude" [ref=e810]
+                  - cell "Base forte para coding premium moderado" [ref=e811]
+                  - cell "Catalogado" [ref=e812]
+                  - cell "Faixa intermediaria Anthropic" [ref=e813]
+                  - cell "Kiro" [ref=e814]
+                  - cell "Relevante porque impacta billing e fallback em suites como Kiro." [ref=e815]
+                - row "Haiku 4.5 Anthropic / Claude Fallback barato e rapido dentro da familia Catalogado Faixa barata Anthropic Kiro Importa para custo e fallback, nao para topo tecnico do hub." [ref=e816]:
+                  - cell "Haiku 4.5" [ref=e817]:
+                    - strong [ref=e818]: Haiku 4.5
+                  - cell "Anthropic / Claude" [ref=e819]
+                  - cell "Fallback barato e rapido dentro da familia" [ref=e820]
+                  - cell "Catalogado" [ref=e821]
+                  - cell "Faixa barata Anthropic" [ref=e822]
+                  - cell "Kiro" [ref=e823]
+                  - cell "Importa para custo e fallback, nao para topo tecnico do hub." [ref=e824]
+                - row "OpenAI" [ref=e825]:
+                  - cell "OpenAI" [ref=e826]
+                - row "GPT-5.5 OpenAI Terminal, browse e tool use no topo atual Benchmark forte US$ 5 input / US$ 30 output OpenAI/Codex, Cursor, comparativo central Hoje e a leitura mais agressiva do hub para execucao agentica ferramental." [ref=e827]:
+                  - cell "GPT-5.5" [ref=e828]:
+                    - strong [ref=e829]: GPT-5.5
+                  - cell "OpenAI" [ref=e830]
+                  - cell "Terminal, browse e tool use no topo atual" [ref=e831]
+                  - cell "Benchmark forte" [ref=e832]
+                  - cell "US$ 5 input / US$ 30 output" [ref=e833]
+                  - cell "OpenAI/Codex, Cursor, comparativo central" [ref=e834]
+                  - cell "Hoje e a leitura mais agressiva do hub para execucao agentica ferramental." [ref=e835]
+                - row "GPT-5.4 xHigh OpenAI Agente premium com melhor custo que Opus em varios cenarios Benchmark forte US$ 2.50 input / US$ 15 output OpenAI/Codex, Cursor, comparativo central Muito forte para terminal e tools, mas vive dentro de quotas menos legiveis." [ref=e836]:
+                  - cell "GPT-5.4 xHigh" [ref=e837]:
+                    - strong [ref=e838]: GPT-5.4 xHigh
+                  - cell "OpenAI" [ref=e839]
+                  - cell "Agente premium com melhor custo que Opus em varios cenarios" [ref=e840]
+                  - cell "Benchmark forte" [ref=e841]
+                  - cell "US$ 2.50 input / US$ 15 output" [ref=e842]
+                  - cell "OpenAI/Codex, Cursor, comparativo central" [ref=e843]
+                  - cell "Muito forte para terminal e tools, mas vive dentro de quotas menos legiveis." [ref=e844]
+                - row "GPT-5.4-Mini OpenAI Fallback barato dentro do stack GPT-5.x Catalogado Faixa abaixo do GPT-5.4 full OpenAI/Codex Entra mais como economia operacional do que como competidor premium." [ref=e845]:
+                  - cell "GPT-5.4-Mini" [ref=e846]:
+                    - strong [ref=e847]: GPT-5.4-Mini
+                  - cell "OpenAI" [ref=e848]
+                  - cell "Fallback barato dentro do stack GPT-5.x" [ref=e849]
+                  - cell "Catalogado" [ref=e850]
+                  - cell "Faixa abaixo do GPT-5.4 full" [ref=e851]
+                  - cell "OpenAI/Codex" [ref=e852]
+                  - cell "Entra mais como economia operacional do que como competidor premium." [ref=e853]
+                - row "GPT-5.3-Codex OpenAI Variante voltada a coding no ecossistema Codex Catalogado Integrado ao stack OpenAI OpenAI/Codex Importa pela superficie de produto, nao pelo ranking tecnico desta pagina." [ref=e854]:
+                  - cell "GPT-5.3-Codex" [ref=e855]:
+                    - strong [ref=e856]: GPT-5.3-Codex
+                  - cell "OpenAI" [ref=e857]
+                  - cell "Variante voltada a coding no ecossistema Codex" [ref=e858]
+                  - cell "Catalogado" [ref=e859]
+                  - cell "Integrado ao stack OpenAI" [ref=e860]
+                  - cell "OpenAI/Codex" [ref=e861]
+                  - cell "Importa pela superficie de produto, nao pelo ranking tecnico desta pagina." [ref=e862]
+                - row "GPT-5.3-Codex-Spark OpenAI Variante mais leve do stack Codex Catalogado Integrado ao stack OpenAI OpenAI/Codex Util para custo e rapidez, mas fora da conversa principal de benchmark." [ref=e863]:
+                  - cell "GPT-5.3-Codex-Spark" [ref=e864]:
+                    - strong [ref=e865]: GPT-5.3-Codex-Spark
+                  - cell "OpenAI" [ref=e866]
+                  - cell "Variante mais leve do stack Codex" [ref=e867]
+                  - cell "Catalogado" [ref=e868]
+                  - cell "Integrado ao stack OpenAI" [ref=e869]
+                  - cell "OpenAI/Codex" [ref=e870]
+                  - cell "Util para custo e rapidez, mas fora da conversa principal de benchmark." [ref=e871]
+                - row "GPT-5.2 OpenAI Camada anterior ainda presente no ecossistema Catalogado Historico OpenAI OpenAI/Codex Fica no catalogo por cobertura do estudo, nao por protagonismo atual." [ref=e872]:
+                  - cell "GPT-5.2" [ref=e873]:
+                    - strong [ref=e874]: GPT-5.2
+                  - cell "OpenAI" [ref=e875]
+                  - cell "Camada anterior ainda presente no ecossistema" [ref=e876]
+                  - cell "Catalogado" [ref=e877]
+                  - cell "Historico OpenAI" [ref=e878]
+                  - cell "OpenAI/Codex" [ref=e879]
+                  - cell "Fica no catalogo por cobertura do estudo, nao por protagonismo atual." [ref=e880]
+                - row "Google / Gemini" [ref=e881]:
+                  - cell "Google / Gemini" [ref=e882]
+                - row "Gemini-3.1-Pro High Google / Gemini Reasoning forte e boa leitura para browse Benchmark forte US$ 2 input / US$ 12 output Google AI, Antigravity, comparativo central Muito competitivo no papel e relevante para stacks Google." [ref=e883]:
+                  - cell "Gemini-3.1-Pro High" [ref=e884]:
+                    - strong [ref=e885]: Gemini-3.1-Pro High
+                  - cell "Google / Gemini" [ref=e886]
+                  - cell "Reasoning forte e boa leitura para browse" [ref=e887]
+                  - cell "Benchmark forte" [ref=e888]
+                  - cell "US$ 2 input / US$ 12 output" [ref=e889]
+                  - cell "Google AI, Antigravity, comparativo central" [ref=e890]
+                  - cell "Muito competitivo no papel e relevante para stacks Google." [ref=e891]
+                - row "Gemini 3 Pro Google / Gemini Modelo comercial central do bundle Google Benchmark parcial Amarrado ao ecossistema Google AI Google AI, Antigravity Mesmo quando a nomenclatura comercial varia, continua no catalogo do hub." [ref=e892]:
+                  - cell "Gemini 3 Pro" [ref=e893]:
+                    - strong [ref=e894]: Gemini 3 Pro
+                  - cell "Google / Gemini" [ref=e895]
+                  - cell "Modelo comercial central do bundle Google" [ref=e896]
+                  - cell "Benchmark parcial" [ref=e897]
+                  - cell "Amarrado ao ecossistema Google AI" [ref=e898]
+                  - cell "Google AI, Antigravity" [ref=e899]
+                  - cell "Mesmo quando a nomenclatura comercial varia, continua no catalogo do hub." [ref=e900]
+                - row "Z.ai / GLM" [ref=e901]:
+                  - cell "Z.ai / GLM" [ref=e902]
+                - row "GLM-5.1 Thinking Z.ai / GLM Melhor custo-beneficio tecnico serio desta rodada Benchmark forte US$ 1.40 input / US$ 4.40 output GLM plans, Alibaba, OpenCode Go, comparativo central Base racional mais limpa do hub para coding pesado com disciplina." [ref=e903]:
+                  - cell "GLM-5.1 Thinking" [ref=e904]:
+                    - strong [ref=e905]: GLM-5.1 Thinking
+                  - cell "Z.ai / GLM" [ref=e906]
+                  - cell "Melhor custo-beneficio tecnico serio desta rodada" [ref=e907]
+                  - cell "Benchmark forte" [ref=e908]
+                  - cell "US$ 1.40 input / US$ 4.40 output" [ref=e909]
+                  - cell "GLM plans, Alibaba, OpenCode Go, comparativo central" [ref=e910]
+                  - cell "Base racional mais limpa do hub para coding pesado com disciplina." [ref=e911]
+                - row "GLM-5-Turbo Z.ai / GLM Tier de throughput e custo dentro da familia GLM Benchmark parcial Mesma familia com multiplicadores proprios GLM plans Importa muito para quota real, mais do que para benchmark absoluto." [ref=e912]:
+                  - cell "GLM-5-Turbo" [ref=e913]:
+                    - strong [ref=e914]: GLM-5-Turbo
+                  - cell "Z.ai / GLM" [ref=e915]
+                  - cell "Tier de throughput e custo dentro da familia GLM" [ref=e916]
+                  - cell "Benchmark parcial" [ref=e917]
+                  - cell "Mesma familia com multiplicadores proprios" [ref=e918]
+                  - cell "GLM plans" [ref=e919]
+                  - cell "Importa muito para quota real, mais do que para benchmark absoluto." [ref=e920]
+                - row "GLM-4.7 Z.ai / GLM Modelo padrao forte para operacao diaria Benchmark parcial Faixa mais amigavel que GLM-5.1 GLM plans, OpenCode Go Faltava nesta pagina e agora entra como componente central da familia GLM." [ref=e921]:
+                  - cell "GLM-4.7" [ref=e922]:
+                    - strong [ref=e923]: GLM-4.7
+                  - cell "Z.ai / GLM" [ref=e924]
+                  - cell "Modelo padrao forte para operacao diaria" [ref=e925]
+                  - cell "Benchmark parcial" [ref=e926]
+                  - cell "Faixa mais amigavel que GLM-5.1" [ref=e927]
+                  - cell "GLM plans, OpenCode Go" [ref=e928]
+                  - cell "Faltava nesta pagina e agora entra como componente central da familia GLM." [ref=e929]
+                - row "GLM-4.5-Air Z.ai / GLM Fallback barato e leve Catalogado Tier economico Z.ai GLM plans Mais importante para estrategia de quota do que para topo tecnico." [ref=e930]:
+                  - cell "GLM-4.5-Air" [ref=e931]:
+                    - strong [ref=e932]: GLM-4.5-Air
+                  - cell "Z.ai / GLM" [ref=e933]
+                  - cell "Fallback barato e leve" [ref=e934]
+                  - cell "Catalogado" [ref=e935]
+                  - cell "Tier economico Z.ai" [ref=e936]
+                  - cell "GLM plans" [ref=e937]
+                  - cell "Mais importante para estrategia de quota do que para topo tecnico." [ref=e938]
+                - row "Moonshot / Kimi" [ref=e939]:
+                  - cell "Moonshot / Kimi" [ref=e940]
+                - row "K2.6 Thinking Moonshot / Kimi Open contender forte para agentic coding Benchmark forte Y 6.50 input / Y 27 output Kimi, Alibaba, OpenCode Go, comparativo central Continua um dos open contenders mais serios para ferramentas e agente." [ref=e941]:
+                  - cell "K2.6 Thinking" [ref=e942]:
+                    - strong [ref=e943]: K2.6 Thinking
+                  - cell "Moonshot / Kimi" [ref=e944]
+                  - cell "Open contender forte para agentic coding" [ref=e945]
+                  - cell "Benchmark forte" [ref=e946]
+                  - cell "Y 6.50 input / Y 27 output" [ref=e947]
+                  - cell "Kimi, Alibaba, OpenCode Go, comparativo central" [ref=e948]
+                  - cell "Continua um dos open contenders mais serios para ferramentas e agente." [ref=e949]
+                - row "K2.5 Moonshot / Kimi Geracao anterior ainda relevante comercialmente Benchmark parcial Mais barato que o K2.6 em stacks agregadas Alibaba, OpenCode Go Entra por disponibilidade real nas assinaturas, mesmo com menos evidencias publicas fortes." [ref=e950]:
+                  - cell "K2.5" [ref=e951]:
+                    - strong [ref=e952]: K2.5
+                  - cell "Moonshot / Kimi" [ref=e953]
+                  - cell "Geracao anterior ainda relevante comercialmente" [ref=e954]
+                  - cell "Benchmark parcial" [ref=e955]
+                  - cell "Mais barato que o K2.6 em stacks agregadas" [ref=e956]
+                  - cell "Alibaba, OpenCode Go" [ref=e957]
+                  - cell "Entra por disponibilidade real nas assinaturas, mesmo com menos evidencias publicas fortes." [ref=e958]
+                - row "Xiaomi MiMo" [ref=e959]:
+                  - cell "Xiaomi MiMo" [ref=e960]
+                - row "MiMo-V2-Flash Xiaomi MiMo Primeiro benchmark auditavel serio da familia no hub Benchmark forte Token plans / precificacao ainda parcial MiMo, benchmark central de familia E a ancora tecnica auditavel que prova que MiMo nao e so marketing." [ref=e961]:
+                  - cell "MiMo-V2-Flash" [ref=e962]:
+                    - strong [ref=e963]: MiMo-V2-Flash
+                  - cell "Xiaomi MiMo" [ref=e964]
+                  - cell "Primeiro benchmark auditavel serio da familia no hub" [ref=e965]
+                  - cell "Benchmark forte" [ref=e966]
+                  - cell "Token plans / precificacao ainda parcial" [ref=e967]
+                  - cell "MiMo, benchmark central de familia" [ref=e968]
+                  - cell "E a ancora tecnica auditavel que prova que MiMo nao e so marketing." [ref=e969]
+                - row "MiMo-V2.5-Pro Xiaomi MiMo Modelo topo atual em observacao forte Benchmark parcial Claim comercial Token plans / tiers ainda menos legiveis MiMo, OpenCode Go Ja e relevante demais para ficar fora do catalogo, mesmo antes de benchmark publico equivalente ao core matrix." [ref=e970]:
+                  - cell "MiMo-V2.5-Pro" [ref=e971]:
+                    - strong [ref=e972]: MiMo-V2.5-Pro
+                  - cell "Xiaomi MiMo" [ref=e973]
+                  - cell "Modelo topo atual em observacao forte" [ref=e974]
+                  - cell "Benchmark parcial Claim comercial" [ref=e975]
+                  - cell "Token plans / tiers ainda menos legiveis" [ref=e976]
+                  - cell "MiMo, OpenCode Go" [ref=e977]
+                  - cell "Ja e relevante demais para ficar fora do catalogo, mesmo antes de benchmark publico equivalente ao core matrix." [ref=e978]
+                - row "MiMo-V2.5 Xiaomi MiMo Companion mais barato da geracao atual Benchmark parcial Token plans / tiers ainda menos legiveis MiMo, OpenCode Go Importa para tese comercial da familia MiMo, nao so para topo tecnico." [ref=e979]:
+                  - cell "MiMo-V2.5" [ref=e980]:
+                    - strong [ref=e981]: MiMo-V2.5
+                  - cell "Xiaomi MiMo" [ref=e982]
+                  - cell "Companion mais barato da geracao atual" [ref=e983]
+                  - cell "Benchmark parcial" [ref=e984]
+                  - cell "Token plans / tiers ainda menos legiveis" [ref=e985]
+                  - cell "MiMo, OpenCode Go" [ref=e986]
+                  - cell "Importa para tese comercial da familia MiMo, nao so para topo tecnico." [ref=e987]
+                - row "MiMo-V2-Pro Xiaomi MiMo Modelo comercial presente em agregadores de coding Catalogado Visivel em ofertas multi-provider OpenCode Go Bom para medir alcance real da familia em produtos terceiros." [ref=e988]:
+                  - cell "MiMo-V2-Pro" [ref=e989]:
+                    - strong [ref=e990]: MiMo-V2-Pro
+                  - cell "Xiaomi MiMo" [ref=e991]
+                  - cell "Modelo comercial presente em agregadores de coding" [ref=e992]
+                  - cell "Catalogado" [ref=e993]
+                  - cell "Visivel em ofertas multi-provider" [ref=e994]
+                  - cell "OpenCode Go" [ref=e995]
+                  - cell "Bom para medir alcance real da familia em produtos terceiros." [ref=e996]
+                - row "MiMo-V2-Omni Xiaomi MiMo Variante multimodal/comercial do ecossistema MiMo Catalogado Visivel em ofertas multi-provider OpenCode Go Fica no catalogo porque amplia a leitura de ecossistema, mesmo fora da matriz central." [ref=e997]:
+                  - cell "MiMo-V2-Omni" [ref=e998]:
+                    - strong [ref=e999]: MiMo-V2-Omni
+                  - cell "Xiaomi MiMo" [ref=e1000]
+                  - cell "Variante multimodal/comercial do ecossistema MiMo" [ref=e1001]
+                  - cell "Catalogado" [ref=e1002]
+                  - cell "Visivel em ofertas multi-provider" [ref=e1003]
+                  - cell "OpenCode Go" [ref=e1004]
+                  - cell "Fica no catalogo porque amplia a leitura de ecossistema, mesmo fora da matriz central." [ref=e1005]
+                - row "DeepSeek" [ref=e1006]:
+                  - cell "DeepSeek" [ref=e1007]
+                - row "DS-V4-Pro Max DeepSeek V4 Maior sinal de ruptura tecnica desta rodada Benchmark forte API opaca Nao revalidado oficialmente nesta rodada Benchmarks, OpenCode Go, model watch O benchmark puxa para cima; a trilha comercial e que ainda segura a subida no hub." [ref=e1008]:
+                  - cell "DS-V4-Pro Max" [ref=e1009]:
+                    - strong [ref=e1010]: DS-V4-Pro Max
+                  - cell "DeepSeek V4" [ref=e1011]
+                  - cell "Maior sinal de ruptura tecnica desta rodada" [ref=e1012]
+                  - cell "Benchmark forte API opaca" [ref=e1013]
+                  - cell "Nao revalidado oficialmente nesta rodada" [ref=e1014]
+                  - cell "Benchmarks, OpenCode Go, model watch" [ref=e1015]
+                  - cell "O benchmark puxa para cima; a trilha comercial e que ainda segura a subida no hub." [ref=e1016]
+                - row "DS-V4-Flash Max DeepSeek V4 Versao mais eficiente da tese V4 Benchmark forte API opaca Nao revalidado oficialmente nesta rodada Benchmarks, OpenCode Go, model watch Mais leve que o Pro Max, ainda assim forte o bastante para radar continuo." [ref=e1017]:
+                  - cell "DS-V4-Flash Max" [ref=e1018]:
+                    - strong [ref=e1019]: DS-V4-Flash Max
+                  - cell "DeepSeek V4" [ref=e1020]
+                  - cell "Versao mais eficiente da tese V4" [ref=e1021]
+                  - cell "Benchmark forte API opaca" [ref=e1022]
+                  - cell "Nao revalidado oficialmente nesta rodada" [ref=e1023]
+                  - cell "Benchmarks, OpenCode Go, model watch" [ref=e1024]
+                  - cell "Mais leve que o Pro Max, ainda assim forte o bastante para radar continuo." [ref=e1025]
+                - row "DeepSeek V4 Pro DeepSeek V4 Nome comercial visto em agregadores e stacks terceiros Benchmark parcial Visivel em OpenCode Go; pricing oficial ainda pouco claro para V4 OpenCode Go Fica como ponte entre benchmark V4 e uso comercial real em products-as-a-service." [ref=e1026]:
+                  - cell "DeepSeek V4 Pro" [ref=e1027]:
+                    - strong [ref=e1028]: DeepSeek V4 Pro
+                  - cell "DeepSeek V4" [ref=e1029]
+                  - cell "Nome comercial visto em agregadores e stacks terceiros" [ref=e1030]
+                  - cell "Benchmark parcial" [ref=e1031]
+                  - cell "Visivel em OpenCode Go; pricing oficial ainda pouco claro para V4" [ref=e1032]
+                  - cell "OpenCode Go" [ref=e1033]
+                  - cell "Fica como ponte entre benchmark V4 e uso comercial real em products-as-a-service." [ref=e1034]
+                - row "DeepSeek V4 Flash DeepSeek V4 Nome comercial leve visto em agregadores Benchmark parcial Visivel em OpenCode Go; pricing oficial ainda pouco claro para V4 OpenCode Go Ajuda a mapear onde a familia V4 ja esta chegando antes da formalizacao completa." [ref=e1035]:
+                  - cell "DeepSeek V4 Flash" [ref=e1036]:
+                    - strong [ref=e1037]: DeepSeek V4 Flash
+                  - cell "DeepSeek V4" [ref=e1038]
+                  - cell "Nome comercial leve visto em agregadores" [ref=e1039]
+                  - cell "Benchmark parcial" [ref=e1040]
+                  - cell "Visivel em OpenCode Go; pricing oficial ainda pouco claro para V4" [ref=e1041]
+                  - cell "OpenCode Go" [ref=e1042]
+                  - cell "Ajuda a mapear onde a familia V4 ja esta chegando antes da formalizacao completa." [ref=e1043]
+                - row "MiniMax" [ref=e1044]:
+                  - cell "MiniMax" [ref=e1045]
+                - row "MiniMax M2.7 MiniMax Open throughput candidate mais agressivo Catalogado Muito favoravel em agregadores de budget MiniMax, OpenCode Go, Alibaba Brilha na tese de volume barato, nao na ancora tecnica premium." [ref=e1046]:
+                  - cell "MiniMax M2.7" [ref=e1047]:
+                    - strong [ref=e1048]: MiniMax M2.7
+                  - cell "MiniMax" [ref=e1049]
+                  - cell "Open throughput candidate mais agressivo" [ref=e1050]
+                  - cell "Catalogado" [ref=e1051]
+                  - cell "Muito favoravel em agregadores de budget" [ref=e1052]
+                  - cell "MiniMax, OpenCode Go, Alibaba" [ref=e1053]
+                  - cell "Brilha na tese de volume barato, nao na ancora tecnica premium." [ref=e1054]
+                - row "MiniMax M2.5 MiniMax Variante popular de alto throughput Catalogado Muito favoravel em agregadores de budget MiniMax, OpenCode Go, Alibaba Continua relevante para capacidade, mesmo com confianca tecnica moderada." [ref=e1055]:
+                  - cell "MiniMax M2.5" [ref=e1056]:
+                    - strong [ref=e1057]: MiniMax M2.5
+                  - cell "MiniMax" [ref=e1058]
+                  - cell "Variante popular de alto throughput" [ref=e1059]
+                  - cell "Catalogado" [ref=e1060]
+                  - cell "Muito favoravel em agregadores de budget" [ref=e1061]
+                  - cell "MiniMax, OpenCode Go, Alibaba" [ref=e1062]
+                  - cell "Continua relevante para capacidade, mesmo com confianca tecnica moderada." [ref=e1063]
+                - row "Qwen / Alibaba" [ref=e1064]:
+                  - cell "Qwen / Alibaba" [ref=e1065]
+                - row "Qwen3.6 Plus Qwen / Alibaba Open/commercial throughput forte em coding plans Catalogado Muito competitivo em stacks agregadas Alibaba, OpenCode Go Mais importante por disponibilidade real do que por benchmark central aqui." [ref=e1066]:
+                  - cell "Qwen3.6 Plus" [ref=e1067]:
+                    - strong [ref=e1068]: Qwen3.6 Plus
+                  - cell "Qwen / Alibaba" [ref=e1069]
+                  - cell "Open/commercial throughput forte em coding plans" [ref=e1070]
+                  - cell "Catalogado" [ref=e1071]
+                  - cell "Muito competitivo em stacks agregadas" [ref=e1072]
+                  - cell "Alibaba, OpenCode Go" [ref=e1073]
+                  - cell "Mais importante por disponibilidade real do que por benchmark central aqui." [ref=e1074]
+                - row "Qwen3.5 Plus Qwen / Alibaba Variante anterior ainda muito usada Catalogado Muito competitivo em stacks agregadas Alibaba, OpenCode Go Ajuda a sustentar volume bruto nos planos baseados em request." [ref=e1075]:
+                  - cell "Qwen3.5 Plus" [ref=e1076]:
+                    - strong [ref=e1077]: Qwen3.5 Plus
+                  - cell "Qwen / Alibaba" [ref=e1078]
+                  - cell "Variante anterior ainda muito usada" [ref=e1079]
+                  - cell "Catalogado" [ref=e1080]
+                  - cell "Muito competitivo em stacks agregadas" [ref=e1081]
+                  - cell "Alibaba, OpenCode Go" [ref=e1082]
+                  - cell "Ajuda a sustentar volume bruto nos planos baseados em request." [ref=e1083]
+                - row "qwen3-max-2026-01-23 Qwen / Alibaba Tier mais ambicioso citado no plano Alibaba Catalogado Encaixado no coding plan Alibaba Fica no catalogo porque representa a camada mais potente do ecossistema Qwen do plano." [ref=e1084]:
+                  - cell "qwen3-max-2026-01-23" [ref=e1085]:
+                    - strong [ref=e1086]: qwen3-max-2026-01-23
+                  - cell "Qwen / Alibaba" [ref=e1087]
+                  - cell "Tier mais ambicioso citado no plano Alibaba" [ref=e1088]
+                  - cell "Catalogado" [ref=e1089]
+                  - cell "Encaixado no coding plan" [ref=e1090]
+                  - cell "Alibaba" [ref=e1091]
+                  - cell "Fica no catalogo porque representa a camada mais potente do ecossistema Qwen do plano." [ref=e1092]
+                - row "qwen3-coder-next Qwen / Alibaba Variante explicitamente voltada a coding Catalogado Encaixado no coding plan Alibaba Importa para entender que o plano Alibaba nao depende de um unico modelo." [ref=e1093]:
+                  - cell "qwen3-coder-next" [ref=e1094]:
+                    - strong [ref=e1095]: qwen3-coder-next
+                  - cell "Qwen / Alibaba" [ref=e1096]
+                  - cell "Variante explicitamente voltada a coding" [ref=e1097]
+                  - cell "Catalogado" [ref=e1098]
+                  - cell "Encaixado no coding plan" [ref=e1099]
+                  - cell "Alibaba" [ref=e1100]
+                  - cell "Importa para entender que o plano Alibaba nao depende de um unico modelo." [ref=e1101]
+                - row "qwen3-coder-plus Qwen / Alibaba Outra variante explicitamente voltada a coding Catalogado Encaixado no coding plan Alibaba Entra pela profundidade do portfolio, nao por benchmark comparavel publicado aqui." [ref=e1102]:
+                  - cell "qwen3-coder-plus" [ref=e1103]:
+                    - strong [ref=e1104]: qwen3-coder-plus
+                  - cell "Qwen / Alibaba" [ref=e1105]
+                  - cell "Outra variante explicitamente voltada a coding" [ref=e1106]
+                  - cell "Catalogado" [ref=e1107]
+                  - cell "Encaixado no coding plan" [ref=e1108]
+                  - cell "Alibaba" [ref=e1109]
+                  - cell "Entra pela profundidade do portfolio, nao por benchmark comparavel publicado aqui." [ref=e1110]
+            - paragraph [ref=e1111]: "Regra desta tabela estendida: se o modelo aparece nas paginas do hub como opcao real de assinatura, provider, fallback ou tier comercial relevante, ele entra aqui. Quando nao existe benchmark suficientemente comparavel, a linha continua existindo mesmo assim com a sinalizacao correta de evidencia."
+          - generic [ref=e1112]:
+            - heading "Leitura por Cenario de Uso" [level=2] [ref=e1113]
+            - generic [ref=e1114]:
+              - generic [ref=e1115]:
+                - generic [ref=e1116]: Se voce quer o mais parecido com frontier premium
+                - list [ref=e1117]:
+                  - listitem [ref=e1118]:
+                    - strong [ref=e1119]: "`Opus-4.6`"
+                    - text: continua sendo a ancora mais forte de qualidade geral e contexto longo.
+                  - listitem [ref=e1120]:
+                    - strong [ref=e1121]: "`Opus-4.7`"
+                    - text: sobe bastante em software engineering e tarefas dificeis.
+                  - listitem [ref=e1122]:
+                    - strong [ref=e1123]: "`GPT-5.5`"
+                    - text: passou a ser a leitura mais agressiva para terminal, browse e tool use.
+              - generic [ref=e1124]:
+                - generic [ref=e1125]: Se voce quer o melhor equilibrio tecnico por dolar
+                - list [ref=e1126]:
+                  - listitem [ref=e1127]:
+                    - strong [ref=e1128]: "`GLM-5.1`"
+                    - text: e a leitura mais limpa desta pagina para custo-beneficio serio.
+                  - listitem [ref=e1129]:
+                    - strong [ref=e1130]: "`Gemini-3.1-Pro`"
+                    - text: tambem fica competitivo em API, mas com produto final menos redondo para o hub.
+                  - listitem [ref=e1131]:
+                    - strong [ref=e1132]: "`K2.6`"
+                    - text: pode ser forte, mas o output pesa e a operacionalizacao ainda e mais instavel.
+              - generic [ref=e1133]:
+                - generic [ref=e1134]: Se voce quer vigiar a proxima ruptura
+                - list [ref=e1135]:
+                  - listitem [ref=e1136]:
+                    - strong [ref=e1137]: "`DeepSeek V4 Pro Max`"
+                    - text: e o nome mais quente para acompanhar.
+                  - listitem [ref=e1138]:
+                    - strong [ref=e1139]: "`Xiaomi MiMo V2.5-Pro`"
+                    - text: entrou no mesmo radar de observacao forte.
+                  - listitem [ref=e1140]:
+                    - strong [ref=e1141]: "`K2.6`"
+                    - text: tambem merece vigia continua porque o produto oficial insiste muito em long-range coding e agent autonomy.
+                  - listitem [ref=e1142]: O problema do DeepSeek nao esta no benchmark; esta em faltar trilha comercial clara para entrar forte no hub.
+                  - listitem [ref=e1143]: Se aparecer assinatura, workspace ou API V4 oficial redonda, ele sobe rapido de relevancia.
+          - generic [ref=e1144]:
+            - heading "Mapa de Evidencia por Modelo" [level=2] [ref=e1145]
+            - generic [ref=e1146]:
+              - generic [ref=e1147]:
+                - generic [ref=e1148]: Evidencia forte
+                - list [ref=e1149]:
+                  - listitem [ref=e1150]:
+                    - strong [ref=e1151]: "`GPT-5.4`"
+                    - text: ": pagina oficial OpenAI com tabela ampla."
+                  - listitem [ref=e1152]:
+                    - strong [ref=e1153]: "`GPT-5.5`"
+                    - text: ": pagina oficial OpenAI com tabela ampla e comparacao direta com Opus 4.7 e Gemini 3.1 Pro."
+                  - listitem [ref=e1154]:
+                    - strong [ref=e1155]: "`Opus 4.6`"
+                    - text: ": pagina oficial Anthropic com benchmark e contexto longo bem documentados."
+                  - listitem [ref=e1156]:
+                    - strong [ref=e1157]: "`GLM-5.1`"
+                    - text: ": doc oficial Z.ai com SWE-Bench Pro e posicionamento claro para coding agent."
+              - generic [ref=e1158]:
+                - generic [ref=e1159]: Evidencia media
+                - list [ref=e1160]:
+                  - listitem [ref=e1161]:
+                    - strong [ref=e1162]: "`Opus 4.7`"
+                    - text: ": forte em docs oficiais, mas menos tabelas publicas completas do que GPT-5.5 e Opus 4.6."
+                  - listitem [ref=e1163]:
+                    - strong [ref=e1164]: "`Gemini 3.1 Pro`"
+                    - text: ": aparece bem em comparativos oficiais de terceiros e em blog oficial do Google, mas com menos profundidade publica em coding."
+                  - listitem [ref=e1165]:
+                    - strong [ref=e1166]: "`K2.6`"
+                    - text: ": produto oficial forte, com claims claros de coding longo e agent autonomy, mas poucos quadros oficiais tao completos quanto OpenAI e Anthropic."
+              - generic [ref=e1167]:
+                - generic [ref=e1168]: Evidencia em observacao
+                - list [ref=e1169]:
+                  - listitem [ref=e1170]:
+                    - strong [ref=e1171]: "`DeepSeek V4 Pro Max`"
+                    - text: e
+                    - strong [ref=e1172]: "`Flash Max`"
+                    - text: ": benchmark visual muito promissor, mas ainda sem trilha comercial/API oficial redonda nesta rodada."
+                  - listitem [ref=e1173]:
+                    - strong [ref=e1174]: "`Xiaomi MiMo`"
+                    - text: ": evidence tecnica subiu bastante com `MiMo-V2-Flash` e `V2.5-Pro`; a camada comercial agora esta documentada oficialmente."
+                  - listitem [ref=e1175]: O ponto em observacao deixou de ser falta de fonte e passou a ser telemetria propria de campo.
+          - generic [ref=e1176]:
+            - heading "Quem Comprar Mentalmente para Cada Tipo de Trabalho" [level=2] [ref=e1177]
+            - generic [ref=e1178]:
+              - generic [ref=e1179]:
+                - strong [ref=e1180]: Se o foco e long context real
+                - list [ref=e1181]:
+                  - listitem [ref=e1182]: "`Opus 4.6` e a referencia mais forte neste card."
+                  - listitem [ref=e1183]: "`DeepSeek V4 Pro Max` fica logo atras, mas ainda abaixo com folga perceptivel em 1M context."
+                  - listitem [ref=e1184]: "`Gemini 3.1 Pro` aparece mais fraco nesse recorte especifico de long context."
+              - generic [ref=e1185]:
+                - strong [ref=e1186]: Se o foco e coding/terminal/agentic
+                - list [ref=e1187]:
+                  - listitem [ref=e1188]: "`GPT-5.4 xHigh` e muito forte em `Terminal Bench 2.0` e `Toolathlon`."
+                  - listitem [ref=e1189]: "`K2.6 Thinking` vai bem em `HLE w/tools` e `SWE Pro` no card."
+                  - listitem [ref=e1190]: "`DeepSeek V4 Pro Max` aparece muito bem distribuido e forte em `LiveCodeBench`."
+              - generic [ref=e1191]:
+                - strong [ref=e1192]: Se o foco e custo/tecnica
+                - list [ref=e1193]:
+                  - listitem [ref=e1194]: "`GLM-5.1` continua impressionando pelo preco muito menor que `Opus` e `GPT-5.4`."
+                  - listitem [ref=e1195]: "`Gemini 3.1 Pro` tambem fica numa faixa de API mais barata que `Opus` e `GPT-5.4`."
+                  - listitem [ref=e1196]: "`DeepSeek V4` ainda nao da para precificar direito porque a API V4 nao apareceu oficialmente nas docs consultadas."
+          - generic [ref=e1197]:
+            - heading "Contexto, API e Custo" [level=2] [ref=e1198]
+            - paragraph [ref=e1199]:
+              - text: Esta tabela nao mede assinatura. Ela mede o
+              - strong [ref=e1200]: modelo
+              - text: ": contexto conhecido, custo oficial de API e observacao pratica para o hub."
+            - table [ref=e1201]:
+              - rowgroup [ref=e1202]:
+                - row "Modelo Contexto conhecido Preco de API Leitura pratica para o hub" [ref=e1203]:
+                  - columnheader "Modelo" [ref=e1204]
+                  - columnheader "Contexto conhecido" [ref=e1205]
+                  - columnheader "Preco de API" [ref=e1206]
+                  - columnheader "Leitura pratica para o hub" [ref=e1207]
+              - rowgroup [ref=e1208]:
+                - row "DS-V4-Pro Max nao revalidado em doc oficial de API V4 nao encontrado oficialmente ate 24/04/2026 Muito interessante tecnicamente, ainda fraco em maturidade comercial oficial para o hub." [ref=e1209]:
+                  - cell "DS-V4-Pro Max" [ref=e1210]:
+                    - strong [ref=e1211]: DS-V4-Pro Max
+                  - cell "nao revalidado em doc oficial de API V4" [ref=e1212]
+                  - cell "nao encontrado oficialmente ate 24/04/2026" [ref=e1213]
+                  - cell "Muito interessante tecnicamente, ainda fraco em maturidade comercial oficial para o hub." [ref=e1214]
+                - 'row "DS-V4-Flash Max nao revalidado em doc oficial de API V4 nao encontrado oficialmente ate 24/04/2026 Mesmo problema do Pro Max: benchmark forte, camada comercial/API ainda opaca." [ref=e1215]':
+                  - cell "DS-V4-Flash Max" [ref=e1216]:
+                    - strong [ref=e1217]: DS-V4-Flash Max
+                  - cell "nao revalidado em doc oficial de API V4" [ref=e1218]
+                  - cell "nao encontrado oficialmente ate 24/04/2026" [ref=e1219]
+                  - 'cell "Mesmo problema do Pro Max: benchmark forte, camada comercial/API ainda opaca." [ref=e1220]'
+                - row "K2.6 Thinking familia K2 Thinking documentada em 256K a pagina de pricing do K2.6 foca mais em preco/capabilidade do que em ficha tecnica completa cache hit CNY 1.10 / MTok input CNY 6.50 / MTok output CNY 27.00 / MTok Modelo caro em output e ainda muito dependente de como entra no produto final." [ref=e1221]:
+                  - cell "K2.6 Thinking" [ref=e1222]:
+                    - strong [ref=e1223]: K2.6 Thinking
+                  - cell "familia K2 Thinking documentada em 256K a pagina de pricing do K2.6 foca mais em preco/capabilidade do que em ficha tecnica completa" [ref=e1224]:
+                    - text: familia K2 Thinking documentada em 256K
+                    - text: a pagina de pricing do K2.6 foca mais em preco/capabilidade do que em ficha tecnica completa
+                  - cell "cache hit CNY 1.10 / MTok input CNY 6.50 / MTok output CNY 27.00 / MTok" [ref=e1225]:
+                    - text: cache hit CNY 1.10 / MTok
+                    - text: input CNY 6.50 / MTok
+                    - text: output CNY 27.00 / MTok
+                  - cell "Modelo caro em output e ainda muito dependente de como entra no produto final." [ref=e1226]
+                - row "GLM-5.1 Thinking 200K input / 128K output input US$ 1.40 / MTok cached US$ 0.26 / MTok output US$ 4.40 / MTok Continua sendo uma das leituras mais fortes de custo/tecnica do hub inteiro." [ref=e1227]:
+                  - cell "GLM-5.1 Thinking" [ref=e1228]:
+                    - strong [ref=e1229]: GLM-5.1 Thinking
+                  - cell "200K input / 128K output" [ref=e1230]
+                  - cell "input US$ 1.40 / MTok cached US$ 0.26 / MTok output US$ 4.40 / MTok" [ref=e1231]:
+                    - text: input US$ 1.40 / MTok
+                    - text: cached US$ 0.26 / MTok
+                    - text: output US$ 4.40 / MTok
+                  - cell "Continua sendo uma das leituras mais fortes de custo/tecnica do hub inteiro." [ref=e1232]
+                - row "Opus-4.6 Max 1M beta / 128K output input US$ 5.00 / MTok output US$ 25.00 / MTok Melhor referencia premium, mas muito caro para ser sua base economica principal." [ref=e1233]:
+                  - cell "Opus-4.6 Max" [ref=e1234]:
+                    - strong [ref=e1235]: Opus-4.6 Max
+                  - cell "1M beta / 128K output" [ref=e1236]
+                  - cell "input US$ 5.00 / MTok output US$ 25.00 / MTok" [ref=e1237]:
+                    - text: input US$ 5.00 / MTok
+                    - text: output US$ 25.00 / MTok
+                  - cell "Melhor referencia premium, mas muito caro para ser sua base economica principal." [ref=e1238]
+                - row "Opus-4.7 seguindo a linha premium da familia Opus melhorias fortes em engenharia e visao input US$ 5.00 / MTok output US$ 25.00 / MTok Sobe bem em software engineering sobre o 4.6, mas continua premium na mesma faixa de preco." [ref=e1239]:
+                  - cell "Opus-4.7" [ref=e1240]:
+                    - strong [ref=e1241]: Opus-4.7
+                  - cell "seguindo a linha premium da familia Opus melhorias fortes em engenharia e visao" [ref=e1242]:
+                    - text: seguindo a linha premium da familia Opus
+                    - text: melhorias fortes em engenharia e visao
+                  - cell "input US$ 5.00 / MTok output US$ 25.00 / MTok" [ref=e1243]:
+                    - text: input US$ 5.00 / MTok
+                    - text: output US$ 25.00 / MTok
+                  - cell "Sobe bem em software engineering sobre o 4.6, mas continua premium na mesma faixa de preco." [ref=e1244]
+                - row "GPT-5.4 xHigh 1.05M input / 128K output acima de 272K em Standard/Flex/Batch tem uplift de preco input US$ 2.50 / MTok cached US$ 0.25 / MTok output US$ 15.00 / MTok Fortissimo tecnicamente, com custo abaixo de Opus e acima de GLM/Gemini." [ref=e1245]:
+                  - cell "GPT-5.4 xHigh" [ref=e1246]:
+                    - strong [ref=e1247]: GPT-5.4 xHigh
+                  - cell "1.05M input / 128K output acima de 272K em Standard/Flex/Batch tem uplift de preco" [ref=e1248]:
+                    - text: 1.05M input / 128K output
+                    - text: acima de 272K em Standard/Flex/Batch tem uplift de preco
+                  - cell "input US$ 2.50 / MTok cached US$ 0.25 / MTok output US$ 15.00 / MTok" [ref=e1249]:
+                    - text: input US$ 2.50 / MTok
+                    - text: cached US$ 0.25 / MTok
+                    - text: output US$ 15.00 / MTok
+                  - cell "Fortissimo tecnicamente, com custo abaixo de Opus e acima de GLM/Gemini." [ref=e1250]
+                - row "GPT-5.5 1M contexto GPT-5.5 Pro tambem foi anunciado, mas aqui foco no tier base do modelo input US$ 5.00 / MTok output US$ 30.00 / MTok Leitura hoje de melhor agente ferramental da pagina, com custo ja claramente premium." [ref=e1251]:
+                  - cell "GPT-5.5" [ref=e1252]:
+                    - strong [ref=e1253]: GPT-5.5
+                  - cell "1M contexto GPT-5.5 Pro tambem foi anunciado, mas aqui foco no tier base do modelo" [ref=e1254]:
+                    - text: 1M contexto
+                    - text: GPT-5.5 Pro tambem foi anunciado, mas aqui foco no tier base do modelo
+                  - cell "input US$ 5.00 / MTok output US$ 30.00 / MTok" [ref=e1255]:
+                    - text: input US$ 5.00 / MTok
+                    - text: output US$ 30.00 / MTok
+                  - cell "Leitura hoje de melhor agente ferramental da pagina, com custo ja claramente premium." [ref=e1256]
+                - row "Gemini-3.1-Pro High 1,048,576 input / 65,536 output input US$ 2.00 / MTok output US$ 12.00 / MTok Melhor do card em varios benchmarks de razao geral; custo de API fica numa faixa competitiva." [ref=e1257]:
+                  - cell "Gemini-3.1-Pro High" [ref=e1258]:
+                    - strong [ref=e1259]: Gemini-3.1-Pro High
+                  - cell "1,048,576 input / 65,536 output" [ref=e1260]
+                  - cell "input US$ 2.00 / MTok output US$ 12.00 / MTok" [ref=e1261]:
+                    - text: input US$ 2.00 / MTok
+                    - text: output US$ 12.00 / MTok
+                  - cell "Melhor do card em varios benchmarks de razao geral; custo de API fica numa faixa competitiva." [ref=e1262]
+          - generic [ref=e1263]:
+            - heading "Resumo Modelo a Modelo" [level=2] [ref=e1264]
+            - generic [ref=e1265]:
+              - generic [ref=e1266]:
+                - heading "DeepSeek V4 Pro Max" [level=3] [ref=e1267]
+                - list [ref=e1268]:
+                  - listitem [ref=e1269]: "Bem forte em `LiveCodeBench`, `SWE Verified`, `BrowseComp` e `Toolathlon`."
+                  - listitem [ref=e1270]: "Long context aparece forte, mas ainda abaixo de `Opus 4.6`."
+                  - listitem [ref=e1271]: "Problema para o hub: benchmark forte, precificacao/API V4 ainda sem trilha oficial clara na doc consultada."
+              - generic [ref=e1272]:
+                - heading "DeepSeek V4 Flash Max" [level=3] [ref=e1273]
+                - list [ref=e1274]:
+                  - listitem [ref=e1275]: Versao mais leve e ainda muito forte em varios testes.
+                  - listitem [ref=e1276]: "Cai mais em terminal/agentic do que o `Pro Max`."
+                  - listitem [ref=e1277]: Mesmo gargalo comercial do V4 Pro Max.
+              - generic [ref=e1278]:
+                - heading "K2.6 Thinking" [level=3] [ref=e1279]
+                - list [ref=e1280]:
+                  - listitem [ref=e1281]: Card mostra comportamento muito bom em agentic coding.
+                  - listitem [ref=e1282]: "Tem uma das melhores leituras em `HLE w/tools` e `SWE Pro`."
+                  - listitem [ref=e1283]: Em API, o output e caro e a leitura de assinatura continua mais complicada.
+              - generic [ref=e1284]:
+                - heading "GLM-5.1 Thinking" [level=3] [ref=e1285]
+                - list [ref=e1286]:
+                  - listitem [ref=e1287]: Fica abaixo dos melhores fechados no topo absoluto, mas entrega valor absurdo por dolar.
+                  - listitem [ref=e1288]: Segue muito forte como base racional para coding pesado.
+                  - listitem [ref=e1289]: Para o hub, ele continua sendo o melhor ponto de equilibrio entre tecnica e custo.
+              - generic [ref=e1290]:
+                - heading "Opus-4.6 Max" [level=3] [ref=e1291]
+                - list [ref=e1292]:
+                  - listitem [ref=e1293]: Continua como referencia premium para long context e qualidade geral.
+                  - listitem [ref=e1294]: Excelente para medir "o que e frontier de verdade" no seu benchmark.
+                  - listitem [ref=e1295]: O custo de API explica por que o hub tenta te levar para alternativas mais baratas.
+              - generic [ref=e1296]:
+                - heading "Opus-4.7" [level=3] [ref=e1297]
+                - list [ref=e1298]:
+                  - listitem [ref=e1299]: E a leitura mais forte da familia Opus para software engineering nesta rodada.
+                  - listitem [ref=e1300]: Sobe sobre o 4.6 principalmente nos casos mais dificeis e supervisionados de perto.
+                  - listitem [ref=e1301]: Continua premium no mesmo patamar de preco da familia.
+              - generic [ref=e1302]:
+                - heading "GPT-5.4 xHigh" [level=3] [ref=e1303]
+                - list [ref=e1304]:
+                  - listitem [ref=e1305]: "Brilha muito em `Terminal Bench 2.0` e `Toolathlon`."
+                  - listitem [ref=e1306]: Tem contexto enorme e custo menor que Opus.
+                  - listitem [ref=e1307]: Se a OpenAI tivesse limites mais legiveis por assinatura, ela subiria mais no hub.
+              - generic [ref=e1308]:
+                - heading "GPT-5.5" [level=3] [ref=e1309]
+                - list [ref=e1310]:
+                  - listitem [ref=e1311]: Passou a ser a referencia mais forte desta pagina para terminal, browse e execucao agentica.
+                  - listitem [ref=e1312]: Tambem sobe sobre o GPT-5.4 em raciocinio e benchmarks profissionais.
+                  - listitem [ref=e1313]: O preco de API deixa claro que ele ja entra em territorio premium serio.
+              - generic [ref=e1314]:
+                - heading "Gemini-3.1-Pro High" [level=3] [ref=e1315]
+                - list [ref=e1316]:
+                  - listitem [ref=e1317]: "Forte em razao geral e tambem muito competitivo em `BrowseComp`."
+                  - listitem [ref=e1318]: "API mais barata que `GPT-5.4` e bem mais barata que `Opus`."
+                  - listitem [ref=e1319]: Para o hub, continua interessante, mas o produto/assinatura ainda nao venceu os melhores caminhos.
+          - generic [ref=e1320]:
+            - heading "Fontes para Atualizacao Futura" [level=2] [ref=e1321]
+            - list [ref=e1322]:
+              - listitem [ref=e1323]:
+                - link "DeepSeek benchmark card no X" [ref=e1324] [cursor=pointer]:
+                  - /url: https://x.com/deepseek_ai/status/2047516922263285776
+              - listitem [ref=e1325]:
+                - link "DeepSeek API pricing" [ref=e1326] [cursor=pointer]:
+                  - /url: https://api-docs.deepseek.com/quick_start/pricing
+              - listitem [ref=e1327]:
+                - link "Moonshot / Kimi platform" [ref=e1328] [cursor=pointer]:
+                  - /url: https://platform.moonshot.cn/
+              - listitem [ref=e1329]:
+                - link "Moonshot docs intro" [ref=e1330] [cursor=pointer]:
+                  - /url: https://platform.moonshot.cn/docs/intro
+              - listitem [ref=e1331]:
+                - link "Kimi K2.6 benchmark post" [ref=e1332] [cursor=pointer]:
+                  - /url: https://www.kimi.com/blog/kimi-k2-6
+              - listitem [ref=e1333]:
+                - link "GLM-5.1 overview" [ref=e1334] [cursor=pointer]:
+                  - /url: https://docs.z.ai/guides/llm/glm-5.1
+              - listitem [ref=e1335]:
+                - link "GLM-4.7 overview" [ref=e1336] [cursor=pointer]:
+                  - /url: https://docs.z.ai/guides/llm/glm-4.7
+              - listitem [ref=e1337]:
+                - link "Z.ai pricing" [ref=e1338] [cursor=pointer]:
+                  - /url: https://docs.z.ai/guides/overview/pricing
+              - listitem [ref=e1339]:
+                - link "Claude Opus 4.6" [ref=e1340] [cursor=pointer]:
+                  - /url: https://www.anthropic.com/news/claude-opus-4-6
+              - listitem [ref=e1341]:
+                - link "OpenAI API pricing" [ref=e1342] [cursor=pointer]:
+                  - /url: https://openai.com/api/pricing/
+              - listitem [ref=e1343]:
+                - link "Introducing GPT-5.4" [ref=e1344] [cursor=pointer]:
+                  - /url: https://openai.com/index/introducing-gpt-5-4/
+              - listitem [ref=e1345]:
+                - link "Introducing GPT-5.5" [ref=e1346] [cursor=pointer]:
+                  - /url: https://openai.com/index/introducing-gpt-5-5/
+              - listitem [ref=e1347]:
+                - link "Gemini API pricing" [ref=e1348] [cursor=pointer]:
+                  - /url: https://ai.google.dev/gemini-api/docs/pricing
+              - listitem [ref=e1349]:
+                - link "Gemini models" [ref=e1350] [cursor=pointer]:
+                  - /url: https://ai.google.dev/models/gemini
+              - listitem [ref=e1351]:
+                - link "Gemini 3 guide" [ref=e1352] [cursor=pointer]:
+                  - /url: https://ai.google.dev/gemini-api/docs/gemini-3
+              - listitem [ref=e1353]:
+                - link "Gemini 3.1 Pro benchmarks" [ref=e1354] [cursor=pointer]:
+                  - /url: https://deepmind.google/models/gemini/pro/
+              - listitem [ref=e1355]:
+                - link "MiMo docs welcome" [ref=e1356] [cursor=pointer]:
+                  - /url: https://platform.xiaomimimo.com/docs/en-US/welcome
+              - listitem [ref=e1357]:
+                - link "MiMo docs pricing" [ref=e1358] [cursor=pointer]:
+                  - /url: https://platform.xiaomimimo.com/docs/en-US/pricing
+              - listitem [ref=e1359]:
+                - link "MiMo tools overview" [ref=e1360] [cursor=pointer]:
+                  - /url: https://platform.xiaomimimo.com/docs/en-US/integration/tools-overview
+              - listitem [ref=e1361]:
+                - link "MiMo + Zed" [ref=e1362] [cursor=pointer]:
+                  - /url: https://platform.xiaomimimo.com/docs/en-US/integration/zed
+              - listitem [ref=e1363]:
+                - link "MiMo + OpenCode" [ref=e1364] [cursor=pointer]:
+                  - /url: https://platform.xiaomimimo.com/docs/en-US/integration/opencode
+              - listitem [ref=e1365]:
+                - link "MiMo V2.5 benchmark page" [ref=e1366] [cursor=pointer]:
+                  - /url: https://mimo.xiaomi.com/mimo-v2-5/
+              - listitem [ref=e1367]:
+                - link "MiMo-V2-Flash official model card" [ref=e1368] [cursor=pointer]:
+                  - /url: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash
+              - listitem [ref=e1369]:
+                - link "MiMo-V2.5-Pro model card" [ref=e1370] [cursor=pointer]:
+                  - /url: https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro
+              - listitem [ref=e1371]:
+                - link "Xiaomi MiMo GitHub" [ref=e1372] [cursor=pointer]:
+                  - /url: https://github.com/XiaomiMiMo/MiMo
+              - listitem [ref=e1373]:
+                - link "MiniMax M2.7 benchmark post" [ref=e1374] [cursor=pointer]:
+                  - /url: https://www.minimax.io/news/minimax-m27-en
+              - listitem [ref=e1375]:
+                - link "Qwen3-Max-Thinking benchmark post" [ref=e1376] [cursor=pointer]:
+                  - /url: https://www.alibabacloud.com/blog/602834
+  - contentinfo [ref=e1377]:
+    - generic [ref=e1378]:
+      - generic [ref=e1379]:
+        - generic [ref=e1380]:
+          - generic [ref=e1381]:
+            - img [ref=e1383]
+            - generic [ref=e1385]: Vibe Coding Hub
+          - paragraph [ref=e1386]: Hub para comparar assinaturas, modelos, IDEs e telemetria de vibe coding.
+        - generic [ref=e1387]:
+          - generic [ref=e1388]:
+            - paragraph [ref=e1389]: Decisao
+            - generic [ref=e1390]:
+              - link "Ranking" [ref=e1391] [cursor=pointer]:
+                - /url: /ranking
+              - link "Estrategias" [ref=e1392] [cursor=pointer]:
+                - /url: /estrategias
+              - link "Vibe Sustentavel" [ref=e1393] [cursor=pointer]:
+                - /url: /vibe-sustentavel
+          - generic [ref=e1394]:
+            - paragraph [ref=e1395]: Tecnico
+            - generic [ref=e1396]:
+              - link "Benchmarks" [ref=e1397] [cursor=pointer]:
+                - /url: /benchmarks
+              - link "Evidencia de Campo" [ref=e1398] [cursor=pointer]:
+                - /url: /evidencia-campo
+              - link "Telemetria" [ref=e1399] [cursor=pointer]:
+                - /url: /telemetria
+          - generic [ref=e1400]:
+            - paragraph [ref=e1401]: Recursos
+            - generic [ref=e1402]:
+              - link "IDEs e Harnesses" [ref=e1403] [cursor=pointer]:
+                - /url: /harnesses
+              - link "Better Prompts" [ref=e1404] [cursor=pointer]:
+                - /url: /ai-better-prompts
+              - link "AI Index" [ref=e1405] [cursor=pointer]:
+                - /url: /ai-index
+        - generic [ref=e1406]:
+          - paragraph [ref=e1407]: Para IA
+          - generic [ref=e1408]:
+            - link "Mapa do Hub" [ref=e1409] [cursor=pointer]:
+              - /url: /ai-index
+            - link "llms.txt" [ref=e1410] [cursor=pointer]:
+              - /url: /llms.txt
+            - link "content-map.json" [ref=e1411] [cursor=pointer]:
+              - /url: /ai-content-map.json
+      - generic [ref=e1412]:
+        - paragraph [ref=e1413]: 6areas · conteudo preservado · SSR + AI-ready
+        - paragraph [ref=e1414]: Vibe Coding Hub © 2026
+  - alert [ref=e1415]

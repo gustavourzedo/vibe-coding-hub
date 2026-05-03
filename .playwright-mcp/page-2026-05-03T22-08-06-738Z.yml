@@ -1,0 +1,802 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Vibe Coding Hub" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e9]: Vibe Coding Hub
+      - navigation [ref=e10]:
+        - link "Inicio" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - link "Ranking" [ref=e12] [cursor=pointer]:
+          - /url: /ranking
+        - link "Benchmarks" [ref=e13] [cursor=pointer]:
+          - /url: /benchmarks
+        - link "IDEs e Agentes" [ref=e14] [cursor=pointer]:
+          - /url: /harnesses
+        - link "Telemetria" [ref=e15] [cursor=pointer]:
+          - /url: /telemetria
+        - link "Prompts" [ref=e16] [cursor=pointer]:
+          - /url: /ai-better-prompts
+        - link "Para IA" [ref=e17] [cursor=pointer]:
+          - /url: /ai-index
+      - generic [ref=e18]:
+        - button "Abrir busca rapida (Ctrl+K)" [ref=e19]:
+          - img [ref=e20]
+          - generic [ref=e23]: Buscar...
+          - generic [ref=e24]: Ctrl+K
+        - link "Abrir AI Index" [ref=e25] [cursor=pointer]:
+          - /url: /ai-index
+          - img [ref=e26]
+  - main [ref=e30]:
+    - navigation "Breadcrumbs" [ref=e31]:
+      - link "Hub" [ref=e33] [cursor=pointer]:
+        - /url: /
+        - img [ref=e34]
+        - text: Hub
+      - generic [ref=e37]:
+        - img [ref=e38]
+        - generic [ref=e40]: Decisao
+      - generic [ref=e41]:
+        - img [ref=e42]
+        - generic [ref=e44]: Ranking Consolidado
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: Ranking
+        - heading "Ranking consolidado de assinaturas para vibe coding." [level=1] [ref=e48]
+        - paragraph [ref=e49]: Baseado em uso real pesado no Cursor, telemetria de campo e triangulacao com benchmarks publicos. O ranking muda conforme evidencia nova.
+      - generic [ref=e50]:
+        - generic [ref=e51]: Caminho rapido
+        - generic [ref=e52]: Ranking para decidir.
+        - generic [ref=e53]: Benchmarks para comparar.
+        - generic [ref=e54]: AI Index para orientar agentes.
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - link "Home" [ref=e58] [cursor=pointer]:
+          - /url: /
+          - img [ref=e59]
+          - text: Home
+        - link "Buscar" [ref=e62] [cursor=pointer]:
+          - /url: /#search
+          - img [ref=e63]
+          - text: Buscar
+        - link "AI Index" [ref=e66] [cursor=pointer]:
+          - /url: /ai-index
+          - img [ref=e67]
+          - text: AI Index
+      - generic [ref=e70]:
+        - generic [ref=e71]: Relacionados
+        - link "Vibe Coding Hub" [ref=e72] [cursor=pointer]:
+          - /url: /
+        - link "Benchmark de Capacidade dos Modelos - Hub de Agentes" [ref=e73] [cursor=pointer]:
+          - /url: /benchmarks
+        - link "Estrategias de Assinatura" [ref=e74] [cursor=pointer]:
+          - /url: /estrategias
+        - link "Evidencia de Campo" [ref=e75] [cursor=pointer]:
+          - /url: /evidencia-campo
+      - link "Voltar para a pagina inicial" [ref=e76] [cursor=pointer]:
+        - /url: /
+        - img [ref=e77]
+        - text: Voltar para a pagina inicial
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - img [ref=e82]
+        - generic [ref=e88]:
+          - heading "Top 3 — Recomendacao ativa" [level=2] [ref=e89]
+          - paragraph [ref=e90]: Solucoes que receberam investimento real do hub.
+      - generic [ref=e91]:
+        - link "1 US$ 18–160/mes GLM Coding Plan Melhor camada de precisao. Fortissimo, mas quota em campo derrubou a tese de motor unico. Capacidade 55–85% Qualidade 75–88% Consolidado 68–85% Ver pagina" [ref=e92] [cursor=pointer]:
+          - /url: /glm
+          - generic [ref=e93]:
+            - generic [ref=e94]: "1"
+            - generic [ref=e95]: US$ 18–160/mes
+          - heading "GLM Coding Plan" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Melhor camada de precisao. Fortissimo, mas quota em campo derrubou a tese de motor unico.
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - paragraph [ref=e100]: Capacidade
+              - paragraph [ref=e101]: 55–85%
+            - generic [ref=e102]:
+              - paragraph [ref=e103]: Qualidade
+              - paragraph [ref=e104]: 75–88%
+            - generic [ref=e105]:
+              - paragraph [ref=e106]: Consolidado
+              - paragraph [ref=e107]: 68–85%
+          - generic [ref=e108]:
+            - text: Ver pagina
+            - img [ref=e109]
+        - link "2 US$ 6–100/mes Xiaomi MiMo Melhor nova camada de volume. Standard = piloto serio; Pro = compra forte. Capacidade 65–100% Qualidade 62–85% Consolidado 68–88% Ver pagina" [ref=e111] [cursor=pointer]:
+          - /url: /mimo
+          - generic [ref=e112]:
+            - generic [ref=e113]: "2"
+            - generic [ref=e114]: US$ 6–100/mes
+          - heading "Xiaomi MiMo" [level=3] [ref=e115]
+          - paragraph [ref=e116]: Melhor nova camada de volume. Standard = piloto serio; Pro = compra forte.
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - paragraph [ref=e119]: Capacidade
+              - paragraph [ref=e120]: 65–100%
+            - generic [ref=e121]:
+              - paragraph [ref=e122]: Qualidade
+              - paragraph [ref=e123]: 62–85%
+            - generic [ref=e124]:
+              - paragraph [ref=e125]: Consolidado
+              - paragraph [ref=e126]: 68–88%
+          - generic [ref=e127]:
+            - text: Ver pagina
+            - img [ref=e128]
+        - link "3 US$ 10/mes OpenCode Go Melhor MVP barato e daily driver economico. Capacidade 50–80% Qualidade 50–72% Consolidado 50–75% Ver pagina" [ref=e130] [cursor=pointer]:
+          - /url: /opencode-go
+          - generic [ref=e131]:
+            - generic [ref=e132]: "3"
+            - generic [ref=e133]: US$ 10/mes
+          - heading "OpenCode Go" [level=3] [ref=e134]
+          - paragraph [ref=e135]: Melhor MVP barato e daily driver economico.
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - paragraph [ref=e138]: Capacidade
+              - paragraph [ref=e139]: 50–80%
+            - generic [ref=e140]:
+              - paragraph [ref=e141]: Qualidade
+              - paragraph [ref=e142]: 50–72%
+            - generic [ref=e143]:
+              - paragraph [ref=e144]: Consolidado
+              - paragraph [ref=e145]: 50–75%
+          - generic [ref=e146]:
+            - text: Ver pagina
+            - img [ref=e147]
+    - generic [ref=e149]:
+      - heading "Ranking completo" [level=2] [ref=e150]
+      - table [ref=e152]:
+        - rowgroup [ref=e153]:
+          - row "# Solucao Preco Capacidade Qualidade Consolidado Veredito" [ref=e154]:
+            - columnheader "#" [ref=e155]
+            - columnheader "Solucao" [ref=e156]
+            - columnheader "Preco" [ref=e157]
+            - columnheader "Capacidade" [ref=e158]
+            - columnheader "Qualidade" [ref=e159]
+            - columnheader "Consolidado" [ref=e160]
+            - columnheader "Veredito" [ref=e161]
+        - rowgroup [ref=e162]:
+          - row "1 GLM Coding Plan US$ 18–160/mes 55–85% 75–88% 68–85% Melhor camada de precisao. Fortissimo, mas quota em campo derrubou a tese de motor unico." [ref=e163]:
+            - cell "1" [ref=e164]:
+              - generic [ref=e165]: "1"
+            - cell "GLM Coding Plan" [ref=e166]:
+              - link "GLM Coding Plan" [ref=e167] [cursor=pointer]:
+                - /url: /glm
+            - cell "US$ 18–160/mes" [ref=e168]
+            - cell "55–85%" [ref=e169]
+            - cell "75–88%" [ref=e170]
+            - cell "68–85%" [ref=e171]
+            - cell "Melhor camada de precisao. Fortissimo, mas quota em campo derrubou a tese de motor unico." [ref=e172]
+          - row "2 Xiaomi MiMo US$ 6–100/mes 65–100% 62–85% 68–88% Melhor nova camada de volume. Standard = piloto serio; Pro = compra forte." [ref=e173]:
+            - cell "2" [ref=e174]:
+              - generic [ref=e175]: "2"
+            - cell "Xiaomi MiMo" [ref=e176]:
+              - link "Xiaomi MiMo" [ref=e177] [cursor=pointer]:
+                - /url: /mimo
+            - cell "US$ 6–100/mes" [ref=e178]
+            - cell "65–100%" [ref=e179]
+            - cell "62–85%" [ref=e180]
+            - cell "68–88%" [ref=e181]
+            - cell "Melhor nova camada de volume. Standard = piloto serio; Pro = compra forte." [ref=e182]
+          - row "3 OpenCode Go US$ 10/mes 50–80% 50–72% 50–75% Melhor MVP barato e daily driver economico." [ref=e183]:
+            - cell "3" [ref=e184]:
+              - generic [ref=e185]: "3"
+            - cell "OpenCode Go" [ref=e186]:
+              - link "OpenCode Go" [ref=e187] [cursor=pointer]:
+                - /url: /opencode-go
+            - cell "US$ 10/mes" [ref=e188]
+            - cell "50–80%" [ref=e189]
+            - cell "50–72%" [ref=e190]
+            - cell "50–75%" [ref=e191]
+            - cell "Melhor MVP barato e daily driver economico." [ref=e192]
+          - row "4 Alibaba Coding Plan Pro US$ 50/mes 80–105% 50–70% 55–80% Melhor dark horse de capacidade. MiMo ficou mais limpa para este caso." [ref=e193]:
+            - cell "4" [ref=e194]:
+              - generic [ref=e195]: "4"
+            - cell "Alibaba Coding Plan Pro" [ref=e196]:
+              - link "Alibaba Coding Plan Pro" [ref=e197] [cursor=pointer]:
+                - /url: /alibaba
+            - cell "US$ 50/mes" [ref=e198]
+            - cell "80–105%" [ref=e199]
+            - cell "50–70%" [ref=e200]
+            - cell "55–80%" [ref=e201]
+            - cell "Melhor dark horse de capacidade. MiMo ficou mais limpa para este caso." [ref=e202]
+          - row "5 Google AI Pro / Ultra US$ 20–250/mes 35–80% 50–75% 35–70% Nova candidata real com mais transparencia." [ref=e203]:
+            - cell "5" [ref=e204]:
+              - generic [ref=e205]: "5"
+            - cell "Google AI Pro / Ultra" [ref=e206]:
+              - link "Google AI Pro / Ultra" [ref=e207] [cursor=pointer]:
+                - /url: /google-ai
+            - cell "US$ 20–250/mes" [ref=e208]
+            - cell "35–80%" [ref=e209]
+            - cell "50–75%" [ref=e210]
+            - cell "35–70%" [ref=e211]
+            - cell "Nova candidata real com mais transparencia." [ref=e212]
+          - row "6 Cursor Pro / Pro+ / Ultra US$ 20–200/mes 20–105% 80–95% 30–90% Melhor experiencia de IDE, nao melhor tese economica." [ref=e213]:
+            - cell "6" [ref=e214]:
+              - generic [ref=e215]: "6"
+            - cell "Cursor Pro / Pro+ / Ultra" [ref=e216]:
+              - link "Cursor Pro / Pro+ / Ultra" [ref=e217] [cursor=pointer]:
+                - /url: /cursor
+            - cell "US$ 20–200/mes" [ref=e218]
+            - cell "20–105%" [ref=e219]
+            - cell "80–95%" [ref=e220]
+            - cell "30–90%" [ref=e221]
+            - cell "Melhor experiencia de IDE, nao melhor tese economica." [ref=e222]
+          - row "7 Claude Max US$ 100–200/mes 85–100% 95–100% 85–100% Melhor referencia premium de qualidade." [ref=e223]:
+            - cell "7" [ref=e224]:
+              - generic [ref=e225]: "7"
+            - cell "Claude Max" [ref=e226]:
+              - link "Claude Max" [ref=e227] [cursor=pointer]:
+                - /url: /claude-max
+            - cell "US$ 100–200/mes" [ref=e228]
+            - cell "85–100%" [ref=e229]
+            - cell "95–100%" [ref=e230]
+            - cell "85–100%" [ref=e231]
+            - cell "Melhor referencia premium de qualidade." [ref=e232]
+          - row "8 Kiro (AWS) US$ 0–200/mes 25–80% 75–90% 35–75% Produto serio, billing menos intuitivo." [ref=e233]:
+            - cell "8" [ref=e234]:
+              - generic [ref=e235]: "8"
+            - cell "Kiro (AWS)" [ref=e236]:
+              - link "Kiro (AWS)" [ref=e237] [cursor=pointer]:
+                - /url: /kiro
+            - cell "US$ 0–200/mes" [ref=e238]
+            - cell "25–80%" [ref=e239]
+            - cell "75–90%" [ref=e240]
+            - cell "35–75%" [ref=e241]
+            - cell "Produto serio, billing menos intuitivo." [ref=e242]
+          - row "9 Factory Pro / Max US$ 20–200/mes 40–85% 75–90% 45–80% Workspace premium, mais plataforma do que tese economica." [ref=e243]:
+            - cell "9" [ref=e244]:
+              - generic [ref=e245]: "9"
+            - cell "Factory Pro / Max" [ref=e246]:
+              - link "Factory Pro / Max" [ref=e247] [cursor=pointer]:
+                - /url: /factory
+            - cell "US$ 20–200/mes" [ref=e248]
+            - cell "40–85%" [ref=e249]
+            - cell "75–90%" [ref=e250]
+            - cell "45–80%" [ref=e251]
+            - cell "Workspace premium, mais plataforma do que tese economica." [ref=e252]
+          - row "10 Windsurf Pro / Max US$ 20–200/mes 35–85% 55–80% 35–70% IDE relevante, risco de friccao operacional." [ref=e253]:
+            - cell "10" [ref=e254]:
+              - generic [ref=e255]: "10"
+            - cell "Windsurf Pro / Max" [ref=e256]:
+              - link "Windsurf Pro / Max" [ref=e257] [cursor=pointer]:
+                - /url: /windsurf
+            - cell "US$ 20–200/mes" [ref=e258]
+            - cell "35–85%" [ref=e259]
+            - cell "55–80%" [ref=e260]
+            - cell "35–70%" [ref=e261]
+            - cell "IDE relevante, risco de friccao operacional." [ref=e262]
+          - row "11 Ollama Pro / Max US$ 20–100/mes 45–85% 45–70% 45–75% Alternativa real para open-model cloud." [ref=e263]:
+            - cell "11" [ref=e264]:
+              - generic [ref=e265]: "11"
+            - cell "Ollama Pro / Max" [ref=e266]:
+              - link "Ollama Pro / Max" [ref=e267] [cursor=pointer]:
+                - /url: /ollama
+            - cell "US$ 20–100/mes" [ref=e268]
+            - cell "45–85%" [ref=e269]
+            - cell "45–70%" [ref=e270]
+            - cell "45–75%" [ref=e271]
+            - cell "Alternativa real para open-model cloud." [ref=e272]
+          - row "12 MiniMax Token Plan US$ 10–150/mes 60–95% 40–65% 30–60% Atrativa para throughput, moderada como substituicao principal." [ref=e273]:
+            - cell "12" [ref=e274]:
+              - generic [ref=e275]: "12"
+            - cell "MiniMax Token Plan" [ref=e276]:
+              - link "MiniMax Token Plan" [ref=e277] [cursor=pointer]:
+                - /url: /minimax
+            - cell "US$ 10–150/mes" [ref=e278]
+            - cell "60–95%" [ref=e279]
+            - cell "40–65%" [ref=e280]
+            - cell "30–60%" [ref=e281]
+            - cell "Atrativa para throughput, moderada como substituicao principal." [ref=e282]
+          - row "13 Devin Pro / Max / Teams US$ 20–200/mes 20–70% 70–90% 20–60% Boa autonomia, fraca como resposta economica." [ref=e283]:
+            - cell "13" [ref=e284]:
+              - generic [ref=e285]: "13"
+            - cell "Devin Pro / Max / Teams" [ref=e286]:
+              - link "Devin Pro / Max / Teams" [ref=e287] [cursor=pointer]:
+                - /url: /devin
+            - cell "US$ 20–200/mes" [ref=e288]
+            - cell "20–70%" [ref=e289]
+            - cell "70–90%" [ref=e290]
+            - cell "20–60%" [ref=e291]
+            - cell "Boa autonomia, fraca como resposta economica." [ref=e292]
+          - row "14 Kimi Code / Membership Varia 25–55% 60–75% 25–50% Promissor, arriscado como plano principal." [ref=e293]:
+            - cell "14" [ref=e294]:
+              - generic [ref=e295]: "14"
+            - cell "Kimi Code / Membership" [ref=e296]:
+              - link "Kimi Code / Membership" [ref=e297] [cursor=pointer]:
+                - /url: /kimi
+            - cell "Varia" [ref=e298]
+            - cell "25–55%" [ref=e299]
+            - cell "60–75%" [ref=e300]
+            - cell "25–50%" [ref=e301]
+            - cell "Promissor, arriscado como plano principal." [ref=e302]
+          - row "15 OpenAI / ChatGPT / Codex US$ 20–200/mes 10–85% 70–90% 10–75% Produto forte, opaco e menos previsivel." [ref=e303]:
+            - cell "15" [ref=e304]:
+              - generic [ref=e305]: "15"
+            - cell "OpenAI / ChatGPT / Codex" [ref=e306]:
+              - link "OpenAI / ChatGPT / Codex" [ref=e307] [cursor=pointer]:
+                - /url: /openai-codex
+            - cell "US$ 20–200/mes" [ref=e308]
+            - cell "10–85%" [ref=e309]
+            - cell "70–90%" [ref=e310]
+            - cell "10–75%" [ref=e311]
+            - cell "Produto forte, opaco e menos previsivel." [ref=e312]
+          - row "16 Chutes Pro / Plus US$ 10–20/mes 35–80% 40–65% 30–60% Vale como hibrida barata, nao como substituto." [ref=e313]:
+            - cell "16" [ref=e314]:
+              - generic [ref=e315]: "16"
+            - cell "Chutes Pro / Plus" [ref=e316]:
+              - link "Chutes Pro / Plus" [ref=e317] [cursor=pointer]:
+                - /url: /chutes
+            - cell "US$ 10–20/mes" [ref=e318]
+            - cell "35–80%" [ref=e319]
+            - cell "40–65%" [ref=e320]
+            - cell "30–60%" [ref=e321]
+            - cell "Vale como hibrida barata, nao como substituto." [ref=e322]
+    - generic [ref=e323]:
+      - generic [ref=e324]:
+        - heading "Conteudo editorial completo" [level=2] [ref=e325]
+        - generic [ref=e326]: legado preservado
+      - article [ref=e327]:
+        - generic [ref=e328]:
+          - generic [ref=e329]:
+            - heading "Ranking consolidado do momento" [level=1] [ref=e330]
+            - paragraph [ref=e331]:
+              - text: "Esta pagina voltou ao papel certo: ser a leitura mestra do estudo, com a tabela consolidada limpa, a logica de estrategias de assinatura e a ponte para as paginas profundas. O benchmark de capacidade continua sendo sua semana extrema no Cursor, tratada como"
+              - code [ref=e332]: 100%
+              - text: .
+            - generic [ref=e333]:
+              - generic [ref=e334]:
+                - strong [ref=e335]: Ultima compilacao
+                - generic [ref=e336]: 29/04/2026
+              - generic [ref=e337]:
+                - strong [ref=e338]: Melhor stack misto
+                - generic [ref=e339]: GLM + MiMo + OpenCode Go
+              - generic [ref=e340]:
+                - strong [ref=e341]: Melhor camada de precisao
+                - generic [ref=e342]: GLM Coding Plan
+              - generic [ref=e343]:
+                - strong [ref=e344]: Melhor nova camada de volume
+                - generic [ref=e345]: Xiaomi MiMo
+            - generic [ref=e346]:
+              - strong [ref=e347]: "Como ler a tabela:"
+              - text: "`capacidade` mede quanto da sua semana extrema a solucao tende a sustentar. `qualidade tecnica` mede o quao perto ela chega do nivel de coding agent pesado que voce extraiu dos frontrunners. `consolidado` mistura volume, nivel tecnico, previsibilidade e risco operacional."
+          - generic [ref=e348]:
+            - heading "Estrategias de assinatura" [level=2] [ref=e349]
+            - generic [ref=e350]:
+              - generic [ref=e351]:
+                - strong [ref=e352]: Stack misto racional
+                - paragraph [ref=e353]:
+                  - link "GLM" [ref=e354] [cursor=pointer]:
+                    - /url: /glm
+                  - text: +
+                  - link "MiMo" [ref=e355] [cursor=pointer]:
+                    - /url: /mimo
+                  - text: +
+                  - link "OpenCode Go" [ref=e356] [cursor=pointer]:
+                    - /url: /opencode-go
+                  - text: virou a leitura mais forte do hub para separar precisao, volume e camada barata.
+              - generic [ref=e357]:
+                - strong [ref=e358]: Camada de precisao
+                - paragraph [ref=e359]:
+                  - link "GLM Coding Plan" [ref=e360] [cursor=pointer]:
+                    - /url: /glm
+                  - text: continua muito forte tecnicamente, mas o consumo de campo ficou agressivo demais para continuar sendo tratado como melhor motor de volume.
+              - generic [ref=e361]:
+                - strong [ref=e362]: MVP barato e serio
+                - paragraph [ref=e363]:
+                  - link "OpenCode Go" [ref=e364] [cursor=pointer]:
+                    - /url: /opencode-go
+                  - text: "continua sendo a melhor porta de entrada para medir uso real e sustentar a trilha barata com `DeepSeek V4 Flash`."
+              - generic [ref=e365]:
+                - strong [ref=e366]: Candidata comercial do momento
+                - paragraph [ref=e367]:
+                  - link "Xiaomi MiMo" [ref=e368] [cursor=pointer]:
+                    - /url: /mimo
+                  - text: saiu do campo da curiosidade e entrou na shortlist principal por ter docs oficiais maduras, integracao com Zed/OpenCode e Token Plan legivel.
+              - generic [ref=e369]:
+                - strong [ref=e370]: Evidencia de campo
+                - paragraph [ref=e371]:
+                  - link "A nova matriz de campo" [ref=e372] [cursor=pointer]:
+                    - /url: /evidencia-campo
+                  - text: "concentra a parte que faltava ao benchmark: qualidade percebida, burn e papel operacional por modelo."
+              - generic [ref=e373]:
+                - strong [ref=e374]: Reviews da comunidade
+                - paragraph [ref=e375]:
+                  - link "A nova tela de reviews" [ref=e376] [cursor=pointer]:
+                    - /url: /reviews-comunidade
+                  - text: amplia o campo para modelos, planos, IDEs e harnesses, sempre com docs oficiais mandando nos fatos e a comunidade validando uso real.
+              - generic [ref=e377]:
+                - strong [ref=e378]: Referencia premium de qualidade
+                - paragraph [ref=e379]:
+                  - link "Claude Max" [ref=e380] [cursor=pointer]:
+                    - /url: /claude-max
+                  - text: continua sendo o teto de referencia, mas nao a melhor compra economica.
+              - generic [ref=e381]:
+                - strong [ref=e382]: Referencia pratica de IDE
+                - paragraph [ref=e383]:
+                  - link "Cursor" [ref=e384] [cursor=pointer]:
+                    - /url: /cursor
+                  - text: continua sendo a ancora de UX e benchmark operacional do seu uso extremo.
+          - generic [ref=e385]:
+            - heading "Tabela comparativa final" [level=2] [ref=e386]
+            - generic [ref=e387]:
+              - strong [ref=e388]: "Nota metodologica:"
+              - text: "`MiMo` ainda tem menos semanas de telemetria propria do que `GLM` e `OpenCode Go`, mas a plataforma oficial da Xiaomi e a triangulacao de comunidade/videos melhoraram a base de evidencia o bastante para muda-lo de \"observacao\" para \"camada comercial principal em piloto serio\"."
+            - table [ref=e389]:
+              - rowgroup [ref=e390]:
+                - row "Rank Solucao Preco base Modelos / assinatura Como quota e cobrada Capacidade Qualidade tecnica Consolidado Leitura final" [ref=e391]:
+                  - columnheader "Rank" [ref=e392]
+                  - columnheader "Solucao" [ref=e393]
+                  - columnheader "Preco base" [ref=e394]
+                  - columnheader "Modelos / assinatura" [ref=e395]
+                  - columnheader "Como quota e cobrada" [ref=e396]
+                  - columnheader "Capacidade" [ref=e397]
+                  - columnheader "Qualidade tecnica" [ref=e398]
+                  - columnheader "Consolidado" [ref=e399]
+                  - columnheader "Leitura final" [ref=e400]
+              - rowgroup [ref=e401]:
+                - row "1 GLM Coding Plan Pagina profunda pronta US$ 18 a US$ 160/mes GLM-5.1, GLM-5-Turbo, GLM-4.7, GLM-4.5-Air Quota em tokens totais; GLM-5.1 e GLM-5-Turbo com multiplicadores (3x pico, 1x off-peak promo) 55% a 85% 75% a 88% 68% a 85% Melhor camada de precisao do hub. Continua fortissimo, mas a queima de quota em campo derrubou a tese de \"motor unico\" para o seu caso." [ref=e402]:
+                  - cell "1" [ref=e403]
+                  - cell "GLM Coding Plan Pagina profunda pronta" [ref=e404]:
+                    - link "GLM Coding Plan" [ref=e405] [cursor=pointer]:
+                      - /url: /glm
+                      - strong [ref=e406]: GLM Coding Plan
+                    - generic [ref=e407]: Pagina profunda pronta
+                  - cell "US$ 18 a US$ 160/mes" [ref=e408]
+                  - cell "GLM-5.1, GLM-5-Turbo, GLM-4.7, GLM-4.5-Air" [ref=e409]
+                  - cell "Quota em tokens totais; GLM-5.1 e GLM-5-Turbo com multiplicadores (3x pico, 1x off-peak promo)" [ref=e410]
+                  - cell "55% a 85%" [ref=e411]:
+                    - generic [ref=e412]: 55% a 85%
+                  - cell "75% a 88%" [ref=e413]:
+                    - generic [ref=e414]: 75% a 88%
+                  - cell "68% a 85%" [ref=e415]:
+                    - generic [ref=e416]: 68% a 85%
+                  - cell "Melhor camada de precisao do hub. Continua fortissimo, mas a queima de quota em campo derrubou a tese de \"motor unico\" para o seu caso." [ref=e417]
+                - 'row "2 Xiaomi MiMo Pagina profunda pronta | Docs oficiais de pricing e integracao revisadas US$ 6 a US$ 100/mes MiMo-V2.5-Pro, MiMo-V2.5, MiMo-V2-Flash e stack MiMo Token Plan por creditos; V2.5 = 1 credit/token, V2.5-Pro = 2 credits/token; off-peak 0.8x; rounds mensais oficiais por tier 65% a 100% 62% a 85% 68% a 88% Melhor nova camada de volume do hub. `Standard` ja virou piloto serio; `Pro` virou compra forte." [ref=e418]':
+                  - cell "2" [ref=e419]
+                  - cell "Xiaomi MiMo Pagina profunda pronta | Docs oficiais de pricing e integracao revisadas" [ref=e420]:
+                    - link "Xiaomi MiMo" [ref=e421] [cursor=pointer]:
+                      - /url: /mimo
+                      - strong [ref=e422]: Xiaomi MiMo
+                    - generic [ref=e423]: Pagina profunda pronta | Docs oficiais de pricing e integracao revisadas
+                  - cell "US$ 6 a US$ 100/mes" [ref=e424]
+                  - cell "MiMo-V2.5-Pro, MiMo-V2.5, MiMo-V2-Flash e stack MiMo" [ref=e425]
+                  - cell "Token Plan por creditos; V2.5 = 1 credit/token, V2.5-Pro = 2 credits/token; off-peak 0.8x; rounds mensais oficiais por tier" [ref=e426]
+                  - cell "65% a 100%" [ref=e427]:
+                    - generic [ref=e428]: 65% a 100%
+                  - cell "62% a 85%" [ref=e429]:
+                    - generic [ref=e430]: 62% a 85%
+                  - cell "68% a 88%" [ref=e431]:
+                    - generic [ref=e432]: 68% a 88%
+                  - 'cell "Melhor nova camada de volume do hub. `Standard` ja virou piloto serio; `Pro` virou compra forte." [ref=e433]'
+                - row "3 OpenCode Go Pagina profunda pronta | Telemetria ativa US$ 10/mes GLM-5 / 5.1, Kimi K2.5/2.6, MiniMax M2.7, MiMo-V2.5, Qwen 3.5/3.6, DeepSeek V4 e outros Budget interno por valor (US$ 12/5h, US$ 30/semana, US$ 60/mes); fallback opcional para Zen 50% a 80% 50% a 72% 50% a 75% Melhor MVP barato e daily driver economico serio." [ref=e434]:
+                  - cell "3" [ref=e435]
+                  - cell "OpenCode Go Pagina profunda pronta | Telemetria ativa" [ref=e436]:
+                    - link "OpenCode Go" [ref=e437] [cursor=pointer]:
+                      - /url: /opencode-go
+                      - strong [ref=e438]: OpenCode Go
+                    - generic [ref=e439]: Pagina profunda pronta | Telemetria ativa
+                  - cell "US$ 10/mes" [ref=e440]
+                  - cell "GLM-5 / 5.1, Kimi K2.5/2.6, MiniMax M2.7, MiMo-V2.5, Qwen 3.5/3.6, DeepSeek V4 e outros" [ref=e441]
+                  - cell "Budget interno por valor (US$ 12/5h, US$ 30/semana, US$ 60/mes); fallback opcional para Zen" [ref=e442]
+                  - cell "50% a 80%" [ref=e443]:
+                    - generic [ref=e444]: 50% a 80%
+                  - cell "50% a 72%" [ref=e445]:
+                    - generic [ref=e446]: 50% a 72%
+                  - cell "50% a 75%" [ref=e447]:
+                    - generic [ref=e448]: 50% a 75%
+                  - cell "Melhor MVP barato e daily driver economico serio." [ref=e449]
+                - row "4 Alibaba Coding Plan Pro Pagina profunda pronta US$ 50/mes qwen3.6-plus, kimi-k2.5, glm-5, MiniMax-M2.5, DeepSeek V4 e outros 6.000 requests/5h, 45.000/semana, 90.000/mes; consumo real varia muito por task 80% a 105% 50% a 70% 55% a 80% Melhor dark horse de capacidade pelo preco, mas hoje a leitura de MiMo ficou mais limpa para o seu caso." [ref=e450]:
+                  - cell "4" [ref=e451]
+                  - cell "Alibaba Coding Plan Pro Pagina profunda pronta" [ref=e452]:
+                    - link "Alibaba Coding Plan Pro" [ref=e453] [cursor=pointer]:
+                      - /url: /alibaba
+                      - strong [ref=e454]: Alibaba Coding Plan Pro
+                    - generic [ref=e455]: Pagina profunda pronta
+                  - cell "US$ 50/mes" [ref=e456]
+                  - cell "qwen3.6-plus, kimi-k2.5, glm-5, MiniMax-M2.5, DeepSeek V4 e outros" [ref=e457]
+                  - cell "6.000 requests/5h, 45.000/semana, 90.000/mes; consumo real varia muito por task" [ref=e458]
+                  - cell "80% a 105%" [ref=e459]:
+                    - generic [ref=e460]: 80% a 105%
+                  - cell "50% a 70%" [ref=e461]:
+                    - generic [ref=e462]: 50% a 70%
+                  - cell "55% a 80%" [ref=e463]:
+                    - generic [ref=e464]: 55% a 80%
+                  - cell "Melhor dark horse de capacidade pelo preco, mas hoje a leitura de MiMo ficou mais limpa para o seu caso." [ref=e465]
+                - row "5 Google AI Pro / Ultra Pagina profunda pronta US$ 19.99 a US$ 249.99/mes Gemini CLI, Gemini Code Assist, Jules, Gemini 3 Pro 1.500 ou 2.000 requests/dia por usuario para CLI + agent mode; 120 req/min 35% a 80% 50% a 75% 35% a 70% Nova candidata real, com mais transparencia do que antes." [ref=e466]:
+                  - cell "5" [ref=e467]
+                  - cell "Google AI Pro / Ultra Pagina profunda pronta" [ref=e468]:
+                    - link "Google AI Pro / Ultra" [ref=e469] [cursor=pointer]:
+                      - /url: /google-ai
+                      - strong [ref=e470]: Google AI Pro / Ultra
+                    - generic [ref=e471]: Pagina profunda pronta
+                  - cell "US$ 19.99 a US$ 249.99/mes" [ref=e472]
+                  - cell "Gemini CLI, Gemini Code Assist, Jules, Gemini 3 Pro" [ref=e473]
+                  - cell "1.500 ou 2.000 requests/dia por usuario para CLI + agent mode; 120 req/min" [ref=e474]
+                  - cell "35% a 80%" [ref=e475]:
+                    - generic [ref=e476]: 35% a 80%
+                  - cell "50% a 75%" [ref=e477]:
+                    - generic [ref=e478]: 50% a 75%
+                  - cell "35% a 70%" [ref=e479]:
+                    - generic [ref=e480]: 35% a 70%
+                  - cell "Nova candidata real, com mais transparencia do que antes." [ref=e481]
+                - row "6 Cursor Pro / Pro+ / Ultra Pagina profunda pronta US$ 20 a US$ 200/mes IDE agentica com OpenAI, Claude, Gemini, MCPs e cloud agents Uso incluido por plano + overage; Pro+ 3x e Ultra 20x 20% a 105% 80% a 95% 30% a 90% Melhor experiencia pratica de IDE, mas nao a melhor tese economica." [ref=e482]:
+                  - cell "6" [ref=e483]
+                  - cell "Cursor Pro / Pro+ / Ultra Pagina profunda pronta" [ref=e484]:
+                    - link "Cursor Pro / Pro+ / Ultra" [ref=e485] [cursor=pointer]:
+                      - /url: /cursor
+                      - strong [ref=e486]: Cursor Pro / Pro+ / Ultra
+                    - generic [ref=e487]: Pagina profunda pronta
+                  - cell "US$ 20 a US$ 200/mes" [ref=e488]
+                  - cell "IDE agentica com OpenAI, Claude, Gemini, MCPs e cloud agents" [ref=e489]
+                  - cell "Uso incluido por plano + overage; Pro+ 3x e Ultra 20x" [ref=e490]
+                  - cell "20% a 105%" [ref=e491]:
+                    - generic [ref=e492]: 20% a 105%
+                  - cell "80% a 95%" [ref=e493]:
+                    - generic [ref=e494]: 80% a 95%
+                  - cell "30% a 90%" [ref=e495]:
+                    - generic [ref=e496]: 30% a 90%
+                  - cell "Melhor experiencia pratica de IDE, mas nao a melhor tese economica." [ref=e497]
+                - row "7 Claude Max Pagina profunda pronta US$ 100 a US$ 200/mes Claude web/desktop/mobile + Claude Code 5x ou 20x do Pro por sessao; limites semanais e caps adicionais 85% a 100% 95% a 100% 85% a 100% Melhor referencia premium de qualidade." [ref=e498]:
+                  - cell "7" [ref=e499]
+                  - cell "Claude Max Pagina profunda pronta" [ref=e500]:
+                    - link "Claude Max" [ref=e501] [cursor=pointer]:
+                      - /url: /claude-max
+                      - strong [ref=e502]: Claude Max
+                    - generic [ref=e503]: Pagina profunda pronta
+                  - cell "US$ 100 a US$ 200/mes" [ref=e504]
+                  - cell "Claude web/desktop/mobile + Claude Code" [ref=e505]
+                  - cell "5x ou 20x do Pro por sessao; limites semanais e caps adicionais" [ref=e506]
+                  - cell "85% a 100%" [ref=e507]:
+                    - generic [ref=e508]: 85% a 100%
+                  - cell "95% a 100%" [ref=e509]:
+                    - generic [ref=e510]: 95% a 100%
+                  - cell "85% a 100%" [ref=e511]:
+                    - generic [ref=e512]: 85% a 100%
+                  - cell "Melhor referencia premium de qualidade." [ref=e513]
+                - row "8 Kiro (AWS) Pagina profunda pronta US$ 0 a US$ 200/mes Kiro IDE, Kiro CLI, ACP IDEs; Sonnet, Opus e Haiku Creditos incluidos + overage por credito 25% a 80% 75% a 90% 35% a 75% Produto serio, mas billing menos intuitivo para o seu caso." [ref=e514]:
+                  - cell "8" [ref=e515]
+                  - cell "Kiro (AWS) Pagina profunda pronta" [ref=e516]:
+                    - link "Kiro (AWS)" [ref=e517] [cursor=pointer]:
+                      - /url: /kiro
+                      - strong [ref=e518]: Kiro (AWS)
+                    - generic [ref=e519]: Pagina profunda pronta
+                  - cell "US$ 0 a US$ 200/mes" [ref=e520]
+                  - cell "Kiro IDE, Kiro CLI, ACP IDEs; Sonnet, Opus e Haiku" [ref=e521]
+                  - cell "Creditos incluidos + overage por credito" [ref=e522]
+                  - cell "25% a 80%" [ref=e523]:
+                    - generic [ref=e524]: 25% a 80%
+                  - cell "75% a 90%" [ref=e525]:
+                    - generic [ref=e526]: 75% a 90%
+                  - cell "35% a 75%" [ref=e527]:
+                    - generic [ref=e528]: 35% a 75%
+                  - cell "Produto serio, mas billing menos intuitivo para o seu caso." [ref=e529]
+                - row "9 Factory Pro / Max Pagina profunda pronta US$ 20 a US$ 200/mes Workspace agentico com desktop, web, CLI e frontier models Planos por workspace; Max promete 10x usage do Pro, sem quota simples 40% a 85% 75% a 90% 45% a 80% Workspace premium forte, mais plataforma do que tese economica." [ref=e530]:
+                  - cell "9" [ref=e531]
+                  - cell "Factory Pro / Max Pagina profunda pronta" [ref=e532]:
+                    - link "Factory Pro / Max" [ref=e533] [cursor=pointer]:
+                      - /url: /factory
+                      - strong [ref=e534]: Factory Pro / Max
+                    - generic [ref=e535]: Pagina profunda pronta
+                  - cell "US$ 20 a US$ 200/mes" [ref=e536]
+                  - cell "Workspace agentico com desktop, web, CLI e frontier models" [ref=e537]
+                  - cell "Planos por workspace; Max promete 10x usage do Pro, sem quota simples" [ref=e538]
+                  - cell "40% a 85%" [ref=e539]:
+                    - generic [ref=e540]: 40% a 85%
+                  - cell "75% a 90%" [ref=e541]:
+                    - generic [ref=e542]: 75% a 90%
+                  - cell "45% a 80%" [ref=e543]:
+                    - generic [ref=e544]: 45% a 80%
+                  - cell "Workspace premium forte, mais plataforma do que tese economica." [ref=e545]
+                - row "10 Windsurf Pro / Max Pagina profunda pronta US$ 20 a US$ 200/mes SWE-1.6, SWE-1.5, Adaptive, Claude/GPT/BYOK Budget diario e semanal por tokens/modelo; extra usage na API price 35% a 85% 55% a 80% 35% a 70% IDE relevante, mas com risco alto de friccao operacional." [ref=e546]:
+                  - cell "10" [ref=e547]
+                  - cell "Windsurf Pro / Max Pagina profunda pronta" [ref=e548]:
+                    - link "Windsurf Pro / Max" [ref=e549] [cursor=pointer]:
+                      - /url: /windsurf
+                      - strong [ref=e550]: Windsurf Pro / Max
+                    - generic [ref=e551]: Pagina profunda pronta
+                  - cell "US$ 20 a US$ 200/mes" [ref=e552]
+                  - cell "SWE-1.6, SWE-1.5, Adaptive, Claude/GPT/BYOK" [ref=e553]
+                  - cell "Budget diario e semanal por tokens/modelo; extra usage na API price" [ref=e554]
+                  - cell "35% a 85%" [ref=e555]:
+                    - generic [ref=e556]: 35% a 85%
+                  - cell "55% a 80%" [ref=e557]:
+                    - generic [ref=e558]: 55% a 80%
+                  - cell "35% a 70%" [ref=e559]:
+                    - generic [ref=e560]: 35% a 70%
+                  - cell "IDE relevante, mas com risco alto de friccao operacional." [ref=e561]
+                - row "11 Ollama Pro / Max Pagina profunda pronta US$ 20 a US$ 100/mes Open models locais e cloud, com privacidade forte Uso cloud medido por utilizacao real da infra; local sempre ilimitado 45% a 85% 45% a 70% 45% a 75% Alternativa real para estrategia open-model cloud." [ref=e562]:
+                  - cell "11" [ref=e563]
+                  - cell "Ollama Pro / Max Pagina profunda pronta" [ref=e564]:
+                    - link "Ollama Pro / Max" [ref=e565] [cursor=pointer]:
+                      - /url: /ollama
+                      - strong [ref=e566]: Ollama Pro / Max
+                    - generic [ref=e567]: Pagina profunda pronta
+                  - cell "US$ 20 a US$ 100/mes" [ref=e568]
+                  - cell "Open models locais e cloud, com privacidade forte" [ref=e569]
+                  - cell "Uso cloud medido por utilizacao real da infra; local sempre ilimitado" [ref=e570]
+                  - cell "45% a 85%" [ref=e571]:
+                    - generic [ref=e572]: 45% a 85%
+                  - cell "45% a 70%" [ref=e573]:
+                    - generic [ref=e574]: 45% a 70%
+                  - cell "45% a 75%" [ref=e575]:
+                    - generic [ref=e576]: 45% a 75%
+                  - cell "Alternativa real para estrategia open-model cloud." [ref=e577]
+                - row "12 MiniMax Token Plan Pagina profunda pronta US$ 10 a US$ 150/mes MiniMax M2.7, Speech 2.8, Hailuo 2.3, Music 2.6 Requests por 5h e janela semanal 10x; Highspeed tiers com capacidade dedicada 60% a 95% 40% a 65% 30% a 60% Atrativa no papel para throughput, mas ainda moderada como substituicao principal." [ref=e578]:
+                  - cell "12" [ref=e579]
+                  - cell "MiniMax Token Plan Pagina profunda pronta" [ref=e580]:
+                    - link "MiniMax Token Plan" [ref=e581] [cursor=pointer]:
+                      - /url: /minimax
+                      - strong [ref=e582]: MiniMax Token Plan
+                    - generic [ref=e583]: Pagina profunda pronta
+                  - cell "US$ 10 a US$ 150/mes" [ref=e584]
+                  - cell "MiniMax M2.7, Speech 2.8, Hailuo 2.3, Music 2.6" [ref=e585]
+                  - cell "Requests por 5h e janela semanal 10x; Highspeed tiers com capacidade dedicada" [ref=e586]
+                  - cell "60% a 95%" [ref=e587]:
+                    - generic [ref=e588]: 60% a 95%
+                  - cell "40% a 65%" [ref=e589]:
+                    - generic [ref=e590]: 40% a 65%
+                  - cell "30% a 60%" [ref=e591]:
+                    - generic [ref=e592]: 30% a 60%
+                  - cell "Atrativa no papel para throughput, mas ainda moderada como substituicao principal." [ref=e593]
+                - row "13 Devin Pro / Max / Teams Pagina profunda pronta US$ 20 a US$ 200/mes Agente autonomo com ACUs e sessoes mais delegadas Quota incluida + PAYG; billing ainda precisa ser revalidado a cada rodada 20% a 70% 70% a 90% 20% a 60% Boa referencia de autonomia, fraca como resposta economica principal." [ref=e594]:
+                  - cell "13" [ref=e595]
+                  - cell "Devin Pro / Max / Teams Pagina profunda pronta" [ref=e596]:
+                    - link "Devin Pro / Max / Teams" [ref=e597] [cursor=pointer]:
+                      - /url: /devin
+                      - strong [ref=e598]: Devin Pro / Max / Teams
+                    - generic [ref=e599]: Pagina profunda pronta
+                  - cell "US$ 20 a US$ 200/mes" [ref=e600]
+                  - cell "Agente autonomo com ACUs e sessoes mais delegadas" [ref=e601]
+                  - cell "Quota incluida + PAYG; billing ainda precisa ser revalidado a cada rodada" [ref=e602]
+                  - cell "20% a 70%" [ref=e603]:
+                    - generic [ref=e604]: 20% a 70%
+                  - cell "70% a 90%" [ref=e605]:
+                    - generic [ref=e606]: 70% a 90%
+                  - cell "20% a 60%" [ref=e607]:
+                    - generic [ref=e608]: 20% a 60%
+                  - cell "Boa referencia de autonomia, fraca como resposta economica principal." [ref=e609]
+                - row "14 Kimi Code / Membership Pagina profunda pronta Varia por membership K2.6 e stack Kimi Code Limite depende muito de tokens nao-cacheados e weekly window 25% a 55% 60% a 75% 25% a 50% Promissor em fluxos certos, mas ainda arriscado demais como plano principal." [ref=e610]:
+                  - cell "14" [ref=e611]
+                  - cell "Kimi Code / Membership Pagina profunda pronta" [ref=e612]:
+                    - link "Kimi Code / Membership" [ref=e613] [cursor=pointer]:
+                      - /url: /kimi
+                      - strong [ref=e614]: Kimi Code / Membership
+                    - generic [ref=e615]: Pagina profunda pronta
+                  - cell "Varia por membership" [ref=e616]
+                  - cell "K2.6 e stack Kimi Code" [ref=e617]
+                  - cell "Limite depende muito de tokens nao-cacheados e weekly window" [ref=e618]
+                  - cell "25% a 55%" [ref=e619]:
+                    - generic [ref=e620]: 25% a 55%
+                  - cell "60% a 75%" [ref=e621]:
+                    - generic [ref=e622]: 60% a 75%
+                  - cell "25% a 50%" [ref=e623]:
+                    - generic [ref=e624]: 25% a 50%
+                  - cell "Promissor em fluxos certos, mas ainda arriscado demais como plano principal." [ref=e625]
+                - row "15 OpenAI / ChatGPT / Codex Pagina profunda pronta US$ 20 a US$ 200/mes ChatGPT Plus/Pro, Codex, GPT-5.5, GPT-5.4, GPT-5.3-Codex Limites misturam 5h, semanal e logica de credito no Codex 10% a 85% 70% a 90% 10% a 75% Produto forte, mas ainda opaco e menos previsivel para o problema economico central do hub." [ref=e626]:
+                  - cell "15" [ref=e627]
+                  - cell "OpenAI / ChatGPT / Codex Pagina profunda pronta" [ref=e628]:
+                    - link "OpenAI / ChatGPT / Codex" [ref=e629] [cursor=pointer]:
+                      - /url: /openai-codex
+                      - strong [ref=e630]: OpenAI / ChatGPT / Codex
+                    - generic [ref=e631]: Pagina profunda pronta
+                  - cell "US$ 20 a US$ 200/mes" [ref=e632]
+                  - cell "ChatGPT Plus/Pro, Codex, GPT-5.5, GPT-5.4, GPT-5.3-Codex" [ref=e633]
+                  - cell "Limites misturam 5h, semanal e logica de credito no Codex" [ref=e634]
+                  - cell "10% a 85%" [ref=e635]:
+                    - generic [ref=e636]: 10% a 85%
+                  - cell "70% a 90%" [ref=e637]:
+                    - generic [ref=e638]: 70% a 90%
+                  - cell "10% a 75%" [ref=e639]:
+                    - generic [ref=e640]: 10% a 75%
+                  - cell "Produto forte, mas ainda opaco e menos previsivel para o problema economico central do hub." [ref=e641]
+                - row "16 Chutes Pro / Plus Pagina profunda pronta US$ 10 a US$ 20/mes Infra hibrida com acesso a modelos e PAYG alem da franquia Assinatura leve + uso adicional por demanda 35% a 80% 40% a 65% 30% a 60% Vale como estrategia hibrida barata, nao como substituto principal previsivel." [ref=e642]:
+                  - cell "16" [ref=e643]
+                  - cell "Chutes Pro / Plus Pagina profunda pronta" [ref=e644]:
+                    - link "Chutes Pro / Plus" [ref=e645] [cursor=pointer]:
+                      - /url: /chutes
+                      - strong [ref=e646]: Chutes Pro / Plus
+                    - generic [ref=e647]: Pagina profunda pronta
+                  - cell "US$ 10 a US$ 20/mes" [ref=e648]
+                  - cell "Infra hibrida com acesso a modelos e PAYG alem da franquia" [ref=e649]
+                  - cell "Assinatura leve + uso adicional por demanda" [ref=e650]
+                  - cell "35% a 80%" [ref=e651]:
+                    - generic [ref=e652]: 35% a 80%
+                  - cell "40% a 65%" [ref=e653]:
+                    - generic [ref=e654]: 40% a 65%
+                  - cell "30% a 60%" [ref=e655]:
+                    - generic [ref=e656]: 30% a 60%
+                  - cell "Vale como estrategia hibrida barata, nao como substituto principal previsivel." [ref=e657]
+          - generic [ref=e658]:
+            - heading "Mapa de paginas" [level=2] [ref=e659]
+            - generic [ref=e660]:
+              - generic [ref=e661]:
+                - strong [ref=e662]: Paginas principais
+                - list [ref=e663]:
+                  - listitem [ref=e664]:
+                    - link "Telemetria" [ref=e665] [cursor=pointer]:
+                      - /url: /telemetria
+                  - listitem [ref=e666]:
+                    - link "Benchmarks" [ref=e667] [cursor=pointer]:
+                      - /url: /benchmarks
+                  - listitem [ref=e668]:
+                    - link "IDEs e harnesses" [ref=e669] [cursor=pointer]:
+                      - /url: /harnesses
+                  - listitem [ref=e670]:
+                    - link "Orquestradores" [ref=e671] [cursor=pointer]:
+                      - /url: /orquestradores
+                  - listitem [ref=e672]:
+                    - link "Solucoes auditadas" [ref=e673] [cursor=pointer]:
+                      - /url: /solucoes-auditadas
+              - generic [ref=e674]:
+                - strong [ref=e675]: Paginas profundas mais importantes
+                - list [ref=e676]:
+                  - listitem [ref=e677]:
+                    - link "GLM Coding Plan" [ref=e678] [cursor=pointer]:
+                      - /url: /glm
+                  - listitem [ref=e679]:
+                    - link "Alibaba Coding Plan Pro" [ref=e680] [cursor=pointer]:
+                      - /url: /alibaba
+                  - listitem [ref=e681]:
+                    - link "OpenCode Go" [ref=e682] [cursor=pointer]:
+                      - /url: /opencode-go
+                  - listitem [ref=e683]:
+                    - link "Xiaomi MiMo" [ref=e684] [cursor=pointer]:
+                      - /url: /mimo
+                  - listitem [ref=e685]:
+                    - link "Cursor" [ref=e686] [cursor=pointer]:
+                      - /url: /cursor
+                  - listitem [ref=e687]:
+                    - link "Claude Max" [ref=e688] [cursor=pointer]:
+                      - /url: /claude-max
+  - contentinfo [ref=e689]:
+    - generic [ref=e690]:
+      - generic [ref=e691]:
+        - generic [ref=e692]:
+          - generic [ref=e693]:
+            - img [ref=e695]
+            - generic [ref=e697]: Vibe Coding Hub
+          - paragraph [ref=e698]: Hub para comparar assinaturas, modelos, IDEs e telemetria de vibe coding.
+        - generic [ref=e699]:
+          - generic [ref=e700]:
+            - paragraph [ref=e701]: Decisao
+            - generic [ref=e702]:
+              - link "Ranking" [ref=e703] [cursor=pointer]:
+                - /url: /ranking
+              - link "Estrategias" [ref=e704] [cursor=pointer]:
+                - /url: /estrategias
+              - link "Vibe Sustentavel" [ref=e705] [cursor=pointer]:
+                - /url: /vibe-sustentavel
+          - generic [ref=e706]:
+            - paragraph [ref=e707]: Tecnico
+            - generic [ref=e708]:
+              - link "Benchmarks" [ref=e709] [cursor=pointer]:
+                - /url: /benchmarks
+              - link "Evidencia de Campo" [ref=e710] [cursor=pointer]:
+                - /url: /evidencia-campo
+              - link "Telemetria" [ref=e711] [cursor=pointer]:
+                - /url: /telemetria
+          - generic [ref=e712]:
+            - paragraph [ref=e713]: Recursos
+            - generic [ref=e714]:
+              - link "IDEs e Harnesses" [ref=e715] [cursor=pointer]:
+                - /url: /harnesses
+              - link "Better Prompts" [ref=e716] [cursor=pointer]:
+                - /url: /ai-better-prompts
+              - link "AI Index" [ref=e717] [cursor=pointer]:
+                - /url: /ai-index
+        - generic [ref=e718]:
+          - paragraph [ref=e719]: Para IA
+          - generic [ref=e720]:
+            - link "Mapa do Hub" [ref=e721] [cursor=pointer]:
+              - /url: /ai-index
+            - link "llms.txt" [ref=e722] [cursor=pointer]:
+              - /url: /llms.txt
+            - link "content-map.json" [ref=e723] [cursor=pointer]:
+              - /url: /ai-content-map.json
+      - generic [ref=e724]:
+        - paragraph [ref=e725]: 6areas · conteudo preservado · SSR + AI-ready
+        - paragraph [ref=e726]: Vibe Coding Hub © 2026
+  - alert [ref=e727]

@@ -4,8 +4,8 @@
       "id": "chatgpt_plus_codex",
       "label": "ChatGPT Plus + Codex Desktop",
       "kind": "manual_snapshot",
-      "status": "active",
-      "notes": "Snapshot manual registrado em 24/04/2026 durante uso combinado de estudo pesado e trabalho no KLG Bots.",
+      "status": "inactive",
+      "notes": "Snapshot antigo de 24/04/2026. Sem atualizacao desde entao.",
       "window": {
         "snapshot_at": "2026-04-24T02:05:00-03:00"
       },
@@ -27,14 +27,35 @@
       "label": "Cursor - estado operacional atual",
       "kind": "manual_snapshot",
       "status": "degraded",
-      "notes": "Snapshot manual: quota principal estourada, uso atual limitado ao composer-2.",
+      "notes": "Quota principal estourada desde 24/04. Ultimos 7 dias (27/04-03/05): 2 conversas, 2238 file edits, apenas composer-2.",
       "window": {
-        "snapshot_at": "2026-04-24T02:10:00-03:00"
+        "snapshot_at": "2026-05-03T22:00:00-03:00",
+        "last_activity": "2026-04-27"
       },
       "usage": {
         "membership_type": "enterprise",
         "current_mode": "composer-2 only",
-        "reason": "quota principal estourada"
+        "reason": "quota principal estourada",
+        "total_conversations_all_time": 33,
+        "total_file_edits_all_time": 166202,
+        "unique_files_touched": 1097,
+        "ai_commits": 9,
+        "last_7_days": {
+          "conversations": 2,
+          "file_edits": 2238,
+          "files_touched": 7,
+          "model_used": "composer-2 only"
+        },
+        "top_models_all_time": [
+          {"model": "claude-opus-4-7-xhigh", "edits": 74171},
+          {"model": "claude-4.6-opus-high-thinking", "edits": 43675},
+          {"model": "claude-opus-4-7-high", "edits": 11542},
+          {"model": "claude-opus-4-7-thinking-high", "edits": 9555},
+          {"model": "composer-2", "edits": 9212},
+          {"model": "claude-4.6-opus-max", "edits": 7336},
+          {"model": "claude-opus-4-7-max", "edits": 6255},
+          {"model": "gpt-5.3-codex-xhigh", "edits": 1533}
+        ]
       }
     },
     {
@@ -42,58 +63,84 @@
       "label": "OpenCode Go",
       "kind": "manual_snapshot",
       "status": "active",
-      "notes": "Telemetria extraida do banco local opencode.db em 27/04/2026. Cobre ~18h de uso desde 26/04 apos das 21:30.",
+      "notes": "Telemetria atualizada em 03/05/2026. 78 sessoes totais, 4542 mensagens, 7 dias de uso continuo. Versao 1.14.33.",
       "window": {
-        "snapshot_at": "2026-04-27T15:22:00-03:00",
+        "snapshot_at": "2026-05-03T19:39:00-03:00",
         "first_session": "2026-04-26T21:30:16-03:00",
-        "last_session": "2026-04-27T15:22:09-03:00",
-        "duration_hours": 18
+        "last_session": "2026-05-03T19:39:00-03:00",
+        "duration_days": 7
       },
       "usage": {
-        "version": "1.14.28",
-        "sessions": 8,
-        "messages": 522,
-        "parts": 2209,
-        "tool_calls": 680,
-        "file_edits": 68,
-        "file_reads": 168,
-        "bash_commands": 353,
-        "grep_searches": 14,
-        "reasoning_blocks": 412,
-        "questions_to_user": 1,
-        "code_additions": 644,
-        "code_deletions": 117,
-        "files_changed": 14,
+        "version_latest": "1.14.33",
+        "versions_used": ["1.14.26", "1.14.28", "1.14.29", "1.14.30", "1.14.31", "1.14.33"],
+        "sessions_total": 78,
+        "sessions_active": 75,
+        "messages_total": 4542,
+        "messages_user": 425,
+        "messages_assistant": 4117,
+        "parts_total": 19010,
+        "tool_parts": 9542,
+        "text_parts": 2056,
+        "todos_total": 148,
+        "todos_completed": 128,
+        "todos_in_progress": 7,
+        "todos_pending": 13,
+        "tool_usage_top10": [
+          {"tool": "bash", "calls": 2019},
+          {"tool": "read", "calls": 1330},
+          {"tool": "edit", "calls": 526},
+          {"tool": "glob", "calls": 229},
+          {"tool": "write", "calls": 218},
+          {"tool": "todowrite", "calls": 213},
+          {"tool": "grep", "calls": 208},
+          {"tool": "webfetch", "calls": 183},
+          {"tool": "web-search-prime", "calls": 58},
+          {"tool": "task", "calls": 44}
+        ],
         "workspaces": [
-          "F:\\KLG Bots",
-          "G:\\Work\\Movida\\Git\\RCA_Vetor_Abril2026",
-          "G:\\Work\\Movida\\Projetos\\SigNoz",
-          "G:\\Work\\NTT DATA\\Projeto Compra Agora",
-          "G:\\Work\\Up Cloud\\projetos\\VibeCoding - Study Case"
+          {"path": "F:\\KLG Bots", "sessions": 30},
+          {"path": "G:\\Work\\Up Cloud\\projetos\\VibeCoding - Study Case", "sessions": 26},
+          {"path": "/ (global)", "sessions": 20},
+          {"path": "D:\\...\\Tibia DBZ - Projeto Oficial", "sessions": 2}
         ],
         "top_sessions": [
           {
             "title": "Retomada KLG Bots validacao E2E Sprint 14",
-            "messages": 232,
-            "dir": "F:\\KLG Bots",
-            "duration_min": 1053,
-            "edits": 68,
-            "additions": 516,
-            "deletions": 117
+            "messages": 1185,
+            "workspace": "F:\\KLG Bots",
+            "additions": 58804,
+            "deletions": 179,
+            "files": 258
           },
           {
-            "title": "SigNoz CS Brasil apresentacao comparativa",
-            "messages": 123,
-            "dir": "G:\\Work\\Movida\\Projetos\\SigNoz",
-            "duration_min": 39
+            "title": "Conhecer projeto completo",
+            "messages": 273,
+            "workspace": "VibeCoding Study Case",
+            "additions": 847,
+            "deletions": 217,
+            "files": 11
           },
           {
-            "title": "Continuidade RCA Vetor Frotas rastreio causa raiz",
-            "messages": 70,
-            "dir": "G:\\Work\\Movida\\Git\\RCA_Vetor_Abril2026",
-            "duration_min": 86
+            "title": "Retomando KLG Bots com validacao de snapshots",
+            "messages": 212,
+            "workspace": "F:\\KLG Bots"
+          },
+          {
+            "title": "Implementar lifecycle emulador e jogo",
+            "messages": 199,
+            "workspace": "F:\\KLG Bots"
+          },
+          {
+            "title": "Sprint 16 Inicializacao Ambiente JS KLG Bots",
+            "messages": 189,
+            "workspace": "F:\\KLG Bots"
           }
-        ]
+        ],
+        "prompts_per_hour": {
+          "light_usage": 29,
+          "heavy_coding": 13,
+          "notes": "Light = 522 msgs / 18h (primeiro dia). Heavy = 1185 msgs / 17.5h (KLG Bots Sprint 14)."
+        }
       }
     }
   ]

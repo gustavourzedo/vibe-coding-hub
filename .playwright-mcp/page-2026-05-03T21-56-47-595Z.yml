@@ -1,0 +1,467 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Vibe Coding Hub" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e9]: Vibe Coding Hub
+      - navigation [ref=e10]:
+        - link "Inicio" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - link "Ranking" [ref=e12] [cursor=pointer]:
+          - /url: /ranking
+        - link "Benchmarks" [ref=e13] [cursor=pointer]:
+          - /url: /benchmarks
+        - link "IDEs e Agentes" [ref=e14] [cursor=pointer]:
+          - /url: /harnesses
+        - link "Telemetria" [ref=e15] [cursor=pointer]:
+          - /url: /telemetria
+        - link "Prompts" [ref=e16] [cursor=pointer]:
+          - /url: /ai-better-prompts
+        - link "Para IA" [ref=e17] [cursor=pointer]:
+          - /url: /ai-index
+      - generic [ref=e18]:
+        - link "Abrir AI Index" [ref=e19] [cursor=pointer]:
+          - /url: /ai-index
+          - img [ref=e20]
+        - link "Abrir busca" [ref=e23] [cursor=pointer]:
+          - /url: /#search
+          - img [ref=e24]
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - paragraph [ref=e31]: MVP de refatoracao
+        - heading "Um hub tecnico feito para humanos decidirem e IAs entenderem." [level=1] [ref=e32]
+        - paragraph [ref=e33]: "Esta versao expande o MVP para as paginas canonicas do projeto: voce escolhe a intencao, compara, aprofunda ou entrega um mapa limpo para agentes de IA."
+      - generic [ref=e34]:
+        - generic [ref=e35]: Caminho rapido
+        - generic [ref=e36]: Ranking para decidir.
+        - generic [ref=e37]: Benchmarks para comparar.
+        - generic [ref=e38]: AI Index para orientar agentes.
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: Navegacao principal
+          - heading "Comece pelo tipo de pergunta" [level=2] [ref=e44]
+        - link "Mapa completo" [ref=e45] [cursor=pointer]:
+          - /url: /ai-index
+      - generic [ref=e46]:
+        - link "01 Ranking Escolha assinatura, stack e prioridade de compra. Entrar" [ref=e47] [cursor=pointer]:
+          - /url: /ranking
+          - generic [ref=e48]:
+            - img [ref=e50]
+            - generic [ref=e53]: "01"
+          - heading "Ranking" [level=3] [ref=e54]
+          - paragraph [ref=e55]: Escolha assinatura, stack e prioridade de compra.
+          - generic [ref=e56]:
+            - text: Entrar
+            - img [ref=e57]
+        - link "02 Benchmarks Compare modelos por capacidade, risco e encaixe tecnico. Entrar" [ref=e59] [cursor=pointer]:
+          - /url: /benchmarks
+          - generic [ref=e60]:
+            - img [ref=e62]
+            - generic [ref=e64]: "02"
+          - heading "Benchmarks" [level=3] [ref=e65]
+          - paragraph [ref=e66]: Compare modelos por capacidade, risco e encaixe tecnico.
+          - generic [ref=e67]:
+            - text: Entrar
+            - img [ref=e68]
+        - link "03 Telemetria Veja sinais de uso real, custos e operacao local. Entrar" [ref=e70] [cursor=pointer]:
+          - /url: /telemetria
+          - generic [ref=e71]:
+            - img [ref=e73]
+            - generic [ref=e76]: "03"
+          - heading "Telemetria" [level=3] [ref=e77]
+          - paragraph [ref=e78]: Veja sinais de uso real, custos e operacao local.
+          - generic [ref=e79]:
+            - text: Entrar
+            - img [ref=e80]
+        - link "04 Modelos e planos Explore GLM, MiMo, OpenCode, Claude, OpenAI e outros. Entrar" [ref=e82] [cursor=pointer]:
+          - /url: /glm
+          - generic [ref=e83]:
+            - img [ref=e85]
+            - generic [ref=e97]: "04"
+          - heading "Modelos e planos" [level=3] [ref=e98]
+          - paragraph [ref=e99]: Explore GLM, MiMo, OpenCode, Claude, OpenAI e outros.
+          - generic [ref=e100]:
+            - text: Entrar
+            - img [ref=e101]
+        - link "05 IDEs e agentes Entenda Cursor, harnesses, orquestradores e workflows. Entrar" [ref=e103] [cursor=pointer]:
+          - /url: /harnesses
+          - generic [ref=e104]:
+            - img [ref=e106]
+            - generic [ref=e109]: "05"
+          - heading "IDEs e agentes" [level=3] [ref=e110]
+          - paragraph [ref=e111]: Entenda Cursor, harnesses, orquestradores e workflows.
+          - generic [ref=e112]:
+            - text: Entrar
+            - img [ref=e113]
+        - link "06 Better prompts Use playbooks e prompts para operar agentes melhor. Entrar" [ref=e115] [cursor=pointer]:
+          - /url: /ai-better-prompts
+          - generic [ref=e116]:
+            - img [ref=e118]
+            - generic [ref=e121]: "06"
+          - heading "Better prompts" [level=3] [ref=e122]
+          - paragraph [ref=e123]: Use playbooks e prompts para operar agentes melhor.
+          - generic [ref=e124]:
+            - text: Entrar
+            - img [ref=e125]
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - paragraph [ref=e130]: Paginas canonicas
+        - paragraph [ref=e131]: "30"
+      - generic [ref=e132]:
+        - paragraph [ref=e133]: Shell Next
+        - paragraph [ref=e134]: Ativo
+      - generic [ref=e135]:
+        - paragraph [ref=e136]: Busca IA
+        - paragraph [ref=e137]: llms + JSON
+      - generic [ref=e138]:
+        - paragraph [ref=e139]: Conteudo
+        - paragraph [ref=e140]: Legado vivo
+    - generic [ref=e142]:
+      - generic [ref=e143]:
+        - generic [ref=e144]: orientacao
+        - heading "Escolha o que voce quer fazer primeiro." [level=2] [ref=e145]
+        - paragraph [ref=e146]: "A navegacao deixa de ser uma lista de nomes internos e passa a ser uma trilha de decisao: decidir, comparar, explorar e orientar IA. O conteudo original continua preservado como fonte de verdade."
+      - generic [ref=e147]:
+        - link "01 Decidir assinatura Comece pelo ranking quando a pergunta for compra, custo ou stack recomendada. Abrir ranking" [ref=e148] [cursor=pointer]:
+          - /url: /ranking
+          - generic [ref=e149]:
+            - img [ref=e151]
+            - generic [ref=e154]: "01"
+          - heading "Decidir assinatura" [level=3] [ref=e155]
+          - paragraph [ref=e156]: Comece pelo ranking quando a pergunta for compra, custo ou stack recomendada.
+          - generic [ref=e157]:
+            - text: Abrir ranking
+            - img [ref=e158]
+        - link "02 Comparar modelos Use benchmarks quando quiser entender capacidade tecnica, risco e encaixe operacional. Ver benchmarks" [ref=e160] [cursor=pointer]:
+          - /url: /benchmarks
+          - generic [ref=e161]:
+            - img [ref=e163]
+            - generic [ref=e170]: "02"
+          - heading "Comparar modelos" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Use benchmarks quando quiser entender capacidade tecnica, risco e encaixe operacional.
+          - generic [ref=e173]:
+            - text: Ver benchmarks
+            - img [ref=e174]
+        - link "03 Explorar solucoes Entre nas paginas profundas para entender o papel de cada ferramenta dentro da stack. Ver exemplo" [ref=e176] [cursor=pointer]:
+          - /url: /glm
+          - generic [ref=e177]:
+            - img [ref=e179]
+            - generic [ref=e183]: "03"
+          - heading "Explorar solucoes" [level=3] [ref=e184]
+          - paragraph [ref=e185]: Entre nas paginas profundas para entender o papel de cada ferramenta dentro da stack.
+          - generic [ref=e186]:
+            - text: Ver exemplo
+            - img [ref=e187]
+        - link "04 Guiar uma IA Use o AI Index para dar contexto limpo a agentes, crawlers e assistentes de pesquisa. Abrir AI Index" [ref=e189] [cursor=pointer]:
+          - /url: /ai-index
+          - generic [ref=e190]:
+            - img [ref=e192]
+            - generic [ref=e195]: "04"
+          - heading "Guiar uma IA" [level=3] [ref=e196]
+          - paragraph [ref=e197]: Use o AI Index para dar contexto limpo a agentes, crawlers e assistentes de pesquisa.
+          - generic [ref=e198]:
+            - text: Abrir AI Index
+            - img [ref=e199]
+    - generic [ref=e201]:
+      - generic [ref=e202]:
+        - generic [ref=e203]:
+          - generic [ref=e204]: mapa visual
+          - heading "O hub vira um mapa, nao uma pilha de paginas." [level=2] [ref=e205]
+          - paragraph [ref=e206]: "As proximas iteracoes podem transformar cada categoria em uma faixa visual propria: decisoes, benchmarks, solucoes, evidencias, telemetria e prompts."
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - img [ref=e209]
+            - text: Leitura recomendada
+          - generic [ref=e221]:
+            - generic [ref=e222]: ranking / benchmarks / solucao
+            - generic [ref=e223]: ai-index / llms.txt / manifesto
+            - generic [ref=e224]: busca / pagina / relacionados
+      - generic [ref=e225]:
+        - generic [ref=e226]:
+          - img [ref=e227]
+          - heading "Para iniciantes" [level=3] [ref=e230]
+          - paragraph [ref=e231]: Comecar por Decidir e seguir para Comparar.
+        - generic [ref=e232]:
+          - img [ref=e233]
+          - heading "Para pesquisa" [level=3] [ref=e236]
+          - paragraph [ref=e237]: Buscar por tags e abrir paginas relacionadas.
+        - generic [ref=e238]:
+          - img [ref=e239]
+          - heading "Para agentes" [level=3] [ref=e242]
+          - paragraph [ref=e243]: Usar AI Index, manifesto e links canonicos.
+    - generic [ref=e244]:
+      - generic [ref=e245]:
+        - generic [ref=e246]:
+          - generic [ref=e247]: local search
+          - heading "Busca piloto por paginas, tags e contexto." [level=2] [ref=e248]
+        - link "Abrir AI Index" [ref=e249] [cursor=pointer]:
+          - /url: /ai-index
+          - text: Abrir AI Index
+          - img [ref=e250]
+      - generic [ref=e252]:
+        - generic [ref=e253]:
+          - img [ref=e254]
+          - generic [ref=e257]: Buscar no hub
+          - textbox "Buscar no hub" [ref=e258]
+        - generic [ref=e259]:
+          - link "Inicio critical Vibe Coding Hub Entrada principal do hub e mapa executivo para navegar pelo estudo." [ref=e260] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e261]:
+              - generic [ref=e262]: Inicio
+              - generic [ref=e263]: critical
+            - heading "Vibe Coding Hub" [level=2] [ref=e264]
+            - paragraph [ref=e265]: Entrada principal do hub e mapa executivo para navegar pelo estudo.
+          - link "Decisao critical Ranking Consolidado - Vibe Coding Hub Leitura executiva para decidir assinatura, stack e prioridade operacional." [ref=e266] [cursor=pointer]:
+            - /url: /ranking
+            - generic [ref=e267]:
+              - generic [ref=e268]: Decisao
+              - generic [ref=e269]: critical
+            - heading "Ranking Consolidado - Vibe Coding Hub" [level=2] [ref=e270]
+            - paragraph [ref=e271]: Leitura executiva para decidir assinatura, stack e prioridade operacional.
+          - link "Benchmark critical Benchmark de Capacidade dos Modelos - Hub de Agentes Comparacao tecnica de modelos, capacidade e encaixe para workloads pesados." [ref=e272] [cursor=pointer]:
+            - /url: /benchmarks
+            - generic [ref=e273]:
+              - generic [ref=e274]: Benchmark
+              - generic [ref=e275]: critical
+            - heading "Benchmark de Capacidade dos Modelos - Hub de Agentes" [level=2] [ref=e276]
+            - paragraph [ref=e277]: Comparacao tecnica de modelos, capacidade e encaixe para workloads pesados.
+          - link "Estrategia high Estrategias de Assinatura - Vibe Coding Hub Trilhas de decisao para custo, combinacao de ferramentas e sustentabilidade." [ref=e278] [cursor=pointer]:
+            - /url: /estrategias
+            - generic [ref=e279]:
+              - generic [ref=e280]: Estrategia
+              - generic [ref=e281]: high
+            - heading "Estrategias de Assinatura - Vibe Coding Hub" [level=2] [ref=e282]
+            - paragraph [ref=e283]: Trilhas de decisao para custo, combinacao de ferramentas e sustentabilidade.
+          - link "Evidencia high Evidencia de Campo - Vibe Coding Hub Sinais de campo, reviews e validacao qualitativa do uso real." [ref=e284] [cursor=pointer]:
+            - /url: /evidencia-campo
+            - generic [ref=e285]:
+              - generic [ref=e286]: Evidencia
+              - generic [ref=e287]: high
+            - heading "Evidencia de Campo - Vibe Coding Hub" [level=2] [ref=e288]
+            - paragraph [ref=e289]: Sinais de campo, reviews e validacao qualitativa do uso real.
+          - link "Evidencia high Reviews da Comunidade - Vibe Coding Hub Sinais de campo, reviews e validacao qualitativa do uso real." [ref=e290] [cursor=pointer]:
+            - /url: /reviews-comunidade
+            - generic [ref=e291]:
+              - generic [ref=e292]: Evidencia
+              - generic [ref=e293]: high
+            - heading "Reviews da Comunidade - Vibe Coding Hub" [level=2] [ref=e294]
+            - paragraph [ref=e295]: Sinais de campo, reviews e validacao qualitativa do uso real.
+          - link "Ferramentas high IDEs e Harnesses para Vibe Coding - Hub Vivo IDEs, harnesses, orquestradores e ambientes de trabalho agentico." [ref=e296] [cursor=pointer]:
+            - /url: /harnesses
+            - generic [ref=e297]:
+              - generic [ref=e298]: Ferramentas
+              - generic [ref=e299]: high
+            - heading "IDEs e Harnesses para Vibe Coding - Hub Vivo" [level=2] [ref=e300]
+            - paragraph [ref=e301]: IDEs, harnesses, orquestradores e ambientes de trabalho agentico.
+          - link "Ferramentas high Orquestradores e Workflows de Agentes - Hub Vibe Coding IDEs, harnesses, orquestradores e ambientes de trabalho agentico." [ref=e302] [cursor=pointer]:
+            - /url: /orquestradores
+            - generic [ref=e303]:
+              - generic [ref=e304]: Ferramentas
+              - generic [ref=e305]: high
+            - heading "Orquestradores e Workflows de Agentes - Hub Vibe Coding" [level=2] [ref=e306]
+            - paragraph [ref=e307]: IDEs, harnesses, orquestradores e ambientes de trabalho agentico.
+          - link "Telemetria high Hub de Agentes - Telemetria Dados locais e sinais operacionais para acompanhar uso real." [ref=e308] [cursor=pointer]:
+            - /url: /telemetria
+            - generic [ref=e309]:
+              - generic [ref=e310]: Telemetria
+              - generic [ref=e311]: high
+            - heading "Hub de Agentes - Telemetria" [level=2] [ref=e312]
+            - paragraph [ref=e313]: Dados locais e sinais operacionais para acompanhar uso real.
+          - link "Prompts high AI Better Prompts - Vibe Coding Hub Playbooks e prompts para operar agentes e modelos com mais previsibilidade." [ref=e314] [cursor=pointer]:
+            - /url: /ai-better-prompts
+            - generic [ref=e315]:
+              - generic [ref=e316]: Prompts
+              - generic [ref=e317]: high
+            - heading "AI Better Prompts - Vibe Coding Hub" [level=2] [ref=e318]
+            - paragraph [ref=e319]: Playbooks e prompts para operar agentes e modelos com mais previsibilidade.
+          - link "Operacao normal Playbook de Atualizacao - Vibe Coding Hub Rotina de atualizacao e manutencao do hub." [ref=e320] [cursor=pointer]:
+            - /url: /atualizacao
+            - generic [ref=e321]:
+              - generic [ref=e322]: Operacao
+              - generic [ref=e323]: normal
+            - heading "Playbook de Atualizacao - Vibe Coding Hub" [level=2] [ref=e324]
+            - paragraph [ref=e325]: Rotina de atualizacao e manutencao do hub.
+          - link "Solucao high GLM Coding Plan - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e326] [cursor=pointer]:
+            - /url: /glm
+            - generic [ref=e327]:
+              - generic [ref=e328]: Solucao
+              - generic [ref=e329]: high
+            - heading "GLM Coding Plan - Documentacao Viva" [level=2] [ref=e330]
+            - paragraph [ref=e331]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao high Xiaomi MiMo - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e332] [cursor=pointer]:
+            - /url: /mimo
+            - generic [ref=e333]:
+              - generic [ref=e334]: Solucao
+              - generic [ref=e335]: high
+            - heading "Xiaomi MiMo - Documentacao Viva" [level=2] [ref=e336]
+            - paragraph [ref=e337]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao high OpenCode Go - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e338] [cursor=pointer]:
+            - /url: /opencode-go
+            - generic [ref=e339]:
+              - generic [ref=e340]: Solucao
+              - generic [ref=e341]: high
+            - heading "OpenCode Go - Documentacao Viva" [level=2] [ref=e342]
+            - paragraph [ref=e343]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Alibaba Coding Plan - Vibe Coding Hub Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e344] [cursor=pointer]:
+            - /url: /alibaba
+            - generic [ref=e345]:
+              - generic [ref=e346]: Solucao
+              - generic [ref=e347]: normal
+            - heading "Alibaba Coding Plan - Vibe Coding Hub" [level=2] [ref=e348]
+            - paragraph [ref=e349]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Google AI Pro e Ultra - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e350] [cursor=pointer]:
+            - /url: /google-ai
+            - generic [ref=e351]:
+              - generic [ref=e352]: Solucao
+              - generic [ref=e353]: normal
+            - heading "Google AI Pro e Ultra - Documentacao Viva" [level=2] [ref=e354]
+            - paragraph [ref=e355]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Cursor - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e356] [cursor=pointer]:
+            - /url: /cursor
+            - generic [ref=e357]:
+              - generic [ref=e358]: Solucao
+              - generic [ref=e359]: normal
+            - heading "Cursor - Documentacao Viva" [level=2] [ref=e360]
+            - paragraph [ref=e361]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Claude Max - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e362] [cursor=pointer]:
+            - /url: /claude-max
+            - generic [ref=e363]:
+              - generic [ref=e364]: Solucao
+              - generic [ref=e365]: normal
+            - heading "Claude Max - Documentacao Viva" [level=2] [ref=e366]
+            - paragraph [ref=e367]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal OpenAI - ChatGPT e Codex - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e368] [cursor=pointer]:
+            - /url: /openai-codex
+            - generic [ref=e369]:
+              - generic [ref=e370]: Solucao
+              - generic [ref=e371]: normal
+            - heading "OpenAI - ChatGPT e Codex - Documentacao Viva" [level=2] [ref=e372]
+            - paragraph [ref=e373]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Windsurf - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e374] [cursor=pointer]:
+            - /url: /windsurf
+            - generic [ref=e375]:
+              - generic [ref=e376]: Solucao
+              - generic [ref=e377]: normal
+            - heading "Windsurf - Documentacao Viva" [level=2] [ref=e378]
+            - paragraph [ref=e379]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Kiro (AWS) - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e380] [cursor=pointer]:
+            - /url: /kiro
+            - generic [ref=e381]:
+              - generic [ref=e382]: Solucao
+              - generic [ref=e383]: normal
+            - heading "Kiro (AWS) - Documentacao Viva" [level=2] [ref=e384]
+            - paragraph [ref=e385]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Devin - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e386] [cursor=pointer]:
+            - /url: /devin
+            - generic [ref=e387]:
+              - generic [ref=e388]: Solucao
+              - generic [ref=e389]: normal
+            - heading "Devin - Documentacao Viva" [level=2] [ref=e390]
+            - paragraph [ref=e391]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Factory - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e392] [cursor=pointer]:
+            - /url: /factory
+            - generic [ref=e393]:
+              - generic [ref=e394]: Solucao
+              - generic [ref=e395]: normal
+            - heading "Factory - Documentacao Viva" [level=2] [ref=e396]
+            - paragraph [ref=e397]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Kimi - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e398] [cursor=pointer]:
+            - /url: /kimi
+            - generic [ref=e399]:
+              - generic [ref=e400]: Solucao
+              - generic [ref=e401]: normal
+            - heading "Kimi - Documentacao Viva" [level=2] [ref=e402]
+            - paragraph [ref=e403]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal MiniMax - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e404] [cursor=pointer]:
+            - /url: /minimax
+            - generic [ref=e405]:
+              - generic [ref=e406]: Solucao
+              - generic [ref=e407]: normal
+            - heading "MiniMax - Documentacao Viva" [level=2] [ref=e408]
+            - paragraph [ref=e409]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Ollama - Documentacao Viva Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e410] [cursor=pointer]:
+            - /url: /ollama
+            - generic [ref=e411]:
+              - generic [ref=e412]: Solucao
+              - generic [ref=e413]: normal
+            - heading "Ollama - Documentacao Viva" [level=2] [ref=e414]
+            - paragraph [ref=e415]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Solucao normal Code Arena - Leitura Operacional no Hub Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e416] [cursor=pointer]:
+            - /url: /arena-code
+            - generic [ref=e417]:
+              - generic [ref=e418]: Solucao
+              - generic [ref=e419]: normal
+            - heading "Code Arena - Leitura Operacional no Hub" [level=2] [ref=e420]
+            - paragraph [ref=e421]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Estrategia normal Vibe Coding Sustentavel - Vibe Coding Hub Trilhas de decisao para custo, combinacao de ferramentas e sustentabilidade." [ref=e422] [cursor=pointer]:
+            - /url: /vibe-sustentavel
+            - generic [ref=e423]:
+              - generic [ref=e424]: Estrategia
+              - generic [ref=e425]: normal
+            - heading "Vibe Coding Sustentavel - Vibe Coding Hub" [level=2] [ref=e426]
+            - paragraph [ref=e427]: Trilhas de decisao para custo, combinacao de ferramentas e sustentabilidade.
+          - link "Solucao normal Solucoes Adicionais Auditadas - Hub de Agentes Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica." [ref=e428] [cursor=pointer]:
+            - /url: /solucoes-auditadas
+            - generic [ref=e429]:
+              - generic [ref=e430]: Solucao
+              - generic [ref=e431]: normal
+            - heading "Solucoes Adicionais Auditadas - Hub de Agentes" [level=2] [ref=e432]
+            - paragraph [ref=e433]: Pagina profunda de uma solucao, modelo, assinatura ou ferramenta especifica.
+          - link "Benchmark normal Fichas Benchmark dos Modelos - Hub de Agentes Comparacao tecnica de modelos, capacidade e encaixe para workloads pesados." [ref=e434] [cursor=pointer]:
+            - /url: /benchmark-modelos
+            - generic [ref=e435]:
+              - generic [ref=e436]: Benchmark
+              - generic [ref=e437]: normal
+            - heading "Fichas Benchmark dos Modelos - Hub de Agentes" [level=2] [ref=e438]
+            - paragraph [ref=e439]: Comparacao tecnica de modelos, capacidade e encaixe para workloads pesados.
+  - contentinfo [ref=e440]:
+    - generic [ref=e441]:
+      - generic [ref=e442]:
+        - generic [ref=e443]:
+          - generic [ref=e444]:
+            - img [ref=e446]
+            - generic [ref=e448]: Vibe Coding Hub
+          - paragraph [ref=e449]: Hub para comparar assinaturas, modelos, IDEs e telemetria de vibe coding.
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - paragraph [ref=e452]: Decisao
+            - generic [ref=e453]:
+              - link "Ranking" [ref=e454] [cursor=pointer]:
+                - /url: /ranking
+              - link "Estrategias" [ref=e455] [cursor=pointer]:
+                - /url: /estrategias
+              - link "Vibe Sustentavel" [ref=e456] [cursor=pointer]:
+                - /url: /vibe-sustentavel
+          - generic [ref=e457]:
+            - paragraph [ref=e458]: Tecnico
+            - generic [ref=e459]:
+              - link "Benchmarks" [ref=e460] [cursor=pointer]:
+                - /url: /benchmarks
+              - link "Evidencia de Campo" [ref=e461] [cursor=pointer]:
+                - /url: /evidencia-campo
+              - link "Telemetria" [ref=e462] [cursor=pointer]:
+                - /url: /telemetria
+          - generic [ref=e463]:
+            - paragraph [ref=e464]: Recursos
+            - generic [ref=e465]:
+              - link "IDEs e Harnesses" [ref=e466] [cursor=pointer]:
+                - /url: /harnesses
+              - link "Better Prompts" [ref=e467] [cursor=pointer]:
+                - /url: /ai-better-prompts
+              - link "AI Index" [ref=e468] [cursor=pointer]:
+                - /url: /ai-index
+        - generic [ref=e469]:
+          - paragraph [ref=e470]: Para IA
+          - generic [ref=e471]:
+            - link "Mapa do Hub" [ref=e472] [cursor=pointer]:
+              - /url: /ai-index
+            - link "llms.txt" [ref=e473] [cursor=pointer]:
+              - /url: /llms.txt
+            - link "content-map.json" [ref=e474] [cursor=pointer]:
+              - /url: /ai-content-map.json
+      - generic [ref=e475]:
+        - paragraph [ref=e476]: 6areas · conteudo preservado · SSR + AI-ready
+        - paragraph [ref=e477]: Vibe Coding Hub © 2026

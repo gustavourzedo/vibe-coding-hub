@@ -1,30 +1,40 @@
-# Hub de Agentes para Vibe Coding
+# Vibe Coding Hub
 
-Documentacao viva para comparar assinaturas, modelos, IDEs, harnesses e telemetria real de uso em workflows de vibe coding pesado.
+Hub de agentes para comparar assinaturas, modelos, IDEs, harnesses, MCPs e telemetria real de uso em workflows de vibe coding pesado.
 
-## Entrada principal
+## URL oficial (MVP)
 
-Abra `index.html` para a home publica ou `ranking.html` para a comparacao detalhada.
+https://frontend-mvp-rouge.vercel.app
 
-Guia operacional de prompts:
-`ai-better-prompts.html`
+O MVP e o projeto oficial. Renderiza todo o conteudo HTML legado dentro de um shell Next.js moderno com:
+- Navegacao responsiva (mobile + desktop)
+- Command palette (Ctrl+K)
+- Paginas dedicadas para Ranking e Benchmarks com dados extraidos
+- Pagina de MCPs, Skills e Plugins com links oficiais
+- Sitemap e robots.txt gerados automaticamente
+- AI Index (llms.txt + ai-content-map.json)
 
-Plano de refatoracao frontend:
-`docs/FRONTEND_REFACTOR_PLAN.md`
+## Estrutura do projeto
 
-Estrategia de descoberta por IA:
-`docs/AI_DISCOVERY_STRATEGY.md`
+```
+frontend-mvp/          ← PROJETO OFICIAL (Next.js 16)
+  src/app/             ← Rotas (pages dedicadas + catch-all legado)
+  src/components/      ← UI components
+  src/lib/             ← Logica de conteudo e dados
+  content/             ← HTMLs legados sincronizados com a raiz
+  public/              ← ai-content-map.json, llms.txt
 
-Contexto/state para outra IA continuar:
-`docs/PROJECT_CONTEXT_STATE.md`
+index.html             ← Site estatico original (legado)
+ranking.html           ← Ranking legado
+benchmarks.html        ← Benchmarks legado
+ai-better-prompts.html ← Prompts legado
+ai-better-prompts/     ← Playbooks de prompts por modelo/IDE
+telemetry/             ← Dados de uso e snapshots manuais
+docs/                  ← Documentacao de contexto e plano de refatoracao
+ide-setup/             ← Templates de configuracao por IDE
+```
 
-Prompt de handoff para outra IDE/agente:
-`docs/NEXT_AGENT_PROMPT.md`
-
-MVP visual da refatoracao:
-`frontend-mvp/`
-
-O MVP ja cobre as paginas canonicas listadas em `ai-content-map.json`, renderizando o conteudo HTML existente dentro do novo shell Next.js.
+## Rodar localmente
 
 ```powershell
 cd frontend-mvp
@@ -32,52 +42,31 @@ npm install
 npm run dev -- --hostname 127.0.0.1 --port 3100
 ```
 
-Publicacao oficial:
-https://vibe-coding-hub-vercel.vercel.app/
+Acesse: http://127.0.0.1:3100
+
+## Deploy
+
+```powershell
+cd frontend-mvp
+npx vercel --prod
+```
+
+## Controle de versao
+
+- Branch principal: `master` (local) / `main` (remote)
+- Deploy via Vercel: automatico a cada push
+- Conteudo HTML legado: sincronizar com `frontend-mvp/content/` apos alteracoes na raiz
 
 ## Escopo
 
-- Ranking de assinaturas e plataformas para um benchmark extremo baseado em uma semana real de uso pesado no Cursor.
-- Paginas profundas por solucao.
-- Benchmark tecnico por modelo.
-- Comparativo de IDEs, apps e harnesses.
-- Comparativo de orquestradores e workflows de agentes.
-- Telemetria local preparada para consolidar Cursor, Codex desktop e futuras ferramentas.
-- Receita de prompts agenticos em `ai-better-prompts/`, com guias por fase, modelo e IDE.
-
-## Publicacao
-
-Este projeto e estatico. Pode ser publicado diretamente em Vercel, GitHub Pages ou qualquer host estatico.
-
-Para Vercel, nao ha build step obrigatorio: o `index.html` agora e a home publica do projeto.
-
-URL publicada:
-https://vibe-coding-hub-vercel.vercel.app/
-
-### Git + Vercel
-
-O projeto esta configurado para deploy estatico na Vercel:
-
-```powershell
-npm install
-npm run deploy:preview
-npm run deploy
-```
-
-Arquivos de trabalho local, estudos `.md`, scripts e telemetria estao excluidos do deploy via `.vercelignore`.
-Para publicar via GitHub, configure um remote e envie a branch `master`:
-
-```powershell
-git remote add origin <url-do-repositorio>
-git push -u origin master
-```
+- Ranking de assinaturas e plataformas para benchmark extremo baseado em uso real pesado.
+- Paginas profundas por solucao (GLM, MiMo, OpenCode Go, Alibaba, Google AI, Cursor, Claude, etc.).
+- Benchmark tecnico por modelo com SWE-bench, Arena Code e evidencia de campo.
+- Comparativo de IDEs, harnesses e orquestradores.
+- MCPs, Skills e Plugins com links oficiais e guia pratico.
+- Telemetria local consolidando Cursor, OpenCode Go e ferramentas.
+- Better Prompts: receita agenticos por fase, modelo e IDE.
 
 ## Atualizacao
 
-Revalidar sempre que mudar:
-
-- preco
-- quota
-- modelo disponivel
-- documentacao oficial
-- telemetria local de uso real
+Revalidar sempre que mudar preco, quota, modelo, documentacao oficial ou telemetria.
